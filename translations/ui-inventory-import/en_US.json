@@ -1,5 +1,5 @@
 {
-    "meta.title": "Harvester admin",
+    "meta.title": "Inventory import",
     "no-value": "-",
     "error": "Something went wrong",
     "resultCount": "{count, number} {count, plural, one {record found} other {records found}}",
@@ -237,7 +237,7 @@
     "settings.storage": "Storage engines",
     "settings.pipeline": "Transformation pipelines",
     "settings.step": "Transformation steps",
-    "permission.all": "Harvester admin: All permissions",
+    "permission.all": "Inventory import: All permissions",
     "filter.date.started": "Date started",
     "filter.date.started.from": "From",
     "filter.date.started.to": "To",
@@ -323,13 +323,13 @@
     "reports": "Reports",
     "transform": "Transform",
     "nav.mike": "Mike",
-    "permission.settings.view": "Harvester admin (Settings): View storage engines, transformation pipelines and transformation steps, and log-file deletion threshold",
-    "permission.settings.view-edit": "Harvester admin (Settings): View, edit storage engines, transformation pipelines and transformation steps, and log-file deletion threshold",
-    "permission.settings.view-edit-create": "Harvester admin (Settings): View, edit, create storage engines, transformation pipelines and transformation steps",
-    "permission.settings.view-edit-create-delete": "Harvester admin (Settings): View, edit, create, delete storage engines, transformation pipelines and transformation steps",
-    "permission.harvestables.view": "Harvester admin: View harvestables",
-    "permission.harvestables.view-edit": "Harvester admin: View, edit harvestables, start/stop jobs",
-    "permission.harvestables.view-edit-create": "Harvester admin: View, edit, create harvestables, start/stop jobs",
-    "permission.harvestables.view-edit-create-delete": "Harvester admin: View, edit, create, delete harvestables, start/stop jobs",
-    "permission.jobs-and-failed-records.view": "Harvester admin: View jobs and failed records"
+    "permission.settings.view": "Inventory import (Settings): View storage engines, transformation pipelines and transformation steps, and log-file deletion threshold",
+    "permission.settings.view-edit": "Inventory import (Settings): View, edit storage engines, transformation pipelines and transformation steps, and log-file deletion threshold",
+    "permission.settings.view-edit-create": "Inventory import (Settings): View, edit, create storage engines, transformation pipelines and transformation steps",
+    "permission.settings.view-edit-create-delete": "Inventory import (Settings): View, edit, create, delete storage engines, transformation pipelines and transformation steps",
+    "permission.harvestables.view": "Inventory import: View harvestables",
+    "permission.harvestables.view-edit": "Inventory import: View, edit harvestables, start/stop jobs",
+    "permission.harvestables.view-edit-create": "Inventory import: View, edit, create harvestables, start/stop jobs",
+    "permission.harvestables.view-edit-create-delete": "Inventory import: View, edit, create, delete harvestables, start/stop jobs",
+    "permission.jobs-and-failed-records.view": "Inventory import: View jobs and failed records"
 }
