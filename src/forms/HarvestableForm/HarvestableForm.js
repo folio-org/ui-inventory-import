@@ -33,8 +33,8 @@ const handleKeyCommand = (handler, { disabled } = {}) => {
 
 function validate(values) {
   const errors = {};
-  const requiredTextMessage = <FormattedMessage id="ui-harvester-admin.fillIn" />;
-  const requiredSelectMessage = <FormattedMessage id="ui-harvester-admin.selectToContinue" />;
+  const requiredTextMessage = <FormattedMessage id="ui-inventory-import.fillIn" />;
+  const requiredSelectMessage = <FormattedMessage id="ui-inventory-import.selectToContinue" />;
 
   if (!values.name) {
     errors.name = requiredTextMessage;
@@ -49,7 +49,7 @@ function validate(values) {
   try {
     if (values.json && values.json !== '') JSON.parse(values.json);
   } catch (e) {
-    errors.json = <FormattedMessage id="ui-harvester-admin.invalidJSON" values={{ error: e.toString() }} />;
+    errors.json = <FormattedMessage id="ui-inventory-import.invalidJSON" values={{ error: e.toString() }} />;
   }
 
   // console.log('validate:', errors);

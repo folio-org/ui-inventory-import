@@ -36,7 +36,7 @@ function summarizeStats(intl, param) {
   const stats = !param ? {} : (typeof param === 'string') ? message2stats(param) : param;
 
   return ['instances', 'holdings', 'items']
-    .map(t => intl.formatMessage({ id: `ui-harvester-admin.stats.${t}` }) + ':' + summarizeLine(stats[t]))
+    .map(t => intl.formatMessage({ id: `ui-inventory-import.stats.${t}` }) + ':' + summarizeLine(stats[t]))
     .join(' ');
 }
 

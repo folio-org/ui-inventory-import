@@ -7,7 +7,7 @@ import { RCKV, CKV } from '../../components/CKV';
 const HeaderSection = ({ rec }) => (
   <Accordion
     id="harvestable-section-general"
-    label={<FormattedMessage id="ui-harvester-admin.harvestables.heading.status" />}
+    label={<FormattedMessage id="ui-inventory-import.harvestables.heading.status" />}
   >
     <Row>
       <CKV rec={rec} tag="__jobClass" i18nTag="jobClass" xs={4} />

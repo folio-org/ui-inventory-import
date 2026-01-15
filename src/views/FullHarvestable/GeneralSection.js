@@ -7,7 +7,7 @@ import { RCKV, CKV } from '../../components/CKV';
 const GeneralSection = ({ rec }) => (
   <Accordion
     id="harvestable-section-general"
-    label={<FormattedMessage id="ui-harvester-admin.harvestables.heading.general" />}
+    label={<FormattedMessage id="ui-inventory-import.harvestables.heading.general" />}
   >
     <Row>
       <CKV rec={rec} tag="id" xs={2} />
@@ -53,7 +53,7 @@ const GeneralSection = ({ rec }) => (
     <Row>
       <Col xs={12}>
         <KeyValue
-          label={<FormattedMessage id="ui-harvester-admin.harvestables.field.json" />}
+          label={<FormattedMessage id="ui-inventory-import.harvestables.field.json" />}
           value={<pre>{JSON.stringify(rec.json, null, 2)}</pre>}
         />
       </Col>

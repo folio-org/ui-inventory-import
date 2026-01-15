@@ -6,7 +6,7 @@ import { CF, RCLF } from '../../components/CF';
 const HarvestableFormStatus = () => (
   <Accordion
     id="harvestable-form-status"
-    label={<FormattedMessage id="ui-harvester-admin.harvestables.field.type.status" />}
+    label={<FormattedMessage id="ui-inventory-import.harvestables.field.type.status" />}
   >
     <Row>
       <CF tag="id" xs={2} disabled />

@@ -14,11 +14,11 @@ const HarvestableFormGeneral = ({ data }) => {
 
   const noValue = {
     value: '',
-    label: intl.formatMessage({ id: 'ui-harvester-admin.selectValue' }),
+    label: intl.formatMessage({ id: 'ui-inventory-import.selectValue' }),
   };
   const failedRecords = rawFailedRecords.map(x => ({
     value: x,
-    label: x + ' - ' + intl.formatMessage({ id: `ui-harvester-admin.harvestables.field.failedRecordsLogging.${x}` }),
+    label: x + ' - ' + intl.formatMessage({ id: `ui-inventory-import.harvestables.field.failedRecordsLogging.${x}` }),
   }));
   const transformationPipelines = data.transformationPipelines.map(x => ({ value: x.id, label: x.name }));
   const storageEngines = data.storageEngines.map(x => ({ value: x.id, label: `${x.name} [${x.description}]` }));
@@ -26,7 +26,7 @@ const HarvestableFormGeneral = ({ data }) => {
   return (
     <Accordion
       id="harvestable-form-general"
-      label={<FormattedMessage id="ui-harvester-admin.harvestables.heading.general" />}
+      label={<FormattedMessage id="ui-inventory-import.harvestables.heading.general" />}
     >
       <Row>
         <CF tag="id" xs={2} disabled />

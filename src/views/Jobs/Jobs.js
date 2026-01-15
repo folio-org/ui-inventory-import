@@ -26,18 +26,18 @@ function Jobs({
   const intl = useIntl();
 
   const columnMapping = {
-    name: <FormattedMessage id="ui-harvester-admin.jobs.column.name" />,
-    status: <FormattedMessage id="ui-harvester-admin.jobs.column.status" />,
-    amountHarvested: <FormattedMessage id="ui-harvester-admin.jobs.column.amountHarvested" />,
-    seconds: <FormattedMessage id="ui-harvester-admin.jobs.column.seconds" />,
-    started: <FormattedMessage id="ui-harvester-admin.jobs.column.started" />,
-    finished: <FormattedMessage id="ui-harvester-admin.jobs.column.finished" />,
-    type: <FormattedMessage id="ui-harvester-admin.jobs.column.type" />,
-    message: <FormattedMessage id="ui-harvester-admin.jobs.column.message" />,
+    name: <FormattedMessage id="ui-inventory-import.jobs.column.name" />,
+    status: <FormattedMessage id="ui-inventory-import.jobs.column.status" />,
+    amountHarvested: <FormattedMessage id="ui-inventory-import.jobs.column.amountHarvested" />,
+    seconds: <FormattedMessage id="ui-inventory-import.jobs.column.seconds" />,
+    started: <FormattedMessage id="ui-inventory-import.jobs.column.started" />,
+    finished: <FormattedMessage id="ui-inventory-import.jobs.column.finished" />,
+    type: <FormattedMessage id="ui-inventory-import.jobs.column.type" />,
+    message: <FormattedMessage id="ui-inventory-import.jobs.column.message" />,
   };
 
   const formatter = {
-    status: r => <FormattedMessage id={`ui-harvester-admin.harvestables.column.currentStatus.${r.status}`} />,
+    status: r => <FormattedMessage id={`ui-inventory-import.harvestables.column.currentStatus.${r.status}`} />,
     amountHarvested: r => {
       const stats = message2stats(r.message);
       return `${r.amountHarvested} (${stats?.instances?.loaded})`;
@@ -45,14 +45,14 @@ function Jobs({
     started: r => formatDateTime(r.started),
     finished: r => formatDateTime(r.finished),
     seconds: r => Math.trunc((new Date(r.finished) - new Date(r.started)) / 1000),
-    type: r => <FormattedMessage id={`ui-harvester-admin.harvestables.field.jobClass.${r.type}`} />,
+    type: r => <FormattedMessage id={`ui-inventory-import.harvestables.field.jobClass.${r.type}`} />,
     message: r => (r.message?.match('Instances_processed') ? summarizeStats(intl, r.message) : r.message),
   };
 
   const paneTitle = !data.harvestable ?
-    <FormattedMessage id="ui-harvester-admin.nav.jobs" /> :
+    <FormattedMessage id="ui-inventory-import.nav.jobs" /> :
     <FormattedMessage
-      id="ui-harvester-admin.nav.jobs-for"
+      id="ui-inventory-import.nav.jobs-for"
       values={{ name: data.harvestable.name }}
     />;
 
@@ -88,7 +88,7 @@ function Jobs({
                         padContent={false}
                         height="100%"
                         paneTitle={paneTitle}
-                        paneSub={<FormattedMessage id="ui-harvester-admin.resultCount" values={{ count: resultCount }} />}
+                        paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: resultCount }} />}
                         actionMenu={() => renderColumnsMenu}
                       >
                         <MultiColumnList

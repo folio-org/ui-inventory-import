@@ -10,7 +10,7 @@ function renderSingleNumericFilter(intl, filterStruct, updateQuery, field, bound
 
   return (
     <TextField
-      label={intl.formatMessage({ id: `ui-harvester-admin.filter.numeric.${field}.${boundary}` })}
+      label={intl.formatMessage({ id: `ui-inventory-import.filter.numeric.${field}.${boundary}` })}
       value={value}
       onChange={(e) => {
         const thisValue = e.target.value;
@@ -30,7 +30,7 @@ function renderSingleNumericFilter(intl, filterStruct, updateQuery, field, bound
 function renderNumericFilterPair(intl, filterStruct, updateQuery, field, openByDefault) {
   return (
     <Accordion
-      label={intl.formatMessage({ id: `ui-harvester-admin.filter.numeric.${field}` })}
+      label={intl.formatMessage({ id: `ui-inventory-import.filter.numeric.${field}` })}
       header={FilterAccordionHeader}
       closedByDefault={!openByDefault}
     >

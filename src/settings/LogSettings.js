@@ -28,14 +28,14 @@ function LogSettings(props) {
     return (data?.number || '1') + ' ' + (data.unit || 'MONTHS');
   };
 
-  const descLabel = <FormattedMessage id="ui-harvester-admin.settings.logs.description" />;
-  const numberLabel = <FormattedMessage id="ui-harvester-admin.settings.logs.number" />;
-  const unitLabel = <FormattedMessage id="ui-harvester-admin.settings.logs.unit" />;
+  const descLabel = <FormattedMessage id="ui-inventory-import.settings.logs.description" />;
+  const numberLabel = <FormattedMessage id="ui-inventory-import.settings.logs.number" />;
+  const unitLabel = <FormattedMessage id="ui-inventory-import.settings.logs.unit" />;
 
   const rawUnits = ['days', 'weeks', 'months'];
   const units = rawUnits.map(tag => ({
     value: tag,
-    label: intl.formatMessage({ id: `ui-harvester-admin.settings.logs.unit.${tag}` }),
+    label: intl.formatMessage({ id: `ui-inventory-import.settings.logs.unit.${tag}` }),
   }));
 
   return (

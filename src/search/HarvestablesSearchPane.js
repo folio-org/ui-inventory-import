@@ -29,7 +29,7 @@ function HarvestablesSearchPane(props) {
 
   const intl = useIntl();
   const searchableIndexes = ['name', 'id', 'message'].map(x => (
-    { value: x, label: intl.formatMessage({ id: `ui-harvester-admin.harvestables.index.${x}` }) }
+    { value: x, label: intl.formatMessage({ id: `ui-inventory-import.harvestables.index.${x}` }) }
   ));
 
   const filterStruct = parseFilters(query.filters);
@@ -41,7 +41,7 @@ function HarvestablesSearchPane(props) {
     >
       <form onSubmit={onSubmitSearch}>
         <div className={css.searchGroupWrap}>
-          <FormattedMessage id="ui-harvester-admin.searchInputLabel">
+          <FormattedMessage id="ui-inventory-import.searchInputLabel">
             { ([ariaLabel]) => (
               <SearchField
                 data-test-harvestables-search-input

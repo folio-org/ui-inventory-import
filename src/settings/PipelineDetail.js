@@ -15,7 +15,7 @@ const PipelineDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.pipeline.field.name" />}
+            label={<FormattedMessage id="ui-inventory-import.pipeline.field.name" />}
             value={data.name}
           />
         </Col>
@@ -23,7 +23,7 @@ const PipelineDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.pipeline.field.description" />}
+            label={<FormattedMessage id="ui-inventory-import.pipeline.field.description" />}
             value={data.description}
           />
         </Col>
@@ -31,7 +31,7 @@ const PipelineDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.pipeline.field.enabled" />}
+            label={<FormattedMessage id="ui-inventory-import.pipeline.field.enabled" />}
             value={bool2display(data.enabled)}
           />
         </Col>
@@ -39,20 +39,20 @@ const PipelineDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.pipeline.field.parallel" />}
+            label={<FormattedMessage id="ui-inventory-import.pipeline.field.parallel" />}
             value={bool2display(data.parallel)}
           />
         </Col>
       </Row>
 
-      <h3><FormattedMessage id="ui-harvester-admin.settings.step" /></h3>
+      <h3><FormattedMessage id="ui-inventory-import.settings.step" /></h3>
       <MultiColumnList
         visibleColumns={['position', 'name', 'in', 'out']}
         columnMapping={{
-          position: <FormattedMessage id="ui-harvester-admin.pipeline.steps.position" />,
-          name: <FormattedMessage id="ui-harvester-admin.pipeline.steps.name" />,
-          in: <FormattedMessage id="ui-harvester-admin.pipeline.steps.in" />,
-          out: <FormattedMessage id="ui-harvester-admin.pipeline.steps.out" />,
+          position: <FormattedMessage id="ui-inventory-import.pipeline.steps.position" />,
+          name: <FormattedMessage id="ui-inventory-import.pipeline.steps.name" />,
+          in: <FormattedMessage id="ui-inventory-import.pipeline.steps.in" />,
+          out: <FormattedMessage id="ui-inventory-import.pipeline.steps.out" />,
         }}
         contentData={data.stepAssociations}
         formatter={{
@@ -65,7 +65,7 @@ const PipelineDetail = (props) => {
       {stripes.config.showDevInfo &&
         <Accordion
           id="pipeline-devinfo"
-          label={<FormattedMessage id="ui-harvester-admin.accordion.devinfo" />}
+          label={<FormattedMessage id="ui-inventory-import.accordion.devinfo" />}
           closedByDefault
         >
           <pre>

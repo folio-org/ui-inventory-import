@@ -11,15 +11,15 @@ const HarvestableLogHeader = ({ record }) => {
   const visibleColumns = ['summary', 'instances', 'holdings', 'items'];
 
   const columnMapping = {
-    summary: <FormattedMessage id="ui-harvester-admin.summary-table.summary" />,
-    instances: <FormattedMessage id="ui-harvester-admin.summary-table.instances" />,
-    holdings: <FormattedMessage id="ui-harvester-admin.summary-table.holdings" />,
-    items: <FormattedMessage id="ui-harvester-admin.summary-table.items" />,
+    summary: <FormattedMessage id="ui-inventory-import.summary-table.summary" />,
+    instances: <FormattedMessage id="ui-inventory-import.summary-table.instances" />,
+    holdings: <FormattedMessage id="ui-inventory-import.summary-table.holdings" />,
+    items: <FormattedMessage id="ui-inventory-import.summary-table.items" />,
   };
 
   const contentData = !stats ? [] : ['processed', 'loaded', 'deleted', 'failed'].map(caption => {
     const values = {
-      summary: <FormattedMessage id={`ui-harvester-admin.summary-label.${caption}`} />,
+      summary: <FormattedMessage id={`ui-inventory-import.summary-label.${caption}`} />,
     };
     visibleColumns.slice(1).forEach(col => {
       values[col] = stats[col]?.[caption];

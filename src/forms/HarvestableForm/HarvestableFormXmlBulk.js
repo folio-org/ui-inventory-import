@@ -12,7 +12,7 @@ const outputSchemas = [
 const HarvestableFormXmlBulk = () => (
   <Accordion
     id="harvestable-form-xml"
-    label={<FormattedMessage id="ui-harvester-admin.harvestables.field.type.xmlBulk" />}
+    label={<FormattedMessage id="ui-inventory-import.harvestables.field.type.xmlBulk" />}
   >
     <RCLF tag="url" i18nTag="urls" />
     <RCF tag="allowErrors" component={Checkbox} type="checkbox" />

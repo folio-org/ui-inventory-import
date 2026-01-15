@@ -24,8 +24,8 @@ const PipelineSettings = (props) => {
       parentMutator={mutator}
       entryList={sortBy((resources.entries || {}).records || [], ['name'])}
       detailComponent={PipelineDetail}
-      paneTitle={intl.formatMessage({ id: 'ui-harvester-admin.settings.pipeline' })}
-      entryLabel={intl.formatMessage({ id: 'ui-harvester-admin.settings.pipeline.heading' })}
+      paneTitle={intl.formatMessage({ id: 'ui-inventory-import.settings.pipeline' })}
+      entryLabel={intl.formatMessage({ id: 'ui-inventory-import.settings.pipeline.heading' })}
       entryFormComponent={(p2) => <PipelineForm {...p2} steps={resources.steps.records} />}
       nameKey="name"
       permissions={PERMS}

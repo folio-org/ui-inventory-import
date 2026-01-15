@@ -16,8 +16,8 @@ import css from './StepForm.css';
 
 function validate(values) {
   const errors = {};
-  const requiredTextMessage = <FormattedMessage id="ui-harvester-admin.fillIn" />;
-  const requiredSelectMessage = <FormattedMessage id="ui-harvester-admin.selectToContinue" />;
+  const requiredTextMessage = <FormattedMessage id="ui-inventory-import.fillIn" />;
+  const requiredSelectMessage = <FormattedMessage id="ui-inventory-import.selectToContinue" />;
 
   if (!values.name) {
     errors.name = requiredTextMessage;
@@ -39,7 +39,7 @@ const StepForm = (props) => {
 
   const noValue = {
     value: '',
-    label: intl.formatMessage({ id: 'ui-harvester-admin.selectValue' }),
+    label: intl.formatMessage({ id: 'ui-inventory-import.selectValue' }),
   };
   const types = ['XmlTransformStep', 'CustomTransformStep'].map(x => ({ value: x, label: x }));
   const formats = ['XML', 'JSON', 'Other'].map(x => ({ value: x, label: x }));
@@ -72,11 +72,11 @@ const StepForm = (props) => {
           <RCF tag="script" domain="step" component={TextArea} rows="4" />
           {
             (xsltStatus === BAD_XML) ?
-              <div className={css.badXML}><FormattedMessage id="ui-harvester-admin.invalidXML" values={{ error: xsltValue }} /></div> :
+              <div className={css.badXML}><FormattedMessage id="ui-inventory-import.invalidXML" values={{ error: xsltValue }} /></div> :
               (xsltStatus === BAD_XSLT) ?
-                <div className={css.badXSLT}><FormattedMessage id="ui-harvester-admin.invalidXSLT" /></div> :
+                <div className={css.badXSLT}><FormattedMessage id="ui-inventory-import.invalidXSLT" /></div> :
                 (xsltStatus === GOOD_XSLT) ?
-                  <div className={css.good}><FormattedMessage id="ui-harvester-admin.validXSLT" /></div> :
+                  <div className={css.good}><FormattedMessage id="ui-inventory-import.validXSLT" /></div> :
                   null
           }
 
@@ -95,10 +95,10 @@ const StepForm = (props) => {
               }
             }}
           >
-            <FormattedMessage id="ui-harvester-admin.transform" />
+            <FormattedMessage id="ui-inventory-import.transform" />
           </Button>
           {xmlError &&
-            <div className={css.badXML}><FormattedMessage id="ui-harvester-admin.invalidXML" values={{ error: xmlError }} /></div>
+            <div className={css.badXML}><FormattedMessage id="ui-inventory-import.invalidXML" values={{ error: xmlError }} /></div>
           }
 
           <RCF tag="testOutput" domain="step" component={TextArea} rows="4" />
@@ -107,7 +107,7 @@ const StepForm = (props) => {
             <Col xs={3}>
               <div style={{ marginTop: '1.9em' }}>
                 <Button marginBottom0 onClick={() => form.change('customClass', ccXML2JSON)}>
-                  <FormattedMessage id="ui-harvester-admin.set-to-xml2json" />
+                  <FormattedMessage id="ui-inventory-import.set-to-xml2json" />
                 </Button>
               </div>
             </Col>

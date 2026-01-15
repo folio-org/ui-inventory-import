@@ -7,7 +7,7 @@ import { RCKV, CKV } from '../../components/CKV';
 const OaiPmhSection = ({ rec }) => (
   <Accordion
     id="harvestable-section-oai"
-    label={<FormattedMessage id="ui-harvester-admin.harvestables.field.type.oaiPmh" />}
+    label={<FormattedMessage id="ui-inventory-import.harvestables.field.type.oaiPmh" />}
   >
     <RCKV rec={rec} tag="url" />
     <Row>

@@ -14,7 +14,7 @@ function renderSingleDateFilter(intl, filterStruct, updateQuery, field, boundary
 
   return (
     <Datepicker
-      label={intl.formatMessage({ id: `ui-harvester-admin.filter.date.${field}.${boundary}` })}
+      label={intl.formatMessage({ id: `ui-inventory-import.filter.date.${field}.${boundary}` })}
       backendDateStandard="YYYY-MM-DD"
       value={value}
       onChange={(e) => {
@@ -36,7 +36,7 @@ function renderSingleDateFilter(intl, filterStruct, updateQuery, field, boundary
 function renderDateFilterPair(intl, filterStruct, updateQuery, field, openByDefault) {
   return (
     <Accordion
-      label={intl.formatMessage({ id: `ui-harvester-admin.filter.date.${field}` })}
+      label={intl.formatMessage({ id: `ui-inventory-import.filter.date.${field}` })}
       header={FilterAccordionHeader}
       closedByDefault={!openByDefault}
     >

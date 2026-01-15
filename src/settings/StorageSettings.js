@@ -24,8 +24,8 @@ const StorageSettings = (props) => {
       parentMutator={mutator}
       entryList={sortBy((resources.entries || {}).records || [], ['name'])}
       detailComponent={StorageDetail}
-      paneTitle={intl.formatMessage({ id: 'ui-harvester-admin.settings.storage' })}
-      entryLabel={intl.formatMessage({ id: 'ui-harvester-admin.settings.storage.heading' })}
+      paneTitle={intl.formatMessage({ id: 'ui-inventory-import.settings.storage' })}
+      entryLabel={intl.formatMessage({ id: 'ui-inventory-import.settings.storage.heading' })}
       entryFormComponent={StorageForm}
       nameKey="name"
       permissions={PERMS}

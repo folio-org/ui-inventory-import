@@ -16,7 +16,7 @@ const HarvestableLogPlainText = ({ record, log, refreshLog }) => {
   const logStatus = status === 'RUNNING' ? 'running' : 'previous';
   const logLabel = (
     <>
-      <FormattedMessage id={`ui-harvester-admin.logs.plainTextLog.${logStatus}`} />
+      <FormattedMessage id={`ui-inventory-import.logs.plainTextLog.${logStatus}`} />
       {fileName ? ` (${fileName})` : ''}
     </>
   );
@@ -35,7 +35,7 @@ const HarvestableLogPlainText = ({ record, log, refreshLog }) => {
         onClick={refreshLog}
       >
         <Icon icon="refresh">
-          <FormattedMessage id="ui-harvester-admin.logs.plainTextLog.refresh" />
+          <FormattedMessage id="ui-inventory-import.logs.plainTextLog.refresh" />
         </Icon>
       </Button>
 
@@ -48,7 +48,7 @@ const HarvestableLogPlainText = ({ record, log, refreshLog }) => {
           marginBottom0
         >
           <Icon icon="download">
-            <FormattedMessage id="ui-harvester-admin.logs.plainTextLog.download" />
+            <FormattedMessage id="ui-inventory-import.logs.plainTextLog.download" />
           </Icon>
         </Button>
       </Download>

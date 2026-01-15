@@ -13,19 +13,19 @@ function SwitchRoute() {
 
   const segments = [{
     name: 'harvestables',
-    perm: 'ui-harvester-admin.harvestables.view',
+    perm: 'ui-inventory-import.harvestables.view',
   }, {
     name: 'jobs',
-    perm: 'ui-harvester-admin.jobs-and-failed-records.view',
+    perm: 'ui-inventory-import.jobs-and-failed-records.view',
     params: 'sort=-started'
   }, {
     name: 'records',
-    perm: 'ui-harvester-admin.jobs-and-failed-records.view',
+    perm: 'ui-inventory-import.jobs-and-failed-records.view',
     params: `filters=timeStamp_from.${isoString}`,
     /*
   }, {
     name: 'mike',
-    perm: 'ui-harvester-admin.harvestables.view',
+    perm: 'ui-inventory-import.harvestables.view',
     */
   }];
 
@@ -45,7 +45,7 @@ function SwitchRoute() {
                   buttonStyle={selected ? 'primary' : 'default'}
                   aria-selected={selected}
                 >
-                  <FormattedMessage id={`ui-harvester-admin.nav.${name}`} />
+                  <FormattedMessage id={`ui-inventory-import.nav.${name}`} />
                 </Button>
               );
             })

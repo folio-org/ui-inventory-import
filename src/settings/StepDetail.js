@@ -15,7 +15,7 @@ const StepDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.step.field.name" />}
+            label={<FormattedMessage id="ui-inventory-import.step.field.name" />}
             value={data.name}
           />
         </Col>
@@ -23,7 +23,7 @@ const StepDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.step.field.description" />}
+            label={<FormattedMessage id="ui-inventory-import.step.field.description" />}
             value={data.description}
           />
         </Col>
@@ -31,7 +31,7 @@ const StepDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.step.field.enabled" />}
+            label={<FormattedMessage id="ui-inventory-import.step.field.enabled" />}
             value={bool2display(data.enabled)}
           />
         </Col>
@@ -39,7 +39,7 @@ const StepDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.step.field.type" />}
+            label={<FormattedMessage id="ui-inventory-import.step.field.type" />}
             value={data.type}
           />
         </Col>
@@ -47,7 +47,7 @@ const StepDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.step.field.inputFormat" />}
+            label={<FormattedMessage id="ui-inventory-import.step.field.inputFormat" />}
             value={data.inputFormat}
           />
         </Col>
@@ -55,7 +55,7 @@ const StepDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.step.field.outputFormat" />}
+            label={<FormattedMessage id="ui-inventory-import.step.field.outputFormat" />}
             value={data.outputFormat}
           />
         </Col>
@@ -63,7 +63,7 @@ const StepDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.step.field.script" />}
+            label={<FormattedMessage id="ui-inventory-import.step.field.script" />}
             value={data.script}
           />
         </Col>
@@ -71,7 +71,7 @@ const StepDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.step.field.testData" />}
+            label={<FormattedMessage id="ui-inventory-import.step.field.testData" />}
             value={data.testData}
           />
         </Col>
@@ -79,7 +79,7 @@ const StepDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.step.field.testOutput" />}
+            label={<FormattedMessage id="ui-inventory-import.step.field.testOutput" />}
             value={data.testOutput}
           />
         </Col>
@@ -87,7 +87,7 @@ const StepDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.step.field.customClass" />}
+            label={<FormattedMessage id="ui-inventory-import.step.field.customClass" />}
             value={data.customClass}
           />
         </Col>
@@ -96,7 +96,7 @@ const StepDetail = (props) => {
       {stripes.config.showDevInfo &&
         <Accordion
           id="step-devinfo"
-          label={<FormattedMessage id="ui-harvester-admin.accordion.devinfo" />}
+          label={<FormattedMessage id="ui-inventory-import.accordion.devinfo" />}
           closedByDefault
         >
           <pre>

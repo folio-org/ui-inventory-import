@@ -44,7 +44,7 @@ const StorageDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.storage.field.name" />}
+            label={<FormattedMessage id="ui-inventory-import.storage.field.name" />}
             value={data.name}
           />
         </Col>
@@ -52,7 +52,7 @@ const StorageDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.storage.field.description" />}
+            label={<FormattedMessage id="ui-inventory-import.storage.field.description" />}
             value={data.description}
           />
         </Col>
@@ -60,7 +60,7 @@ const StorageDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.storage.field.enabled" />}
+            label={<FormattedMessage id="ui-inventory-import.storage.field.enabled" />}
             value={bool2display(data.enabled)}
           />
         </Col>
@@ -68,7 +68,7 @@ const StorageDetail = (props) => {
       <Row>
         <Col xs={12}>
           <KeyValue
-            label={<FormattedMessage id="ui-harvester-admin.storage.field.url" />}
+            label={<FormattedMessage id="ui-inventory-import.storage.field.url" />}
             value={data.url}
           />
         </Col>
@@ -77,7 +77,7 @@ const StorageDetail = (props) => {
         <Row>
           <Col xs={12}>
             <KeyValue
-              label={<FormattedMessage id="ui-harvester-admin.storage.field.json" />}
+              label={<FormattedMessage id="ui-inventory-import.storage.field.json" />}
               value={JSON.stringify(censoredJson, null, 2)}
             />
           </Col>
@@ -87,7 +87,7 @@ const StorageDetail = (props) => {
       {stripes.config.showDevInfo &&
         <Accordion
           id="storage-devinfo"
-          label={<FormattedMessage id="ui-harvester-admin.accordion.devinfo" />}
+          label={<FormattedMessage id="ui-inventory-import.accordion.devinfo" />}
           closedByDefault
         >
           <pre>

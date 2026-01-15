@@ -6,7 +6,7 @@ import css from './ErrorMessage.css';
 const ErrorMessage = ({ message }) => (
   <div className={css.error}>
     <div className={css.errorHeading}>
-      <FormattedMessage id="ui-harvester-admin.error" />
+      <FormattedMessage id="ui-inventory-import.error" />
     </div>
     <div className={css.errorBody}>
       {message}

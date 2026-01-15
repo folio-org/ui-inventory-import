@@ -38,7 +38,7 @@ function RecordsSearchPane(props) {
   ];
   const searchableIndexes = indexNames.map(x => ({
     value: x,
-    label: intl.formatMessage({ id: `ui-harvester-admin.records.index.${x}` }),
+    label: intl.formatMessage({ id: `ui-inventory-import.records.index.${x}` }),
   }));
 
   const filterStruct = parseFilters(query.filters);
@@ -50,7 +50,7 @@ function RecordsSearchPane(props) {
     >
       <form onSubmit={onSubmitSearch}>
         <div className={css.searchGroupWrap}>
-          <FormattedMessage id="ui-harvester-admin.searchInputLabel">
+          <FormattedMessage id="ui-inventory-import.searchInputLabel">
             { ([ariaLabel]) => (
               <SearchField
                 data-test-records-search-input

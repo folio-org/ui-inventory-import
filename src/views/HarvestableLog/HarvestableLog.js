@@ -47,7 +47,7 @@ const HarvestableLog = (props) => {
         <>
           {' '}&mdash;{' '}
           <span className={`${css.status} ${css[`status_${status}`]}`}>
-            <FormattedMessage id={`ui-harvester-admin.harvestables.column.currentStatus.${status}`} />
+            <FormattedMessage id={`ui-inventory-import.harvestables.column.currentStatus.${status}`} />
           </span>
         </>
       }

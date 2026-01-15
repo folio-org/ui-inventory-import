@@ -12,11 +12,11 @@ const HarvestableLogFailedRecords = ({ failedRecords }) => {
   const visibleColumns = ['recordNumber', 'instanceHrid', 'instanceTitle', 'errors', 'timeStamp'];
 
   const columnMapping = {
-    recordNumber: <FormattedMessage id="ui-harvester-admin.failed-records.recordNumber" />,
-    instanceHrid: <FormattedMessage id="ui-harvester-admin.failed-records.instanceHrid" />,
-    instanceTitle: <FormattedMessage id="ui-harvester-admin.failed-records.instanceTitle" />,
-    errors: <FormattedMessage id="ui-harvester-admin.failed-records.errors" />,
-    timeStamp: <FormattedMessage id="ui-harvester-admin.failed-records.timeStamp" />,
+    recordNumber: <FormattedMessage id="ui-inventory-import.failed-records.recordNumber" />,
+    instanceHrid: <FormattedMessage id="ui-inventory-import.failed-records.instanceHrid" />,
+    instanceTitle: <FormattedMessage id="ui-inventory-import.failed-records.instanceTitle" />,
+    errors: <FormattedMessage id="ui-inventory-import.failed-records.errors" />,
+    timeStamp: <FormattedMessage id="ui-inventory-import.failed-records.timeStamp" />,
   };
 
   const resultsFormatter = {
@@ -29,7 +29,7 @@ const HarvestableLogFailedRecords = ({ failedRecords }) => {
     <Accordion
       id="logs-failed"
       label={<FormattedMessage
-        id="ui-harvester-admin.logs.countFailedRecords"
+        id="ui-inventory-import.logs.countFailedRecords"
         values={{ count: failedRecords?.failedRecords.length }}
       />}
     >
@@ -51,7 +51,7 @@ const HarvestableLogFailedRecords = ({ failedRecords }) => {
         {stripes.config.showDevInfo &&
           <Accordion
             id="harvest-failedRecords-devinfo"
-            label={<FormattedMessage id="ui-harvester-admin.accordion.devinfo" />}
+            label={<FormattedMessage id="ui-inventory-import.accordion.devinfo" />}
             closedByDefault
           >
             <ObjectInspector

@@ -29,7 +29,7 @@ const HarvesterAdminApp = (props) => {
   }
 
   // Don't redirect to a page we don't have permission to view: see Tabs.js
-  const dest = stripes.hasPerm('ui-harvester-admin.harvestables.view') ? 'harvestables' : 'jobs';
+  const dest = stripes.hasPerm('ui-inventory-import.harvestables.view') ? 'harvestables' : 'jobs';
 
   return (
     <div className={css.container}>

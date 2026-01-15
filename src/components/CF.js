@@ -6,8 +6,8 @@ import { Row, Col, TextField, InfoPopover } from '@folio/stripes/components';
 import ListField from './ListField';
 
 function translationTagAndHelpButton(intl, domain = 'harvestables', tag, i18nTag, helpTag) {
-  const translationTag = `ui-harvester-admin.${domain}.field.${i18nTag || tag}`;
-  const helpTranslationTag = `ui-harvester-admin.${domain}.field.${helpTag || i18nTag || tag}.help`;
+  const translationTag = `ui-inventory-import.${domain}.field.${i18nTag || tag}`;
+  const helpTranslationTag = `ui-inventory-import.${domain}.field.${helpTag || i18nTag || tag}.help`;
   const helpMessage = intl.messages[helpTranslationTag];
   const helpButton =
     !helpMessage ?

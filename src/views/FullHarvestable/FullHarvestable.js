@@ -30,7 +30,7 @@ const FullHarvestableContent = ({ rec }) => {
   const SpecificSection = specificSections[type] || ErrorSection;
 
   // eslint-disable-next-line react/prop-types
-  rec.__jobClass = intl.formatMessage({ id: `ui-harvester-admin.harvestables.field.jobClass.${rec.type}` });
+  rec.__jobClass = intl.formatMessage({ id: `ui-inventory-import.harvestables.field.jobClass.${rec.type}` });
 
   return (
     <>
@@ -41,7 +41,7 @@ const FullHarvestableContent = ({ rec }) => {
       {stripes.config.showDevInfo &&
         <Accordion
           id="harvestable-section-devinfo"
-          label={<FormattedMessage id="ui-harvester-admin.accordion.devinfo" />}
+          label={<FormattedMessage id="ui-inventory-import.accordion.devinfo" />}
           closedByDefault
         >
           <pre>
@@ -83,7 +83,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
       callout.sendCallout({
         message: (
           <FormattedMessage
-            id="ui-harvester-admin.op.delete.completed"
+            id="ui-inventory-import.op.delete.completed"
             values={{
               name: rec.name,
               b: text => <b>{text}</b>,
@@ -99,7 +99,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
       callout.sendCallout({
         message: (
           <FormattedMessage
-            id={`ui-harvester-admin.op.${op}.completed`}
+            id={`ui-inventory-import.op.${op}.completed`}
             values={{
               name: rec.name,
               b: text => <b>{text}</b>,
@@ -113,7 +113,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
           type: 'error',
           message: (
             <FormattedMessage
-              id={`ui-harvester-admin.op.${op}.error`}
+              id={`ui-inventory-import.op.${op}.error`}
               values={{
                 name: rec.name,
                 error: error.toString(),
@@ -139,7 +139,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
             }}
           >
             <Icon icon="edit">
-              <FormattedMessage id="ui-harvester-admin.button.edit" />
+              <FormattedMessage id="ui-inventory-import.button.edit" />
             </Icon>
           </Button>
         </IfPermission>
@@ -151,7 +151,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
             onClick={e => maybeDeleteRecord(e)}
           >
             <Icon icon="trash">
-              <FormattedMessage id="ui-harvester-admin.button.delete" />
+              <FormattedMessage id="ui-inventory-import.button.delete" />
             </Icon>
           </Button>
         </IfPermission>
@@ -163,7 +163,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
             onClick={() => { onToggle(); controlJob('run'); }}
           >
             <Icon icon="play">
-              <FormattedMessage id="ui-harvester-admin.button.start-job" />
+              <FormattedMessage id="ui-inventory-import.button.start-job" />
             </Icon>
           </Button>
         </IfPermission>
@@ -175,7 +175,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
             onClick={() => { onToggle(); controlJob('stop'); }}
           >
             <Icon icon="times-circle-solid">
-              <FormattedMessage id="ui-harvester-admin.button.stop-job" />
+              <FormattedMessage id="ui-inventory-import.button.stop-job" />
             </Icon>
           </Button>
         </IfPermission>
@@ -201,7 +201,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
             }}
           >
             <Icon icon="list">
-              <FormattedMessage id="ui-harvester-admin.button.old-jobs" />
+              <FormattedMessage id="ui-inventory-import.button.old-jobs" />
             </Icon>
           </Button>
         </IfPermission>
@@ -221,9 +221,9 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
       {deleting &&
         <ConfirmationModal
           open
-          heading={<FormattedMessage id="ui-harvester-admin.op.delete.confirm" />}
+          heading={<FormattedMessage id="ui-inventory-import.op.delete.confirm" />}
           message={rec.name}
-          confirmLabel={<FormattedMessage id="ui-harvester-admin.button.confirm" />}
+          confirmLabel={<FormattedMessage id="ui-inventory-import.button.confirm" />}
           onConfirm={() => actuallyDeleteRecord()}
           onCancel={() => setDeleting(false)}
         />

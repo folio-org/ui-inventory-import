@@ -18,14 +18,14 @@ function renderFilter(intl, filterStruct, updateQuery, qualifiedField, optionTag
 
   const dataOptions = optionTags.map(tag => ({
     value: tag,
-    label: intl.formatMessage({ id: `ui-harvester-admin.${transTag}.${tag}` }),
+    label: intl.formatMessage({ id: `ui-inventory-import.${transTag}.${tag}` }),
   }));
 
   if (isMulti) {
     return (
       <MultiSelectionFilter
         name={`multifilter-${field}`}
-        label={intl.formatMessage({ id: `ui-harvester-admin.${transTag}` })}
+        label={intl.formatMessage({ id: `ui-inventory-import.${transTag}` })}
         dataOptions={dataOptions}
         selectedValues={filterStruct[field] || []}
         onChange={(group) => {
@@ -38,9 +38,9 @@ function renderFilter(intl, filterStruct, updateQuery, qualifiedField, optionTag
 
   return (
     <Select
-      label={intl.formatMessage({ id: `ui-harvester-admin.${transTag}` })}
+      label={intl.formatMessage({ id: `ui-inventory-import.${transTag}` })}
       dataOptions={[
-        { value: NO_VALUE, label: intl.formatMessage({ id: 'ui-harvester-admin.no-value' }) },
+        { value: NO_VALUE, label: intl.formatMessage({ id: 'ui-inventory-import.no-value' }) },
         ...dataOptions
       ]}
       value={filterStruct[field] ? filterStruct[field][0] : ''}

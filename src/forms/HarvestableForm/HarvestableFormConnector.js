@@ -6,7 +6,7 @@ import { RCF, CF } from '../../components/CF';
 const HarvestableFormConnector = () => (
   <Accordion
     id="harvestable-form-connector"
-    label={<FormattedMessage id="ui-harvester-admin.harvestables.field.type.connector" />}
+    label={<FormattedMessage id="ui-inventory-import.harvestables.field.type.connector" />}
   >
     <RCF tag="connectorEngineUrlSetting.label" />
     <RCF tag="engineParameters" />

@@ -38,15 +38,15 @@ function exportAllRecords(resultCount, okapiKy) {
 function renderActionMenu(onToggle, intl, data, resultCount, okapiKy, renderedColumnsMenu) {
   return (
     <div>
-      <MenuSection label={intl.formatMessage({ id: 'ui-harvester-admin.reports' })}>
+      <MenuSection label={intl.formatMessage({ id: 'ui-inventory-import.reports' })}>
         <Button
-          aria-label={intl.formatMessage({ id: 'ui-harvester-admin.export-csv' })}
+          aria-label={intl.formatMessage({ id: 'ui-inventory-import.export-csv' })}
           disabled={!resultCount}
           buttonStyle="dropdownItem"
           onClick={() => { exportAllRecords(resultCount, okapiKy); onToggle(); }}
         >
           <Icon icon="download">
-            <FormattedMessage id="ui-harvester-admin.export-csv" />
+            <FormattedMessage id="ui-inventory-import.export-csv" />
           </Icon>
         </Button>
       </MenuSection>
@@ -72,12 +72,12 @@ function Records({
   const okapiKy = useOkapiKy();
 
   const columnMapping = {
-    recordNumber: <FormattedMessage id="ui-harvester-admin.failed-records.recordNumber" />,
-    instanceHrid: <FormattedMessage id="ui-harvester-admin.failed-records.instanceHrid" />,
-    instanceTitle: <FormattedMessage id="ui-harvester-admin.failed-records.instanceTitle" />,
-    errors: <FormattedMessage id="ui-harvester-admin.failed-records.errors" />,
-    timeStamp: <FormattedMessage id="ui-harvester-admin.failed-records.timeStamp" />,
-    harvestableName: <FormattedMessage id="ui-harvester-admin.failed-records.harvestableName" />,
+    recordNumber: <FormattedMessage id="ui-inventory-import.failed-records.recordNumber" />,
+    instanceHrid: <FormattedMessage id="ui-inventory-import.failed-records.instanceHrid" />,
+    instanceTitle: <FormattedMessage id="ui-inventory-import.failed-records.instanceTitle" />,
+    errors: <FormattedMessage id="ui-inventory-import.failed-records.errors" />,
+    timeStamp: <FormattedMessage id="ui-inventory-import.failed-records.timeStamp" />,
+    harvestableName: <FormattedMessage id="ui-inventory-import.failed-records.harvestableName" />,
   };
 
   const columnWidths = {
@@ -93,7 +93,7 @@ function Records({
     errors: r => errors2react(r.recordErrors),
   };
 
-  const paneTitle = <FormattedMessage id="ui-harvester-admin.nav.records" />;
+  const paneTitle = <FormattedMessage id="ui-inventory-import.nav.records" />;
 
   const sortKeys = parseSort(query.sort);
   const sortedColumn = sortKeys[0]?.key;
@@ -126,7 +126,7 @@ function Records({
                         defaultWidth="fill"
                         padContent={false}
                         paneTitle={paneTitle}
-                        paneSub={<FormattedMessage id="ui-harvester-admin.resultCount" values={{ count: resultCount }} />}
+                        paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: resultCount }} />}
                         actionMenu={({ onToggle }) => renderActionMenu(onToggle, intl, data, resultCount, okapiKy, renderColumnsMenu)}
                       >
                         <MultiColumnList
@@ -149,9 +149,9 @@ function Records({
                         />
                         <ErrorModal
                           open={!!invalidSortKey}
-                          label={<FormattedMessage id="ui-harvester-admin.error.invalidSort.label" />}
+                          label={<FormattedMessage id="ui-inventory-import.error.invalidSort.label" />}
                           content={<FormattedMessage
-                            id="ui-harvester-admin.error.invalidSort.content"
+                            id="ui-inventory-import.error.invalidSort.content"
                             values={{ name: invalidSortKey, code: s => <code>{s}</code> }}
                           />}
                           onClose={() => setInvalidSortKey(undefined)}

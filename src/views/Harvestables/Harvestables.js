@@ -65,9 +65,9 @@ function renderActionsMenu(search, renderedColumnsMenu) {
   return (
     <PaneMenu>
       <IfPermission perm="harvester-admin.harvestables.item.post">
-        <MenuSection id="actions-menu-section" label={<FormattedMessage id="ui-harvester-admin.actions.new" />}>
+        <MenuSection id="actions-menu-section" label={<FormattedMessage id="ui-inventory-import.actions.new" />}>
           {['oaiPmh', 'xmlBulk', 'connector', 'status'].map(type => (
-            <FormattedMessage key={type} id={`ui-harvester-admin.actions.new.harvestable.${type}`}>
+            <FormattedMessage key={type} id={`ui-inventory-import.actions.new.harvestable.${type}`}>
               {ariaLabel => (
                 <Button
                   id={`clickable-new-harvestable-${type}`}
@@ -77,7 +77,7 @@ function renderActionsMenu(search, renderedColumnsMenu) {
                   marginBottom0
                 >
                   <Icon icon="plus-sign">
-                    <FormattedMessage id={`ui-harvester-admin.actions.new.harvestable.${type}`} />
+                    <FormattedMessage id={`ui-inventory-import.actions.new.harvestable.${type}`} />
                   </Icon>
                 </Button>
               )}
@@ -107,25 +107,25 @@ function Harvestables({
   const stripes = useStripes();
 
   const columnMapping = {
-    name: <FormattedMessage id="ui-harvester-admin.harvestables.column.name" />,
-    currentStatus: <FormattedMessage id="ui-harvester-admin.harvestables.column.currentStatus" />,
-    records: <FormattedMessage id="ui-harvester-admin.harvestables.column.records" />,
-    lastHarvestFinished: <FormattedMessage id="ui-harvester-admin.harvestables.column.lastHarvestFinished" />,
-    enabled: <FormattedMessage id="ui-harvester-admin.harvestables.column.enabled" />,
-    jobClass: <FormattedMessage id="ui-harvester-admin.harvestables.column.jobClass" />,
-    id: <FormattedMessage id="ui-harvester-admin.harvestables.column.id" />,
-    message: <FormattedMessage id="ui-harvester-admin.harvestables.column.message" />,
+    name: <FormattedMessage id="ui-inventory-import.harvestables.column.name" />,
+    currentStatus: <FormattedMessage id="ui-inventory-import.harvestables.column.currentStatus" />,
+    records: <FormattedMessage id="ui-inventory-import.harvestables.column.records" />,
+    lastHarvestFinished: <FormattedMessage id="ui-inventory-import.harvestables.column.lastHarvestFinished" />,
+    enabled: <FormattedMessage id="ui-inventory-import.harvestables.column.enabled" />,
+    jobClass: <FormattedMessage id="ui-inventory-import.harvestables.column.jobClass" />,
+    id: <FormattedMessage id="ui-inventory-import.harvestables.column.id" />,
+    message: <FormattedMessage id="ui-inventory-import.harvestables.column.message" />,
   };
 
   if (stripes.hasPerm('harvester-admin.harvestables.log.get')) {
-    columnMapping.logFile = <FormattedMessage id="ui-harvester-admin.harvestables.column.logFile" />;
-    columnMapping.oldJobs = <FormattedMessage id="ui-harvester-admin.harvestables.column.oldJobs" />;
+    columnMapping.logFile = <FormattedMessage id="ui-inventory-import.harvestables.column.logFile" />;
+    columnMapping.oldJobs = <FormattedMessage id="ui-inventory-import.harvestables.column.oldJobs" />;
   }
 
   const formatter = {
-    enabled: r => <FormattedMessage id={`ui-harvester-admin.harvestables.column.enabled.${r.enabled}`} />,
-    jobClass: r => <FormattedMessage id={`ui-harvester-admin.harvestables.column.jobClass.${r.jobClass}`} />,
-    currentStatus: r => <FormattedMessage id={`ui-harvester-admin.harvestables.column.currentStatus.${r.currentStatus}`} />,
+    enabled: r => <FormattedMessage id={`ui-inventory-import.harvestables.column.enabled.${r.enabled}`} />,
+    jobClass: r => <FormattedMessage id={`ui-inventory-import.harvestables.column.jobClass.${r.jobClass}`} />,
+    currentStatus: r => <FormattedMessage id={`ui-inventory-import.harvestables.column.currentStatus.${r.currentStatus}`} />,
     records: r => {
       const stats = message2stats(r.message);
       return stats?.instances?.loaded;
@@ -153,7 +153,7 @@ function Harvestables({
         }}
         marginBottom0
       >
-        <FormattedMessage id="ui-harvester-admin.button.old-jobs" />
+        <FormattedMessage id="ui-inventory-import.button.old-jobs" />
       </Button>
     ),
   };
@@ -189,8 +189,8 @@ function Harvestables({
                         appIcon={<AppIcon app="harvester-admin" />}
                         defaultWidth="fill"
                         padContent={false}
-                        paneTitle={<FormattedMessage id="ui-harvester-admin.nav.harvestables" />}
-                        paneSub={<FormattedMessage id="ui-harvester-admin.resultCount" values={{ count: harvestables.length }} />}
+                        paneTitle={<FormattedMessage id="ui-inventory-import.nav.harvestables" />}
+                        paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: harvestables.length }} />}
                         actionMenu={() => renderActionsMenu(location.search, renderColumnsMenu)}
                       >
                         <MultiColumnList

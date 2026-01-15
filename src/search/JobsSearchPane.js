@@ -32,7 +32,7 @@ function JobsSearchPane(props) {
   const intl = useIntl();
   const searchableIndexes = ['name', 'message'].map(x => ({
     value: x,
-    label: intl.formatMessage({ id: `ui-harvester-admin.jobs.index.${x}` }),
+    label: intl.formatMessage({ id: `ui-inventory-import.jobs.index.${x}` }),
   }));
 
   const filterStruct = parseFilters(query.filters);
@@ -44,7 +44,7 @@ function JobsSearchPane(props) {
     >
       <form onSubmit={onSubmitSearch}>
         <div className={css.searchGroupWrap}>
-          <FormattedMessage id="ui-harvester-admin.searchInputLabel">
+          <FormattedMessage id="ui-inventory-import.searchInputLabel">
             { ([ariaLabel]) => (
               <SearchField
                 data-test-jobs-search-input

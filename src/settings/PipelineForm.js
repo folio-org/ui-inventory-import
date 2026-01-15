@@ -14,7 +14,7 @@ import renderPaneFooter from './renderPaneFooter';
 
 function validate(values) {
   const errors = {};
-  const requiredTextMessage = <FormattedMessage id="ui-harvester-admin.fillIn" />;
+  const requiredTextMessage = <FormattedMessage id="ui-inventory-import.fillIn" />;
 
   if (!values.name) {
     errors.name = requiredTextMessage;

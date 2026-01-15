@@ -59,7 +59,7 @@ const HarvestableFormOaiPmh = ({ values }) => {
   return (
     <Accordion
       id="harvestable-form-oai"
-      label={<FormattedMessage id="ui-harvester-admin.harvestables.field.type.oaiPmh" />}
+      label={<FormattedMessage id="ui-inventory-import.harvestables.field.type.oaiPmh" />}
     >
       <RCF tag="url" />
       <Row>
