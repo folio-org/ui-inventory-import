@@ -1,5 +1,5 @@
 {
-    "meta.title": "Harvester admin",
+    "meta.title": "Inventory import",
 
     "no-value": "-",
     "error": "Something went wrong",
@@ -359,16 +359,16 @@
     "error.invalidSort.label": "Invalid sort criterion",
     "error.invalidSort.content": "It is not possible to sort on the <code>{name}</code> column due to implementation limitations.",
 
-    "permission.settings.view": "Harvester admin (Settings): View storage engines, transformation pipelines and transformation steps, and log-file deletion threshold",
-    "permission.settings.view-edit": "Harvester admin (Settings): View, edit storage engines, transformation pipelines and transformation steps, and log-file deletion threshold",
-    "permission.settings.view-edit-create": "Harvester admin (Settings): View, edit, create storage engines, transformation pipelines and transformation steps",
-    "permission.settings.view-edit-create-delete": "Harvester admin (Settings): View, edit, create, delete storage engines, transformation pipelines and transformation steps",
-    "permission.harvestables.view": "Harvester admin: View harvestables",
-    "permission.harvestables.view-edit": "Harvester admin: View, edit harvestables, start/stop jobs",
-    "permission.harvestables.view-edit-create": "Harvester admin: View, edit, create harvestables, start/stop jobs",
-    "permission.harvestables.view-edit-create-delete": "Harvester admin: View, edit, create, delete harvestables, start/stop jobs",
-    "permission.jobs-and-failed-records.view": "Harvester admin: View jobs and failed records",
-    "permission.all": "Harvester admin: All permissions",
+    "permission.settings.view": "Inventory import (Settings): View storage engines, transformation pipelines and transformation steps, and log-file deletion threshold",
+    "permission.settings.view-edit": "Inventory import (Settings): View, edit storage engines, transformation pipelines and transformation steps, and log-file deletion threshold",
+    "permission.settings.view-edit-create": "Inventory import (Settings): View, edit, create storage engines, transformation pipelines and transformation steps",
+    "permission.settings.view-edit-create-delete": "Inventory import (Settings): View, edit, create, delete storage engines, transformation pipelines and transformation steps",
+    "permission.harvestables.view": "Inventory import: View harvestables",
+    "permission.harvestables.view-edit": "Inventory import: View, edit harvestables, start/stop jobs",
+    "permission.harvestables.view-edit-create": "Inventory import: View, edit, create harvestables, start/stop jobs",
+    "permission.harvestables.view-edit-create-delete": "Inventory import: View, edit, create, delete harvestables, start/stop jobs",
+    "permission.jobs-and-failed-records.view": "Inventory import: View jobs and failed records",
+    "permission.all": "Inventory import: All permissions",
 
     "SENTINEL": "SENTINEL"
 }
