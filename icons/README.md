@@ -1,1 +1,1 @@
-The icon is a stand-in until we get a real one. I made it by downloading the public domain (CC0) image https://publicdomainvectors.org/en/free-clipart/Wheat-sheaf/58461.html adding a background color and expanding to a square in GIMP, exporting as a PNG, and converting using https://www.pngtosvg.com/
+The icon is a stand-in until we get a real one. I made it by hand in GIMP, exporting as a PNG, and converting using https://www.pngtosvg.com/
