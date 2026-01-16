@@ -72,7 +72,7 @@ function renderActionsMenu(search, renderedColumnsMenu) {
                 <Button
                   id={`clickable-new-harvestable-${type}`}
                   aria-label={ariaLabel}
-                  to={`/ha/harvestables/create/${type}${search}`}
+                  to={`/invimp/harvestables/create/${type}${search}`}
                   buttonStyle="dropdownItem"
                   marginBottom0
                 >

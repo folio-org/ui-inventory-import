@@ -35,13 +35,13 @@ function SwitchRoute() {
         <ButtonGroup data-test-navigation>
           {
             segments.filter(({ perm }) => stripes.hasPerm(perm)).map(({ name, params }) => {
-              let effectiveTab = location.pathname.replace(/^\/ha\//, '').replace(/\/.*/, '');
+              let effectiveTab = location.pathname.replace(/^\/invimp\//, '').replace(/\/.*/, '');
               if (location.pathname.endsWith('/jobs')) effectiveTab = 'jobs';
               const selected = (effectiveTab === name);
               return (
                 <Button
                   key={`${name}`}
-                  to={`/ha/${name}${params ? `?${params}` : ''}`}
+                  to={`/invimp/${name}${params ? `?${params}` : ''}`}
                   buttonStyle={selected ? 'primary' : 'default'}
                   aria-selected={selected}
                 >

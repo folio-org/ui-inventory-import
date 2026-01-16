@@ -20,7 +20,7 @@
       "settings"
     ],
     "displayName": "ui-inventory-import.meta.title",
-    "route": "/ha",
+    "route": "/invimp",
     "queryResource": "query",
     "icons": [
       {
