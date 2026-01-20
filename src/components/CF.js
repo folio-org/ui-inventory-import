@@ -25,7 +25,7 @@ export const CF = ({ domain, tag, i18nTag, helpTag, xs, ...rest }) => {
   return (
     <Col xs={xs}>
       <Field
-        id={`edit-harvestable-${tag}`}
+        id={`edit-${domain}-${tag}`}
         name={tag}
         label={<><FormattedMessage id={translationTag} /> {helpButton}</>}
         component={TextField}
@@ -58,7 +58,7 @@ export const CLF = ({ domain, tag, i18nTag, helpTag, xs, ...rest }) => {
   return (
     <Col xs={xs}>
       <ListField
-        id={`edit-harvestable-${tag}`}
+        id={`edit-${domain}-${tag}`}
         name={tag}
         label={<><FormattedMessage id={translationTag} /> {helpButton}</>}
         {...rest}
