@@ -31,8 +31,6 @@ const PipelineForm = (props) => {
   const stepOptions = steps.map(s => ({
     value: s.id,
     label: s.name,
-    // XXX If we do this, <Selection> gets confused about regular expressions
-    // label: `${s.name} (${s.inputFormat}→${s.outputFormat})`,
   }));
 
   const title = props.initialValues?.name;
@@ -52,20 +50,17 @@ const PipelineForm = (props) => {
             <CF tag="name" xs={8} required />
           </Row>
           <RCF tag="description" domain="pipeline" component={TextArea} rows="4" />
-          <RCF tag="enabled" domain="pipeline" component={Checkbox} type="checkbox" />
-          <RCF tag="parallel" domain="pipeline" component={Checkbox} type="checkbox" />
           <br />
           <RCLF
-            tag="stepAssociations"
+            tag="steps"
             domain="pipeline"
             renderEntry={(name) => (
               <Row>
                 <Col xs={12}>
-                  <Field name={`${name}.step.id`} component={Selection} dataOptions={stepOptions} />
+                  <Field name={`${name}.id`} component={Selection} dataOptions={stepOptions} />
                 </Col>
               </Row>
             )}
-            emptyValue={{ key: '', value: '' }}
           />
         </form>
       </TitleManager>

@@ -28,22 +28,6 @@ const PipelineDetail = (props) => {
           />
         </Col>
       </Row>
-      <Row>
-        <Col xs={12}>
-          <KeyValue
-            label={<FormattedMessage id="ui-inventory-import.pipeline.field.enabled" />}
-            value={bool2display(data.enabled)}
-          />
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={12}>
-          <KeyValue
-            label={<FormattedMessage id="ui-inventory-import.pipeline.field.parallel" />}
-            value={bool2display(data.parallel)}
-          />
-        </Col>
-      </Row>
 
       <h3><FormattedMessage id="ui-inventory-import.settings.step" /></h3>
       <MultiColumnList
@@ -54,7 +38,7 @@ const PipelineDetail = (props) => {
           in: <FormattedMessage id="ui-inventory-import.pipeline.steps.in" />,
           out: <FormattedMessage id="ui-inventory-import.pipeline.steps.out" />,
         }}
-        contentData={data.stepAssociations}
+        contentData={data.steps}
         formatter={{
           name: r => r.step.name,
           in: r => r.step.inputFormat,
@@ -81,13 +65,9 @@ const PipelineDetail = (props) => {
 PipelineDetail.propTypes = {
   initialValues: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    // See https://github.com/indexdata/mod-harvester-admin/blob/master/src/main/resources/openapi/schemas/transformationGet.json
-    // No properties seem to be mandatory
     name: PropTypes.string,
     description: PropTypes.string,
-    enabled: PropTypes.bool,
-    parallel: PropTypes.bool,
-    stepAssociations: PropTypes.arrayOf(
+    steps: PropTypes.arrayOf(
       PropTypes.shape({
       }).isRequired,
     ),

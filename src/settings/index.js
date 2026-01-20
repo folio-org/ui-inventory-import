@@ -11,13 +11,13 @@ const HarvesterAdminSettings = (props) => {
       route: 'pipeline',
       label: <FormattedMessage id="ui-inventory-import.settings.pipeline" />,
       component: PipelineSettings,
-      perm: 'inventory-update.import.steps.collection.get',
+      perm: 'inventory-update.import.transformations.collection.get',
     },
     {
       route: 'step',
       label: <FormattedMessage id="ui-inventory-import.settings.step" />,
       component: StepSettings,
-      // perm: 'XXX',
+      perm: 'inventory-update.import.steps.collection.get',
     },
     {
       route: 'logs',

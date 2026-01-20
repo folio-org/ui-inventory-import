@@ -289,9 +289,7 @@
 
     "pipeline.field.name": "Name",
     "pipeline.field.description": "Description",
-    "pipeline.field.enabled": "Enabled",
-    "pipeline.field.parallel": "Parallel",
-    "pipeline.field.stepAssociations": "Transformation steps",
+    "pipeline.field.steps": "Transformation steps",
     "pipeline.steps.position": "#",
     "pipeline.steps.name": "Name",
     "pipeline.steps.in": "In",

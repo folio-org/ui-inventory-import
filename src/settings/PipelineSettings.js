@@ -9,9 +9,10 @@ import PipelineDetail from './PipelineDetail';
 import PipelineForm from './PipelineForm';
 
 const PERMS = {
-  put: 'harvester-admin.transformations.item.put',
-  post: 'harvester-admin.transformations.item.post',
-  delete: 'harvester-admin.transformations.item.delete',
+  // XXX update these
+  put: 'inventory-update.import.transformations.item.put',
+  post: 'inventory-update.import.transformations.item.post',
+  delete: 'inventory-update.import.transformations.item.delete',
 };
 
 const PipelineSettings = (props) => {
@@ -20,9 +21,9 @@ const PipelineSettings = (props) => {
   return (
     <EntryManager
       {...props}
-      resourcePath="harvester-admin/transformations"
+      resourcePath="inventory-import/transformations"
       parentMutator={mutator}
-      entryList={sortBy((resources.entries || {}).records || [], ['name'])}
+      entryList={sortBy(resources.entries?.records || [], ['name'])}
       detailComponent={PipelineDetail}
       paneTitle={intl.formatMessage({ id: 'ui-inventory-import.settings.pipeline' })}
       entryLabel={intl.formatMessage({ id: 'ui-inventory-import.settings.pipeline.heading' })}
@@ -30,15 +31,6 @@ const PipelineSettings = (props) => {
       nameKey="name"
       permissions={PERMS}
       enableDetailsActionMenu
-      parseInitialValues={values => {
-        if (!values) return values; // Necessary if the edit-form is reloaded, for some reason
-        return boolValues2string(values, ['enabled', 'parallel']);
-      }}
-      onBeforeSave={values => {
-        const newValues = stringValues2bool(values, ['enabled', 'parallel']);
-        if (!newValues.type) newValues.type = 'basicTransformation';
-        return newValues;
-      }}
     />
   );
 };
@@ -66,14 +58,14 @@ PipelineSettings.manifest = Object.freeze({
   entries: {
     type: 'okapi',
     records: 'transformations',
-    path: 'harvester-admin/transformations',
+    path: 'inventory-import/transformations',
     clientGeneratePk: false,
     throwErrors: false,
   },
   steps: {
     type: 'okapi',
-    path: 'harvester-admin/steps?limit=1000',
-    records: 'transformationSteps',
+    path: 'inventory-import/steps?limit=1000',
+    records: 'steps',
   },
 });
 
