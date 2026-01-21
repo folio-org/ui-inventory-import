@@ -5,7 +5,7 @@ import { MultiColumnList } from '@folio/stripes/components';
 import { message2stats } from '../../util/message2stats';
 
 
-const HarvestableLogHeader = ({ record }) => {
+const ChannelLogHeader = ({ record }) => {
   const stats = message2stats(record.message);
 
   const visibleColumns = ['summary', 'instances', 'holdings', 'items'];
@@ -43,11 +43,11 @@ const HarvestableLogHeader = ({ record }) => {
 };
 
 
-HarvestableLogHeader.propTypes = {
+ChannelLogHeader.propTypes = {
   record: PropTypes.shape({
     message: PropTypes.string,
   }).isRequired,
 };
 
 
-export default HarvestableLogHeader;
+export default ChannelLogHeader;

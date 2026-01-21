@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
 import { StripesConnectedSource } from '@folio/stripes/smart-components';
-import Harvestables from '../views/Harvestables';
+import Channels from '../views/Channels';
 
 
 const INITIAL_RESULT_COUNT = 100;
 const RESULT_COUNT_INCREMENT = 100;
 
 
-function HarvestablesRoute({ stripes, resources, mutator, children }) {
+function ChannelsRoute({ stripes, resources, mutator, children }) {
   let [source, setSource] = useState(); // eslint-disable-line prefer-const
   if (!source) {
     source = new StripesConnectedSource({ resources, mutator }, stripes.logger, 'reportTitles');
@@ -27,7 +27,7 @@ function HarvestablesRoute({ stripes, resources, mutator, children }) {
   const hasLoaded = resources.harvestables.hasLoaded;
 
   return (
-    <Harvestables
+    <Channels
       data={{
         harvestables: resources.harvestables.records,
       }}
@@ -40,12 +40,12 @@ function HarvestablesRoute({ stripes, resources, mutator, children }) {
       onNeedMoreData={handleNeedMoreData}
     >
       {children}
-    </Harvestables>
+    </Channels>
   );
 }
 
 
-HarvestablesRoute.manifest = Object.freeze({
+ChannelsRoute.manifest = Object.freeze({
   query: { initialValue: {} },
   resultCount: { initialValue: INITIAL_RESULT_COUNT },
   resultOffset: { initialValue: 0 },
@@ -91,7 +91,7 @@ HarvestablesRoute.manifest = Object.freeze({
 });
 
 
-HarvestablesRoute.propTypes = {
+ChannelsRoute.propTypes = {
   stripes: PropTypes.shape({
     logger: PropTypes.object.isRequired,
   }).isRequired,
@@ -122,4 +122,4 @@ HarvestablesRoute.propTypes = {
 };
 
 
-export default stripesConnect(HarvestablesRoute);
+export default stripesConnect(ChannelsRoute);

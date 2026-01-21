@@ -1,1 +1,1 @@
-export { default } from './Harvestables';
+export { default } from './Channels';

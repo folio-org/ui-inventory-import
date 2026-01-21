@@ -8,7 +8,7 @@ import searchPanePropTypes from './searchPanePropTypes';
 import css from './SearchPane.css';
 
 
-function HarvestablesSearchPane(props) {
+function ChannelsSearchPane(props) {
   const {
     defaultWidth,
     searchValue,
@@ -103,7 +103,7 @@ function HarvestablesSearchPane(props) {
 }
 
 
-HarvestablesSearchPane.propTypes = searchPanePropTypes;
+ChannelsSearchPane.propTypes = searchPanePropTypes;
 
 
-export default HarvestablesSearchPane;
+export default ChannelsSearchPane;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect, useOkapiKy } from '@folio/stripes/core';
-import HarvestableLog from '../views/HarvestableLog';
+import ChannelLog from '../views/ChannelLog';
 import packageInfo from '../../package';
 import loadPlainTextLog from '../util/loadPlainTextLog';
 
@@ -15,13 +15,13 @@ const FullJobRoute = ({ resources, mutator, match }) => {
     mutator.query.update({ _path: `${packageInfo.stripes.route}/jobs` });
   };
 
-  // See comments on loadPlainTextLog in HarvestableLogRoute.js
+  // See comments on loadPlainTextLog in ChannelLogRoute.js
   const load = () => loadPlainTextLog(okapiKy, `previous-jobs/${match.params.recId}/log`, setPlainTextLog);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(load, [setPlainTextLog, match.params.recId, logFetchCount]);
 
   return (
-    <HarvestableLog
+    <ChannelLog
       data={{
         record: resources.job.records[0],
         failedRecords: resources.failedRecords.records[0],

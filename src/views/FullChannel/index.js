@@ -1,1 +1,1 @@
-export { default } from './FullHarvestable';
+export { default } from './FullChannel';

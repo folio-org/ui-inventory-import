@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import { stripesConnect } from '@folio/stripes/core';
-import HarvestableForm from '../forms/HarvestableForm';
+import ChannelForm from '../forms/ChannelForm';
 import packageInfo from '../../package';
 import { raw2cooked, cooked2raw } from '../util/cookData';
 
 
-const EditHarvestableRoute = ({ resources, mutator, match }) => {
+const EditChannelRoute = ({ resources, mutator, match }) => {
   const handleClose = () => {
     mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables/${match.params.recId}` });
   };
@@ -21,7 +21,7 @@ const EditHarvestableRoute = ({ resources, mutator, match }) => {
                      resources.transformationPipelines.isPending);
 
   return (
-    <HarvestableForm
+    <ChannelForm
       isLoading={isLoading}
       initialValues={raw2cooked(get(resources, 'harvestable.records[0]', {}))}
       data={{
@@ -34,7 +34,7 @@ const EditHarvestableRoute = ({ resources, mutator, match }) => {
 };
 
 
-EditHarvestableRoute.manifest = Object.freeze({
+EditChannelRoute.manifest = Object.freeze({
   query: {},
   harvestable: {
     type: 'okapi',
@@ -48,7 +48,7 @@ EditHarvestableRoute.manifest = Object.freeze({
 });
 
 
-EditHarvestableRoute.propTypes = {
+EditChannelRoute.propTypes = {
   resources: PropTypes.shape({
     harvestable: PropTypes.shape({
       isPending: PropTypes.bool.isRequired,
@@ -79,4 +79,4 @@ EditHarvestableRoute.propTypes = {
 };
 
 
-export default stripesConnect(EditHarvestableRoute);
+export default stripesConnect(EditChannelRoute);

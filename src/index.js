@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { Switch, Redirect } from 'react-router-dom';
 import { Route as NestedRoute } from '@folio/stripes/core';
 import Settings from './settings';
-import HarvestablesRoute from './routes/HarvestablesRoute';
-import CreateHarvestableRoute from './routes/CreateHarvestableRoute';
-import FullHarvestableRoute from './routes/FullHarvestableRoute';
-import EditHarvestableRoute from './routes/EditHarvestableRoute';
-import HarvestableLogRoute from './routes/HarvestableLogRoute';
-import HarvestableJobsRoute from './routes/HarvestableJobsRoute';
+import ChannelsRoute from './routes/ChannelsRoute';
+import CreateChannelRoute from './routes/CreateChannelRoute';
+import FullChannelRoute from './routes/FullChannelRoute';
+import EditChannelRoute from './routes/EditChannelRoute';
+import ChannelLogRoute from './routes/ChannelLogRoute';
+import ChannelJobsRoute from './routes/ChannelJobsRoute';
 import JobsRoute from './routes/JobsRoute';
 import FullJobRoute from './routes/FullJobRoute';
 import RecordsRoute from './routes/RecordsRoute';
@@ -40,12 +40,12 @@ const HarvesterAdminApp = (props) => {
         <Switch>
           <Redirect exact from={path} to={`${path}/${dest}`} />
           <NestedRoute path={`${path}/mike`} exact component={MikeRoute} />
-          <NestedRoute path={`${path}/harvestables/create/:type`} exact component={CreateHarvestableRoute} />
-          <NestedRoute path={`${path}/harvestables/:recId/logs`} exact component={HarvestableLogRoute} />
-          <NestedRoute path={`${path}/harvestables/:recId/jobs`} exact component={HarvestableJobsRoute} />
-          <NestedRoute path={`${path}/harvestables`} component={HarvestablesRoute}>
-            <NestedRoute path={`${path}/harvestables/:recId`} exact component={FullHarvestableRoute} />
-            <NestedRoute path={`${path}/harvestables/:recId/edit`} exact component={EditHarvestableRoute} />
+          <NestedRoute path={`${path}/harvestables/create/:type`} exact component={CreateChannelRoute} />
+          <NestedRoute path={`${path}/harvestables/:recId/logs`} exact component={ChannelLogRoute} />
+          <NestedRoute path={`${path}/harvestables/:recId/jobs`} exact component={ChannelJobsRoute} />
+          <NestedRoute path={`${path}/harvestables`} component={ChannelsRoute}>
+            <NestedRoute path={`${path}/harvestables/:recId`} exact component={FullChannelRoute} />
+            <NestedRoute path={`${path}/harvestables/:recId/edit`} exact component={EditChannelRoute} />
           </NestedRoute>
           <NestedRoute path={`${path}/jobs`} component={JobsRoute}>
             <NestedRoute path={`${path}/jobs/:recId`} exact component={FullJobRoute} />

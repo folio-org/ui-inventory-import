@@ -1,1 +1,1 @@
-export { default } from './HarvestableLog';
+export { default } from './ChannelLog';

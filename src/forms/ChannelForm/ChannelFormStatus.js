@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { Accordion, Checkbox, Row } from '@folio/stripes/components';
 import { CF, RCLF } from '../../components/CF';
 
-const HarvestableFormStatus = () => (
+const ChannelFormStatus = () => (
   <Accordion
     id="harvestable-form-status"
     label={<FormattedMessage id="ui-inventory-import.harvestables.field.type.status" />}
@@ -22,4 +22,4 @@ const HarvestableFormStatus = () => (
   </Accordion>
 );
 
-export default HarvestableFormStatus;
+export default ChannelFormStatus;

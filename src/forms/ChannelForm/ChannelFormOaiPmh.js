@@ -5,7 +5,7 @@ import OaiPmh from '@indexdata/oai-pmh';
 import { Accordion, Row, Checkbox, Datepicker, Select } from '@folio/stripes/components';
 import { RCF, CF } from '../../components/CF';
 
-const HarvestableFormOaiPmh = ({ values }) => {
+const ChannelFormOaiPmh = ({ values }) => {
   const [oaiPmh, setOaiPmh] = useState();
   const [sets, setSets] = useState();
   const [prefixes, setPrefixes] = useState();
@@ -82,10 +82,10 @@ const HarvestableFormOaiPmh = ({ values }) => {
   );
 };
 
-HarvestableFormOaiPmh.propTypes = {
+ChannelFormOaiPmh.propTypes = {
   values: PropTypes.shape({
     url: PropTypes.string,
   }).isRequired,
 };
 
-export default HarvestableFormOaiPmh;
+export default ChannelFormOaiPmh;

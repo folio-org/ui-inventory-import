@@ -5,7 +5,7 @@ import Download from '@axetroy/react-download';
 import { Accordion, Loading, NoValue, Button, Icon } from '@folio/stripes/components';
 
 
-const HarvestableLogPlainText = ({ record, log, refreshLog }) => {
+const ChannelLogPlainText = ({ record, log, refreshLog }) => {
   let fileName;
   if (log) {
     const m = log.match(/Begin processing of (.*)/m);
@@ -62,7 +62,7 @@ const HarvestableLogPlainText = ({ record, log, refreshLog }) => {
 };
 
 
-HarvestableLogPlainText.propTypes = {
+ChannelLogPlainText.propTypes = {
   record: PropTypes.shape({
     message: PropTypes.string,
     currentStatus: PropTypes.string, // .isRequired for harvestable, not for previous-job
@@ -72,4 +72,4 @@ HarvestableLogPlainText.propTypes = {
 };
 
 
-export default HarvestableLogPlainText;
+export default ChannelLogPlainText;

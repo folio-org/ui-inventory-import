@@ -9,7 +9,7 @@ const outputSchemas = [
   { value: 'application/tmarc', label: 'TurboMARC' },
 ];
 
-const HarvestableFormXmlBulk = () => (
+const ChannelFormXmlBulk = () => (
   <Accordion
     id="harvestable-form-xml"
     label={<FormattedMessage id="ui-inventory-import.harvestables.field.type.xmlBulk" />}
@@ -37,4 +37,4 @@ const HarvestableFormXmlBulk = () => (
   </Accordion>
 );
 
-export default HarvestableFormXmlBulk;
+export default ChannelFormXmlBulk;

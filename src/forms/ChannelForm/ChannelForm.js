@@ -8,18 +8,18 @@ import stripesFinalForm from '@folio/stripes/final-form';
 import { isEqual } from 'lodash';
 import setFieldData from 'final-form-set-field-data'; // XXX do we need this?
 import ErrorMessage from '../../components/ErrorMessage';
-import HarvestableFormGeneral from './HarvestableFormGeneral';
-import HarvestableFormOaiPmh from './HarvestableFormOaiPmh';
-import HarvestableFormXmlBulk from './HarvestableFormXmlBulk';
-import HarvestableFormConnector from './HarvestableFormConnector';
-import HarvestableFormStatus from './HarvestableFormStatus';
+import ChannelFormGeneral from './ChannelFormGeneral';
+import ChannelFormOaiPmh from './ChannelFormOaiPmh';
+import ChannelFormXmlBulk from './ChannelFormXmlBulk';
+import ChannelFormConnector from './ChannelFormConnector';
+import ChannelFormStatus from './ChannelFormStatus';
 
 
 const specificSections = {
-  oaiPmh: HarvestableFormOaiPmh,
-  xmlBulk: HarvestableFormXmlBulk,
-  connector: HarvestableFormConnector,
-  status: HarvestableFormStatus,
+  oaiPmh: ChannelFormOaiPmh,
+  xmlBulk: ChannelFormXmlBulk,
+  connector: ChannelFormConnector,
+  status: ChannelFormStatus,
 };
 
 
@@ -54,7 +54,7 @@ function validate(values) {
 }
 
 
-const HarvestableForm = (props) => {
+const ChannelForm = (props) => {
   const {
     isLoading,
     data,
@@ -131,7 +131,7 @@ const HarvestableForm = (props) => {
       >
         <TitleManager record={title}>
           <form id="form-course">
-            {type !== 'status' && <HarvestableFormGeneral {...sectionProps} />}
+            {type !== 'status' && <ChannelFormGeneral {...sectionProps} />}
             <SpecificSection {...sectionProps} />
           </form>
         </TitleManager>
@@ -141,7 +141,7 @@ const HarvestableForm = (props) => {
 };
 
 
-HarvestableForm.propTypes = {
+ChannelForm.propTypes = {
   data: PropTypes.shape({}).isRequired,
   handlers: PropTypes.shape({
     onClose: PropTypes.func.isRequired,
@@ -163,4 +163,4 @@ export default stripesFinalForm({
     values: true,
   },
   mutators: { setFieldData, ...arrayMutators }
-})(HarvestableForm);
+})(ChannelForm);

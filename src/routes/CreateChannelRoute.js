@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
-import HarvestableForm from '../forms/HarvestableForm';
+import ChannelForm from '../forms/ChannelForm';
 import { cooked2raw } from '../util/cookData';
 import packageInfo from '../../package';
 
 
-const CreateHarvestableRoute = ({ resources, mutator, match, location }) => {
+const CreateChannelRoute = ({ resources, mutator, match, location }) => {
   const handleClose = () => {
     mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables/${location.search}` });
   };
@@ -19,7 +19,7 @@ const CreateHarvestableRoute = ({ resources, mutator, match, location }) => {
   const isLoading = resources.transformationPipelines.isPending;
 
   return (
-    <HarvestableForm
+    <ChannelForm
       isLoading={isLoading}
       initialValues={{
         type: match.params.type,
@@ -35,7 +35,7 @@ const CreateHarvestableRoute = ({ resources, mutator, match, location }) => {
 };
 
 
-CreateHarvestableRoute.manifest = Object.freeze({
+CreateChannelRoute.manifest = Object.freeze({
   query: {},
   harvestables: {
     type: 'okapi',
@@ -51,7 +51,7 @@ CreateHarvestableRoute.manifest = Object.freeze({
 });
 
 
-CreateHarvestableRoute.propTypes = {
+CreateChannelRoute.propTypes = {
   resources: PropTypes.shape({
     harvestables: PropTypes.shape({
       records: PropTypes.arrayOf(
@@ -84,4 +84,4 @@ CreateHarvestableRoute.propTypes = {
 };
 
 
-export default stripesConnect(CreateHarvestableRoute);
+export default stripesConnect(CreateChannelRoute);

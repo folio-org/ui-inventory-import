@@ -9,7 +9,7 @@ const logLevels = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR'].map(x => ({ value:
 const mailLevels = ['OK', 'WARN', 'ERROR'].map(x => ({ value: x, label: x }));
 const rawFailedRecords = ['NO_STORE', 'CLEAN_DIRECTORY', 'CREATE_OVERWRITE', 'ADD_ALL'];
 
-const HarvestableFormGeneral = ({ data }) => {
+const ChannelFormGeneral = ({ data }) => {
   const intl = useIntl();
 
   const noValue = {
@@ -88,7 +88,7 @@ const HarvestableFormGeneral = ({ data }) => {
   );
 };
 
-HarvestableFormGeneral.propTypes = {
+ChannelFormGeneral.propTypes = {
   data: PropTypes.shape({
     transformationPipelines: PropTypes.arrayOf(
       PropTypes.shape({
@@ -100,4 +100,4 @@ HarvestableFormGeneral.propTypes = {
   }).isRequired,
 };
 
-export default HarvestableFormGeneral;
+export default ChannelFormGeneral;

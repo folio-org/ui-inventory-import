@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { Accordion, Row, Checkbox, Datepicker, TextArea } from '@folio/stripes/components';
 import { RCF, CF } from '../../components/CF';
 
-const HarvestableFormConnector = () => (
+const ChannelFormConnector = () => (
   <Accordion
     id="harvestable-form-connector"
     label={<FormattedMessage id="ui-inventory-import.harvestables.field.type.connector" />}
@@ -34,4 +34,4 @@ const HarvestableFormConnector = () => (
   </Accordion>
 );
 
-export default HarvestableFormConnector;
+export default ChannelFormConnector;

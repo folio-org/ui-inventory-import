@@ -22,7 +22,7 @@ const specificSections = {
 };
 
 
-const FullHarvestableContent = ({ rec }) => {
+const FullChannelContent = ({ rec }) => {
   const intl = useIntl();
   const stripes = useStripes();
   const type = rec.type;
@@ -54,14 +54,14 @@ const FullHarvestableContent = ({ rec }) => {
 };
 
 
-FullHarvestableContent.propTypes = {
+FullChannelContent.propTypes = {
   rec: PropTypes.shape({
     type: PropTypes.string.isRequired,
   }).isRequired,
 };
 
 
-const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord }) => {
+const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) => {
   const [deleting, setDeleting] = useState(false);
   const callout = useContext(CalloutContext);
 
@@ -217,7 +217,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
       paneTitle={resource.records[0]?.name}
       actionMenu={actionMenu}
     >
-      <FullHarvestableContent rec={rec} />
+      <FullChannelContent rec={rec} />
       {deleting &&
         <ConfirmationModal
           open
@@ -233,7 +233,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
 };
 
 
-FullHarvestable.propTypes = {
+FullChannel.propTypes = {
   defaultWidth: PropTypes.string,
   resources: PropTypes.shape({
     harvestable: PropTypes.shape({
@@ -265,4 +265,4 @@ FullHarvestable.propTypes = {
   deleteRecord: PropTypes.func.isRequired,
 };
 
-export default FullHarvestable;
+export default FullChannel;

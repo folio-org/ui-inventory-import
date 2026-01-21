@@ -9,7 +9,7 @@ import { message2stats, summarizeStats } from '../../util/message2stats';
 import viewLogTranslationTag from '../../util/viewLogTranslationTag';
 import parseSort from '../../util/parseSort';
 import formatDateTime from '../../util/formatDateTime';
-import HarvestablesSearchPane from '../../search/HarvestablesSearchPane';
+import ChannelsSearchPane from '../../search/ChannelsSearchPane';
 import ErrorMessage from '../../components/ErrorMessage';
 import packageInfo from '../../../package';
 
@@ -92,7 +92,7 @@ function renderActionsMenu(search, renderedColumnsMenu) {
 }
 
 
-function Harvestables({
+function Channels({
   data,
   query,
   updateQuery,
@@ -169,7 +169,7 @@ function Harvestables({
         (sasqParams) => {
           return (
             <Paneset id="harvestables-paneset">
-              <HarvestablesSearchPane
+              <ChannelsSearchPane
                 {...sasqParams}
                 defaultWidth="20%"
                 query={query}
@@ -233,7 +233,7 @@ function Harvestables({
 }
 
 
-Harvestables.propTypes = {
+Channels.propTypes = {
   data: PropTypes.shape({
     harvestables: PropTypes.arrayOf(
       PropTypes.shape({
@@ -250,4 +250,4 @@ Harvestables.propTypes = {
 };
 
 
-export default Harvestables;
+export default Channels;

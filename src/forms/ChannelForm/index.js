@@ -1,1 +1,1 @@
-export { default } from './HarvestableForm';
+export { default } from './ChannelForm';

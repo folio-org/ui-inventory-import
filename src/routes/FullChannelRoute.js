@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
-import FullHarvestable from '../views/FullHarvestable';
+import FullChannel from '../views/FullChannel';
 
 
-const FullHarvestableRoute = (props) => {
+const FullChannelRoute = (props) => {
   const deleteRecord = () => props.mutator.harvestable.DELETE({ id: props.match.params.recId });
 
-  return <FullHarvestable {...props} deleteRecord={deleteRecord} />;
+  return <FullChannel {...props} deleteRecord={deleteRecord} />;
 };
 
 
-FullHarvestableRoute.manifest = Object.freeze({
+FullChannelRoute.manifest = Object.freeze({
   query: {},
   harvestable: {
     type: 'okapi',
@@ -43,7 +43,7 @@ FullHarvestableRoute.manifest = Object.freeze({
 });
 
 
-FullHarvestableRoute.propTypes = {
+FullChannelRoute.propTypes = {
   defaultWidth: PropTypes.string,
   resources: PropTypes.shape({
     harvestable: PropTypes.shape({
@@ -75,8 +75,8 @@ FullHarvestableRoute.propTypes = {
   }).isRequired
 };
 
-FullHarvestableRoute.defaultProps = {
+FullChannelRoute.defaultProps = {
   defaultWidth: '60%',
 };
 
-export default stripesConnect(FullHarvestableRoute);
+export default stripesConnect(FullChannelRoute);
