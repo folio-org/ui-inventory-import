@@ -12,8 +12,8 @@ function SwitchRoute() {
   const isoString = yesterday.toISOString().substring(0, 10);
 
   const segments = [{
-    name: 'harvestables',
-    perm: 'ui-inventory-import.harvestables.view',
+    name: 'channels',
+    perm: 'ui-inventory-import.harvestables.view', // XXX Upgrade to 'ui-inventory-import.channels.view'
   }, {
     name: 'jobs',
     perm: 'ui-inventory-import.jobs-and-failed-records.view',
@@ -25,7 +25,7 @@ function SwitchRoute() {
     /*
   }, {
     name: 'mike',
-    perm: 'ui-inventory-import.harvestables.view',
+    perm: 'ui-inventory-import.channels.view',
     */
   }];
 

@@ -30,7 +30,7 @@ const FullChannelContent = ({ rec }) => {
   const SpecificSection = specificSections[type] || ErrorSection;
 
   // eslint-disable-next-line react/prop-types
-  rec.__jobClass = intl.formatMessage({ id: `ui-inventory-import.harvestables.field.jobClass.${rec.type}` });
+  rec.__jobClass = intl.formatMessage({ id: `ui-inventory-import.channels.field.jobClass.${rec.type}` });
 
   return (
     <>
@@ -69,7 +69,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
   if (!resource.hasLoaded) return <Loading />;
   const rec = resource.records[0];
 
-  const returnToList = () => mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables` });
+  const returnToList = () => mutator.query.update({ _path: `${packageInfo.stripes.route}/channels` });
 
   function maybeDeleteRecord(e) {
     e.stopPropagation();
@@ -135,7 +135,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
             data-test-actions-menu-edit
             id="clickable-edit-harvestable"
             onClick={() => {
-              mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables/${match.params.recId}/edit` });
+              mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}/edit` });
             }}
           >
             <Icon icon="edit">
@@ -185,7 +185,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
             marginBottom0
             id="clickable-view-log"
             onClick={() => {
-              mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables/${match.params.recId}/logs` });
+              mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}/logs` });
             }}
           >
             <Icon icon="report">
@@ -197,7 +197,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
             marginBottom0
             id="clickable-jobs"
             onClick={() => {
-              mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables/${match.params.recId}/jobs` });
+              mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}/jobs` });
             }}
           >
             <Icon icon="list">

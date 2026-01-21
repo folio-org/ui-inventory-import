@@ -18,14 +18,14 @@ const ChannelFormGeneral = ({ data }) => {
   };
   const failedRecords = rawFailedRecords.map(x => ({
     value: x,
-    label: x + ' - ' + intl.formatMessage({ id: `ui-inventory-import.harvestables.field.failedRecordsLogging.${x}` }),
+    label: x + ' - ' + intl.formatMessage({ id: `ui-inventory-import.channels.field.failedRecordsLogging.${x}` }),
   }));
   const transformationPipelines = data.transformationPipelines.map(x => ({ value: x.id, label: x.name }));
 
   return (
     <Accordion
       id="harvestable-form-general"
-      label={<FormattedMessage id="ui-inventory-import.harvestables.heading.general" />}
+      label={<FormattedMessage id="ui-inventory-import.channels.heading.general" />}
     >
       <Row>
         <CF tag="id" xs={2} disabled />

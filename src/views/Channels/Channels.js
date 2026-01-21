@@ -67,17 +67,17 @@ function renderActionsMenu(search, renderedColumnsMenu) {
       <IfPermission perm="harvester-admin.harvestables.item.post">
         <MenuSection id="actions-menu-section" label={<FormattedMessage id="ui-inventory-import.actions.new" />}>
           {['oaiPmh', 'xmlBulk', 'connector', 'status'].map(type => (
-            <FormattedMessage key={type} id={`ui-inventory-import.actions.new.harvestable.${type}`}>
+            <FormattedMessage key={type} id={`ui-inventory-import.actions.new.channel.${type}`}>
               {ariaLabel => (
                 <Button
                   id={`clickable-new-harvestable-${type}`}
                   aria-label={ariaLabel}
-                  to={`/invimp/harvestables/create/${type}${search}`}
+                  to={`/invimp/channels/create/${type}${search}`}
                   buttonStyle="dropdownItem"
                   marginBottom0
                 >
                   <Icon icon="plus-sign">
-                    <FormattedMessage id={`ui-inventory-import.actions.new.harvestable.${type}`} />
+                    <FormattedMessage id={`ui-inventory-import.actions.new.channel.${type}`} />
                   </Icon>
                 </Button>
               )}
@@ -107,25 +107,25 @@ function Channels({
   const stripes = useStripes();
 
   const columnMapping = {
-    name: <FormattedMessage id="ui-inventory-import.harvestables.column.name" />,
-    currentStatus: <FormattedMessage id="ui-inventory-import.harvestables.column.currentStatus" />,
-    records: <FormattedMessage id="ui-inventory-import.harvestables.column.records" />,
-    lastHarvestFinished: <FormattedMessage id="ui-inventory-import.harvestables.column.lastHarvestFinished" />,
-    enabled: <FormattedMessage id="ui-inventory-import.harvestables.column.enabled" />,
-    jobClass: <FormattedMessage id="ui-inventory-import.harvestables.column.jobClass" />,
-    id: <FormattedMessage id="ui-inventory-import.harvestables.column.id" />,
-    message: <FormattedMessage id="ui-inventory-import.harvestables.column.message" />,
+    name: <FormattedMessage id="ui-inventory-import.channels.column.name" />,
+    currentStatus: <FormattedMessage id="ui-inventory-import.channels.column.currentStatus" />,
+    records: <FormattedMessage id="ui-inventory-import.channels.column.records" />,
+    lastHarvestFinished: <FormattedMessage id="ui-inventory-import.channels.column.lastHarvestFinished" />,
+    enabled: <FormattedMessage id="ui-inventory-import.channels.column.enabled" />,
+    jobClass: <FormattedMessage id="ui-inventory-import.channels.column.jobClass" />,
+    id: <FormattedMessage id="ui-inventory-import.channels.column.id" />,
+    message: <FormattedMessage id="ui-inventory-import.channels.column.message" />,
   };
 
   if (stripes.hasPerm('harvester-admin.harvestables.log.get')) {
-    columnMapping.logFile = <FormattedMessage id="ui-inventory-import.harvestables.column.logFile" />;
-    columnMapping.oldJobs = <FormattedMessage id="ui-inventory-import.harvestables.column.oldJobs" />;
+    columnMapping.logFile = <FormattedMessage id="ui-inventory-import.channels.column.logFile" />;
+    columnMapping.oldJobs = <FormattedMessage id="ui-inventory-import.channels.column.oldJobs" />;
   }
 
   const formatter = {
-    enabled: r => <FormattedMessage id={`ui-inventory-import.harvestables.column.enabled.${r.enabled}`} />,
-    jobClass: r => <FormattedMessage id={`ui-inventory-import.harvestables.column.jobClass.${r.jobClass}`} />,
-    currentStatus: r => <FormattedMessage id={`ui-inventory-import.harvestables.column.currentStatus.${r.currentStatus}`} />,
+    enabled: r => <FormattedMessage id={`ui-inventory-import.channels.column.enabled.${r.enabled}`} />,
+    jobClass: r => <FormattedMessage id={`ui-inventory-import.channels.column.jobClass.${r.jobClass}`} />,
+    currentStatus: r => <FormattedMessage id={`ui-inventory-import.channels.column.currentStatus.${r.currentStatus}`} />,
     records: r => {
       const stats = message2stats(r.message);
       return stats?.instances?.loaded;
@@ -137,7 +137,7 @@ function Channels({
         id={`clickable-log-file-${r.id}`}
         onClick={(e) => {
           e.stopPropagation();
-          updateQuery({ _path: `${packageInfo.stripes.route}/harvestables/${r.id}/logs` });
+          updateQuery({ _path: `${packageInfo.stripes.route}/channels/${r.id}/logs` });
         }}
         marginBottom0
       >
@@ -149,7 +149,7 @@ function Channels({
         id={`clickable-old-logs-${r.id}`}
         onClick={(e) => {
           e.stopPropagation();
-          updateQuery({ _path: `${packageInfo.stripes.route}/harvestables/${r.id}/jobs` });
+          updateQuery({ _path: `${packageInfo.stripes.route}/channels/${r.id}/jobs` });
         }}
         marginBottom0
       >
@@ -189,7 +189,7 @@ function Channels({
                         appIcon={<AppIcon app="harvester-admin" />}
                         defaultWidth="fill"
                         padContent={false}
-                        paneTitle={<FormattedMessage id="ui-inventory-import.nav.harvestables" />}
+                        paneTitle={<FormattedMessage id="ui-inventory-import.nav.channels" />}
                         paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: harvestables.length }} />}
                         actionMenu={() => renderActionsMenu(location.search, renderColumnsMenu)}
                       >
@@ -217,7 +217,7 @@ function Channels({
                           pageAmount={pageAmount}
                           onNeedMoreData={onNeedMoreData}
                           pagingType={MCLPagingTypes.PREV_NEXT}
-                          onRowClick={(event, rec) => updateQuery({ _path: `${packageInfo.stripes.route}/harvestables/${rec.id}` })}
+                          onRowClick={(event, rec) => updateQuery({ _path: `${packageInfo.stripes.route}/channels/${rec.id}` })}
                         />
                       </Pane>
                     )}

@@ -8,13 +8,14 @@ const NO_VALUE = 'NO';
 
 function renderFilter(intl, filterStruct, updateQuery, qualifiedField, optionTags, isMulti) {
   // `qualifiedField` may be simply the fieldname, provided that the
-  // translations for that field are in `harvestables.column.FIELD`. If
+  // translations for that field are in `channels.column.FIELD`. If
   // they are elsewhere, `qualifiedField` takes the form `FIELD/TAG`
   // where TAG is the translation-tag path to the relevant field's
   // translations. See JobsSearchPane.js for examples.
   const match = qualifiedField.match(/(.*)\/(.*)/);
   const field = match ? match[1] : qualifiedField;
-  const transTag = match ? match[2] : `harvestables.column.${field}`;
+  const transTag = match ? match[2] : `channels.column.${field}`;
+  console.log(`qualifiedField='${qualifiedField} => field '${field}', transTag '${transTag}'`);
 
   const dataOptions = optionTags.map(tag => ({
     value: tag,

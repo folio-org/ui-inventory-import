@@ -8,7 +8,7 @@ import packageInfo from '../../package';
 
 const CreateChannelRoute = ({ resources, mutator, match, location }) => {
   const handleClose = () => {
-    mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables/${location.search}` });
+    mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${location.search}` });
   };
 
   const handleSubmit = (record) => {

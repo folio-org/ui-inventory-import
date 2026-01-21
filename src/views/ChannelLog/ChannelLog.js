@@ -47,7 +47,7 @@ const ChannelLog = (props) => {
         <>
           {' '}&mdash;{' '}
           <span className={`${css.status} ${css[`status_${status}`]}`}>
-            <FormattedMessage id={`ui-inventory-import.harvestables.column.currentStatus.${status}`} />
+            <FormattedMessage id={`ui-inventory-import.channels.column.currentStatus.${status}`} />
           </span>
         </>
       }

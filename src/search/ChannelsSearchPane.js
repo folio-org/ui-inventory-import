@@ -29,7 +29,7 @@ function ChannelsSearchPane(props) {
 
   const intl = useIntl();
   const searchableIndexes = ['name', 'id', 'message'].map(x => (
-    { value: x, label: intl.formatMessage({ id: `ui-inventory-import.harvestables.index.${x}` }) }
+    { value: x, label: intl.formatMessage({ id: `ui-inventory-import.channels.index.${x}` }) }
   ));
 
   const filterStruct = parseFilters(query.filters);

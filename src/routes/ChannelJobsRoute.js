@@ -21,7 +21,7 @@ const ChannelJobsRoute = ({ stripes, resources, mutator, match }) => {
   }
 
   const handleClose = () => {
-    mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables/${match.params.recId}` });
+    mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}` });
   };
 
   const handleNeedMoreData = () => source.fetchMore(RESULT_COUNT_INCREMENT);

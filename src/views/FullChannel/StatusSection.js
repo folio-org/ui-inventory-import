@@ -7,7 +7,7 @@ import { RCKV, CKV } from '../../components/CKV';
 const StatusSection = ({ rec }) => (
   <Accordion
     id="harvestable-section-status"
-    label={<FormattedMessage id="ui-inventory-import.harvestables.field.type.status" />}
+    label={<FormattedMessage id="ui-inventory-import.channels.field.type.status" />}
   >
     <Row>
       <CKV rec={rec} tag="id" xs={2} />

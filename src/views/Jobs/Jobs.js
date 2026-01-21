@@ -37,7 +37,7 @@ function Jobs({
   };
 
   const formatter = {
-    status: r => <FormattedMessage id={`ui-inventory-import.harvestables.column.currentStatus.${r.status}`} />,
+    status: r => <FormattedMessage id={`ui-inventory-import.channels.column.currentStatus.${r.status}`} />,
     amountHarvested: r => {
       const stats = message2stats(r.message);
       return `${r.amountHarvested} (${stats?.instances?.loaded})`;
@@ -45,7 +45,7 @@ function Jobs({
     started: r => formatDateTime(r.started),
     finished: r => formatDateTime(r.finished),
     seconds: r => Math.trunc((new Date(r.finished) - new Date(r.started)) / 1000),
-    type: r => <FormattedMessage id={`ui-inventory-import.harvestables.field.jobClass.${r.type}`} />,
+    type: r => <FormattedMessage id={`ui-inventory-import.channels.field.jobClass.${r.type}`} />,
     message: r => (r.message?.match('Instances_processed') ? summarizeStats(intl, r.message) : r.message),
   };
 

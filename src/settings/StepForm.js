@@ -55,9 +55,9 @@ const StepForm = (props) => {
       <TitleManager record={title}>
         <form id="form-step">
           <Row>
-            <CF tag="id" xs={2} disabled />
+            <CF tag="id" domain="channels" xs={2} disabled />
             <CF tag="type" domain="step" xs={2} component={Select} dataOptions={[noValue].concat(types)} required />
-            <CF tag="name" xs={8} required />
+            <CF tag="name" domain="channels" xs={8} required />
           </Row>
           <RCF tag="description" domain="step" component={TextArea} rows="4" />
           <RCF tag="script" domain="step" component={TextArea} rows="4" />

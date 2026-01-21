@@ -6,7 +6,7 @@ import { Row, Col, KeyValue } from '@folio/stripes/components';
 
 export const CKV = ({ rec, tag, i18nTag, xs }) => (
   <Col xs={xs}>
-    <KeyValue label={<FormattedMessage id={`ui-inventory-import.harvestables.field.${i18nTag || tag}`} />} value={get(rec, tag)} />
+    <KeyValue label={<FormattedMessage id={`ui-inventory-import.channels.field.${i18nTag || tag}`} />} value={get(rec, tag)} />
   </Col>
 );
 

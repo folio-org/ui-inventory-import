@@ -29,7 +29,7 @@ const HarvesterAdminApp = (props) => {
   }
 
   // Don't redirect to a page we don't have permission to view: see Tabs.js
-  const dest = stripes.hasPerm('ui-inventory-import.harvestables.view') ? 'harvestables' : 'jobs';
+  const dest = stripes.hasPerm('ui-inventory-import.channels.view') ? 'channels' : 'jobs';
 
   return (
     <div className={css.container}>
@@ -40,12 +40,12 @@ const HarvesterAdminApp = (props) => {
         <Switch>
           <Redirect exact from={path} to={`${path}/${dest}`} />
           <NestedRoute path={`${path}/mike`} exact component={MikeRoute} />
-          <NestedRoute path={`${path}/harvestables/create/:type`} exact component={CreateChannelRoute} />
-          <NestedRoute path={`${path}/harvestables/:recId/logs`} exact component={ChannelLogRoute} />
-          <NestedRoute path={`${path}/harvestables/:recId/jobs`} exact component={ChannelJobsRoute} />
-          <NestedRoute path={`${path}/harvestables`} component={ChannelsRoute}>
-            <NestedRoute path={`${path}/harvestables/:recId`} exact component={FullChannelRoute} />
-            <NestedRoute path={`${path}/harvestables/:recId/edit`} exact component={EditChannelRoute} />
+          <NestedRoute path={`${path}/channels/create/:type`} exact component={CreateChannelRoute} />
+          <NestedRoute path={`${path}/channels/:recId/logs`} exact component={ChannelLogRoute} />
+          <NestedRoute path={`${path}/channels/:recId/jobs`} exact component={ChannelJobsRoute} />
+          <NestedRoute path={`${path}/channels`} component={ChannelsRoute}>
+            <NestedRoute path={`${path}/channels/:recId`} exact component={FullChannelRoute} />
+            <NestedRoute path={`${path}/channels/:recId/edit`} exact component={EditChannelRoute} />
           </NestedRoute>
           <NestedRoute path={`${path}/jobs`} component={JobsRoute}>
             <NestedRoute path={`${path}/jobs/:recId`} exact component={FullJobRoute} />

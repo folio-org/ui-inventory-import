@@ -46,8 +46,8 @@ const PipelineForm = (props) => {
       <TitleManager record={title}>
         <form id="form-pipeline">
           <Row>
-            <CF tag="id" xs={2} disabled />
-            <CF tag="name" xs={8} required />
+            <CF tag="id" domain="channels" xs={2} disabled />
+            <CF tag="name" domain="channels" xs={8} required />
           </Row>
           <RCF tag="description" domain="pipeline" component={TextArea} rows="4" />
           <br />

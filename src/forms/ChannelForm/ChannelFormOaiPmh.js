@@ -59,7 +59,7 @@ const ChannelFormOaiPmh = ({ values }) => {
   return (
     <Accordion
       id="harvestable-form-oai"
-      label={<FormattedMessage id="ui-inventory-import.harvestables.field.type.oaiPmh" />}
+      label={<FormattedMessage id="ui-inventory-import.channels.field.type.oaiPmh" />}
     >
       <RCF tag="url" />
       <Row>

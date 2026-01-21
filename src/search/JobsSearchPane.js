@@ -92,11 +92,10 @@ function JobsSearchPane(props) {
           </Button>
         </div>
 
-        {renderFilter(intl, filterStruct, updateQuery, 'status/harvestables.column.currentStatus',
+        {renderFilter(intl, filterStruct, updateQuery, 'status/channels.column.currentStatus',
           ['NEW', 'OK', 'WARN', 'ERROR', 'RUNNING', 'FINISHED', 'KILLED'],
           true)}
-        {/* XXX we need a filter for "some errors occurred during the run, which was OK overall" */}
-        {renderFilter(intl, filterStruct, updateQuery, 'type/harvestables.field.jobClass',
+        {renderFilter(intl, filterStruct, updateQuery, 'type/channels.field.jobClass',
           ['oaiPmh', 'xmlBulk', 'connector', 'status'])}
         {renderNumericFilterPair(intl, filterStruct, updateQuery, 'records')}
         {renderDateFilterPair(intl, filterStruct, updateQuery, 'started')}
