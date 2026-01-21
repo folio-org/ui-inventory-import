@@ -42,7 +42,7 @@ function LogSettings(props) {
     <ConnectedConfigManager
       formType="final-form"
       label={props.label}
-      scope="mod-harvester-admin"
+      scope="mod-inventory-update"
       configName="PURGE_LOGS_AFTER"
       getInitialValues={getInitialValues}
       onBeforeSave={beforeSave}

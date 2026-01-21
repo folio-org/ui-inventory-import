@@ -53,7 +53,7 @@
           "mod-settings.entries.collection.get",
           "inventory-update.import.steps.collection.get",
           "inventory-update.import.steps.item.get",
-          "mod-settings.global.read.xxx-mod-harvester-admin"
+          "mod-settings.global.read.mod-inventory-update"
         ],
         "visible": true
       },
@@ -65,7 +65,7 @@
           "mod-settings.entries.item.put",
           "mod-settings.entries.item.post",
           "inventory-update.import.steps.item.put",
-          "mod-settings.global.write.xxx-mod-harvester-admin"
+          "mod-settings.global.write.mod-inventory-update"
         ],
         "visible": true
       },
