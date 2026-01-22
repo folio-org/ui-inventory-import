@@ -15,7 +15,6 @@ function renderFilter(intl, filterStruct, updateQuery, qualifiedField, optionTag
   const match = qualifiedField.match(/(.*)\/(.*)/);
   const field = match ? match[1] : qualifiedField;
   const transTag = match ? match[2] : `channels.column.${field}`;
-  console.log(`qualifiedField='${qualifiedField} => field '${field}', transTag '${transTag}'`);
 
   const dataOptions = optionTags.map(tag => ({
     value: tag,
