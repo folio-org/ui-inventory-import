@@ -292,8 +292,6 @@
     "pipeline.field.steps": "Transformation steps",
     "pipeline.steps.position": "#",
     "pipeline.steps.name": "Name",
-    "pipeline.steps.in": "In",
-    "pipeline.steps.out": "Out",
     "pipeline.steps.actions": "Actions",
     "step.field.name": "Name",
     "step.field.description": "Description",

@@ -31,18 +31,14 @@ const PipelineDetail = (props) => {
 
       <h3><FormattedMessage id="ui-inventory-import.settings.step" /></h3>
       <MultiColumnList
-        visibleColumns={['position', 'name', 'in', 'out']}
+        visibleColumns={['position', 'name']}
         columnMapping={{
           position: <FormattedMessage id="ui-inventory-import.pipeline.steps.position" />,
           name: <FormattedMessage id="ui-inventory-import.pipeline.steps.name" />,
-          in: <FormattedMessage id="ui-inventory-import.pipeline.steps.in" />,
-          out: <FormattedMessage id="ui-inventory-import.pipeline.steps.out" />,
         }}
         contentData={data.steps}
         formatter={{
-          name: r => r.step.name,
-          in: r => r.step.inputFormat,
-          out: r => r.step.outputFormat,
+          position: r => r.rowIndex + 1,
         }}
       />
 
