@@ -17,7 +17,7 @@ import Tabs from './Tabs';
 import css from './index.css';
 
 
-const HarvesterAdminApp = (props) => {
+const InventoryImportApp = (props) => {
   const {
     actAs,
     stripes,
@@ -57,7 +57,7 @@ const HarvesterAdminApp = (props) => {
   );
 };
 
-HarvesterAdminApp.propTypes = {
+InventoryImportApp.propTypes = {
   match: PropTypes.shape({
     path: PropTypes.string.isRequired,
   }).isRequired,
@@ -67,4 +67,4 @@ HarvesterAdminApp.propTypes = {
   }).isRequired,
 };
 
-export default HarvesterAdminApp;
+export default InventoryImportApp;
