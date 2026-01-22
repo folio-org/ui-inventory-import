@@ -6,19 +6,13 @@ import { Loading, Pane, Accordion, Button, Icon, ConfirmationModal } from '@foli
 import viewLogTranslationTag from '../../util/viewLogTranslationTag';
 import ErrorMessage from '../../components/ErrorMessage';
 import GeneralSection from './GeneralSection';
-import OaiPmhSection from './OaiPmhSection';
 import XmlBulkSection from './XmlBulkSection';
-import ConnectorSection from './ConnectorSection';
-import StatusSection from './StatusSection';
 import HeaderSection from './HeaderSection';
 import packageInfo from '../../../package';
 
 
 const specificSections = {
-  oaiPmh: OaiPmhSection,
-  xmlBulk: XmlBulkSection,
-  connector: ConnectorSection,
-  status: StatusSection,
+  XML: XmlBulkSection,
 };
 
 
@@ -26,21 +20,19 @@ const FullChannelContent = ({ rec }) => {
   const intl = useIntl();
   const stripes = useStripes();
   const type = rec.type;
+
   const ErrorSection = () => <ErrorMessage message={`Unknown type '${type}'`} />;
   const SpecificSection = specificSections[type] || ErrorSection;
 
-  // eslint-disable-next-line react/prop-types
-  rec.__jobClass = intl.formatMessage({ id: `ui-inventory-import.channels.field.jobClass.${rec.type}` });
-
   return (
     <>
-      {type !== 'status' && <HeaderSection rec={rec} />}
-      {type !== 'status' && <GeneralSection rec={rec} />}
+      <HeaderSection rec={rec} />
+      <GeneralSection rec={rec} />
       <SpecificSection rec={rec} />
 
       {stripes.config.showDevInfo &&
         <Accordion
-          id="harvestable-section-devinfo"
+          id="channel-section-devinfo"
           label={<FormattedMessage id="ui-inventory-import.accordion.devinfo" />}
           closedByDefault
         >
@@ -65,7 +57,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
   const [deleting, setDeleting] = useState(false);
   const callout = useContext(CalloutContext);
 
-  const resource = resources.harvestable;
+  const resource = resources.channel;
   if (!resource.hasLoaded) return <Loading />;
   const rec = resource.records[0];
 
@@ -94,6 +86,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
     });
   }
 
+  /*
   function controlJob(op) {
     mutator[op].PUT({}).then(() => {
       callout.sendCallout({
@@ -125,15 +118,16 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
       });
     });
   }
+  */
 
   const actionMenu = ({ onToggle }) => {
     return (
       <>
-        <IfPermission perm="harvester-admin.harvestables.item.put">
+        <IfPermission perm="inventory-update.import.channels.item.put">
           <Button
             buttonStyle="dropdownItem"
             data-test-actions-menu-edit
-            id="clickable-edit-harvestable"
+            id="clickable-edit-channel"
             onClick={() => {
               mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}/edit` });
             }}
@@ -143,11 +137,11 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
             </Icon>
           </Button>
         </IfPermission>
-        <IfPermission perm="harvester-admin.harvestables.item.delete">
+        <IfPermission perm="inventory-update.import.channels.item.delete">
           <Button
             buttonStyle="dropdownItem"
             data-test-actions-menu-delete
-            id="clickable-delete-harvestable"
+            id="clickable-delete-channel"
             onClick={e => maybeDeleteRecord(e)}
           >
             <Icon icon="trash">
@@ -155,6 +149,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
             </Icon>
           </Button>
         </IfPermission>
+        {/*
         <IfPermission perm="harvester-admin.run-jobs">
           <Button
             buttonStyle="dropdownItem"
@@ -205,6 +200,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
             </Icon>
           </Button>
         </IfPermission>
+        */}
       </>
     );
   };
@@ -236,7 +232,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
 FullChannel.propTypes = {
   defaultWidth: PropTypes.string,
   resources: PropTypes.shape({
-    harvestable: PropTypes.shape({
+    channel: PropTypes.shape({
       hasLoaded: PropTypes.bool.isRequired,
       records: PropTypes.arrayOf(
         PropTypes.shape({

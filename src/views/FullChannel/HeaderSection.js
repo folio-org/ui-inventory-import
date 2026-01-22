@@ -10,7 +10,7 @@ const HeaderSection = ({ rec }) => (
     label={<FormattedMessage id="ui-inventory-import.channels.heading.status" />}
   >
     <Row>
-      <CKV rec={rec} tag="__jobClass" i18nTag="jobClass" xs={4} />
+      <CKV rec={rec} tag="type" i18nTag="jobClass" xs={4} />
       <CKV rec={rec} tag="currentStatus" xs={4} />
       <CKV rec={rec} tag="lastUpdated" xs={4} />
     </Row>

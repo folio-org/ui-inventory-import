@@ -5,7 +5,7 @@ import FullChannel from '../views/FullChannel';
 
 
 const FullChannelRoute = (props) => {
-  const deleteRecord = () => props.mutator.harvestable.DELETE({ id: props.match.params.recId });
+  const deleteRecord = () => props.mutator.channel.DELETE({ id: props.match.params.recId });
 
   return <FullChannel {...props} deleteRecord={deleteRecord} />;
 };
@@ -13,11 +13,13 @@ const FullChannelRoute = (props) => {
 
 FullChannelRoute.manifest = Object.freeze({
   query: {},
-  harvestable: {
+  channel: {
     type: 'okapi',
-    path: 'harvester-admin/harvestables/:{recId}',
+    path: 'inventory-import/channels/:{recId}',
     shouldRefresh: () => false,
   },
+/*
+  XXX update
   run: {
     type: 'okapi',
     path: 'harvester-admin/jobs/run/:{recId}',
@@ -40,13 +42,14 @@ FullChannelRoute.manifest = Object.freeze({
       }
     }
   },
+*/
 });
 
 
 FullChannelRoute.propTypes = {
   defaultWidth: PropTypes.string,
   resources: PropTypes.shape({
-    harvestable: PropTypes.shape({
+    channel: PropTypes.shape({
       records: PropTypes.arrayOf(
         PropTypes.shape({
           name: PropTypes.string.isRequired,
@@ -58,7 +61,7 @@ FullChannelRoute.propTypes = {
     query: PropTypes.shape({
       update: PropTypes.func.isRequired,
     }).isRequired,
-    harvestable: PropTypes.shape({
+    channel: PropTypes.shape({
       DELETE: PropTypes.func.isRequired,
     }).isRequired,
     run: PropTypes.shape({
