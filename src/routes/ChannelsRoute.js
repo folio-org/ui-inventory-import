@@ -22,17 +22,16 @@ function ChannelsRoute({ stripes, resources, mutator, children }) {
     source.fetchOffset(index);
   };
 
-
-  const error = resources.harvestables.failed ? resources.harvestables.failed.message : undefined;
-  const hasLoaded = resources.harvestables.hasLoaded;
+  const error = resources.channels.failed ? resources.channels.failed.message : undefined;
+  const hasLoaded = resources.channels.hasLoaded;
 
   return (
     <Channels
       data={{
-        harvestables: resources.harvestables.records,
+        channels: resources.channels.records,
       }}
       query={resources.query}
-      resultCount={resources.harvestables.other?.totalRecords}
+      resultCount={resources.channels.other?.totalRecords}
       updateQuery={mutator.query.update}
       error={error}
       hasLoaded={hasLoaded}
@@ -49,11 +48,11 @@ ChannelsRoute.manifest = Object.freeze({
   query: { initialValue: {} },
   resultCount: { initialValue: INITIAL_RESULT_COUNT },
   resultOffset: { initialValue: 0 },
-  harvestables: {
+  channels: {
     type: 'okapi',
-    path: 'harvester-admin/harvestables',
+    path: 'inventory-import/channels',
     throwErrors: false,
-    records: 'harvestables',
+    records: 'channels',
     recordsRequired: '%{resultCount}',
     resultOffset: '%{resultOffset}',
     perRequest: RESULT_COUNT_INCREMENT,
@@ -63,28 +62,17 @@ ChannelsRoute.manifest = Object.freeze({
       query: (qp) => {
         const conditions = [];
         if (qp.query) conditions.push(`${qp.qindex || 'name'}=${qp.query}*`);
-
-        /*
-        // Due to back-end limitations, filters can't be handled at
-        // the same time as the main query. Instead we will handle
-        // filtering client-side.
         if (qp.filters) {
           const o = parseFilters(qp.filters);
           Object.keys(o).sort().forEach(key => {
             conditions.push(`${key}=${o[key][0]}`);
           });
         }
-        */
-
         if (conditions.length === 0) return undefined;
         return conditions.join(' or '); // Not supported on back-end, but hey-ho
       },
-      orderBy: (_qp) => {
-        // We could use qp.sort, but there are all sorts of back-end
-        // limitations: only certain fields can be sorted, only the
-        // first of multiple keys can be made desceding (by prepending
-        // "~"), so instead we sort client-side.
-        return undefined;
+      orderBy: (qp) => {
+        return qp.sort
       }
     },
   },
@@ -97,7 +85,7 @@ ChannelsRoute.propTypes = {
   }).isRequired,
   resources: PropTypes.shape({
     query: PropTypes.object.isRequired,
-    harvestables: PropTypes.shape({
+    channels: PropTypes.shape({
       failed: PropTypes.oneOfType([
         PropTypes.bool,
         PropTypes.shape({

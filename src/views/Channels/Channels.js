@@ -14,46 +14,6 @@ import ErrorMessage from '../../components/ErrorMessage';
 import packageInfo from '../../../package';
 
 
-/*
- * Server-side limitations mean that queries submitted to
- * mod-harvester-admin cannot include filtering criteria and that the
- * data returned is not sorted according to the `orderBy`
- * parameter. Since the total size of the data-set is small, we do the
- * filtering and sorting by hand here in the display component.
- *
- * DO NOT TRY THIS AT HOME.
- */
-function manuallyFilterAndSort(query, raw) {
-  const { filters, sort } = query;
-  const filterStruct = parseFilters(filters);
-  const sortKeys = parseSort(sort);
-
-  const filterKeys = Object.keys(filterStruct).sort();
-  const filtered = raw.filter(entry => {
-    for (let i = 0; i < filterKeys.length; i++) {
-      const key = filterKeys[i];
-      const values = filterStruct[key];
-      if (values.indexOf(entry[key]) === -1) return false;
-    }
-    return true;
-  });
-
-  if (sortKeys.length === 0) return filtered;
-
-  return filtered.sort((a, b) => {
-    for (let i = 0; i < sortKeys.length; i++) {
-      const { key, descending } = sortKeys[i];
-      if (a[key] === b[key]) continue; // eslint-disable-line no-continue
-      const tmp = a[key] < b[key] ? -1 : 1;
-      return descending ? -tmp : tmp;
-    }
-
-    // All keys were equal in value
-    return 0;
-  });
-}
-
-
 // For reasons I do not understand, the two sections of this menu
 // render side-by-side instead of one above the other. To mitigate
 // this, I am currently separating the two columns of menu items with
@@ -64,13 +24,13 @@ function manuallyFilterAndSort(query, raw) {
 function renderActionsMenu(search, renderedColumnsMenu) {
   return (
     <PaneMenu>
-      <IfPermission perm="harvester-admin.harvestables.item.post">
+      <IfPermission perm="inventory-update.import.channels.item.post">
         <MenuSection id="actions-menu-section" label={<FormattedMessage id="ui-inventory-import.actions.new" />}>
-          {['oaiPmh', 'xmlBulk', 'connector', 'status'].map(type => (
+          {['xml'].map(type => (
             <FormattedMessage key={type} id={`ui-inventory-import.actions.new.channel.${type}`}>
               {ariaLabel => (
                 <Button
-                  id={`clickable-new-harvestable-${type}`}
+                  id={`clickable-new-channel-${type}`}
                   aria-label={ariaLabel}
                   to={`/invimp/channels/create/${type}${search}`}
                   buttonStyle="dropdownItem"
@@ -108,30 +68,19 @@ function Channels({
 
   const columnMapping = {
     name: <FormattedMessage id="ui-inventory-import.channels.column.name" />,
-    currentStatus: <FormattedMessage id="ui-inventory-import.channels.column.currentStatus" />,
-    records: <FormattedMessage id="ui-inventory-import.channels.column.records" />,
-    lastHarvestFinished: <FormattedMessage id="ui-inventory-import.channels.column.lastHarvestFinished" />,
     enabled: <FormattedMessage id="ui-inventory-import.channels.column.enabled" />,
-    jobClass: <FormattedMessage id="ui-inventory-import.channels.column.jobClass" />,
+    type: <FormattedMessage id="ui-inventory-import.channels.column.type" />,
     id: <FormattedMessage id="ui-inventory-import.channels.column.id" />,
-    message: <FormattedMessage id="ui-inventory-import.channels.column.message" />,
   };
 
-  if (stripes.hasPerm('harvester-admin.harvestables.log.get')) {
+  if (stripes.hasPerm('inventory-update.import.job-logs.collection.get')) {
     columnMapping.logFile = <FormattedMessage id="ui-inventory-import.channels.column.logFile" />;
     columnMapping.oldJobs = <FormattedMessage id="ui-inventory-import.channels.column.oldJobs" />;
   }
 
   const formatter = {
     enabled: r => <FormattedMessage id={`ui-inventory-import.channels.column.enabled.${r.enabled}`} />,
-    jobClass: r => <FormattedMessage id={`ui-inventory-import.channels.column.jobClass.${r.jobClass}`} />,
-    currentStatus: r => <FormattedMessage id={`ui-inventory-import.channels.column.currentStatus.${r.currentStatus}`} />,
-    records: r => {
-      const stats = message2stats(r.message);
-      return stats?.instances?.loaded;
-    },
-    lastHarvestFinished: r => formatDateTime(r.lastHarvestFinished),
-    message: r => (r.message?.match('Instances_processed') ? summarizeStats(intl, r.message) : r.message),
+    type: r => <FormattedMessage id={`ui-inventory-import.channels.column.type.${r.type}`} />,
     logFile: r => (
       <Button
         id={`clickable-log-file-${r.id}`}
@@ -158,7 +107,7 @@ function Channels({
     ),
   };
 
-  const harvestables = manuallyFilterAndSort(query, data.harvestables);
+  const channels = data.channels;
   const sortKeys = parseSort(query.sort);
   const sortedColumn = sortKeys[0]?.key;
   const sortDirection = sortKeys[0]?.descending ? 'descending' : 'ascending';
@@ -168,7 +117,7 @@ function Channels({
       {
         (sasqParams) => {
           return (
-            <Paneset id="harvestables-paneset">
+            <Paneset id="channels-paneset">
               <ChannelsSearchPane
                 {...sasqParams}
                 defaultWidth="20%"
@@ -179,38 +128,34 @@ function Channels({
                 error ? <ErrorMessage message={error} /> :
                   !hasLoaded ? <LoadingPane /> :
                   <ColumnManager
-                    id="harvestable-visible-columns"
+                    id="channel-visible-columns"
                     columnMapping={columnMapping}
                     excludeKeys={['name']}
                     persist
                   >
                     {({ renderColumnsMenu, visibleColumns }) => (
                       <Pane
-                        appIcon={<AppIcon app="harvester-admin" />}
+                        appIcon={<AppIcon app="inventory-update" />}
                         defaultWidth="fill"
                         padContent={false}
                         paneTitle={<FormattedMessage id="ui-inventory-import.nav.channels" />}
-                        paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: harvestables.length }} />}
+                        paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: channels.length }} />}
                         actionMenu={() => renderActionsMenu(location.search, renderColumnsMenu)}
                       >
                         <MultiColumnList
                           autosize
-                          id="list-harvestables"
+                          id="list-channels"
                           visibleColumns={visibleColumns}
                           columnMapping={columnMapping}
                           columnWidths={{
                             name: '400px',
-                            currentStatus: '90px',
-                            records: '90px',
-                            lastHarvestFinished: '210px',
                             enabled: '80px',
-                            jobClass: '150px',
-                            id: '80px',
-                            message: '600px',
+                            type: '150px',
+                            id: '300px',
                           }}
                           formatter={formatter}
-                          contentData={harvestables}
-                          totalCount={harvestables.length}
+                          contentData={channels}
+                          totalCount={channels.length}
                           onHeaderClick={sasqParams.onSort}
                           sortedColumn={sortedColumn}
                           sortDirection={sortDirection}
@@ -235,7 +180,7 @@ function Channels({
 
 Channels.propTypes = {
   data: PropTypes.shape({
-    harvestables: PropTypes.arrayOf(
+    channels: PropTypes.arrayOf(
       PropTypes.shape({
       }).isRequired,
     ).isRequired,
