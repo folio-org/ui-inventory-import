@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
-import { StripesConnectedSource, parseFilters } from '@folio/stripes/smart-components';
+import { makeQueryFunction, StripesConnectedSource, parseFilters } from '@folio/stripes/smart-components';
 import Channels from '../views/Channels';
-
 
 const INITIAL_RESULT_COUNT = 100;
 const RESULT_COUNT_INCREMENT = 100;
@@ -44,6 +43,20 @@ function ChannelsRoute({ stripes, resources, mutator, children }) {
 }
 
 
+// Keep these in sync with what's in ../search/ChannelsSearchPane.js
+const searchableIndexes = ['name', 'id'];
+
+const filterConfig = [{
+  name: 'enabled',
+  cql: 'enabled',
+  values: [],
+}, {
+  name: 'type',
+  cql: 'type',
+  values: [],
+}];
+
+
 ChannelsRoute.manifest = Object.freeze({
   query: { initialValue: {} },
   resultCount: { initialValue: INITIAL_RESULT_COUNT },
@@ -51,29 +64,22 @@ ChannelsRoute.manifest = Object.freeze({
   channels: {
     type: 'okapi',
     path: 'inventory-import/channels',
-    throwErrors: false,
     records: 'channels',
-    recordsRequired: '%{resultCount}',
-    resultOffset: '%{resultOffset}',
-    perRequest: RESULT_COUNT_INCREMENT,
+    throwErrors: false,
     resultDensity: 'sparse',
-    accumulate: 'true',
+    recordsRequired: '%{resultCount}',
+    perRequest: RESULT_COUNT_INCREMENT,
     params: {
-      query: (qp) => {
-        const conditions = [];
-        if (qp.query) conditions.push(`${qp.qindex || 'name'}=${qp.query}`);
-        if (qp.filters) {
-          const o = parseFilters(qp.filters);
-          Object.keys(o).sort().forEach(key => {
-            conditions.push(`${key}=${o[key][0]}`);
-          });
-        }
-        if (conditions.length === 0) return undefined;
-        return conditions.join(' or '); // Not supported on back-end, but hey-ho
+      query: (qp, pathComponents, rv, logger) => {
+        // Is it not a strange fate that we should suffer so much fear and doubt for so small a thing?
+        const queryFunction = makeQueryFunction(
+          'cql.allRecords=1',
+          searchableIndexes.map(index => `${index}="${qp.query}*"`).join(' or '),
+          {},
+          filterConfig,
+        );
+        return queryFunction(qp, pathComponents, rv, logger);
       },
-      orderBy: (qp) => {
-        return qp.sort
-      }
     },
   },
 });
