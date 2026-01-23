@@ -5,7 +5,6 @@ import { CalloutContext, IfPermission, useStripes } from '@folio/stripes/core';
 import { Loading, Pane, Accordion, Button, Icon, ConfirmationModal } from '@folio/stripes/components';
 import viewLogTranslationTag from '../../util/viewLogTranslationTag';
 import ErrorMessage from '../../components/ErrorMessage';
-import GeneralSection from './GeneralSection';
 import XmlBulkSection from './XmlBulkSection';
 import HeaderSection from './HeaderSection';
 import packageInfo from '../../../package';
@@ -27,7 +26,6 @@ const FullChannelContent = ({ rec }) => {
   return (
     <>
       <HeaderSection rec={rec} />
-      <GeneralSection rec={rec} />
       <SpecificSection rec={rec} />
 
       {stripes.config.showDevInfo &&
