@@ -65,7 +65,7 @@ FullChannelRoute.propTypes = {
       DELETE: PropTypes.func.isRequired,
     }).isRequired,
     run: PropTypes.shape({
-      PUT: PropTypes.func.isRequired,
+      // PUT: PropTypes.func.isRequired,
     }).isRequired,
     stop: PropTypes.shape({
       PUT: PropTypes.func.isRequired,
