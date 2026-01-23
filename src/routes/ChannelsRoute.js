@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
-import { StripesConnectedSource } from '@folio/stripes/smart-components';
+import { StripesConnectedSource, parseFilters } from '@folio/stripes/smart-components';
 import Channels from '../views/Channels';
 
 
@@ -61,7 +61,7 @@ ChannelsRoute.manifest = Object.freeze({
     params: {
       query: (qp) => {
         const conditions = [];
-        if (qp.query) conditions.push(`${qp.qindex || 'name'}=${qp.query}*`);
+        if (qp.query) conditions.push(`${qp.qindex || 'name'}=${qp.query}`);
         if (qp.filters) {
           const o = parseFilters(qp.filters);
           Object.keys(o).sort().forEach(key => {
