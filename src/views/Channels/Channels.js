@@ -80,7 +80,7 @@ function Channels({
 
   const formatter = {
     enabled: r => <FormattedMessage id={`ui-inventory-import.channels.column.enabled.${r.enabled}`} />,
-    type: r => <FormattedMessage id={`ui-inventory-import.channels.column.type.${r.type}`} />,
+    type: r => <FormattedMessage id={`ui-inventory-import.channels.column.type.${r.type.toUpperCase()}`} />,
     logFile: r => (
       <Button
         id={`clickable-log-file-${r.id}`}
