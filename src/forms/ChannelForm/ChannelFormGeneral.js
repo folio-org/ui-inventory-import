@@ -24,66 +24,20 @@ const ChannelFormGeneral = ({ data }) => {
 
   return (
     <Accordion
-      id="harvestable-form-general"
+      id="channel-form-general"
       label={<FormattedMessage id="ui-inventory-import.channels.heading.general" />}
     >
+      <RCF tag="type" />
       <Row>
-        <CF tag="id" xs={2} disabled />
+        <CF tag="id" xs={4} disabled />
+        <CF tag="tag" xs={2} />
         <CF tag="name" xs={6} required />
-        <CF tag="serviceProvider" xs={4} />
       </Row>
-      <Row>
-        <CLF tag="usedBy" xs={6} />
-        <CLF tag="managedBy" xs={6} />
-      </Row>
-      <RCF tag="openAccess" component={Checkbox} type="checkbox" />
-      <RCF tag="description" component={TextArea} rows="4" />
-      <Row>
-        <CF tag="technicalNotes" xs={6} component={TextArea} rows="4" />
-        <CF tag="contactNotes" xs={6} component={TextArea} rows="4" />
-      </Row>
-      <Row>
-        <CF tag="enabled" xs={4} component={Checkbox} type="checkbox" />
-        <CF tag="scheduleString" xs={8} />
-      </Row>
+      <RCF tag="enabled" component={Checkbox} type="checkbox" />
+      <RCF tag="commissioned" component={Checkbox} type="checkbox" disabled />
+      <RCF tag="listening" component={Checkbox} type="checkbox" />
       <RCF tag="transformation.id" i18nTag="transformationPipeline" component={Select} dataOptions={[noValue].concat(transformationPipelines)} required />
-      <RCF tag="laxParsing" component={Checkbox} type="checkbox" />
-      <RCF tag="encoding" />
-      <Row>
-        <CF tag="cacheEnabled" xs={6} component={Checkbox} type="checkbox" />
-        <CF tag="storeOriginal" xs={6} component={Checkbox} type="checkbox" />
-      </Row>
       <div style={{ marginTop: '1em' }} />
-      <Row>
-        <CF tag="recordLimit" xs={6} />
-        <CF tag="timeout" xs={6} />
-      </Row>
-      <RCF tag="logLevel" component={Select} dataOptions={[noValue].concat(logLevels)} />
-      <RCF tag="failedRecordsLogging" component={Select} dataOptions={[noValue].concat(failedRecords)} />
-      <Row>
-        <CF tag="maxSavedFailedRecordsPerRun" xs={6} type="number" />
-        <CF tag="maxSavedFailedRecordsTotal" xs={6} type="number" />
-      </Row>
-      <RCLF tag="mailAddress" i18nTag="mailAddresses" />
-      <RCF tag="mailLevel" component={Select} dataOptions={[noValue].concat(mailLevels)} />
-      <RCLF
-        tag="constantFields"
-        renderEntry={(name) => (
-          <Row>
-            <Col xs={3}>
-              <Field name={`${name}.key`} component={TextField} />
-            </Col>
-            <Col xs={1}>
-              =
-            </Col>
-            <Col xs={8}>
-              <Field name={`${name}.value`} component={TextField} />
-            </Col>
-          </Row>
-        )}
-        emptyValue={{ key: '', value: '' }}
-      />
-      <RCF tag="json" component={TextArea} rows="6" />
     </Accordion>
   );
 };

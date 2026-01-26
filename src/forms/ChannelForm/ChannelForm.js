@@ -9,18 +9,6 @@ import { isEqual } from 'lodash';
 import setFieldData from 'final-form-set-field-data'; // XXX do we need this?
 import ErrorMessage from '../../components/ErrorMessage';
 import ChannelFormGeneral from './ChannelFormGeneral';
-import ChannelFormOaiPmh from './ChannelFormOaiPmh';
-import ChannelFormXmlBulk from './ChannelFormXmlBulk';
-import ChannelFormConnector from './ChannelFormConnector';
-import ChannelFormStatus from './ChannelFormStatus';
-
-
-const specificSections = {
-  oaiPmh: ChannelFormOaiPmh,
-  xmlBulk: ChannelFormXmlBulk,
-  connector: ChannelFormConnector,
-  status: ChannelFormStatus,
-};
 
 
 const handleKeyCommand = (handler, { disabled } = {}) => {
@@ -43,13 +31,6 @@ function validate(values) {
     errors.transformation = { id: requiredSelectMessage };
   }
 
-  try {
-    if (values.json && values.json !== '') JSON.parse(values.json);
-  } catch (e) {
-    errors.json = <FormattedMessage id="ui-inventory-import.invalidJSON" values={{ error: e.toString() }} />;
-  }
-
-  // console.log('validate:', errors);
   return errors;
 }
 
@@ -83,7 +64,7 @@ const ChannelForm = (props) => {
           <Button
             buttonStyle="primary mega"
             disabled={pristine || submitting}
-            id="clickable-update-harvestable"
+            id="clickable-update-channel"
             marginBottom0
             onClick={handleSubmit}
             type="submit"
@@ -100,8 +81,6 @@ const ChannelForm = (props) => {
   const title = values.name;
   const type = values.type;
   const ErrorSection = () => <ErrorMessage message={`Unknown type '${type}'`} />;
-  const SpecificSection = specificSections[type] || ErrorSection;
-
   // XXX We probably don't need to pass most of these
   const sectionProps = { data, handlers, mutators, values };
 
@@ -120,19 +99,18 @@ const ChannelForm = (props) => {
   return (
     <HasCommand commands={shortcuts} isWithinScope={checkScope} scope={document.body}>
       <Pane
-        appIcon={<AppIcon app="harvester-admin" />}
+        appIcon={<AppIcon app="inventory-import" />}
         centerContent
         defaultWidth="60%"
         footer={renderPaneFooter()}
-        id="pane-harvestable-form"
+        id="pane-channel-form"
         paneTitle={title}
         dismissible
         onClose={handlers.onClose}
       >
         <TitleManager record={title}>
           <form id="form-course">
-            {type !== 'status' && <ChannelFormGeneral {...sectionProps} />}
-            <SpecificSection {...sectionProps} />
+            <ChannelFormGeneral {...sectionProps} />
           </form>
         </TitleManager>
       </Pane>

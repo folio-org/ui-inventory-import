@@ -13,17 +13,17 @@ const EditChannelRoute = ({ resources, mutator, match }) => {
   };
 
   const handleSubmit = (record) => {
-    mutator.harvestable.PUT(cooked2raw(record))
+    mutator.channel.PUT(cooked2raw(record))
       .then(handleClose);
   };
 
-  const isLoading = (resources.harvestable.isPending ||
+  const isLoading = (resources.channel.isPending ||
                      resources.transformationPipelines.isPending);
 
   return (
     <ChannelForm
       isLoading={isLoading}
-      initialValues={raw2cooked(get(resources, 'harvestable.records[0]', {}))}
+      initialValues={raw2cooked(get(resources, 'channel.records[0]', {}))}
       data={{
         transformationPipelines: resources.transformationPipelines.records,
       }}
@@ -36,9 +36,9 @@ const EditChannelRoute = ({ resources, mutator, match }) => {
 
 EditChannelRoute.manifest = Object.freeze({
   query: {},
-  harvestable: {
+  channel: {
     type: 'okapi',
-    path: 'harvester-admin/harvestables/:{recId}',
+    path: 'inventory-import/channels/:{recId}',
   },
   transformationPipelines: {
     type: 'okapi',
@@ -50,7 +50,7 @@ EditChannelRoute.manifest = Object.freeze({
 
 EditChannelRoute.propTypes = {
   resources: PropTypes.shape({
-    harvestable: PropTypes.shape({
+    channel: PropTypes.shape({
       isPending: PropTypes.bool.isRequired,
       records: PropTypes.arrayOf(
         PropTypes.shape({}).isRequired,
@@ -67,7 +67,7 @@ EditChannelRoute.propTypes = {
     query: PropTypes.shape({
       update: PropTypes.func.isRequired,
     }).isRequired,
-    harvestable: PropTypes.shape({
+    channel: PropTypes.shape({
       PUT: PropTypes.func.isRequired,
     }).isRequired,
   }).isRequired,
