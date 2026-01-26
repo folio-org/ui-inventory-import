@@ -19,7 +19,7 @@ const HeaderSection = ({ rec }) => (
       <CKV rec={rec} tag="enabled" xs={4} />
     </Row>
     <Row>
-      <CKV rec={rec} tag="isCommissioned" xs={4} />
+      <CKV rec={rec} tag="commissioned" xs={4} />
     </Row>
     <Row>
       <CKV rec={rec} tag="listening" xs={4} />
