@@ -7,7 +7,7 @@ import { AppIcon, TitleManager } from '@folio/stripes/core';
 import stripesFinalForm from '@folio/stripes/final-form';
 import { isEqual } from 'lodash';
 import setFieldData from 'final-form-set-field-data'; // XXX do we need this?
-import { RCF, CF } from '../../components/CF';
+import { RCF, CF } from '../components/CF';
 
 
 const handleKeyCommand = (handler, { disabled } = {}) => {
