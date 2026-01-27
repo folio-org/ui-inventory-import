@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
-import { makeQueryFunction, StripesConnectedSource, parseFilters } from '@folio/stripes/smart-components';
+import { makeQueryFunction, StripesConnectedSource } from '@folio/stripes/smart-components';
 import Channels from '../views/Channels';
 
 const INITIAL_RESULT_COUNT = 100;

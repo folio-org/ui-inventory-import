@@ -12,7 +12,7 @@ const CreateChannelRoute = ({ resources, mutator, match, location }) => {
   };
 
   const handleSubmit = (record) => {
-    mutator.harvestables.POST(cooked2raw({ ...record, harvestImmediately: 'false' }))
+    mutator.channels.POST(cooked2raw({ ...record }))
       .then(handleClose);
   };
 
@@ -22,14 +22,17 @@ const CreateChannelRoute = ({ resources, mutator, match, location }) => {
     <ChannelForm
       isLoading={isLoading}
       initialValues={{
-        type: match.params.type,
+        type: match.params.type.toUpperCase(),
         enabled: false,
       }}
       data={{
         transformationPipelines: resources.transformationPipelines.records,
       }}
       handlers={{ onClose: handleClose }}
-      onSubmit={handleSubmit}
+      onSubmit={(e) => {
+        console.log('CreateChannelRoute:onSubmit: handleSubmit =', handleSubmit);
+        handleSubmit(e);
+      }}
     />
   );
 };
@@ -37,15 +40,15 @@ const CreateChannelRoute = ({ resources, mutator, match, location }) => {
 
 CreateChannelRoute.manifest = Object.freeze({
   query: {},
-  harvestables: {
+  channels: {
     type: 'okapi',
-    path: 'harvester-admin/harvestables',
+    path: 'inventory-import/channels',
     fetch: false,
     clientGeneratePk: false,
   },
   transformationPipelines: {
     type: 'okapi',
-    path: 'harvester-admin/transformations',
+    path: 'inventory-import/transformations',
     records: 'transformations',
   },
 });
@@ -53,7 +56,7 @@ CreateChannelRoute.manifest = Object.freeze({
 
 CreateChannelRoute.propTypes = {
   resources: PropTypes.shape({
-    harvestables: PropTypes.shape({
+    channels: PropTypes.shape({
       records: PropTypes.arrayOf(
         PropTypes.shape({}).isRequired,
       ).isRequired,
@@ -69,7 +72,7 @@ CreateChannelRoute.propTypes = {
     query: PropTypes.shape({
       update: PropTypes.func.isRequired,
     }).isRequired,
-    harvestables: PropTypes.shape({
+    channels: PropTypes.shape({
       POST: PropTypes.func.isRequired,
     }).isRequired,
   }).isRequired,

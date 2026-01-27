@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { Accordion, Row } from '@folio/stripes/components';
 import { RCKV, CKV } from '../../components/CKV';
 
-const HeaderSection = ({ rec }) => (
+const HeaderSection = ({ rec, transformationPipeline }) => (
   <Accordion
     id="harvestable-section-general"
     label={<FormattedMessage id="ui-inventory-import.channels.heading.status" />}
@@ -24,8 +24,7 @@ const HeaderSection = ({ rec }) => (
     <Row>
       <CKV rec={rec} tag="listening" xs={4} />
     </Row>
-    {/* XXX we want to look this up by name */}
-    <RCKV rec={rec} tag="transformationId" i18nTag="transformationPipeline" />
+    <RCKV rec={transformationPipeline} tag="records[0].name" i18nTag="transformationPipeline" />
   </Accordion>
 );
 

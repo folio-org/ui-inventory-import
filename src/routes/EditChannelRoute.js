@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import { stripesConnect } from '@folio/stripes/core';
 import ChannelForm from '../forms/ChannelForm';
-import packageInfo from '../../package';
 import { raw2cooked, cooked2raw } from '../util/cookData';
+import packageInfo from '../../package';
 
 
 const EditChannelRoute = ({ resources, mutator, match }) => {
@@ -13,6 +13,7 @@ const EditChannelRoute = ({ resources, mutator, match }) => {
   };
 
   const handleSubmit = (record) => {
+    console.log('EditChannelRoute: handleSubmit', record);
     mutator.channel.PUT(cooked2raw(record))
       .then(handleClose);
   };
@@ -42,7 +43,7 @@ EditChannelRoute.manifest = Object.freeze({
   },
   transformationPipelines: {
     type: 'okapi',
-    path: 'harvester-admin/transformations',
+    path: 'inventory-import/transformations',
     records: 'transformations',
   },
 });

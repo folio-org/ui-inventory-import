@@ -15,7 +15,7 @@ const specificSections = {
 };
 
 
-const FullChannelContent = ({ rec }) => {
+const FullChannelContent = ({ rec, transformationPipeline }) => {
   const intl = useIntl();
   const stripes = useStripes();
   const type = rec.type;
@@ -25,7 +25,7 @@ const FullChannelContent = ({ rec }) => {
 
   return (
     <>
-      <HeaderSection rec={rec} />
+      <HeaderSection rec={rec} transformationPipeline={transformationPipeline} />
       <SpecificSection rec={rec} />
 
       {stripes.config.showDevInfo &&
@@ -211,7 +211,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
       paneTitle={resource.records[0]?.name}
       actionMenu={actionMenu}
     >
-      <FullChannelContent rec={rec} />
+      <FullChannelContent rec={rec} transformationPipeline={resources.transformationPipeline} />
       {deleting &&
         <ConfirmationModal
           open

@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import arrayMutators from 'final-form-arrays';
-import { HasCommand, Button, LoadingPane, Pane, PaneFooter, checkScope } from '@folio/stripes/components';
+import { Row, Checkbox, Select, HasCommand, Button, LoadingPane, Pane, PaneFooter, checkScope } from '@folio/stripes/components';
 import { AppIcon, TitleManager } from '@folio/stripes/core';
 import stripesFinalForm from '@folio/stripes/final-form';
 import { isEqual } from 'lodash';
 import setFieldData from 'final-form-set-field-data'; // XXX do we need this?
-import ErrorMessage from '../../components/ErrorMessage';
-import ChannelFormGeneral from './ChannelFormGeneral';
+import { RCF, CF } from '../../components/CF';
 
 
 const handleKeyCommand = (handler, { disabled } = {}) => {
@@ -21,14 +20,12 @@ const handleKeyCommand = (handler, { disabled } = {}) => {
 
 function validate(values) {
   const errors = {};
-  const requiredTextMessage = <FormattedMessage id="ui-inventory-import.fillIn" />;
-  const requiredSelectMessage = <FormattedMessage id="ui-inventory-import.selectToContinue" />;
 
   if (!values.name) {
-    errors.name = requiredTextMessage;
+    errors.name = <FormattedMessage id="ui-inventory-import.fillIn" />;
   }
-  if (!values.transformation?.id) {
-    errors.transformation = { id: requiredSelectMessage };
+  if (!values.transformationId) {
+    errors.transformationId = <FormattedMessage id="ui-inventory-import.selectToContinue" />;
   }
 
   return errors;
@@ -46,6 +43,16 @@ const ChannelForm = (props) => {
     pristine,
     submitting
   } = props;
+
+  console.log('ChannelForm: handleSubmit =', handleSubmit, '--->', handleSubmit({ foo:1 }));
+
+  const intl = useIntl();
+  const noValue = {
+    value: '',
+    label: intl.formatMessage({ id: 'ui-inventory-import.selectValue' }),
+  };
+
+  const transformationPipelines = data.transformationPipelines.map(x => ({ value: x.id, label: x.name }));
 
   function renderPaneFooter() {
     return (
@@ -66,7 +73,12 @@ const ChannelForm = (props) => {
             disabled={pristine || submitting}
             id="clickable-update-channel"
             marginBottom0
-            onClick={handleSubmit}
+            onClick={
+              (e) => {
+                console.log('submitting, handleSubmit =', handleSubmit, '-- args =', e);
+                handleSubmit(e);
+              }
+            }
             type="submit"
           >
             <FormattedMessage id="stripes-components.saveAndClose" />
@@ -79,10 +91,6 @@ const ChannelForm = (props) => {
   if (isLoading) return <LoadingPane />;
 
   const title = values.name;
-  const type = values.type;
-  const ErrorSection = () => <ErrorMessage message={`Unknown type '${type}'`} />;
-  // XXX We probably don't need to pass most of these
-  const sectionProps = { data, handlers, mutators, values };
 
   const shortcuts = [
     {
@@ -110,7 +118,16 @@ const ChannelForm = (props) => {
       >
         <TitleManager record={title}>
           <form id="form-course">
-            <ChannelFormGeneral {...sectionProps} />
+            <RCF tag="type" disabled />
+            <Row>
+              <CF tag="id" xs={4} disabled />
+              <CF tag="tag" xs={2} />
+              <CF tag="name" xs={6} required />
+            </Row>
+            <RCF tag="enabled" component={Checkbox} type="checkbox" />
+            <RCF tag="commissioned" component={Checkbox} type="checkbox" disabled />
+            <RCF tag="listening" component={Checkbox} type="checkbox" />
+            <RCF tag="transformationId" i18nTag="transformationPipeline" component={Select} dataOptions={[noValue].concat(transformationPipelines)} required />
           </form>
         </TitleManager>
       </Pane>

@@ -18,6 +18,15 @@ FullChannelRoute.manifest = Object.freeze({
     path: 'inventory-import/channels/:{recId}',
     shouldRefresh: () => false,
   },
+  transformationPipeline: {
+    type: 'okapi',
+    path: (_q, _p, _r, _l, props) => {
+      const rec = props.resources?.channel?.records?.[0];
+      if (!rec) return {};
+      return `inventory-import/transformations/${rec.transformationId}`;
+    },
+  },
+
 /*
   XXX update
   run: {
