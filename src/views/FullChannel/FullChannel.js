@@ -7,37 +7,9 @@ import HeaderSection from './HeaderSection';
 import packageInfo from '../../../package';
 
 
-const FullChannelContent = ({ rec, transformationPipeline }) => {
-  const stripes = useStripes();
-
-  return (
-    <>
-      <HeaderSection rec={rec} transformationPipeline={transformationPipeline} />
-      {stripes.config.showDevInfo &&
-        <Accordion
-          id="channel-section-devinfo"
-          label={<FormattedMessage id="ui-inventory-import.accordion.devinfo" />}
-          closedByDefault
-        >
-          <pre>
-            {JSON.stringify(rec, null, 2)}
-          </pre>
-        </Accordion>
-      }
-    </>
-  );
-};
-
-
-FullChannelContent.propTypes = {
-  rec: PropTypes.shape({
-    type: PropTypes.string.isRequired,
-  }).isRequired,
-};
-
-
 const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) => {
   const [deleting, setDeleting] = useState(false);
+  const stripes = useStripes();
   const callout = useContext(CalloutContext);
 
   const resource = resources.channel;
@@ -196,7 +168,18 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
       paneTitle={resource.records[0]?.name}
       actionMenu={actionMenu}
     >
-      <FullChannelContent rec={rec} transformationPipeline={resources.transformationPipeline} />
+      <HeaderSection rec={rec} transformationPipeline={resources.transformationPipeline} />
+      {stripes.config.showDevInfo &&
+        <Accordion
+          id="channel-section-devinfo"
+          label={<FormattedMessage id="ui-inventory-import.accordion.devinfo" />}
+          closedByDefault
+        >
+          <pre>
+            {JSON.stringify(rec, null, 2)}
+          </pre>
+        </Accordion>
+      }
       {deleting &&
         <ConfirmationModal
           open
