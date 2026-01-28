@@ -1,33 +1,18 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { CalloutContext, IfPermission, useStripes } from '@folio/stripes/core';
 import { Loading, Pane, Accordion, Button, Icon, ConfirmationModal } from '@folio/stripes/components';
-import viewLogTranslationTag from '../../util/viewLogTranslationTag';
-import ErrorMessage from '../../components/ErrorMessage';
-import XmlBulkSection from './XmlBulkSection';
 import HeaderSection from './HeaderSection';
 import packageInfo from '../../../package';
 
 
-const specificSections = {
-  XML: XmlBulkSection,
-};
-
-
 const FullChannelContent = ({ rec, transformationPipeline }) => {
-  const intl = useIntl();
   const stripes = useStripes();
-  const type = rec.type;
-
-  const ErrorSection = () => <ErrorMessage message={`Unknown type '${type}'`} />;
-  const SpecificSection = specificSections[type] || ErrorSection;
 
   return (
     <>
       <HeaderSection rec={rec} transformationPipeline={transformationPipeline} />
-      <SpecificSection rec={rec} />
-
       {stripes.config.showDevInfo &&
         <Accordion
           id="channel-section-devinfo"
@@ -118,7 +103,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
   }
   */
 
-  const actionMenu = ({ onToggle }) => {
+  const actionMenu = ({ _onToggle }) => {
     return (
       <>
         <IfPermission perm="inventory-update.import.channels.item.put">
