@@ -2,8 +2,8 @@ import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { CalloutContext, IfPermission, useStripes } from '@folio/stripes/core';
-import { Loading, Pane, Accordion, Button, Icon, ConfirmationModal } from '@folio/stripes/components';
-import HeaderSection from './HeaderSection';
+import { Loading, Pane, Row, Accordion, Button, Icon, ConfirmationModal } from '@folio/stripes/components';
+import { RCKV, CKV } from '../../components/CKV';
 import packageInfo from '../../../package';
 
 
@@ -168,7 +168,22 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
       paneTitle={resource.records[0]?.name}
       actionMenu={actionMenu}
     >
-      <HeaderSection rec={rec} transformationPipeline={resources.transformationPipeline} />
+      <RCKV rec={rec} tag="type" xs={4} />
+      <Row>
+        <CKV rec={rec} tag="id" xs={4} />
+        <CKV rec={rec} tag="tag" xs={2} />
+        <CKV rec={rec} tag="name" xs={6} />
+      </Row>
+      <Row>
+        <CKV rec={rec} tag="enabled" xs={4} />
+      </Row>
+      <Row>
+        <CKV rec={rec} tag="commissioned" xs={4} />
+      </Row>
+      <Row>
+        <CKV rec={rec} tag="listening" xs={4} />
+      </Row>
+      <RCKV rec={resources.transformationPipeline} tag="records[0].name" i18nTag="transformationPipeline" />
       {stripes.config.showDevInfo &&
         <Accordion
           id="channel-section-devinfo"
