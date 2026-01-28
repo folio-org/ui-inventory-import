@@ -13,7 +13,6 @@ const EditChannelRoute = ({ resources, mutator, match }) => {
   };
 
   const handleSubmit = (record) => {
-    console.log('EditChannelRoute: handleSubmit', record);
     mutator.channel.PUT(cooked2raw(record))
       .then(handleClose);
   };

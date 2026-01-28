@@ -44,8 +44,6 @@ const ChannelForm = (props) => {
     submitting
   } = props;
 
-  console.log('ChannelForm: handleSubmit =', handleSubmit, '--->', handleSubmit({ foo:1 }));
-
   const intl = useIntl();
   const noValue = {
     value: '',
@@ -73,12 +71,7 @@ const ChannelForm = (props) => {
             disabled={pristine || submitting}
             id="clickable-update-channel"
             marginBottom0
-            onClick={
-              (e) => {
-                console.log('submitting, handleSubmit =', handleSubmit, '-- args =', e);
-                handleSubmit(e);
-              }
-            }
+            onClick={handleSubmit}
             type="submit"
           >
             <FormattedMessage id="stripes-components.saveAndClose" />

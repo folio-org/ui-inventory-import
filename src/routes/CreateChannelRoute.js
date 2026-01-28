@@ -29,10 +29,7 @@ const CreateChannelRoute = ({ resources, mutator, match, location }) => {
         transformationPipelines: resources.transformationPipelines.records,
       }}
       handlers={{ onClose: handleClose }}
-      onSubmit={(e) => {
-        console.log('CreateChannelRoute:onSubmit: handleSubmit =', handleSubmit);
-        handleSubmit(e);
-      }}
+      onSubmit={handleSubmit}
     />
   );
 };
