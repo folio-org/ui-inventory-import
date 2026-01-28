@@ -165,7 +165,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
       dismissible
       onClose={returnToList}
       defaultWidth={defaultWidth}
-      paneTitle={resource.records[0]?.name}
+      paneTitle={rec.name}
       actionMenu={actionMenu}
     >
       <RCKV rec={rec} tag="type" xs={4} />
