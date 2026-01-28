@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { CalloutContext, IfPermission, useStripes } from '@folio/stripes/core';
 import { Loading, Pane, Row, Accordion, Button, Icon, ConfirmationModal } from '@folio/stripes/components';
-import { RCKV, CKV } from '../../components/CKV';
-import packageInfo from '../../../package';
+import { RCKV, CKV } from '../components/CKV';
+import packageInfo from '../../package';
 
 
 const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) => {
