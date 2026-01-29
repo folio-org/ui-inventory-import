@@ -42,11 +42,11 @@ function Jobs({
     type: r => r.importType,
   };
 
-  const paneTitle = !data.harvestable ?
+  const paneTitle = !data.channel ?
     <FormattedMessage id="ui-inventory-import.nav.jobs" /> :
     <FormattedMessage
       id="ui-inventory-import.nav.jobs-for"
-      values={{ name: data.harvestable.name }}
+      values={{ name: data.channel.name }}
     />;
 
   const sortKeys = parseSort(query.sort);
@@ -127,7 +127,7 @@ function Jobs({
 
 Jobs.propTypes = {
   data: PropTypes.shape({
-    harvestable: PropTypes.shape({
+    channel: PropTypes.shape({
       name: PropTypes.string.isRequired,
     }), // optional
     jobs: PropTypes.arrayOf(
