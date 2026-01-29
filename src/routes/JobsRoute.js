@@ -52,9 +52,9 @@ JobsRoute.manifest = Object.freeze({
   resultOffset: { initialValue: 0 },
   jobs: {
     type: 'okapi',
-    path: 'harvester-admin/previous-jobs',
+    path: 'inventory-import/import-jobs',
     throwErrors: false,
-    records: 'previousJobs',
+    records: 'importJobs',
     recordsRequired: '%{resultCount}',
     resultOffset: '%{resultOffset}',
     perRequest: RESULT_COUNT_INCREMENT,

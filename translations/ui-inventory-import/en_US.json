@@ -80,14 +80,9 @@
 
     "channels.column.type.XML": "XML bulk",
 
-    "channels.column.currentStatus.NEW": "New XXX DELETE THIS",
-    "channels.column.currentStatus.OK": "OK XXX DELETE THIS",
-    "channels.column.currentStatus.WARN": "Warning XXX DELETE THIS",
-    "channels.column.currentStatus.ERROR": "Error XXX DELETE THIS",
-    "channels.column.currentStatus.RUNNING": "Running XXX DELETE THIS",
-    "channels.column.currentStatus.FINISHED": "Finished XXX DELETE THIS",
-    "channels.column.currentStatus.KILLED": "Killed XXX DELETE THIS",
-    "channels.column.currentStatus.SHUTDOWN": "Shutdown XXX DELETE THIS",
+    "jobs.column.status.RUNNING": "Running",
+    "jobs.column.status.PAUSED": "Paused",
+    "jobs.column.status.DONE": "Done",
 
     "channels.index.name": "Name",
     "channels.index.id": "ID",
@@ -283,17 +278,17 @@
     "channels.field.customMailAddresses.help": "",
 
     "channels.heading.status": "Status information",
-    "channels.field.currentStatus": "Current status:",
     "channels.field.initiallyHarvested": "Initial harvest",
     "channels.field.lastHarvestStarted": "Last harvest started",
     "channels.field.lastHarvestFinished": "Last harvest completed XXX DELETE THIS",
     "channels.field.lastUpdated": "Last updated",
     "channels.field.message": "Message from last harvest:",
 
-    "channels.field.failedRecordsLogging.NO_STORE": "Don't save failed records",
-    "channels.field.failedRecordsLogging.CLEAN_DIRECTORY": "Do save. Clean up directory first",
-    "channels.field.failedRecordsLogging.CREATE_OVERWRITE": "Do save. Overwrite existing files",
-    "channels.field.failedRecordsLogging.ADD_ALL": "Do save. Add numbered versions for existing files",
+    "jobs.field.currentStatus": "Current status XXX delete this",
+    "jobs.field.failedRecordsLogging.NO_STORE": "Don't save failed records",
+    "jobs.field.failedRecordsLogging.CLEAN_DIRECTORY": "Do save. Clean up directory first",
+    "jobs.field.failedRecordsLogging.CREATE_OVERWRITE": "Do save. Overwrite existing files",
+    "jobs.field.failedRecordsLogging.ADD_ALL": "Do save. Add numbered versions for existing files",
 
     "pipeline.field.name": "Name",
     "pipeline.field.description": "Description",
@@ -331,11 +326,11 @@
 
     "jobs.column.name": "Channel name",
     "jobs.column.status": "Status",
-    "jobs.column.amountHarvested": "Records",
+    "jobs.column.amountImported": "Records",
     "jobs.column.seconds": "Seconds",
     "jobs.column.started": "Started",
     "jobs.column.finished": "Finished",
-    "jobs.column.type": "Job class",
+    "jobs.column.type": "Type",
     "jobs.column.message": "Message (processed/loaded/deleted(skipped)/failed)",
 
     "stats.instances": "Instances",
