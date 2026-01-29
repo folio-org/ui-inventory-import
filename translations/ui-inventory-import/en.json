@@ -87,7 +87,7 @@
     "records.index.timeStamp": "Time stamp",
     "records.index.channelName": "Channel name",
 
-    "searchInputLabel": "XXX searchInputLabel",
+    "searchInputLabel": "Search input field",
     "filter.date.started": "Date started",
     "filter.date.started.from": "From",
     "filter.date.started.to": "To",
