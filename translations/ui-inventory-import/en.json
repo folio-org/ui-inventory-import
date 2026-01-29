@@ -30,10 +30,6 @@
 
     "add": "Add",
     "actions.new": "New record",
-    "actions.new.channel.oaiPmh": "OAI-PMH channel XXX DELETE THIS",
-    "actions.new.channel.xmlBulk": "XML bulk channel XXX DELETE THIS",
-    "actions.new.channel.connector": "Connector channel XXX DELETE THIS",
-    "actions.new.channel.status": "Status-report channel XXX DELETE THIS",
     "actions.new.channel.xml": "XML bulk channel",
 
     "nav.channels": "Channels",
@@ -59,24 +55,15 @@
     "op.stop.error": "Could not stop job <b>{name}</b>: {error}",
 
     "channels.column.name": "Name",
-    "channels.column.currentStatus": "Status XXX DELETE THIS",
-    "channels.column.records": "Records XXX DELETE THIS",
     "channels.column.lastHarvestFinished": "Last harvest finished",
     "channels.column.enabled": "Enabled?",
-    "channels.column.jobClass": "Job class XXX DELETE THIS",
     "channels.column.type": "Type",
     "channels.column.id": "ID",
-    "channels.column.message": "Message (processed/loaded/deleted(skipped)/failed) XXX DELETE THIS",
     "channels.column.logFile": "Log file",
     "channels.column.oldJobs": "Old jobs",
 
     "channels.column.enabled.true": "Yes",
     "channels.column.enabled.false": "No",
-
-    "channels.column.jobClass.OaiPmhResource": "OAI-PMH XXX DELETE THIS",
-    "channels.column.jobClass.XmlBulkResource": "XML bulk XXX DELETE THIS",
-    "channels.column.jobClass.HarvestConnectorResource": "Harvest connector XXX DELETE THIS",
-    "channels.column.jobClass.StatusResource": "Status report XXX DELETE THIS",
 
     "channels.column.type.XML": "XML bulk",
 
@@ -278,11 +265,9 @@
     "channels.heading.status": "Status information",
     "channels.field.initiallyHarvested": "Initial harvest",
     "channels.field.lastHarvestStarted": "Last harvest started",
-    "channels.field.lastHarvestFinished": "Last harvest completed XXX DELETE THIS",
     "channels.field.lastUpdated": "Last updated",
     "channels.field.message": "Message from last harvest:",
 
-    "jobs.field.currentStatus": "Current status XXX delete this",
     "jobs.field.failedRecordsLogging.NO_STORE": "Don't save failed records",
     "jobs.field.failedRecordsLogging.CLEAN_DIRECTORY": "Do save. Clean up directory first",
     "jobs.field.failedRecordsLogging.CREATE_OVERWRITE": "Do save. Overwrite existing files",
