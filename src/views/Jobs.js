@@ -23,7 +23,7 @@ function Jobs({
   children,
 }) {
   const columnMapping = {
-    name: <FormattedMessage id="ui-inventory-import.jobs.column.name" />,
+    channelName: <FormattedMessage id="ui-inventory-import.jobs.column.channelName" />,
     status: <FormattedMessage id="ui-inventory-import.jobs.column.status" />,
     amountImported: <FormattedMessage id="ui-inventory-import.jobs.column.amountImported" />,
     seconds: <FormattedMessage id="ui-inventory-import.jobs.column.seconds" />,
@@ -34,7 +34,6 @@ function Jobs({
   };
 
   const formatter = {
-    name: r => r.channelName,
     status: r => <FormattedMessage id={`ui-inventory-import.jobs.column.status.${r.status}`} />,
     started: r => formatDateTime(r.started),
     finished: r => formatDateTime(r.finished),
@@ -71,7 +70,7 @@ function Jobs({
                   <ColumnManager
                     id="jobs-visible-columns"
                     columnMapping={columnMapping}
-                    excludeKeys={['name']}
+                    excludeKeys={['channelName']}
                     persist
                   >
                     {({ renderColumnsMenu, visibleColumns }) => (
@@ -90,7 +89,7 @@ function Jobs({
                           visibleColumns={visibleColumns}
                           columnMapping={columnMapping}
                           columnWidths={{
-                            name: '20%',
+                            channelName: '20%',
                             status: '80px',
                             amountImported: '90px',
                             seconds: '70px',
@@ -128,7 +127,7 @@ function Jobs({
 Jobs.propTypes = {
   data: PropTypes.shape({
     channel: PropTypes.shape({
-      name: PropTypes.string.isRequired,
+      channelName: PropTypes.string.isRequired,
     }), // optional
     jobs: PropTypes.arrayOf(
       PropTypes.shape({

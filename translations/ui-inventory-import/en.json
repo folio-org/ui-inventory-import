@@ -324,7 +324,7 @@
     "failed-records.errors": "Errors",
     "failed-records.channelName": "Channel name",
 
-    "jobs.column.name": "Channel name",
+    "jobs.column.channelName": "Channel name",
     "jobs.column.status": "Status",
     "jobs.column.amountImported": "Records",
     "jobs.column.seconds": "Seconds",
