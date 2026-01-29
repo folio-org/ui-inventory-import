@@ -58,12 +58,12 @@ const filterConfig = [{
   name: 'records_from',
   cql: 'records_from',
   values: [],
-  parse: makePFV('amountHarvested', '>='),
+  parse: makePFV('amountImported', '>='),
 }, {
   name: 'records_to',
   cql: 'records_to',
   values: [],
-  parse: makePFV('amountHarvested', '<='),
+  parse: makePFV('amountImported', '<='),
 }, {
   name: 'started_from',
   cql: 'started_from',
