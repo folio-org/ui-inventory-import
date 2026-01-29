@@ -38,11 +38,11 @@ FullJobRoute.manifest = Object.freeze({
   query: {},
   job: {
     type: 'okapi',
-    path: 'harvester-admin/previous-jobs/:{recId}',
+    path: 'inventory-import/import-jobs/:{recId}',
   },
   failedRecords: {
     type: 'okapi',
-    path: 'harvester-admin/previous-jobs/:{recId}/failed-records',
+    path: 'inventory-import/failed-records?query=importJobId=:{recId}',
   },
 });
 
