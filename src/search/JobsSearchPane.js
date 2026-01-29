@@ -30,9 +30,9 @@ function JobsSearchPane(props) {
   };
 
   const intl = useIntl();
-  const searchableIndexes = ['name', 'message'].map(x => ({
+  const searchableIndexes = ['', 'channelName', 'message'].map(x => ({
     value: x,
-    label: intl.formatMessage({ id: `ui-inventory-import.jobs.index.${x}` }),
+    label: intl.formatMessage({ id: `ui-inventory-import.jobs.index.${x || 'all'}` }),
   }));
 
   const filterStruct = parseFilters(query.filters);
@@ -92,11 +92,8 @@ function JobsSearchPane(props) {
           </Button>
         </div>
 
-        {renderFilter(intl, filterStruct, updateQuery, 'status/channels.column.currentStatus',
-          ['NEW', 'OK', 'WARN', 'ERROR', 'RUNNING', 'FINISHED', 'KILLED'],
-          true)}
-        {renderFilter(intl, filterStruct, updateQuery, 'type/channels.field.jobClass',
-          ['oaiPmh', 'xmlBulk', 'connector', 'status'])}
+        {renderFilter(intl, filterStruct, updateQuery, 'status/jobs.column.status',
+          ['RUNNING', 'PAUSED', 'DONE'], true)}
         {renderNumericFilterPair(intl, filterStruct, updateQuery, 'records')}
         {renderDateFilterPair(intl, filterStruct, updateQuery, 'started')}
         {renderDateFilterPair(intl, filterStruct, updateQuery, 'finished')}

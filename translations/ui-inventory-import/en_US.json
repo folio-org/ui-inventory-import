@@ -89,9 +89,7 @@
     "channels.index.message": "Message",
 
     "jobs.index.all": "(All)",
-    "jobs.index.name": "Channel name",
-    "jobs.index.id": "ID",
-    "jobs.index.channelId": "Channel ID",
+    "jobs.index.channelName": "Channel name",
     "jobs.index.message": "Message",
 
     "records.index.all": "(All)",
