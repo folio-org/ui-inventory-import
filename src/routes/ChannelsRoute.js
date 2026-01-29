@@ -71,7 +71,6 @@ ChannelsRoute.manifest = Object.freeze({
     perRequest: RESULT_COUNT_INCREMENT,
     params: {
       query: (qp, pathComponents, rv, logger) => {
-        // Is it not a strange fate that we should suffer so much fear and doubt for so small a thing?
         const queryFunction = makeQueryFunction(
           'cql.allRecords=1',
           searchableIndexes.map(index => `${index}="${qp.query}*"`).join(' or '),
