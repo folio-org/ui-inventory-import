@@ -97,3 +97,4 @@ function queryFunction(defaultSearch, ...params) {
 }
 
 export default queryFunction;
+export { makePFV };

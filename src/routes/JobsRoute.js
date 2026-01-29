@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
 import { makeQueryFunction, StripesConnectedSource } from '@folio/stripes/smart-components';
+import { makePFV } from '../search/queryFunction';
 import Jobs from '../views/Jobs';
 
 const INITIAL_RESULT_COUNT = 100;
@@ -46,10 +47,43 @@ function JobsRoute({ stripes, resources, mutator, children }) {
 // Keep these in sync with what's in ../search/JobsSearchPane.js
 const searchableIndexes = ['channelName', 'message'];
 
+const startOfDay = 'T00:00:00';
+const endOfDay = 'T23:59:59';
+
 const filterConfig = [{
   name: 'status',
   cql: 'status',
   values: [],
+}, {
+  name: 'records_from',
+  cql: 'records_from',
+  values: [],
+  parse: makePFV('amountHarvested', '>='),
+}, {
+  name: 'records_to',
+  cql: 'records_to',
+  values: [],
+  parse: makePFV('amountHarvested', '<='),
+}, {
+  name: 'started_from',
+  cql: 'started_from',
+  values: [],
+  parse: makePFV('started', '>=', startOfDay),
+}, {
+  name: 'started_to',
+  cql: 'started_to',
+  values: [],
+  parse: makePFV('started', '<=', endOfDay),
+}, {
+  name: 'finished_from',
+  cql: 'finished_from',
+  values: [],
+  parse: makePFV('finished', '>=', startOfDay),
+}, {
+  name: 'finished_to',
+  cql: 'finished_to',
+  values: [],
+  parse: makePFV('finished', '<=', endOfDay),
 }];
 
 JobsRoute.manifest = Object.freeze({
