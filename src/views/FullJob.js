@@ -63,6 +63,23 @@ const FullJob = (props) => {
         onClose={handlers.onClose}
       >
         <TitleManager record={title}>
+          {record.finished ? (
+            <p>
+              <FormattedMessage
+                id="ui-inventory-import.jobs.caption.completed"
+                values={{
+                  count: record.amountImported,
+                  seconds: ((new Date(record.finished) - new Date(record.started)) / 1000).toFixed(3),
+                }}
+              />
+
+            </p>
+          ): (
+            <p>
+              <FormattedMessage id="ui-inventory-import.jobs.caption.notComplete" />
+            </p>
+          )}
+          {/* XXX display record.finished somehow */}
           <KeyValue
             label={<FormattedMessage id="ui-inventory-import.jobs.field.transformationPipeline" />}
             value={data.transformationPipeline?.name}
