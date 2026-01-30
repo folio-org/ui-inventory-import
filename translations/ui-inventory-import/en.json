@@ -268,10 +268,14 @@
     "channels.field.lastUpdated": "Last updated",
     "channels.field.message": "Message from last harvest:",
 
+    "jobs.field.transformationPipeline": "Transformation pipeline",
     "jobs.field.failedRecordsLogging.NO_STORE": "Don't save failed records",
     "jobs.field.failedRecordsLogging.CLEAN_DIRECTORY": "Do save. Clean up directory first",
     "jobs.field.failedRecordsLogging.CREATE_OVERWRITE": "Do save. Overwrite existing files",
     "jobs.field.failedRecordsLogging.ADD_ALL": "Do save. Add numbered versions for existing files",
+
+    "logs.field.timeStamp": "Timestamp",
+    "logs.field.line": "Line",
 
     "pipeline.field.name": "Name",
     "pipeline.field.description": "Description",

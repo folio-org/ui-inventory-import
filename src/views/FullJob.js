@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { HasCommand, LoadingPane, Pane, checkScope } from '@folio/stripes/components';
+import { HasCommand, LoadingPane, Pane, KeyValue, MultiColumnList, checkScope } from '@folio/stripes/components';
 import { AppIcon, TitleManager } from '@folio/stripes/core';
-import formatDateTime from '../../util/formatDateTime';
-import ChannelLogHeader from './ChannelLogHeader';
-import ChannelLogPlainText from './ChannelLogPlainText';
-import ChannelLogFailedRecords from './ChannelLogFailedRecords';
-import css from '../Styles.css';
+import formatDateTime from '../util/formatDateTime';
+import ChannelLogFailedRecords from './ChannelLog/ChannelLogFailedRecords';
+import css from './Styles.css';
 
 
 const handleKeyCommand = (handler, { disabled } = {}) => {
@@ -18,11 +16,10 @@ const handleKeyCommand = (handler, { disabled } = {}) => {
 };
 
 
-const ChannelLog = (props) => {
+const FullJob = (props) => {
   const {
     data,
     handlers,
-    refreshLog,
   } = props;
 
   const record = data.record;
@@ -60,15 +57,30 @@ const ChannelLog = (props) => {
         appIcon={<AppIcon app="inventory-import" />}
         centerContent
         defaultWidth="60%"
-        id="pane-logs"
+        id="pane-full-job"
         paneTitle={paneTitle}
         dismissible
         onClose={handlers.onClose}
       >
         <TitleManager record={title}>
-          <ChannelLogHeader record={record} />
-          <ChannelLogPlainText record={record} log={data.plainTextLog} refreshLog={refreshLog} />
+          <KeyValue
+            label={<FormattedMessage id="ui-inventory-import.jobs.field.transformationPipeline" />}
+            value={data.transformationPipeline?.name}
+          />
           <ChannelLogFailedRecords failedRecords={data.failedRecords} />
+          <MultiColumnList
+            autosize
+            id="list-log-lines"
+            visibleColumns={['timeStamp', 'line']}
+            columnMapping={{
+              timeStamp: <FormattedMessage id="ui-inventory-import.logs.field.timeStamp" />,
+              line: <FormattedMessage id="ui-inventory-import.logs.field.line" />,
+            }}
+            columnWidths={{ timeStamp: '240px', line: '500px' }}
+            formatter={{}}
+            contentData={data.logs?.logLines}
+            totalCount={data.logs?.totalRecords}
+          />
         </TitleManager>
       </Pane>
     </HasCommand>
@@ -76,7 +88,7 @@ const ChannelLog = (props) => {
 };
 
 
-ChannelLog.propTypes = {
+FullJob.propTypes = {
   data: PropTypes.shape({
     record: PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -90,8 +102,7 @@ ChannelLog.propTypes = {
   handlers: PropTypes.shape({
     onClose: PropTypes.func.isRequired,
   }),
-  refreshLog: PropTypes.func.isRequired,
 };
 
 
-export default ChannelLog;
+export default FullJob;
