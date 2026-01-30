@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { AppIcon } from '@folio/stripes/core';
-import { LoadingPane, Paneset, Pane, MultiColumnList, MCLPagingTypes } from '@folio/stripes/components';
+import { LoadingPane, Paneset, Pane, MultiColumnList, MCLPagingTypes, NoValue } from '@folio/stripes/components';
 import { ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
 import parseSort from '../util/parseSort';
 import formatDateTime from '../util/formatDateTime';
@@ -36,8 +36,11 @@ function Jobs({
   const formatter = {
     status: r => <FormattedMessage id={`ui-inventory-import.jobs.column.status.${r.status}`} />,
     started: r => formatDateTime(r.started),
-    finished: r => formatDateTime(r.finished),
-    seconds: r => ((new Date(r.finished) - new Date(r.started)) / 1000).toFixed(3),
+    finished: r => (r.finished ? formatDateTime(r.finished) : <NoValue />),
+    seconds: r => {
+      if (!r.finished) return <NoValue />;
+      return ((new Date(r.finished) - new Date(r.started)) / 1000).toFixed(3);
+    },
     type: r => r.importType,
   };
 
