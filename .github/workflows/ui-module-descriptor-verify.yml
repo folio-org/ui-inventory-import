@@ -1,0 +1,14 @@
+# Why isn't this done by the main UI workflow?
+name: Module descriptor verifier (e.g. permission names)
+on:
+  - push
+  - pull_request
+  - workflow_dispatch
+
+jobs:
+  verify-md:
+    # Use the shared workflow from https://github.com/folio-org/.github
+    uses: folio-org/.github/.github/workflows/ui-module-descriptor-verify.yml
+    # Only handle push events from the main branch, to decrease noise
+    if: github.ref_name == github.event.repository.default_branch || github.event_name != 'push' || github.ref_type == 'tag'
+    secrets: inherit
