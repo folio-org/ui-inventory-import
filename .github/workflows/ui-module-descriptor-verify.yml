@@ -8,5 +8,5 @@ on:
 jobs:
   verify-md:
     # Use the shared workflow from https://github.com/folio-org/.github
-    uses: folio-org/.github/.github/workflows/ui-module-descriptor-verify.yml
+    uses: folio-org/.github/.github/workflows/ui-module-descriptor-verify.yml@v99
     secrets: inherit
