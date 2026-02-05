@@ -15,4 +15,4 @@ jobs:
       sonar-enabled: false
       compile-translations: true
       generate-module-descriptor: false
-      publish-module-descriptor: false
+      publish-module-descriptor: true
