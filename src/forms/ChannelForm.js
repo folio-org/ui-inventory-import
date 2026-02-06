@@ -38,7 +38,6 @@ const ChannelForm = (props) => {
     data,
     handlers,
     handleSubmit,
-    form: { mutators },
     values = {},
     pristine,
     submitting
@@ -136,7 +135,6 @@ ChannelForm.propTypes = {
   }),
   handleSubmit: PropTypes.func.isRequired,
   isLoading: PropTypes.bool,
-  form: PropTypes.object,
   pristine: PropTypes.bool,
   submitting: PropTypes.bool,
   values: PropTypes.object,

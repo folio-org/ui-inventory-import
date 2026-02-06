@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import { stripesConnect } from '@folio/stripes/core';
 import { EntryManager } from '../smart-components';
-import { boolValues2string, stringValues2bool } from './transformBooleans';
 import PipelineDetail from './PipelineDetail';
 import PipelineForm from './PipelineForm';
 

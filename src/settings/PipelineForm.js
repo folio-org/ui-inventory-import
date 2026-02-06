@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Field } from 'react-final-form';
 import arrayMutators from 'final-form-arrays';
-import { LoadingPane, Pane, Row, Col, Checkbox, TextArea, Selection } from '@folio/stripes/components';
+import { LoadingPane, Pane, Row, Col, TextArea, Selection } from '@folio/stripes/components';
 import { TitleManager } from '@folio/stripes/core';
 import stripesFinalForm from '@folio/stripes/final-form';
 import { isEqual } from 'lodash';

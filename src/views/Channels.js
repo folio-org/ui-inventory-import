@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useIntl, FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { useLocation } from 'react-router-dom';
 import { useStripes, IfPermission, AppIcon } from '@folio/stripes/core';
 import { LoadingPane, Paneset, Pane, MultiColumnList, PaneMenu, MenuSection, Button, Icon, MCLPagingTypes } from '@folio/stripes/components';
-import { parseFilters, ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
-import { message2stats, summarizeStats } from '../util/message2stats';
+import { ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
 import viewLogTranslationTag from '../util/viewLogTranslationTag';
 import parseSort from '../util/parseSort';
-import formatDateTime from '../util/formatDateTime';
 import ChannelsSearchPane from '../search/ChannelsSearchPane';
 import ErrorMessage from '../components/ErrorMessage';
 import packageInfo from '../../package';
@@ -62,7 +60,6 @@ function Channels({
   onNeedMoreData,
   children,
 }) {
-  const intl = useIntl();
   const location = useLocation();
   const stripes = useStripes();
 
