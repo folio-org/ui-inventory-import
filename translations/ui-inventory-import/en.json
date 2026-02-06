@@ -295,6 +295,7 @@
     "logs.plainTextLog.refresh": "Refresh",
     "logs.plainTextLog.download": "Download",
     "logs.countFailedRecords": "{count, number} {count, plural, one {failed record} other {failed records}}",
+    "logs.countLogLiines": "{count, number} {count, plural, one {log line} other {log lines}}",
 
     "summary-table.summary": "Summary",
     "summary-table.instances": "Instance",

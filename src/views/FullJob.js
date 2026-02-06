@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { HasCommand, LoadingPane, Pane, KeyValue, MultiColumnList, checkScope } from '@folio/stripes/components';
+import { HasCommand, LoadingPane, Pane, KeyValue, Accordion, MultiColumnList, checkScope } from '@folio/stripes/components';
 import { AppIcon, TitleManager } from '@folio/stripes/core';
 import formatDateTime from '../util/formatDateTime';
 import ChannelLogFailedRecords from './ChannelLog/ChannelLogFailedRecords';
@@ -72,9 +72,8 @@ const FullJob = (props) => {
                   seconds: ((new Date(record.finished) - new Date(record.started)) / 1000).toFixed(3),
                 }}
               />
-
             </p>
-          ): (
+          ) : (
             <p>
               <FormattedMessage id="ui-inventory-import.jobs.caption.notComplete" />
             </p>
@@ -85,19 +84,27 @@ const FullJob = (props) => {
             value={data.transformationPipeline?.name}
           />
           <ChannelLogFailedRecords failedRecords={data.failedRecords} />
-          <MultiColumnList
-            autosize
-            id="list-log-lines"
-            visibleColumns={['timeStamp', 'line']}
-            columnMapping={{
-              timeStamp: <FormattedMessage id="ui-inventory-import.logs.field.timeStamp" />,
-              line: <FormattedMessage id="ui-inventory-import.logs.field.line" />,
-            }}
-            columnWidths={{ timeStamp: '240px', line: '500px' }}
-            formatter={{}}
-            contentData={data.logs?.logLines}
-            totalCount={data.logs?.totalRecords}
-          />
+
+          <Accordion
+            id="job-logs"
+            label={<FormattedMessage
+              id="ui-inventory-import.logs.countLogLiines"
+              values={{ count: data.logs?.totalRecords }}
+            />}
+          >
+            <MultiColumnList
+              id="list-log-lines"
+              visibleColumns={['timeStamp', 'line']}
+              columnMapping={{
+                timeStamp: <FormattedMessage id="ui-inventory-import.logs.field.timeStamp" />,
+                line: <FormattedMessage id="ui-inventory-import.logs.field.line" />,
+              }}
+              columnWidths={{ timeStamp: '240px', line: '500px' }}
+              formatter={{}}
+              contentData={data.logs?.logLines}
+              totalCount={data.logs?.totalRecords}
+            />
+          </Accordion>
         </TitleManager>
       </Pane>
     </HasCommand>
