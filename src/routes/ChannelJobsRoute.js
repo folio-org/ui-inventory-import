@@ -11,7 +11,7 @@ const INITIAL_RESULT_COUNT = 100;
 const RESULT_COUNT_INCREMENT = 100;
 
 
-const HarvestableJobsRoute = ({ stripes, resources, mutator, match }) => {
+const ChannelJobsRoute = ({ stripes, resources, mutator, match }) => {
   let [source, setSource] = useState(); // eslint-disable-line prefer-const
   if (!source) {
     source = new StripesConnectedSource({ resources, mutator }, stripes.logger, 'reportTitles');
@@ -21,7 +21,7 @@ const HarvestableJobsRoute = ({ stripes, resources, mutator, match }) => {
   }
 
   const handleClose = () => {
-    mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables/${match.params.recId}` });
+    mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}` });
   };
 
   const handleNeedMoreData = () => source.fetchMore(RESULT_COUNT_INCREMENT);
@@ -47,7 +47,7 @@ const HarvestableJobsRoute = ({ stripes, resources, mutator, match }) => {
 };
 
 
-HarvestableJobsRoute.manifest = Object.freeze({
+ChannelJobsRoute.manifest = Object.freeze({
   query: {},
   resultCount: { initialValue: INITIAL_RESULT_COUNT },
   harvestable: {
@@ -78,7 +78,7 @@ HarvestableJobsRoute.manifest = Object.freeze({
 });
 
 
-HarvestableJobsRoute.propTypes = {
+ChannelJobsRoute.propTypes = {
   stripes: PropTypes.shape({
     logger: PropTypes.object.isRequired,
   }).isRequired,
@@ -119,4 +119,4 @@ HarvestableJobsRoute.propTypes = {
 };
 
 
-export default stripesConnect(HarvestableJobsRoute);
+export default stripesConnect(ChannelJobsRoute);

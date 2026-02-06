@@ -4,9 +4,9 @@ import { FormattedMessage } from 'react-intl';
 import { HasCommand, LoadingPane, Pane, checkScope } from '@folio/stripes/components';
 import { AppIcon, TitleManager } from '@folio/stripes/core';
 import formatDateTime from '../../util/formatDateTime';
-import HarvestableLogHeader from './HarvestableLogHeader';
-import HarvestableLogPlainText from './HarvestableLogPlainText';
-import HarvestableLogFailedRecords from './HarvestableLogFailedRecords';
+import ChannelLogHeader from './ChannelLogHeader';
+import ChannelLogPlainText from './ChannelLogPlainText';
+import ChannelLogFailedRecords from './ChannelLogFailedRecords';
 import css from '../Styles.css';
 
 
@@ -18,7 +18,7 @@ const handleKeyCommand = (handler, { disabled } = {}) => {
 };
 
 
-const HarvestableLog = (props) => {
+const ChannelLog = (props) => {
   const {
     data,
     handlers,
@@ -40,14 +40,14 @@ const HarvestableLog = (props) => {
 
   const paneTitle = (
     <>
-      {record.name}
+      {record.channelName}
       &nbsp;
       ({formatDateTime(record.started)})
       {status &&
         <>
           {' '}&mdash;{' '}
           <span className={`${css.status} ${css[`status_${status}`]}`}>
-            <FormattedMessage id={`ui-inventory-import.harvestables.column.currentStatus.${status}`} />
+            <FormattedMessage id={`ui-inventory-import.jobs.column.status.${status}`} />
           </span>
         </>
       }
@@ -57,7 +57,7 @@ const HarvestableLog = (props) => {
   return (
     <HasCommand commands={shortcuts} isWithinScope={checkScope} scope={document.body}>
       <Pane
-        appIcon={<AppIcon app="harvester-admin" />}
+        appIcon={<AppIcon app="inventory-import" />}
         centerContent
         defaultWidth="60%"
         id="pane-logs"
@@ -66,9 +66,9 @@ const HarvestableLog = (props) => {
         onClose={handlers.onClose}
       >
         <TitleManager record={title}>
-          <HarvestableLogHeader record={record} />
-          <HarvestableLogPlainText record={record} log={data.plainTextLog} refreshLog={refreshLog} />
-          <HarvestableLogFailedRecords failedRecords={data.failedRecords} />
+          <ChannelLogHeader record={record} />
+          <ChannelLogPlainText record={record} log={data.plainTextLog} refreshLog={refreshLog} />
+          <ChannelLogFailedRecords failedRecords={data.failedRecords} />
         </TitleManager>
       </Pane>
     </HasCommand>
@@ -76,7 +76,7 @@ const HarvestableLog = (props) => {
 };
 
 
-HarvestableLog.propTypes = {
+ChannelLog.propTypes = {
   data: PropTypes.shape({
     record: PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -94,4 +94,4 @@ HarvestableLog.propTypes = {
 };
 
 
-export default HarvestableLog;
+export default ChannelLog;

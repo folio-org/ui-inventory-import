@@ -1,23 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
-import FullHarvestable from '../views/FullHarvestable';
+import FullChannel from '../views/FullChannel';
 
 
-const FullHarvestableRoute = (props) => {
-  const deleteRecord = () => props.mutator.harvestable.DELETE({ id: props.match.params.recId });
+const FullChannelRoute = (props) => {
+  const deleteRecord = () => props.mutator.channel.DELETE({ id: props.match.params.recId });
 
-  return <FullHarvestable {...props} deleteRecord={deleteRecord} />;
+  return <FullChannel {...props} deleteRecord={deleteRecord} />;
 };
 
 
-FullHarvestableRoute.manifest = Object.freeze({
+FullChannelRoute.manifest = Object.freeze({
   query: {},
-  harvestable: {
+  channel: {
     type: 'okapi',
-    path: 'harvester-admin/harvestables/:{recId}',
+    path: 'inventory-import/channels/:{recId}',
     shouldRefresh: () => false,
   },
+  transformationPipeline: {
+    type: 'okapi',
+    path: (_q, _p, _r, _l, props) => {
+      const rec = props.resources?.channel?.records?.[0];
+      if (!rec) return {};
+      return `inventory-import/transformations/${rec.transformationId}`;
+    },
+  },
+
+/*
+  XXX update
   run: {
     type: 'okapi',
     path: 'harvester-admin/jobs/run/:{recId}',
@@ -40,13 +51,14 @@ FullHarvestableRoute.manifest = Object.freeze({
       }
     }
   },
+*/
 });
 
 
-FullHarvestableRoute.propTypes = {
+FullChannelRoute.propTypes = {
   defaultWidth: PropTypes.string,
   resources: PropTypes.shape({
-    harvestable: PropTypes.shape({
+    channel: PropTypes.shape({
       records: PropTypes.arrayOf(
         PropTypes.shape({
           name: PropTypes.string.isRequired,
@@ -58,11 +70,11 @@ FullHarvestableRoute.propTypes = {
     query: PropTypes.shape({
       update: PropTypes.func.isRequired,
     }).isRequired,
-    harvestable: PropTypes.shape({
+    channel: PropTypes.shape({
       DELETE: PropTypes.func.isRequired,
     }).isRequired,
     run: PropTypes.shape({
-      PUT: PropTypes.func.isRequired,
+      // PUT: PropTypes.func.isRequired,
     }).isRequired,
     stop: PropTypes.shape({
       PUT: PropTypes.func.isRequired,
@@ -75,8 +87,8 @@ FullHarvestableRoute.propTypes = {
   }).isRequired
 };
 
-FullHarvestableRoute.defaultProps = {
+FullChannelRoute.defaultProps = {
   defaultWidth: '60%',
 };
 
-export default stripesConnect(FullHarvestableRoute);
+export default stripesConnect(FullChannelRoute);

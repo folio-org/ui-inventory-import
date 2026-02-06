@@ -4,11 +4,20 @@ import get from 'lodash/get';
 import { FormattedMessage } from 'react-intl';
 import { Row, Col, KeyValue } from '@folio/stripes/components';
 
-export const CKV = ({ rec, tag, i18nTag, xs }) => (
-  <Col xs={xs}>
-    <KeyValue label={<FormattedMessage id={`ui-inventory-import.harvestables.field.${i18nTag || tag}`} />} value={get(rec, tag)} />
-  </Col>
-);
+export const CKV = ({ rec, tag, i18nTag, xs }) => {
+  let value = get(rec, tag);
+  if (value === true) {
+    value = '✅';
+  } else if (value === false) {
+    value = '❌';
+  }
+
+  return (
+    <Col xs={xs}>
+      <KeyValue label={<FormattedMessage id={`ui-inventory-import.channels.field.${i18nTag || tag}`} />} value={value} />
+    </Col>
+  );
+};
 
 CKV.propTypes = {
   rec: PropTypes.object.isRequired,

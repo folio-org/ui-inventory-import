@@ -63,12 +63,12 @@ const filterConfig = [{
   name: 'records_from',
   cql: 'records_from',
   values: [],
-  parse: makePFV('amountHarvested', '>='),
+  parse: makePFV('amountImported', '>='),
 }, {
   name: 'records_to',
   cql: 'records_to',
   values: [],
-  parse: makePFV('amountHarvested', '<='),
+  parse: makePFV('amountImported', '<='),
 }, {
   // Value is injected from path-component by HarvestableJobsRoute's query function
   name: 'harvestableId',
@@ -97,3 +97,4 @@ function queryFunction(defaultSearch, ...params) {
 }
 
 export default queryFunction;
+export { makePFV };

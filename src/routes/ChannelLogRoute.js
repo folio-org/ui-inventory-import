@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { stripesConnect, useOkapiKy } from '@folio/stripes/core';
-import HarvestableLog from '../views/HarvestableLog';
+import ChannelLog from '../views/ChannelLog';
 import loadPlainTextLog from '../util/loadPlainTextLog';
 
 
-const HarvestableLogRoute = ({ resources, match }) => {
+const ChannelLogRoute = ({ resources, match }) => {
   const okapiKy = useOkapiKy();
   const [logFetchCount, setLogFetchCount] = useState(0);
   const [plainTextLog, setPlainTextLog] = useState();
@@ -29,7 +29,7 @@ const HarvestableLogRoute = ({ resources, match }) => {
   useEffect(load, [setPlainTextLog, match.params.recId, logFetchCount]);
 
   return (
-    <HarvestableLog
+    <ChannelLog
       data={{
         record: resources.harvestable.records[0],
         failedRecords: resources.failedRecords.records[0],
@@ -42,7 +42,7 @@ const HarvestableLogRoute = ({ resources, match }) => {
 };
 
 
-HarvestableLogRoute.manifest = Object.freeze({
+ChannelLogRoute.manifest = Object.freeze({
   query: {},
   harvestable: {
     type: 'okapi',
@@ -55,7 +55,7 @@ HarvestableLogRoute.manifest = Object.freeze({
 });
 
 
-HarvestableLogRoute.propTypes = {
+ChannelLogRoute.propTypes = {
   resources: PropTypes.shape({
     harvestable: PropTypes.shape({
       isPending: PropTypes.bool.isRequired,
@@ -83,4 +83,4 @@ HarvestableLogRoute.propTypes = {
 };
 
 
-export default stripesConnect(HarvestableLogRoute);
+export default stripesConnect(ChannelLogRoute);

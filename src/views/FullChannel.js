@@ -1,75 +1,22 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { CalloutContext, IfPermission, useStripes } from '@folio/stripes/core';
-import { Loading, Pane, Accordion, Button, Icon, ConfirmationModal } from '@folio/stripes/components';
-import viewLogTranslationTag from '../../util/viewLogTranslationTag';
-import ErrorMessage from '../../components/ErrorMessage';
-import GeneralSection from './GeneralSection';
-import OaiPmhSection from './OaiPmhSection';
-import XmlBulkSection from './XmlBulkSection';
-import ConnectorSection from './ConnectorSection';
-import StatusSection from './StatusSection';
-import HeaderSection from './HeaderSection';
-import packageInfo from '../../../package';
+import { Loading, Pane, Row, Accordion, Button, Icon, ConfirmationModal } from '@folio/stripes/components';
+import { RCKV, CKV } from '../components/CKV';
+import packageInfo from '../../package';
 
 
-const specificSections = {
-  oaiPmh: OaiPmhSection,
-  xmlBulk: XmlBulkSection,
-  connector: ConnectorSection,
-  status: StatusSection,
-};
-
-
-const FullHarvestableContent = ({ rec }) => {
-  const intl = useIntl();
-  const stripes = useStripes();
-  const type = rec.type;
-  const ErrorSection = () => <ErrorMessage message={`Unknown type '${type}'`} />;
-  const SpecificSection = specificSections[type] || ErrorSection;
-
-  // eslint-disable-next-line react/prop-types
-  rec.__jobClass = intl.formatMessage({ id: `ui-inventory-import.harvestables.field.jobClass.${rec.type}` });
-
-  return (
-    <>
-      {type !== 'status' && <HeaderSection rec={rec} />}
-      {type !== 'status' && <GeneralSection rec={rec} />}
-      <SpecificSection rec={rec} />
-
-      {stripes.config.showDevInfo &&
-        <Accordion
-          id="harvestable-section-devinfo"
-          label={<FormattedMessage id="ui-inventory-import.accordion.devinfo" />}
-          closedByDefault
-        >
-          <pre>
-            {JSON.stringify(rec, null, 2)}
-          </pre>
-        </Accordion>
-      }
-    </>
-  );
-};
-
-
-FullHarvestableContent.propTypes = {
-  rec: PropTypes.shape({
-    type: PropTypes.string.isRequired,
-  }).isRequired,
-};
-
-
-const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord }) => {
+const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) => {
   const [deleting, setDeleting] = useState(false);
+  const stripes = useStripes();
   const callout = useContext(CalloutContext);
 
-  const resource = resources.harvestable;
+  const resource = resources.channel;
   if (!resource.hasLoaded) return <Loading />;
   const rec = resource.records[0];
 
-  const returnToList = () => mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables` });
+  const returnToList = () => mutator.query.update({ _path: `${packageInfo.stripes.route}/channels` });
 
   function maybeDeleteRecord(e) {
     e.stopPropagation();
@@ -94,6 +41,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
     });
   }
 
+  /*
   function controlJob(op) {
     mutator[op].PUT({}).then(() => {
       callout.sendCallout({
@@ -125,17 +73,18 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
       });
     });
   }
+  */
 
-  const actionMenu = ({ onToggle }) => {
+  const actionMenu = ({ _onToggle }) => {
     return (
       <>
-        <IfPermission perm="harvester-admin.harvestables.item.put">
+        <IfPermission perm="inventory-update.import.channels.item.put">
           <Button
             buttonStyle="dropdownItem"
             data-test-actions-menu-edit
-            id="clickable-edit-harvestable"
+            id="clickable-edit-channel"
             onClick={() => {
-              mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables/${match.params.recId}/edit` });
+              mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}/edit` });
             }}
           >
             <Icon icon="edit">
@@ -143,11 +92,11 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
             </Icon>
           </Button>
         </IfPermission>
-        <IfPermission perm="harvester-admin.harvestables.item.delete">
+        <IfPermission perm="inventory-update.import.channels.item.delete">
           <Button
             buttonStyle="dropdownItem"
             data-test-actions-menu-delete
-            id="clickable-delete-harvestable"
+            id="clickable-delete-channel"
             onClick={e => maybeDeleteRecord(e)}
           >
             <Icon icon="trash">
@@ -155,6 +104,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
             </Icon>
           </Button>
         </IfPermission>
+        {/*
         <IfPermission perm="harvester-admin.run-jobs">
           <Button
             buttonStyle="dropdownItem"
@@ -185,7 +135,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
             marginBottom0
             id="clickable-view-log"
             onClick={() => {
-              mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables/${match.params.recId}/logs` });
+              mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}/logs` });
             }}
           >
             <Icon icon="report">
@@ -197,7 +147,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
             marginBottom0
             id="clickable-jobs"
             onClick={() => {
-              mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables/${match.params.recId}/jobs` });
+              mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}/jobs` });
             }}
           >
             <Icon icon="list">
@@ -205,6 +155,7 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
             </Icon>
           </Button>
         </IfPermission>
+        */}
       </>
     );
   };
@@ -214,10 +165,36 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
       dismissible
       onClose={returnToList}
       defaultWidth={defaultWidth}
-      paneTitle={resource.records[0]?.name}
+      paneTitle={rec.name}
       actionMenu={actionMenu}
     >
-      <FullHarvestableContent rec={rec} />
+      <RCKV rec={rec} tag="type" xs={4} />
+      <Row>
+        <CKV rec={rec} tag="id" xs={4} />
+        <CKV rec={rec} tag="tag" xs={2} />
+        <CKV rec={rec} tag="name" xs={6} />
+      </Row>
+      <Row>
+        <CKV rec={rec} tag="enabled" xs={4} />
+      </Row>
+      <Row>
+        <CKV rec={rec} tag="commissioned" xs={4} />
+      </Row>
+      <Row>
+        <CKV rec={rec} tag="listening" xs={4} />
+      </Row>
+      <RCKV rec={resources.transformationPipeline} tag="records[0].name" i18nTag="transformationPipeline" />
+      {stripes.config.showDevInfo &&
+        <Accordion
+          id="channel-section-devinfo"
+          label={<FormattedMessage id="ui-inventory-import.accordion.devinfo" />}
+          closedByDefault
+        >
+          <pre>
+            {JSON.stringify(rec, null, 2)}
+          </pre>
+        </Accordion>
+      }
       {deleting &&
         <ConfirmationModal
           open
@@ -233,10 +210,10 @@ const FullHarvestable = ({ defaultWidth, resources, mutator, match, deleteRecord
 };
 
 
-FullHarvestable.propTypes = {
+FullChannel.propTypes = {
   defaultWidth: PropTypes.string,
   resources: PropTypes.shape({
-    harvestable: PropTypes.shape({
+    channel: PropTypes.shape({
       hasLoaded: PropTypes.bool.isRequired,
       records: PropTypes.arrayOf(
         PropTypes.shape({
@@ -265,4 +242,4 @@ FullHarvestable.propTypes = {
   deleteRecord: PropTypes.func.isRequired,
 };
 
-export default FullHarvestable;
+export default FullChannel;

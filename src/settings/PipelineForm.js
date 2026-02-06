@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Field } from 'react-final-form';
 import arrayMutators from 'final-form-arrays';
-import { LoadingPane, Pane, Row, Col, Checkbox, TextArea, Selection } from '@folio/stripes/components';
+import { LoadingPane, Pane, Row, Col, TextArea, Selection } from '@folio/stripes/components';
 import { TitleManager } from '@folio/stripes/core';
 import stripesFinalForm from '@folio/stripes/final-form';
 import { isEqual } from 'lodash';
@@ -46,8 +46,8 @@ const PipelineForm = (props) => {
       <TitleManager record={title}>
         <form id="form-pipeline">
           <Row>
-            <CF tag="id" xs={2} disabled />
-            <CF tag="name" xs={8} required />
+            <CF tag="id" domain="channels" xs={2} disabled />
+            <CF tag="name" domain="channels" xs={8} required />
           </Row>
           <RCF tag="description" domain="pipeline" component={TextArea} rows="4" />
           <br />

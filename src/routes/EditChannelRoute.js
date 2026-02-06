@@ -1,30 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import get from 'lodash/get';
 import { stripesConnect } from '@folio/stripes/core';
-import HarvestableForm from '../forms/HarvestableForm';
-import { cooked2raw } from '../util/cookData';
+import ChannelForm from '../forms/ChannelForm';
+import { raw2cooked, cooked2raw } from '../util/cookData';
 import packageInfo from '../../package';
 
 
-const CreateHarvestableRoute = ({ resources, mutator, match, location }) => {
+const EditChannelRoute = ({ resources, mutator, match }) => {
   const handleClose = () => {
-    mutator.query.update({ _path: `${packageInfo.stripes.route}/harvestables/${location.search}` });
+    mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}` });
   };
 
   const handleSubmit = (record) => {
-    mutator.harvestables.POST(cooked2raw({ ...record, harvestImmediately: 'false' }))
+    mutator.channel.PUT(cooked2raw(record))
       .then(handleClose);
   };
 
-  const isLoading = resources.transformationPipelines.isPending;
+  const isLoading = (resources.channel.isPending ||
+                     resources.transformationPipelines.isPending);
 
   return (
-    <HarvestableForm
+    <ChannelForm
       isLoading={isLoading}
-      initialValues={{
-        type: match.params.type,
-        enabled: false,
-      }}
+      initialValues={raw2cooked(get(resources, 'channel.records[0]', {}))}
       data={{
         transformationPipelines: resources.transformationPipelines.records,
       }}
@@ -35,25 +34,24 @@ const CreateHarvestableRoute = ({ resources, mutator, match, location }) => {
 };
 
 
-CreateHarvestableRoute.manifest = Object.freeze({
+EditChannelRoute.manifest = Object.freeze({
   query: {},
-  harvestables: {
+  channel: {
     type: 'okapi',
-    path: 'harvester-admin/harvestables',
-    fetch: false,
-    clientGeneratePk: false,
+    path: 'inventory-import/channels/:{recId}',
   },
   transformationPipelines: {
     type: 'okapi',
-    path: 'harvester-admin/transformations',
+    path: 'inventory-import/transformations',
     records: 'transformations',
   },
 });
 
 
-CreateHarvestableRoute.propTypes = {
+EditChannelRoute.propTypes = {
   resources: PropTypes.shape({
-    harvestables: PropTypes.shape({
+    channel: PropTypes.shape({
+      isPending: PropTypes.bool.isRequired,
       records: PropTypes.arrayOf(
         PropTypes.shape({}).isRequired,
       ).isRequired,
@@ -69,19 +67,16 @@ CreateHarvestableRoute.propTypes = {
     query: PropTypes.shape({
       update: PropTypes.func.isRequired,
     }).isRequired,
-    harvestables: PropTypes.shape({
-      POST: PropTypes.func.isRequired,
+    channel: PropTypes.shape({
+      PUT: PropTypes.func.isRequired,
     }).isRequired,
   }).isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
-      type: PropTypes.string.isRequired,
+      recId: PropTypes.string.isRequired,
     }).isRequired,
-  }).isRequired,
-  location: PropTypes.shape({
-    search: PropTypes.string,
   }).isRequired,
 };
 
 
-export default stripesConnect(CreateHarvestableRoute);
+export default stripesConnect(EditChannelRoute);

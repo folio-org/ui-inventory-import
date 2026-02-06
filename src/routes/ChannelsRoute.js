@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
-import { StripesConnectedSource } from '@folio/stripes/smart-components';
-import Harvestables from '../views/Harvestables';
-
+import { makeQueryFunction, StripesConnectedSource } from '@folio/stripes/smart-components';
+import Channels from '../views/Channels';
 
 const INITIAL_RESULT_COUNT = 100;
 const RESULT_COUNT_INCREMENT = 100;
 
 
-function HarvestablesRoute({ stripes, resources, mutator, children }) {
+function ChannelsRoute({ stripes, resources, mutator, children }) {
   let [source, setSource] = useState(); // eslint-disable-line prefer-const
   if (!source) {
     source = new StripesConnectedSource({ resources, mutator }, stripes.logger, 'reportTitles');
@@ -22,17 +21,16 @@ function HarvestablesRoute({ stripes, resources, mutator, children }) {
     source.fetchOffset(index);
   };
 
-
-  const error = resources.harvestables.failed ? resources.harvestables.failed.message : undefined;
-  const hasLoaded = resources.harvestables.hasLoaded;
+  const error = resources.channels.failed ? resources.channels.failed.message : undefined;
+  const hasLoaded = resources.channels.hasLoaded;
 
   return (
-    <Harvestables
+    <Channels
       data={{
-        harvestables: resources.harvestables.records,
+        channels: resources.channels.records,
       }}
       query={resources.query}
-      resultCount={resources.harvestables.other?.totalRecords}
+      resultCount={resources.channels.other?.totalRecords}
       updateQuery={mutator.query.update}
       error={error}
       hasLoaded={hasLoaded}
@@ -40,64 +38,59 @@ function HarvestablesRoute({ stripes, resources, mutator, children }) {
       onNeedMoreData={handleNeedMoreData}
     >
       {children}
-    </Harvestables>
+    </Channels>
   );
 }
 
 
-HarvestablesRoute.manifest = Object.freeze({
+// Keep these in sync with what's in ../search/ChannelsSearchPane.js
+const searchableIndexes = ['name', 'id'];
+
+const filterConfig = [{
+  name: 'enabled',
+  cql: 'enabled',
+  values: [],
+}, {
+  name: 'type',
+  cql: 'type',
+  values: [],
+}];
+
+
+ChannelsRoute.manifest = Object.freeze({
   query: { initialValue: {} },
   resultCount: { initialValue: INITIAL_RESULT_COUNT },
   resultOffset: { initialValue: 0 },
-  harvestables: {
+  channels: {
     type: 'okapi',
-    path: 'harvester-admin/harvestables',
+    path: 'inventory-import/channels',
+    records: 'channels',
     throwErrors: false,
-    records: 'harvestables',
-    recordsRequired: '%{resultCount}',
-    resultOffset: '%{resultOffset}',
-    perRequest: RESULT_COUNT_INCREMENT,
     resultDensity: 'sparse',
-    accumulate: 'true',
+    recordsRequired: '%{resultCount}',
+    perRequest: RESULT_COUNT_INCREMENT,
     params: {
-      query: (qp) => {
-        const conditions = [];
-        if (qp.query) conditions.push(`${qp.qindex || 'name'}=${qp.query}*`);
-
-        /*
-        // Due to back-end limitations, filters can't be handled at
-        // the same time as the main query. Instead we will handle
-        // filtering client-side.
-        if (qp.filters) {
-          const o = parseFilters(qp.filters);
-          Object.keys(o).sort().forEach(key => {
-            conditions.push(`${key}=${o[key][0]}`);
-          });
-        }
-        */
-
-        if (conditions.length === 0) return undefined;
-        return conditions.join(' or '); // Not supported on back-end, but hey-ho
+      query: (qp, pathComponents, rv, logger) => {
+        const queryFunction = makeQueryFunction(
+          'cql.allRecords=1',
+          searchableIndexes.map(index => `${index}="${qp.query}*"`).join(' or '),
+          {},
+          filterConfig,
+        );
+        return queryFunction(qp, pathComponents, rv, logger);
       },
-      orderBy: (_qp) => {
-        // We could use qp.sort, but there are all sorts of back-end
-        // limitations: only certain fields can be sorted, only the
-        // first of multiple keys can be made desceding (by prepending
-        // "~"), so instead we sort client-side.
-        return undefined;
-      }
     },
   },
 });
 
 
-HarvestablesRoute.propTypes = {
+ChannelsRoute.propTypes = {
   stripes: PropTypes.shape({
     logger: PropTypes.object.isRequired,
   }).isRequired,
   resources: PropTypes.shape({
     query: PropTypes.object.isRequired,
-    harvestables: PropTypes.shape({
+    channels: PropTypes.shape({
       failed: PropTypes.oneOfType([
         PropTypes.bool,
         PropTypes.shape({
@@ -122,4 +115,4 @@ HarvestablesRoute.propTypes = {
 };
 
 
-export default stripesConnect(HarvestablesRoute);
+export default stripesConnect(ChannelsRoute);

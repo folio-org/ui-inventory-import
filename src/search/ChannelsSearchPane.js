@@ -8,7 +8,7 @@ import searchPanePropTypes from './searchPanePropTypes';
 import css from './SearchPane.css';
 
 
-function HarvestablesSearchPane(props) {
+function ChannelsSearchPane(props) {
   const {
     defaultWidth,
     searchValue,
@@ -28,8 +28,8 @@ function HarvestablesSearchPane(props) {
   };
 
   const intl = useIntl();
-  const searchableIndexes = ['name', 'id', 'message'].map(x => (
-    { value: x, label: intl.formatMessage({ id: `ui-inventory-import.harvestables.index.${x}` }) }
+  const searchableIndexes = ['name', 'id'].map(x => (
+    { value: x, label: intl.formatMessage({ id: `ui-inventory-import.channels.index.${x}` }) }
   ));
 
   const filterStruct = parseFilters(query.filters);
@@ -91,19 +91,15 @@ function HarvestablesSearchPane(props) {
 
         {renderFilter(intl, filterStruct, updateQuery, 'enabled',
           ['true', 'false'])}
-        {renderFilter(intl, filterStruct, updateQuery, 'jobClass',
-          ['OaiPmhResource', 'XmlBulkResource', 'HarvestConnectorResource', 'StatusResource'])}
-        {renderFilter(intl, filterStruct, updateQuery, 'currentStatus',
-          ['NEW', 'OK', 'WARN', 'ERROR', 'RUNNING', 'FINISHED', 'KILLED'],
-          true)}
-
+        {renderFilter(intl, filterStruct, updateQuery, 'type',
+          ['XML'])}
       </form>
     </Pane>
   );
 }
 
 
-HarvestablesSearchPane.propTypes = searchPanePropTypes;
+ChannelsSearchPane.propTypes = searchPanePropTypes;
 
 
-export default HarvestablesSearchPane;
+export default ChannelsSearchPane;

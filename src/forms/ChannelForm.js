@@ -1,26 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import arrayMutators from 'final-form-arrays';
-import { HasCommand, Button, LoadingPane, Pane, PaneFooter, checkScope } from '@folio/stripes/components';
+import { Row, Checkbox, Select, HasCommand, Button, LoadingPane, Pane, PaneFooter, checkScope } from '@folio/stripes/components';
 import { AppIcon, TitleManager } from '@folio/stripes/core';
 import stripesFinalForm from '@folio/stripes/final-form';
 import { isEqual } from 'lodash';
 import setFieldData from 'final-form-set-field-data'; // XXX do we need this?
-import ErrorMessage from '../../components/ErrorMessage';
-import HarvestableFormGeneral from './HarvestableFormGeneral';
-import HarvestableFormOaiPmh from './HarvestableFormOaiPmh';
-import HarvestableFormXmlBulk from './HarvestableFormXmlBulk';
-import HarvestableFormConnector from './HarvestableFormConnector';
-import HarvestableFormStatus from './HarvestableFormStatus';
-
-
-const specificSections = {
-  oaiPmh: HarvestableFormOaiPmh,
-  xmlBulk: HarvestableFormXmlBulk,
-  connector: HarvestableFormConnector,
-  status: HarvestableFormStatus,
-};
+import { RCF, CF } from '../components/CF';
 
 
 const handleKeyCommand = (handler, { disabled } = {}) => {
@@ -33,38 +20,36 @@ const handleKeyCommand = (handler, { disabled } = {}) => {
 
 function validate(values) {
   const errors = {};
-  const requiredTextMessage = <FormattedMessage id="ui-inventory-import.fillIn" />;
-  const requiredSelectMessage = <FormattedMessage id="ui-inventory-import.selectToContinue" />;
 
   if (!values.name) {
-    errors.name = requiredTextMessage;
+    errors.name = <FormattedMessage id="ui-inventory-import.fillIn" />;
   }
-  if (!values.transformation?.id) {
-    errors.transformation = { id: requiredSelectMessage };
-  }
-
-  try {
-    if (values.json && values.json !== '') JSON.parse(values.json);
-  } catch (e) {
-    errors.json = <FormattedMessage id="ui-inventory-import.invalidJSON" values={{ error: e.toString() }} />;
+  if (!values.transformationId) {
+    errors.transformationId = <FormattedMessage id="ui-inventory-import.selectToContinue" />;
   }
 
-  // console.log('validate:', errors);
   return errors;
 }
 
 
-const HarvestableForm = (props) => {
+const ChannelForm = (props) => {
   const {
     isLoading,
     data,
     handlers,
     handleSubmit,
-    form: { mutators },
     values = {},
     pristine,
     submitting
   } = props;
+
+  const intl = useIntl();
+  const noValue = {
+    value: '',
+    label: intl.formatMessage({ id: 'ui-inventory-import.selectValue' }),
+  };
+
+  const transformationPipelines = data.transformationPipelines.map(x => ({ value: x.id, label: x.name }));
 
   function renderPaneFooter() {
     return (
@@ -83,7 +68,7 @@ const HarvestableForm = (props) => {
           <Button
             buttonStyle="primary mega"
             disabled={pristine || submitting}
-            id="clickable-update-harvestable"
+            id="clickable-update-channel"
             marginBottom0
             onClick={handleSubmit}
             type="submit"
@@ -98,12 +83,6 @@ const HarvestableForm = (props) => {
   if (isLoading) return <LoadingPane />;
 
   const title = values.name;
-  const type = values.type;
-  const ErrorSection = () => <ErrorMessage message={`Unknown type '${type}'`} />;
-  const SpecificSection = specificSections[type] || ErrorSection;
-
-  // XXX We probably don't need to pass most of these
-  const sectionProps = { data, handlers, mutators, values };
 
   const shortcuts = [
     {
@@ -120,19 +99,27 @@ const HarvestableForm = (props) => {
   return (
     <HasCommand commands={shortcuts} isWithinScope={checkScope} scope={document.body}>
       <Pane
-        appIcon={<AppIcon app="harvester-admin" />}
+        appIcon={<AppIcon app="inventory-import" />}
         centerContent
         defaultWidth="60%"
         footer={renderPaneFooter()}
-        id="pane-harvestable-form"
+        id="pane-channel-form"
         paneTitle={title}
         dismissible
         onClose={handlers.onClose}
       >
         <TitleManager record={title}>
           <form id="form-course">
-            {type !== 'status' && <HarvestableFormGeneral {...sectionProps} />}
-            <SpecificSection {...sectionProps} />
+            <RCF tag="type" disabled />
+            <Row>
+              <CF tag="id" xs={4} disabled />
+              <CF tag="tag" xs={2} />
+              <CF tag="name" xs={6} required />
+            </Row>
+            <RCF tag="enabled" component={Checkbox} type="checkbox" />
+            <RCF tag="commissioned" component={Checkbox} type="checkbox" disabled />
+            <RCF tag="listening" component={Checkbox} type="checkbox" />
+            <RCF tag="transformationId" i18nTag="transformationPipeline" component={Select} dataOptions={[noValue].concat(transformationPipelines)} required />
           </form>
         </TitleManager>
       </Pane>
@@ -141,14 +128,13 @@ const HarvestableForm = (props) => {
 };
 
 
-HarvestableForm.propTypes = {
+ChannelForm.propTypes = {
   data: PropTypes.shape({}).isRequired,
   handlers: PropTypes.shape({
     onClose: PropTypes.func.isRequired,
   }),
   handleSubmit: PropTypes.func.isRequired,
   isLoading: PropTypes.bool,
-  form: PropTypes.object,
   pristine: PropTypes.bool,
   submitting: PropTypes.bool,
   values: PropTypes.object,
@@ -163,4 +149,4 @@ export default stripesFinalForm({
     values: true,
   },
   mutators: { setFieldData, ...arrayMutators }
-})(HarvestableForm);
+})(ChannelForm);

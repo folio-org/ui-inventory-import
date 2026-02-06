@@ -5,7 +5,7 @@ import { Field } from 'react-final-form';
 import { Row, Col, TextField, InfoPopover } from '@folio/stripes/components';
 import ListField from './ListField';
 
-function translationTagAndHelpButton(intl, domain = 'harvestables', tag, i18nTag, helpTag) {
+function translationTagAndHelpButton(intl, domain = 'channels', tag, i18nTag, helpTag) {
   const translationTag = `ui-inventory-import.${domain}.field.${i18nTag || tag}`;
   const helpTranslationTag = `ui-inventory-import.${domain}.field.${helpTag || i18nTag || tag}.help`;
   const helpMessage = intl.messages[helpTranslationTag];
@@ -37,7 +37,7 @@ export const CF = ({ domain, tag, i18nTag, helpTag, xs, ...rest }) => {
 
 CF.propTypes = {
   tag: PropTypes.string.isRequired,
-  domain: PropTypes.string, // if defined, use instead of "harvestables"
+  domain: PropTypes.string, // if defined, use instead of "channels"
   i18nTag: PropTypes.string, // if defined, use this translation tag instead of `tag`
   helpTag: PropTypes.string, // if defined, use this translation tag to find help text
   xs: PropTypes.number.isRequired,

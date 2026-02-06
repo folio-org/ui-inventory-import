@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useIntl, FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { AppIcon } from '@folio/stripes/core';
-import { LoadingPane, Paneset, Pane, MultiColumnList, MCLPagingTypes } from '@folio/stripes/components';
+import { LoadingPane, Paneset, Pane, MultiColumnList, MCLPagingTypes, NoValue } from '@folio/stripes/components';
 import { ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
-import { message2stats, summarizeStats } from '../../util/message2stats';
-import parseSort from '../../util/parseSort';
-import formatDateTime from '../../util/formatDateTime';
-import JobsSearchPane from '../../search/JobsSearchPane';
-import ErrorMessage from '../../components/ErrorMessage';
-import packageInfo from '../../../package';
+import parseSort from '../util/parseSort';
+import formatDateTime from '../util/formatDateTime';
+import JobsSearchPane from '../search/JobsSearchPane';
+import ErrorMessage from '../components/ErrorMessage';
+import packageInfo from '../../package';
 
 
 function Jobs({
@@ -23,12 +22,10 @@ function Jobs({
   onNeedMoreData,
   children,
 }) {
-  const intl = useIntl();
-
   const columnMapping = {
-    name: <FormattedMessage id="ui-inventory-import.jobs.column.name" />,
+    channelName: <FormattedMessage id="ui-inventory-import.jobs.column.channelName" />,
     status: <FormattedMessage id="ui-inventory-import.jobs.column.status" />,
-    amountHarvested: <FormattedMessage id="ui-inventory-import.jobs.column.amountHarvested" />,
+    amountImported: <FormattedMessage id="ui-inventory-import.jobs.column.amountImported" />,
     seconds: <FormattedMessage id="ui-inventory-import.jobs.column.seconds" />,
     started: <FormattedMessage id="ui-inventory-import.jobs.column.started" />,
     finished: <FormattedMessage id="ui-inventory-import.jobs.column.finished" />,
@@ -37,23 +34,21 @@ function Jobs({
   };
 
   const formatter = {
-    status: r => <FormattedMessage id={`ui-inventory-import.harvestables.column.currentStatus.${r.status}`} />,
-    amountHarvested: r => {
-      const stats = message2stats(r.message);
-      return `${r.amountHarvested} (${stats?.instances?.loaded})`;
-    },
+    status: r => <FormattedMessage id={`ui-inventory-import.jobs.column.status.${r.status}`} />,
     started: r => formatDateTime(r.started),
-    finished: r => formatDateTime(r.finished),
-    seconds: r => Math.trunc((new Date(r.finished) - new Date(r.started)) / 1000),
-    type: r => <FormattedMessage id={`ui-inventory-import.harvestables.field.jobClass.${r.type}`} />,
-    message: r => (r.message?.match('Instances_processed') ? summarizeStats(intl, r.message) : r.message),
+    finished: r => (r.finished ? formatDateTime(r.finished) : <NoValue />),
+    seconds: r => {
+      if (!r.finished) return <NoValue />;
+      return ((new Date(r.finished) - new Date(r.started)) / 1000).toFixed(3);
+    },
+    type: r => r.importType,
   };
 
-  const paneTitle = !data.harvestable ?
+  const paneTitle = !data.channel ?
     <FormattedMessage id="ui-inventory-import.nav.jobs" /> :
     <FormattedMessage
       id="ui-inventory-import.nav.jobs-for"
-      values={{ name: data.harvestable.name }}
+      values={{ name: data.channel.name }}
     />;
 
   const sortKeys = parseSort(query.sort);
@@ -78,7 +73,7 @@ function Jobs({
                   <ColumnManager
                     id="jobs-visible-columns"
                     columnMapping={columnMapping}
-                    excludeKeys={['name']}
+                    excludeKeys={['channelName']}
                     persist
                   >
                     {({ renderColumnsMenu, visibleColumns }) => (
@@ -97,12 +92,12 @@ function Jobs({
                           visibleColumns={visibleColumns}
                           columnMapping={columnMapping}
                           columnWidths={{
-                            name: '20%',
+                            channelName: '20%',
                             status: '80px',
-                            amountHarvested: '110px',
+                            amountImported: '90px',
                             seconds: '70px',
-                            started: '200px',
-                            finished: '200px',
+                            started: '230px',
+                            finished: '230px',
                             type: '110px',
                             message: '450px',
                           }}
@@ -134,8 +129,8 @@ function Jobs({
 
 Jobs.propTypes = {
   data: PropTypes.shape({
-    harvestable: PropTypes.shape({
-      name: PropTypes.string.isRequired,
+    channel: PropTypes.shape({
+      channelName: PropTypes.string.isRequired,
     }), // optional
     jobs: PropTypes.arrayOf(
       PropTypes.shape({

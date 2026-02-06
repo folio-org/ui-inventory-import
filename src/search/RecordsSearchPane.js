@@ -34,7 +34,7 @@ function RecordsSearchPane(props) {
     // 'instanceHrid', // XXX not yet supported
     // 'instanceTitle', // XXX not yet supported
     // 'errors', // XXX not yet supported
-    'harvestableName',
+    'channelName',
   ];
   const searchableIndexes = indexNames.map(x => ({
     value: x,

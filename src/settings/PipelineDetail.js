@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { useStripes } from '@folio/stripes/core';
 import { Col, Row, KeyValue, MultiColumnList, Accordion } from '@folio/stripes/components';
-import { bool2display } from './transformBooleans';
 
 
 const PipelineDetail = (props) => {

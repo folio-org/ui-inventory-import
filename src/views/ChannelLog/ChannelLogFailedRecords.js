@@ -7,7 +7,7 @@ import { Loading, MultiColumnList, Accordion } from '@folio/stripes/components';
 import { errors2react } from '../../util/summarizeErrors';
 
 
-const HarvestableLogFailedRecords = ({ failedRecords }) => {
+const ChannelLogFailedRecords = ({ failedRecords }) => {
   const stripes = useStripes();
   const visibleColumns = ['recordNumber', 'instanceHrid', 'instanceTitle', 'errors', 'timeStamp'];
 
@@ -68,7 +68,7 @@ const HarvestableLogFailedRecords = ({ failedRecords }) => {
 };
 
 
-HarvestableLogFailedRecords.propTypes = {
+ChannelLogFailedRecords.propTypes = {
   failedRecords: PropTypes.shape({
     totalRecords: PropTypes.number.isRequired,
     failedRecords: PropTypes.arrayOf(
@@ -80,4 +80,4 @@ HarvestableLogFailedRecords.propTypes = {
 };
 
 
-export default HarvestableLogFailedRecords;
+export default ChannelLogFailedRecords;
