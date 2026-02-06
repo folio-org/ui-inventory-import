@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-import { HasCommand, LoadingPane, Pane, KeyValue, Accordion, MultiColumnList, checkScope } from '@folio/stripes/components';
+import { HasCommand, LoadingPane, Pane, Row, Col, KeyValue, Accordion, MultiColumnList, checkScope } from '@folio/stripes/components';
 import { AppIcon, TitleManager } from '@folio/stripes/core';
 import formatDateTime from '../util/formatDateTime';
 import ChannelLogFailedRecords from './ChannelLog/ChannelLogFailedRecords';
@@ -79,10 +80,20 @@ const FullJob = (props) => {
             </p>
           )}
           {/* XXX display record.finished somehow */}
-          <KeyValue
-            label={<FormattedMessage id="ui-inventory-import.jobs.field.transformationPipeline" />}
-            value={data.transformationPipeline?.name}
-          />
+          <Row>
+            <Col xs={6}>
+              <KeyValue
+                label={<FormattedMessage id="ui-inventory-import.jobs.field.channelName" />}
+                value={<Link to={`/invimp/channels/${record.channelId}`}>{record.channelName}</Link>}
+              />
+            </Col>
+            <Col xs={6}>
+              <KeyValue
+                label={<FormattedMessage id="ui-inventory-import.jobs.field.transformationPipeline" />}
+                value={<Link to={`/settings/invimp/pipeline/${data.transformationPipeline?.id}`}>{data.transformationPipeline?.name}</Link>}
+              />
+            </Col>
+          </Row>
           <ChannelLogFailedRecords failedRecords={data.failedRecords} />
 
           <Accordion
