@@ -1,8 +1,8 @@
 {
-  "name": "@indexdata/inventory-import",
+  "name": "@folio/inventory-import",
   "version": "4.0.0",
   "description": "Admin console for the Index Data Harvester",
-  "repository": "https://github.com/indexdata/ui-inventory-import",
+  "repository": "https://github.com/folio-org/ui-inventory-import",
   "license": "Apache-2.0",
   "main": "src/index.js",
   "scripts": {
