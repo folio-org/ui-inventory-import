@@ -77,14 +77,15 @@ function Records({
     instanceTitle: <FormattedMessage id="ui-inventory-import.failed-records.instanceTitle" />,
     errors: <FormattedMessage id="ui-inventory-import.failed-records.errors" />,
     timeStamp: <FormattedMessage id="ui-inventory-import.failed-records.timeStamp" />,
-    harvestableName: <FormattedMessage id="ui-inventory-import.failed-records.channelName" />,
+    channelName: <FormattedMessage id="ui-inventory-import.failed-records.channelName" />,
   };
 
   const columnWidths = {
-    harvestableName: '300px',
+    channelName: '300px',
     recordNumber: '150px',
     instanceHrid: '140px',
     instanceTitle: '300px',
+    errors: '300px',
   };
 
   const formatter = {
