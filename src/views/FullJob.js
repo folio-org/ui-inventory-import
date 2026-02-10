@@ -25,7 +25,7 @@ const FullJob = (props) => {
 
   const record = data.record;
   if (!record) return <LoadingPane />;
-  const title = record.name;
+  const title = record.channelName;
   const status = record.currentStatus || record.status;
 
   const shortcuts = [
@@ -126,7 +126,7 @@ const FullJob = (props) => {
 FullJob.propTypes = {
   data: PropTypes.shape({
     record: PropTypes.shape({
-      name: PropTypes.string.isRequired,
+      channelName: PropTypes.string.isRequired,
       started: PropTypes.string,
       currentStatus: PropTypes.string, // .isRequired for harvestable, not for previous-job
       status: PropTypes.string // Sometimes we get this instead of currentStatus
