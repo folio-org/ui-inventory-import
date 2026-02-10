@@ -93,7 +93,7 @@ function Jobs({
                           columnMapping={columnMapping}
                           columnWidths={{
                             channelName: '20%',
-                            status: '80px',
+                            status: '100px',
                             amountImported: '90px',
                             seconds: '70px',
                             started: '230px',

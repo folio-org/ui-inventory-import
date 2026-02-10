@@ -70,6 +70,7 @@
     "jobs.column.status.RUNNING": "Running",
     "jobs.column.status.PAUSED": "Paused",
     "jobs.column.status.DONE": "Done",
+    "jobs.column.status.INTERRUPTED": "Interrupted",
 
     "channels.index.name": "Name",
     "channels.index.id": "ID",
