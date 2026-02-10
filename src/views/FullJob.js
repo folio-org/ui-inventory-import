@@ -7,6 +7,7 @@ import { AppIcon, TitleManager } from '@folio/stripes/core';
 import formatDateTime from '../util/formatDateTime';
 import ChannelLogFailedRecords from './ChannelLog/ChannelLogFailedRecords';
 import css from './Styles.css';
+import packageInfo from '../../package';
 
 
 const handleKeyCommand = (handler, { disabled } = {}) => {
@@ -84,13 +85,13 @@ const FullJob = (props) => {
             <Col xs={6}>
               <KeyValue
                 label={<FormattedMessage id="ui-inventory-import.jobs.field.channelName" />}
-                value={<Link to={`/invimp/channels/${record.channelId}`}>{record.channelName}</Link>}
+                value={<Link to={`${packageInfo.stripes.route}/channels/${record.channelId}`}>{record.channelName}</Link>}
               />
             </Col>
             <Col xs={6}>
               <KeyValue
                 label={<FormattedMessage id="ui-inventory-import.jobs.field.transformationPipeline" />}
-                value={<Link to={`/settings/invimp/pipeline/${data.transformationPipeline?.id}`}>{data.transformationPipeline?.name}</Link>}
+                value={<Link to={`/settings${packageInfo.stripes.route}/pipeline/${data.transformationPipeline?.id}`}>{data.transformationPipeline?.name}</Link>}
               />
             </Col>
           </Row>
