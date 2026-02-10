@@ -72,6 +72,7 @@
     "jobs.column.status.DONE": "Done",
     "jobs.column.status.INTERRUPTED": "Interrupted",
 
+    "channels.index.all": "(All)",
     "channels.index.name": "Name",
     "channels.index.id": "ID",
     "channels.index.message": "Message",

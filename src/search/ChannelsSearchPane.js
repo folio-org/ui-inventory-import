@@ -28,8 +28,8 @@ function ChannelsSearchPane(props) {
   };
 
   const intl = useIntl();
-  const searchableIndexes = ['name', 'id'].map(x => (
-    { value: x, label: intl.formatMessage({ id: `ui-inventory-import.channels.index.${x}` }) }
+  const searchableIndexes = ['', 'name', 'id'].map(x => (
+    { value: x, label: intl.formatMessage({ id: `ui-inventory-import.channels.index.${x || 'all'}` }) }
   ));
 
   const filterStruct = parseFilters(query.filters);

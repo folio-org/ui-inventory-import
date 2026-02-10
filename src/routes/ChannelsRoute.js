@@ -73,7 +73,7 @@ ChannelsRoute.manifest = Object.freeze({
       query: (qp, pathComponents, rv, logger) => {
         const queryFunction = makeQueryFunction(
           'cql.allRecords=1',
-          searchableIndexes.map(index => `${index}="${qp.query}*"`).join(' or '),
+          searchableIndexes.map(index => `${index}="${qp.query}"`).join(' or '),
           {},
           filterConfig,
         );
