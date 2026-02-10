@@ -29,16 +29,16 @@ function RecordsSearchPane(props) {
 
   const intl = useIntl();
 
-  const indexNames = [
+  const searchableIndexes = [
+    '',
     'recordNumber',
     // 'instanceHrid', // XXX not yet supported
     // 'instanceTitle', // XXX not yet supported
     // 'errors', // XXX not yet supported
     'channelName',
-  ];
-  const searchableIndexes = indexNames.map(x => ({
+  ].map(x => ({
     value: x,
-    label: intl.formatMessage({ id: `ui-inventory-import.records.index.${x}` }),
+    label: intl.formatMessage({ id: `ui-inventory-import.records.index.${x || 'all'}` }),
   }));
 
   const filterStruct = parseFilters(query.filters);

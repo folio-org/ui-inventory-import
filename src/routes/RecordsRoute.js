@@ -46,7 +46,7 @@ const RecordsRoute = ({ stripes, resources, mutator, children }) => {
 
 
 // Keep these in sync with what's in ../search/RecordsSearchPane.js
-const searchableIndexes = ['xxx', 'yyy'];
+const searchableIndexes = ['recordNumber', 'channelName']; // XXX Find a way to add transformedRecord.instance.title
 
 const filterConfig = [{
   name: 'timeStamp_from',
