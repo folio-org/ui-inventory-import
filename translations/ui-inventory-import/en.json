@@ -72,6 +72,7 @@
     "jobs.column.status.DONE": "Done",
     "jobs.column.status.INTERRUPTED": "Interrupted",
 
+    "channels.index.all": "(All)",
     "channels.index.name": "Name",
     "channels.index.id": "ID",
     "channels.index.message": "Message",
@@ -278,6 +279,17 @@
     "jobs.field.failedRecordsLogging.CREATE_OVERWRITE": "Do save. Overwrite existing files",
     "jobs.field.failedRecordsLogging.ADD_ALL": "Do save. Add numbered versions for existing files",
   
+    "records.field.recordNumber": "Record number",
+    "records.field.instanceHrid": "Instance HRID",
+    "records.field.instanceTitle": "Instance title",
+    "records.field.errors": "Errors",
+    "records.field.timeStamp": "Time stamp",
+    "records.field.channelName": "Channel name",
+    "records.field.importJob": "Import job",
+    "records.field.sourceFileName": "Source file name",
+    "records.field.originalRecord": "Original record",
+    "records.field.transformedRecord": "Transformed record",
+
     "logs.field.timeStamp": "Timestamp",
     "logs.field.line": "Line",
 
@@ -308,13 +320,6 @@
     "summary-label.loaded": "Loaded",
     "summary-label.deleted": "Deleted(skipped)",
     "summary-label.failed": "Failed",
-
-    "failed-records.recordNumber": "Record number",
-    "failed-records.timeStamp": "Time stamp",
-    "failed-records.instanceHrid": "Instance HRID",
-    "failed-records.instanceTitle": "Instance title",
-    "failed-records.errors": "Errors",
-    "failed-records.channelName": "Channel name",
 
     "jobs.column.channelName": "Channel name",
     "jobs.column.status": "Status",

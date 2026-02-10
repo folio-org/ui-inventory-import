@@ -4,11 +4,11 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { AppIcon, useOkapiKy } from '@folio/stripes/core';
 import { MenuSection, Button, Icon, LoadingPane, Paneset, Pane, MultiColumnList, ErrorModal, exportToCsv, MCLPagingTypes } from '@folio/stripes/components';
 import { ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
-import parseSort from '../../util/parseSort';
-import { errors2react, errors2string } from '../../util/summarizeErrors';
-import RecordsSearchPane from '../../search/RecordsSearchPane';
-import ErrorMessage from '../../components/ErrorMessage';
-import packageInfo from '../../../package';
+import parseSort from '../util/parseSort';
+import { errors2react, errors2string } from '../util/summarizeErrors';
+import RecordsSearchPane from '../search/RecordsSearchPane';
+import ErrorMessage from '../components/ErrorMessage';
+import packageInfo from '../../package';
 
 
 function exportAllRecords(resultCount, okapiKy) {
@@ -72,19 +72,20 @@ function Records({
   const okapiKy = useOkapiKy();
 
   const columnMapping = {
-    recordNumber: <FormattedMessage id="ui-inventory-import.failed-records.recordNumber" />,
-    instanceHrid: <FormattedMessage id="ui-inventory-import.failed-records.instanceHrid" />,
-    instanceTitle: <FormattedMessage id="ui-inventory-import.failed-records.instanceTitle" />,
-    errors: <FormattedMessage id="ui-inventory-import.failed-records.errors" />,
-    timeStamp: <FormattedMessage id="ui-inventory-import.failed-records.timeStamp" />,
-    harvestableName: <FormattedMessage id="ui-inventory-import.failed-records.channelName" />,
+    recordNumber: <FormattedMessage id="ui-inventory-import.records.field.recordNumber" />,
+    instanceHrid: <FormattedMessage id="ui-inventory-import.records.field.instanceHrid" />,
+    instanceTitle: <FormattedMessage id="ui-inventory-import.records.field.instanceTitle" />,
+    errors: <FormattedMessage id="ui-inventory-import.records.field.errors" />,
+    timeStamp: <FormattedMessage id="ui-inventory-import.records.field.timeStamp" />,
+    channelName: <FormattedMessage id="ui-inventory-import.records.field.channelName" />,
   };
 
   const columnWidths = {
-    harvestableName: '300px',
+    channelName: '300px',
     recordNumber: '150px',
     instanceHrid: '140px',
     instanceTitle: '300px',
+    errors: '300px',
   };
 
   const formatter = {

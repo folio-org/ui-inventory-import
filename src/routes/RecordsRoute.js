@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
-import { StripesConnectedSource } from '@folio/stripes/smart-components';
-import queryFunction from '../search/queryFunction';
+import { makeQueryFunction, StripesConnectedSource } from '@folio/stripes/smart-components';
+import { makePFV } from '../search/queryFunction';
 import Records from '../views/Records';
 
 
@@ -45,13 +45,28 @@ const RecordsRoute = ({ stripes, resources, mutator, children }) => {
 };
 
 
+// Keep these in sync with what's in ../search/RecordsSearchPane.js
+const searchableIndexes = ['recordNumber', 'channelName']; // XXX Find a way to add transformedRecord.instance.title
+
+const filterConfig = [{
+  name: 'timeStamp_from',
+  cql: 'timeStamp',
+  values: [],
+  parse: makePFV('timeStamp', '>='),
+}, {
+  name: 'timeStamp_to',
+  cql: 'timeStamp',
+  values: [],
+  parse: makePFV('timeStamp', '<='),
+}];
+
 RecordsRoute.manifest = Object.freeze({
   query: {},
   resultCount: { initialValue: INITIAL_RESULT_COUNT },
   resultOffset: { initialValue: 0 },
   records: {
     type: 'okapi',
-    path: 'harvester-admin/previous-jobs/failed-records',
+    path: 'inventory-import/failed-records',
     throwErrors: false,
     records: 'failedRecords',
     recordsRequired: '%{resultCount}',
@@ -60,14 +75,21 @@ RecordsRoute.manifest = Object.freeze({
     resultDensity: 'sparse',
     accumulate: 'true',
     params: {
-      // Modify the query-function to remove unwanted asterisks after ID searches
-      query: (queryParams, pathComponents, rv, logger) => {
-        const res = queryFunction('recordNumber="%{query.query}" or harvestableName="%{query.query}"',
-          queryParams, pathComponents, rv, logger);
-        if (res === undefined) return undefined;
-        const m = res.match(/^(\(?(id|harvestableId)=\"[^\"]*)\*"(.*)$/);
-        return m ? `${m[1]}\"${m[3]}` : res;
-      }
+      query: (qp, pathComponents, rv, logger) => {
+        const queryFunction = makeQueryFunction(
+          'cql.allRecords=1',
+          searchableIndexes.map(index => `${index}="${qp.query}"`).join(' or '),
+          {},
+          filterConfig,
+          0,
+          undefined,
+          {
+            rightTrunc: false,
+          }
+        );
+        return queryFunction(qp, pathComponents, rv, logger);
+      },
+
     },
   },
 });
