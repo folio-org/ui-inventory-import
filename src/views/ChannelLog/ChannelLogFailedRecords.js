@@ -12,11 +12,11 @@ const ChannelLogFailedRecords = ({ failedRecords }) => {
   const visibleColumns = ['recordNumber', 'instanceHrid', 'instanceTitle', 'errors', 'timeStamp'];
 
   const columnMapping = {
-    recordNumber: <FormattedMessage id="ui-inventory-import.failed-records.recordNumber" />,
-    instanceHrid: <FormattedMessage id="ui-inventory-import.failed-records.instanceHrid" />,
-    instanceTitle: <FormattedMessage id="ui-inventory-import.failed-records.instanceTitle" />,
-    errors: <FormattedMessage id="ui-inventory-import.failed-records.errors" />,
-    timeStamp: <FormattedMessage id="ui-inventory-import.failed-records.timeStamp" />,
+    recordNumber: <FormattedMessage id="ui-inventory-import.records.field.recordNumber" />,
+    instanceHrid: <FormattedMessage id="ui-inventory-import.records.field.instanceHrid" />,
+    instanceTitle: <FormattedMessage id="ui-inventory-import.records.field.instanceTitle" />,
+    errors: <FormattedMessage id="ui-inventory-import.records.field.errors" />,
+    timeStamp: <FormattedMessage id="ui-inventory-import.records.field.timeStamp" />,
   };
 
   const resultsFormatter = {

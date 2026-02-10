@@ -12,6 +12,7 @@ import ChannelJobsRoute from './routes/ChannelJobsRoute';
 import JobsRoute from './routes/JobsRoute';
 import FullJobRoute from './routes/FullJobRoute';
 import RecordsRoute from './routes/RecordsRoute';
+import FullRecordRoute from './routes/FullRecordRoute';
 import MikeRoute from './routes/MikeRoute';
 import Tabs from './Tabs';
 import css from './index.css';
@@ -50,7 +51,9 @@ const InventoryImportApp = (props) => {
           <NestedRoute path={`${path}/jobs`} component={JobsRoute}>
             <NestedRoute path={`${path}/jobs/:recId`} exact component={FullJobRoute} />
           </NestedRoute>
-          <NestedRoute path={`${path}/records`} component={RecordsRoute} />
+          <NestedRoute path={`${path}/records`} component={RecordsRoute}>
+            <NestedRoute path={`${path}/records/:recId`} component={FullRecordRoute} />
+          </NestedRoute>
         </Switch>
       </div>
     </div>

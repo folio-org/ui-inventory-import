@@ -3,10 +3,13 @@ import { useLocation } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { useStripes } from '@folio/stripes/core';
 import { Button, ButtonGroup } from '@folio/stripes/components';
+import packageInfo from '../package';
+
 
 function SwitchRoute() {
   const location = useLocation();
   const stripes = useStripes();
+  const base = packageInfo.stripes.route.replace(/^\//, '');
   const today = new Date();
   const yesterday = new Date(today - 24 * 60 * 60 * 1000);
   const isoString = yesterday.toISOString().substring(0, 10);
@@ -35,13 +38,14 @@ function SwitchRoute() {
         <ButtonGroup data-test-navigation>
           {
             segments.filter(({ perm }) => stripes.hasPerm(perm)).map(({ name, params }) => {
-              let effectiveTab = location.pathname.replace(/^\/invimp\//, '').replace(/\/.*/, '');
+              const fullBase = '/' + base + '/';
+              let effectiveTab = location.pathname.replace(fullBase, '').replace(/\/.*/, '');
               if (location.pathname.endsWith('/jobs')) effectiveTab = 'jobs';
               const selected = (effectiveTab === name);
               return (
                 <Button
                   key={`${name}`}
-                  to={`/invimp/${name}${params ? `?${params}` : ''}`}
+                  to={`/${base}/${name}${params ? `?${params}` : ''}`}
                   buttonStyle={selected ? 'primary' : 'default'}
                   aria-selected={selected}
                 >
