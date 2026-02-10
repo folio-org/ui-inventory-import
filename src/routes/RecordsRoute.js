@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
 import { makeQueryFunction, StripesConnectedSource } from '@folio/stripes/smart-components';
+import { makePFV } from '../search/queryFunction';
 import Records from '../views/Records';
 
 
@@ -48,9 +49,15 @@ const RecordsRoute = ({ stripes, resources, mutator, children }) => {
 const searchableIndexes = ['xxx', 'yyy'];
 
 const filterConfig = [{
-  name: 'zzz',
-  cql: 'zzz',
+  name: 'timeStamp_from',
+  cql: 'timeStamp',
   values: [],
+  parse: makePFV('timeStamp', '>='),
+}, {
+  name: 'timeStamp_to',
+  cql: 'timeStamp',
+  values: [],
+  parse: makePFV('timeStamp', '<='),
 }];
 
 RecordsRoute.manifest = Object.freeze({
