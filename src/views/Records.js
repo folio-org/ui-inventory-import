@@ -4,11 +4,11 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { AppIcon, useOkapiKy } from '@folio/stripes/core';
 import { MenuSection, Button, Icon, LoadingPane, Paneset, Pane, MultiColumnList, ErrorModal, exportToCsv, MCLPagingTypes } from '@folio/stripes/components';
 import { ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
-import parseSort from '../../util/parseSort';
-import { errors2react, errors2string } from '../../util/summarizeErrors';
-import RecordsSearchPane from '../../search/RecordsSearchPane';
-import ErrorMessage from '../../components/ErrorMessage';
-import packageInfo from '../../../package';
+import parseSort from '../util/parseSort';
+import { errors2react, errors2string } from '../util/summarizeErrors';
+import RecordsSearchPane from '../search/RecordsSearchPane';
+import ErrorMessage from '../components/ErrorMessage';
+import packageInfo from '../../package';
 
 
 function exportAllRecords(resultCount, okapiKy) {
