@@ -72,12 +72,12 @@ function Records({
   const okapiKy = useOkapiKy();
 
   const columnMapping = {
-    recordNumber: <FormattedMessage id="ui-inventory-import.failed-records.recordNumber" />,
-    instanceHrid: <FormattedMessage id="ui-inventory-import.failed-records.instanceHrid" />,
-    instanceTitle: <FormattedMessage id="ui-inventory-import.failed-records.instanceTitle" />,
-    errors: <FormattedMessage id="ui-inventory-import.failed-records.errors" />,
-    timeStamp: <FormattedMessage id="ui-inventory-import.failed-records.timeStamp" />,
-    channelName: <FormattedMessage id="ui-inventory-import.failed-records.channelName" />,
+    recordNumber: <FormattedMessage id="ui-inventory-import.records.field.recordNumber" />,
+    instanceHrid: <FormattedMessage id="ui-inventory-import.records.field.instanceHrid" />,
+    instanceTitle: <FormattedMessage id="ui-inventory-import.records.field.instanceTitle" />,
+    errors: <FormattedMessage id="ui-inventory-import.records.field.errors" />,
+    timeStamp: <FormattedMessage id="ui-inventory-import.records.field.timeStamp" />,
+    channelName: <FormattedMessage id="ui-inventory-import.records.field.channelName" />,
   };
 
   const columnWidths = {
