@@ -22,6 +22,7 @@ const FullJob = (props) => {
   const {
     data,
     handlers,
+    updateQuery,
   } = props;
 
   const record = data.record;
@@ -95,7 +96,7 @@ const FullJob = (props) => {
               />
             </Col>
           </Row>
-          <ChannelLogFailedRecords failedRecords={data.failedRecords} />
+          <ChannelLogFailedRecords failedRecords={data.failedRecords} updateQuery={updateQuery} />
 
           <Accordion
             id="job-logs"

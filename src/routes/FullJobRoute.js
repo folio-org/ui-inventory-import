@@ -19,6 +19,7 @@ const FullJobRoute = ({ resources, mutator }) => {
         logs: resources.logs.records[0],
       }}
       handlers={{ onClose: handleClose }}
+      updateQuery={mutator.query.update}
     />
   );
 };

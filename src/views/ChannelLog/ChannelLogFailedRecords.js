@@ -5,9 +5,10 @@ import ObjectInspector from 'react-inspector';
 import { useStripes } from '@folio/stripes/core';
 import { Loading, MultiColumnList, Accordion } from '@folio/stripes/components';
 import { errors2react } from '../../util/summarizeErrors';
+import packageInfo from '../../../package';
 
 
-const ChannelLogFailedRecords = ({ failedRecords }) => {
+const ChannelLogFailedRecords = ({ failedRecords, updateQuery }) => {
   const stripes = useStripes();
   const visibleColumns = ['recordNumber', 'instanceHrid', 'instanceTitle', 'errors', 'timeStamp'];
 
@@ -47,6 +48,16 @@ const ChannelLogFailedRecords = ({ failedRecords }) => {
           }}
           contentData={failedRecords.failedRecords}
           formatter={resultsFormatter}
+          onRowClick={(event, rec) => {
+            // When we go to the Failed Records section, the query and
+            // filters that we used in the Jobs section become
+            // inapplicable. They must be removed from the URL to
+            // prevent backend errors.
+            updateQuery({
+              _path: `${packageInfo.stripes.route}/records/${rec.id}`,
+              filters: undefined,
+            });
+          }}
         />
         {stripes.config.showDevInfo &&
           <Accordion
