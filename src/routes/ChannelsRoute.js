@@ -76,6 +76,11 @@ ChannelsRoute.manifest = Object.freeze({
           searchableIndexes.map(index => `${index}="${qp.query}"`).join(' or '),
           {},
           filterConfig,
+          0,
+          undefined,
+          {
+            rightTrunc: false,
+          }
         );
         return queryFunction(qp, pathComponents, rv, logger);
       },
