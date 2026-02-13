@@ -260,7 +260,7 @@ class EntrySelector extends React.Component {
 
     const lastMenu = (
       <PaneMenu>
-        <FormattedMessage id="stripes-components.button.edit">
+        <FormattedMessage id="stripes-core.button.edit">
           {([ariaLabel]) => (
             editable && (
               <Button

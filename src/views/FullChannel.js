@@ -88,7 +88,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
             }}
           >
             <Icon icon="edit">
-              <FormattedMessage id="ui-inventory-import.button.edit" />
+              <FormattedMessage id="stripes-core.button.edit" />
             </Icon>
           </Button>
         </IfPermission>
@@ -100,7 +100,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
             onClick={e => maybeDeleteRecord(e)}
           >
             <Icon icon="trash">
-              <FormattedMessage id="ui-inventory-import.button.delete" />
+              <FormattedMessage id="stripes-core.button.delete" />
             </Icon>
           </Button>
         </IfPermission>
@@ -200,7 +200,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
           open
           heading={<FormattedMessage id="ui-inventory-import.op.delete.confirm" />}
           message={rec.name}
-          confirmLabel={<FormattedMessage id="ui-inventory-import.button.confirm" />}
+          confirmLabel={<FormattedMessage id="stripes-core.button.confirm" />}
           onConfirm={() => actuallyDeleteRecord()}
           onCancel={() => setDeleting(false)}
         />
