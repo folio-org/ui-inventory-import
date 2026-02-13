@@ -16,7 +16,11 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
   if (!resource.hasLoaded) return <Loading />;
   const rec = resource.records[0];
 
-  const returnToList = () => mutator.query.update({ _path: `${packageInfo.stripes.route}/channels` });
+  const returnToList = () => {
+    const currentPath = match.url;
+    const newPath = currentPath.replace(/(.*)\/.*./, '$1');
+    mutator.query.update({ _path: `${newPath}` });
+  };
 
   function maybeDeleteRecord(e) {
     e.stopPropagation();

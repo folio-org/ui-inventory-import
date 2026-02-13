@@ -159,7 +159,7 @@ function Channels({
                           pageAmount={pageAmount}
                           onNeedMoreData={onNeedMoreData}
                           pagingType={MCLPagingTypes.PREV_NEXT}
-                          onRowClick={(event, rec) => updateQuery({ _path: `${packageInfo.stripes.route}/channels/${rec.id}` })}
+                          onRowClick={(event, rec) => updateQuery({ _path: `./channels/${rec.id}` })}
                         />
                       </Pane>
                     )}
