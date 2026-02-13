@@ -6,6 +6,7 @@ import PipelineSettings from './PipelineSettings';
 import StepSettings from './StepSettings';
 import ChannelsRoute from '../routes/ChannelsRoute';
 import FullChannelRoute from '../routes/FullChannelRoute';
+import CreateChannelRoute from '../routes/CreateChannelRoute';
 import LogSettings from './LogSettings';
 
 
@@ -40,9 +41,14 @@ const InventoryImportSettings = (props) => {
   // To support pages within the Channels settings
   const additionalRoutes = [
     <Route
+      path={`${props.match.path}/channels/create/:type`}
+      exact
+      component={CreateChannelRoute}
+    />,
+    <Route
       path={`${props.match.path}/channels/:recId`}
       component={FullChannelRoute}
-    />
+    />,
   ];
 
   return (

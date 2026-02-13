@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
 import ChannelForm from '../forms/ChannelForm';
 import { cooked2raw } from '../util/cookData';
-import packageInfo from '../../package';
 
 
-const CreateChannelRoute = ({ resources, mutator, match, location }) => {
+const CreateChannelRoute = ({ resources, mutator, match }) => {
   const handleClose = () => {
-    mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${location.search}` });
+    mutator.query.update({ _path: '../../channels' });
   };
 
   const handleSubmit = (record) => {

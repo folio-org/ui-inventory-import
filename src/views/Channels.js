@@ -30,7 +30,7 @@ function renderActionsMenu(search, renderedColumnsMenu) {
                 <Button
                   id={`clickable-new-channel-${type}`}
                   aria-label={ariaLabel}
-                  to={`${packageInfo.stripes.route}/channels/create/${type}${search}`}
+                  to={`channels/create/${type}${search}`}
                   buttonStyle="dropdownItem"
                   marginBottom0
                 >
