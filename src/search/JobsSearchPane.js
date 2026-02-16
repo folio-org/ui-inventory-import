@@ -93,7 +93,7 @@ function JobsSearchPane(props) {
         </div>
 
         {renderFilter(intl, filterStruct, updateQuery, 'status/jobs.column.status',
-          ['RUNNING', 'PAUSED', 'DONE'], true)}
+          ['RUNNING', 'PAUSED', 'DONE', 'INTERRUPTED'], true)}
         {renderNumericFilterPair(intl, filterStruct, updateQuery, 'records')}
         {renderDateFilterPair(intl, filterStruct, updateQuery, 'started')}
         {renderDateFilterPair(intl, filterStruct, updateQuery, 'finished')}
