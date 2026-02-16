@@ -19,6 +19,7 @@
     "settings.pipeline.heading": "Manage transformation pipelines",
     "settings.step": "Transformation steps",
     "settings.step.heading": "Manage transformation steps",
+    "settings.channels": "Channels",
     "settings.logs": "Log deletion",
     "settings.logs.heading": "Manage log deletion threshold",
     "settings.logs.description": "Logs older than the configured age threshold are automatically deleted once per day, at 2am Central European time. The threshhold is specified by a number and a unit. ",

@@ -30,7 +30,7 @@ function renderActionsMenu(search, renderedColumnsMenu) {
                 <Button
                   id={`clickable-new-channel-${type}`}
                   aria-label={ariaLabel}
-                  to={`${packageInfo.stripes.route}/channels/create/${type}${search}`}
+                  to={`channels/create/${type}${search}`}
                   buttonStyle="dropdownItem"
                   marginBottom0
                 >
@@ -159,7 +159,7 @@ function Channels({
                           pageAmount={pageAmount}
                           onNeedMoreData={onNeedMoreData}
                           pagingType={MCLPagingTypes.PREV_NEXT}
-                          onRowClick={(event, rec) => updateQuery({ _path: `${packageInfo.stripes.route}/channels/${rec.id}` })}
+                          onRowClick={(event, rec) => updateQuery({ _path: `./channels/${rec.id}` })}
                         />
                       </Pane>
                     )}
