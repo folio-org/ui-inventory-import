@@ -4,7 +4,6 @@ import { FormattedMessage } from 'react-intl';
 import { CalloutContext, IfPermission, useStripes } from '@folio/stripes/core';
 import { Loading, Pane, Row, Accordion, Button, Icon, ConfirmationModal } from '@folio/stripes/components';
 import { RCKV, CKV } from '../components/CKV';
-import packageInfo from '../../package';
 
 
 const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) => {
@@ -88,7 +87,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
             data-test-actions-menu-edit
             id="clickable-edit-channel"
             onClick={() => {
-              mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}/edit` });
+              mutator.query.update({ _path: `${match.params.recId}/edit` });
             }}
           >
             <Icon icon="edit">

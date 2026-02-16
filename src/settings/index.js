@@ -7,6 +7,7 @@ import StepSettings from './StepSettings';
 import ChannelsRoute from '../routes/ChannelsRoute';
 import FullChannelRoute from '../routes/FullChannelRoute';
 import CreateChannelRoute from '../routes/CreateChannelRoute';
+import EditChannelRoute from '../routes/EditChannelRoute';
 import LogSettings from './LogSettings';
 
 
@@ -48,6 +49,12 @@ const InventoryImportSettings = (props) => {
     <Route
       path={`${props.match.path}/channels/:recId`}
       component={FullChannelRoute}
+      exact
+    />,
+    <Route
+      path={`${props.match.path}/channels/:recId/edit`}
+      exact
+      component={EditChannelRoute}
     />,
   ];
 
