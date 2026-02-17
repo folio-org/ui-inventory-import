@@ -7,7 +7,7 @@ import FullChannel from '../views/FullChannel';
 const FullChannelRoute = (props) => {
   const deleteRecord = () => props.mutator.channel.DELETE({ id: props.match.params.recId });
 
-  return <FullChannel {...props} deleteRecord={deleteRecord} />;
+  return <FullChannel {...props} defaultWidth="60%" deleteRecord={deleteRecord} />;
 };
 
 
@@ -56,7 +56,6 @@ FullChannelRoute.manifest = Object.freeze({
 
 
 FullChannelRoute.propTypes = {
-  defaultWidth: PropTypes.string,
   resources: PropTypes.shape({
     channel: PropTypes.shape({
       records: PropTypes.arrayOf(
@@ -85,10 +84,6 @@ FullChannelRoute.propTypes = {
       recId: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired
-};
-
-FullChannelRoute.defaultProps = {
-  defaultWidth: '60%',
 };
 
 export default stripesConnect(FullChannelRoute);
