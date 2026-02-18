@@ -72,7 +72,7 @@ function Channels({
 
   if (stripes.hasPerm('inventory-update.import.job-logs.collection.get')) {
     columnMapping.logFile = <FormattedMessage id="ui-inventory-import.channels.column.logFile" />;
-    columnMapping.oldJobs = <FormattedMessage id="ui-inventory-import.channels.column.oldJobs" />;
+    columnMapping.jobs = <FormattedMessage id="ui-inventory-import.channels.column.jobs" />;
   }
 
   const formatter = {
@@ -90,7 +90,7 @@ function Channels({
         <FormattedMessage id={viewLogTranslationTag(r)} />
       </Button>
     ),
-    oldJobs: r => (
+    jobs: r => (
       <Button
         id={`clickable-old-logs-${r.id}`}
         onClick={(e) => {
@@ -99,7 +99,7 @@ function Channels({
         }}
         marginBottom0
       >
-        <FormattedMessage id="ui-inventory-import.button.old-jobs" />
+        <FormattedMessage id="ui-inventory-import.button.jobs" />
       </Button>
     ),
   };

@@ -9,7 +9,7 @@ const INITIAL_RESULT_COUNT = 100;
 const RESULT_COUNT_INCREMENT = 100;
 
 
-function JobsRoute({ stripes, resources, mutator, children }) {
+function JobsRoute({ stripes, resources, mutator, children, match }) {
   let [source, setSource] = useState(); // eslint-disable-line prefer-const
   if (!source) {
     source = new StripesConnectedSource({ resources, mutator }, stripes.logger, 'reportTitles');
@@ -22,12 +22,15 @@ function JobsRoute({ stripes, resources, mutator, children }) {
     source.fetchOffset(index);
   };
 
+  const channelId = match.params.recId;
   const error = resources.jobs.failed ? resources.jobs.failed.message : undefined;
   const hasLoaded = resources.jobs.hasLoaded;
 
   return (
     <Jobs
       data={{
+        // stripes-connect rememeber old value for channel resource, hence we need this guard:
+        channel: channelId && resources.channel.records[0],
         jobs: resources.jobs.records,
       }}
       query={resources.query}
@@ -111,9 +114,18 @@ JobsRoute.manifest = Object.freeze({
             rightTrunc: false,
           }
         );
-        return queryFunction(qp, pathComponents, rv, logger);
+        const res = queryFunction(qp, pathComponents, rv, logger);
+        const channelId = pathComponents.recId;
+        if (!channelId) return res;
+        // Inject channelId into query
+        const cidQuery = `channelId==${channelId}`;
+        return res ? `${cidQuery} and ${res}` : cidQuery;
       },
     },
+  },
+  channel: {
+    type: 'okapi',
+    path: 'inventory-import/channels/:{recId}',
   },
 });
 

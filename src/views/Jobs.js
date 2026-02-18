@@ -130,7 +130,7 @@ function Jobs({
 Jobs.propTypes = {
   data: PropTypes.shape({
     channel: PropTypes.shape({
-      channelName: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
     }), // optional
     jobs: PropTypes.arrayOf(
       PropTypes.shape({

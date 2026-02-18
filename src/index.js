@@ -8,7 +8,6 @@ import CreateChannelRoute from './routes/CreateChannelRoute';
 import FullChannelRoute from './routes/FullChannelRoute';
 import EditChannelRoute from './routes/EditChannelRoute';
 import ChannelLogRoute from './routes/ChannelLogRoute';
-import ChannelJobsRoute from './routes/ChannelJobsRoute';
 import JobsRoute from './routes/JobsRoute';
 import FullJobRoute from './routes/FullJobRoute';
 import RecordsRoute from './routes/RecordsRoute';
@@ -43,7 +42,7 @@ const InventoryImportApp = (props) => {
           <NestedRoute path={`${path}/mike`} exact component={MikeRoute} />
           <NestedRoute path={`${path}/channels/create/:type`} exact component={CreateChannelRoute} />
           <NestedRoute path={`${path}/channels/:recId/logs`} exact component={ChannelLogRoute} />
-          <NestedRoute path={`${path}/channels/:recId/jobs`} exact component={ChannelJobsRoute} />
+          <NestedRoute path={`${path}/channels/:recId/jobs`} exact component={JobsRoute} />
           <NestedRoute path={`${path}/channels`} component={ChannelsRoute}>
             <NestedRoute path={`${path}/channels/:recId`} exact component={FullChannelRoute} />
             <NestedRoute path={`${path}/channels/:recId/edit`} exact component={EditChannelRoute} />

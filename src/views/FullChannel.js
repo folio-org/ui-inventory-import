@@ -154,7 +154,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
             }}
           >
             <Icon icon="list">
-              <FormattedMessage id="ui-inventory-import.button.old-jobs" />
+              <FormattedMessage id="ui-inventory-import.button.jobs" />
             </Icon>
           </Button>
         </IfPermission>
