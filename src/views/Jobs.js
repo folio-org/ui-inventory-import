@@ -95,7 +95,7 @@ function Jobs({
                             channelName: '20%',
                             status: '100px',
                             amountImported: '90px',
-                            seconds: '70px',
+                            seconds: '100px',
                             started: '230px',
                             finished: '230px',
                             type: '110px',
