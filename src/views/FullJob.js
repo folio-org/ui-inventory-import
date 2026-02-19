@@ -1,9 +1,10 @@
-import React from 'react';
+/* eslint-disable react/jsx-no-bind */
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-import { HasCommand, LoadingPane, Pane, Row, Col, KeyValue, Accordion, MultiColumnList, checkScope } from '@folio/stripes/components';
-import { AppIcon, TitleManager } from '@folio/stripes/core';
+import { HasCommand, LoadingPane, Pane, Row, Col, KeyValue, Accordion, MultiColumnList, Button, checkScope } from '@folio/stripes/components';
+import { AppIcon, TitleManager, CalloutContext } from '@folio/stripes/core';
 import formatDateTime from '../util/formatDateTime';
 import ChannelLogFailedRecords from './ChannelLog/ChannelLogFailedRecords';
 import css from './Styles.css';
@@ -19,6 +20,8 @@ const handleKeyCommand = (handler, { disabled } = {}) => {
 
 
 const FullJob = (props) => {
+  const callout = useContext(CalloutContext);
+
   const {
     data,
     handlers,
@@ -54,6 +57,56 @@ const FullJob = (props) => {
     </>
   );
 
+  async function pauseJob() {
+    try {
+      await handlers.pause();
+    } catch (response) {
+      const body = await response.text();
+      // It turns out that statusText is omitted in many service's responses, and that's just how it is
+      callout.sendCallout({
+        type: 'error',
+        message: <FormattedMessage
+          id="ui-inventory-import.pause.failure"
+          values={{
+            channelName: record.channelName,
+            status: response.status,
+            body,
+          }}
+        />
+      });
+      return;
+    }
+
+    callout.sendCallout({
+      message: <FormattedMessage id="ui-inventory-import.pause.success" values={{ channelName: record.channelName }} />
+    });
+  }
+
+  async function resumeJob() {
+    try {
+      await handlers.resume();
+    } catch (response) {
+      const body = await response.text();
+      // It turns out that statusText is omitted in many service's responses, and that's just how it is
+      callout.sendCallout({
+        type: 'error',
+        message: <FormattedMessage
+          id="ui-inventory-import.resume.failure"
+          values={{
+            channelName: record.channelName,
+            status: response.status,
+            body,
+          }}
+        />
+      });
+      return;
+    }
+
+    callout.sendCallout({
+      message: <FormattedMessage id="ui-inventory-import.resume.success" values={{ channelName: record.channelName }} />
+    });
+  }
+
   return (
     <HasCommand commands={shortcuts} isWithinScope={checkScope} scope={document.body}>
       <Pane
@@ -79,9 +132,29 @@ const FullJob = (props) => {
           ) : (
             <p>
               <FormattedMessage id="ui-inventory-import.jobs.caption.notComplete" />
+              &nbsp;
+              &nbsp;
+              {status === 'RUNNING' ? (
+                <Button
+                  id="clickable-pause"
+                  buttonStyle="primary"
+                  onClick={pauseJob}
+                  marginBottom0
+                >
+                  <FormattedMessage id="ui-inventory-import.button.pause" />
+                </Button>
+              ) : (
+                <Button
+                  id="clickable-resume"
+                  buttonStyle="primary"
+                  onClick={resumeJob}
+                  marginBottom0
+                >
+                  <FormattedMessage id="ui-inventory-import.button.resume" />
+                </Button>
+              )}
             </p>
           )}
-          {/* XXX display record.finished somehow */}
           <Row>
             <Col xs={6}>
               <KeyValue
@@ -138,6 +211,8 @@ FullJob.propTypes = {
   }).isRequired,
   handlers: PropTypes.shape({
     onClose: PropTypes.func.isRequired,
+    pause: PropTypes.func.isRequired,
+    resume: PropTypes.func.isRequired,
   }),
 };
 

@@ -6,9 +6,8 @@ import packageInfo from '../../package';
 
 
 const FullJobRoute = ({ resources, mutator }) => {
-  const handleClose = () => {
-    mutator.query.update({ _path: `${packageInfo.stripes.route}/jobs` });
-  };
+  const handleClose =
+    () => mutator.query.update({ _path: `${packageInfo.stripes.route}/jobs` });
 
   return (
     <FullJob
@@ -18,7 +17,11 @@ const FullJobRoute = ({ resources, mutator }) => {
         failedRecords: resources.failedRecords.records[0],
         logs: resources.logs.records[0],
       }}
-      handlers={{ onClose: handleClose }}
+      handlers={{
+        onClose: handleClose,
+        pause: () => mutator.pause.POST({}),
+        resume: () => mutator.resume.POST({}),
+      }}
       updateQuery={mutator.query.update}
     />
   );
@@ -47,6 +50,26 @@ FullJobRoute.manifest = Object.freeze({
     type: 'okapi',
     path: 'inventory-import/failed-records?query=importJobId=:{recId}',
   },
+  pause: {
+    type: 'okapi',
+    path: (_qp, _pc, res) => {
+      const channelId = res.job.records?.[0]?.channelId;
+      if (channelId === undefined) return undefined;
+      return `inventory-import/channels/${channelId}/pause-job`;
+    },
+    fetch: false,
+    throwErrors: false,
+  },
+  resume: {
+    type: 'okapi',
+    path: (_qp, _pc, res) => {
+      const channelId = res.job.records?.[0]?.channelId;
+      if (channelId === undefined) return undefined;
+      return `inventory-import/channels/${channelId}/resume-job`;
+    },
+    fetch: false,
+    throwErrors: false,
+  },
 });
 
 
@@ -68,6 +91,12 @@ FullJobRoute.propTypes = {
   mutator: PropTypes.shape({
     query: PropTypes.shape({
       update: PropTypes.func.isRequired,
+    }).isRequired,
+    pause: PropTypes.shape({
+      POST: PropTypes.func.isRequired,
+    }).isRequired,
+    resume: PropTypes.shape({
+      POST: PropTypes.func.isRequired,
     }).isRequired,
   }).isRequired,
   match: PropTypes.shape({
