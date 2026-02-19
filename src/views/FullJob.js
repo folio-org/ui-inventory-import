@@ -6,6 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import { HasCommand, LoadingPane, Pane, Row, Col, KeyValue, Accordion, MultiColumnList, Button, checkScope } from '@folio/stripes/components';
 import { AppIcon, TitleManager, CalloutContext } from '@folio/stripes/core';
 import formatDateTime from '../util/formatDateTime';
+import useDurationFormatter from '../util/useDurationFormatter';
 import ChannelLogFailedRecords from './ChannelLog/ChannelLogFailedRecords';
 import css from './Styles.css';
 import packageInfo from '../../package';
@@ -20,6 +21,7 @@ const handleKeyCommand = (handler, { disabled } = {}) => {
 
 
 const FullJob = (props) => {
+  const formatDuration = useDurationFormatter();
   const callout = useContext(CalloutContext);
 
   const {
@@ -125,7 +127,7 @@ const FullJob = (props) => {
                 id="ui-inventory-import.jobs.caption.completed"
                 values={{
                   count: record.amountImported,
-                  seconds: ((new Date(record.finished) - new Date(record.started)) / 1000).toFixed(3),
+                  duration: formatDuration(Math.floor((new Date(record.finished) - new Date(record.started)) / 1000)),
                 }}
               />
             </p>

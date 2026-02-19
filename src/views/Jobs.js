@@ -6,6 +6,7 @@ import { LoadingPane, Paneset, Pane, MultiColumnList, MCLPagingTypes, NoValue } 
 import { ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
 import parseSort from '../util/parseSort';
 import formatDateTime from '../util/formatDateTime';
+import useDurationFormatter from '../util/useDurationFormatter';
 import JobsSearchPane from '../search/JobsSearchPane';
 import ErrorMessage from '../components/ErrorMessage';
 import packageInfo from '../../package';
@@ -22,11 +23,13 @@ function Jobs({
   onNeedMoreData,
   children,
 }) {
+  const formatDuration = useDurationFormatter('narrow');
+
   const columnMapping = {
     channelName: <FormattedMessage id="ui-inventory-import.jobs.column.channelName" />,
     status: <FormattedMessage id="ui-inventory-import.jobs.column.status" />,
     amountImported: <FormattedMessage id="ui-inventory-import.jobs.column.amountImported" />,
-    seconds: <FormattedMessage id="ui-inventory-import.jobs.column.seconds" />,
+    duration: <FormattedMessage id="ui-inventory-import.jobs.column.duration" />,
     started: <FormattedMessage id="ui-inventory-import.jobs.column.started" />,
     finished: <FormattedMessage id="ui-inventory-import.jobs.column.finished" />,
     type: <FormattedMessage id="ui-inventory-import.jobs.column.type" />,
@@ -37,9 +40,9 @@ function Jobs({
     status: r => <FormattedMessage id={`ui-inventory-import.jobs.column.status.${r.status}`} />,
     started: r => formatDateTime(r.started),
     finished: r => (r.finished ? formatDateTime(r.finished) : <NoValue />),
-    seconds: r => {
+    duration: r => {
       if (!r.finished) return <NoValue />;
-      return ((new Date(r.finished) - new Date(r.started)) / 1000).toFixed(3);
+      return formatDuration(Math.floor((new Date(r.finished) - new Date(r.started)) / 1000));
     },
     type: r => r.importType,
   };
@@ -95,7 +98,7 @@ function Jobs({
                             channelName: '20%',
                             status: '100px',
                             amountImported: '90px',
-                            seconds: '100px',
+                            duration: '100px',
                             started: '230px',
                             finished: '230px',
                             type: '110px',
@@ -105,7 +108,7 @@ function Jobs({
                           contentData={data.jobs}
                           totalCount={resultCount}
                           onHeaderClick={sasqParams.onSort}
-                          nonInteractiveHeaders={['seconds']}
+                          nonInteractiveHeaders={['duration']}
                           pageAmount={pageAmount}
                           onNeedMoreData={onNeedMoreData}
                           sortedColumn={sortedColumn}
