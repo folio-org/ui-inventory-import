@@ -145,7 +145,10 @@ function Channels({
                           pageAmount={pageAmount}
                           onNeedMoreData={onNeedMoreData}
                           pagingType={MCLPagingTypes.PREV_NEXT}
-                          onRowClick={(event, rec) => updateQuery({ _path: `./channels/${rec.id}` })}
+                          onRowClick={(event, rec) => {
+                            const basepath = location.pathname.replace(/\/channels.*/, '/channels');
+                            updateQuery({ _path: `${basepath}/${rec.id}` });
+                          }}
                         />
                       </Pane>
                     )}
