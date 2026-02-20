@@ -12,11 +12,12 @@ import packageInfo from '../../package';
 
 
 function exportAllRecords(resultCount, okapiKy) {
+  console.log('exportAllRecords', resultCount);
   const RCI = 100;   // Probably keep in sync with RESULT_COUNT_INCREMENT from RecordsRoute.js
 
   const p = [];
   for (let offset = 0; offset < resultCount; offset += RCI) {
-    p.push(okapiKy(`harvester-admin/previous-jobs/failed-records?offset=${offset}&limit=${RCI}`)
+    p.push(okapiKy(`inventory-import/failed-records?offset=${offset}&limit=${RCI}`)
       .then(res => res.json()));
   }
 
