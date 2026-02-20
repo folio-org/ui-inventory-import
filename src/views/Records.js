@@ -12,7 +12,6 @@ import packageInfo from '../../package';
 
 
 function exportAllRecords(resultCount, okapiKy) {
-  console.log('exportAllRecords', resultCount);
   const RCI = 100;   // Probably keep in sync with RESULT_COUNT_INCREMENT from RecordsRoute.js
 
   const p = [];
