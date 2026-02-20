@@ -10,7 +10,7 @@ import { deparseFilters } from '@folio/stripes/smart-components';
 function renderSingleDateFilter(intl, filterStruct, updateQuery, field, boundary) {
   const keyString = `${field}_${boundary}`;
   const rawValue = filterStruct[keyString]?.[0];
-  const value = !rawValue ? '' : rawValue.replace(/.*[<>]=/, '');
+  const value = !rawValue ? '' : rawValue.replace(/^.*[<>]=/, '');
 
   return (
     <Datepicker
