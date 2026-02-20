@@ -3,7 +3,7 @@ function message2stats(message) {
   if (!message || message === 'No records harvested') return stats;
 
   message.split(' ').forEach(row => {
-    const matchData = row.match(/(.*?)_.*:_+([^_]*)_+([^_]*)_+([^_]*)_+([^_]*)/);
+    const matchData = row.match(/^([^_]*)_[^:]*:_+([^_]+)_+([^_]+)_+([^_]+)_+([^_]+)/);
     if (matchData) {
       // eslint-disable-next-line no-unused-vars
       const [_matched, name, processed, loaded, deleted, failed] = matchData;
