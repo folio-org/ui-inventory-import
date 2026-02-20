@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 import { useStripes, IfPermission, AppIcon } from '@folio/stripes/core';
 import { LoadingPane, Paneset, Pane, MultiColumnList, PaneMenu, MenuSection, Button, Icon, MCLPagingTypes } from '@folio/stripes/components';
 import { ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
-import viewLogTranslationTag from '../util/viewLogTranslationTag';
 import parseSort from '../util/parseSort';
 import ChannelsSearchPane from '../search/ChannelsSearchPane';
 import ErrorMessage from '../components/ErrorMessage';
@@ -71,28 +70,15 @@ function Channels({
   };
 
   if (stripes.hasPerm('inventory-update.import.job-logs.collection.get')) {
-    columnMapping.logFile = <FormattedMessage id="ui-inventory-import.channels.column.logFile" />;
     columnMapping.jobs = <FormattedMessage id="ui-inventory-import.channels.column.jobs" />;
   }
 
   const formatter = {
     enabled: r => <FormattedMessage id={`ui-inventory-import.channels.column.enabled.${r.enabled}`} />,
     type: r => <FormattedMessage id={`ui-inventory-import.channels.column.type.${r.type.toUpperCase()}`} />,
-    logFile: r => (
-      <Button
-        id={`clickable-log-file-${r.id}`}
-        onClick={(e) => {
-          e.stopPropagation();
-          updateQuery({ _path: `${packageInfo.stripes.route}/channels/${r.id}/logs` });
-        }}
-        marginBottom0
-      >
-        <FormattedMessage id={viewLogTranslationTag(r)} />
-      </Button>
-    ),
     jobs: r => (
       <Button
-        id={`clickable-old-logs-${r.id}`}
+        id={`clickable-jobs-${r.id}`}
         onClick={(e) => {
           e.stopPropagation();
           updateQuery({ _path: `${packageInfo.stripes.route}/channels/${r.id}/jobs` });
