@@ -57,7 +57,7 @@ const filterConfig = [{
   name: 'timeStamp_to',
   cql: 'timeStamp',
   values: [],
-  parse: makePFV('timeStamp', '<='),
+  parse: makePFV('timeStamp', '<=', 'T23:59:59'),
 }];
 
 RecordsRoute.manifest = Object.freeze({
