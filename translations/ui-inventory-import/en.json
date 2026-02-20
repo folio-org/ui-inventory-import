@@ -30,7 +30,6 @@
     "nav.jobs": "Jobs",
     "nav.jobs-for": "Jobs for {name}",
     "nav.records": "Failed records",
-    "button.view-log.last": "Last log",
     "button.jobs": "Jobs",
     "button.pause": "Pause",
     "button.resume": "Resume",

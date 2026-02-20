@@ -136,18 +136,6 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
           <Button
             buttonStyle="dropdownItem"
             marginBottom0
-            id="clickable-view-log"
-            onClick={() => {
-              mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}/logs` });
-            }}
-          >
-            <Icon icon="report">
-              <FormattedMessage id={viewLogTranslationTag(rec)} />
-            </Icon>
-          </Button>
-          <Button
-            buttonStyle="dropdownItem"
-            marginBottom0
             id="clickable-jobs"
             onClick={() => {
               mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}/jobs` });
