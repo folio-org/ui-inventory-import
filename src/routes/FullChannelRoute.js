@@ -26,32 +26,6 @@ FullChannelRoute.manifest = Object.freeze({
       return `inventory-import/transformations/${rec.transformationId}`;
     },
   },
-
-/*
-  XXX update
-  run: {
-    type: 'okapi',
-    path: 'harvester-admin/jobs/run/:{recId}',
-    fetch: false,
-    throwErrors: false,
-    PUT: {
-      headers: {
-        'Accept': 'application/json'
-      }
-    }
-  },
-  stop: {
-    type: 'okapi',
-    path: 'harvester-admin/jobs/stop/:{recId}',
-    fetch: false,
-    throwErrors: false,
-    PUT: {
-      headers: {
-        'Accept': 'application/json'
-      }
-    }
-  },
-*/
 });
 
 
@@ -71,12 +45,6 @@ FullChannelRoute.propTypes = {
     }).isRequired,
     channel: PropTypes.shape({
       DELETE: PropTypes.func.isRequired,
-    }).isRequired,
-    run: PropTypes.shape({
-      // PUT: PropTypes.func.isRequired,
-    }).isRequired,
-    stop: PropTypes.shape({
-      PUT: PropTypes.func.isRequired,
     }).isRequired,
   }).isRequired,
   match: PropTypes.shape({

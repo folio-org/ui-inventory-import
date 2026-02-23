@@ -108,30 +108,6 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
           </Button>
         </IfPermission>
         {/*
-        <IfPermission perm="harvester-admin.run-jobs">
-          <Button
-            buttonStyle="dropdownItem"
-            marginBottom0
-            id="clickable-start-job"
-            onClick={() => { onToggle(); controlJob('run'); }}
-          >
-            <Icon icon="play">
-              <FormattedMessage id="ui-inventory-import.button.start-job" />
-            </Icon>
-          </Button>
-        </IfPermission>
-        <IfPermission perm="harvester-admin.stop-jobs">
-          <Button
-            buttonStyle="dropdownItem"
-            marginBottom0
-            id="clickable-stop-job"
-            onClick={() => { onToggle(); controlJob('stop'); }}
-          >
-            <Icon icon="times-circle-solid">
-              <FormattedMessage id="ui-inventory-import.button.stop-job" />
-            </Icon>
-          </Button>
-        </IfPermission>
         <IfPermission perm="harvester-admin.harvestables.log.get">
           <Button
             buttonStyle="dropdownItem"
@@ -217,12 +193,6 @@ FullChannel.propTypes = {
   mutator: PropTypes.shape({
     query: PropTypes.shape({
       update: PropTypes.func.isRequired,
-    }).isRequired,
-    run: PropTypes.shape({
-      PUT: PropTypes.func.isRequired,
-    }).isRequired,
-    stop: PropTypes.shape({
-      PUT: PropTypes.func.isRequired,
     }).isRequired,
   }).isRequired,
   match: PropTypes.shape({
