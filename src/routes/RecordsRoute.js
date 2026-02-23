@@ -24,7 +24,6 @@ const RecordsRoute = ({ stripes, resources, mutator, children }) => {
   };
 
   const hasLoaded = resources.records.hasLoaded;
-  console.log('RecordsRoute: hasLoaded =', hasLoaded, 'from', resources.records);
   const error = resources.records.failed ? resources.records.failed.message : undefined;
 
   return (
