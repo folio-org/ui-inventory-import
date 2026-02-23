@@ -42,16 +42,19 @@ const InventoryImportSettings = (props) => {
   // To support pages within the Channels settings
   const additionalRoutes = [
     <Route
+      key="route-create-channel"
       path={`${props.match.path}/channels/create/:type`}
       exact
       component={CreateChannelRoute}
     />,
     <Route
+      key="route-view-channel"
       path={`${props.match.path}/channels/:recId`}
       component={FullChannelRoute}
       exact
     />,
     <Route
+      key="route-edit-channel"
       path={`${props.match.path}/channels/:recId/edit`}
       exact
       component={EditChannelRoute}
