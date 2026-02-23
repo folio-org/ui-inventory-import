@@ -67,6 +67,7 @@ function Records({
   onNeedMoreData,
   children,
 }) {
+  console.log('Records: hasLoaded =', hasLoaded);
   const intl = useIntl();
   const [invalidSortKey, setInvalidSortKey] = useState();
   const okapiKy = useOkapiKy();
