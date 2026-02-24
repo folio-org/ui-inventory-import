@@ -61,7 +61,7 @@ Use these conventions to indicate the status of each criterion.
   * _This is not applicable to libraries_
 * [ ] **Inclusion of third party dependencies complies with [ASF 3rd Party License Policy](https://apache.org/legal/resolved.html) (2)**
   * **emitter-component version 1.1.2 is not licensed https://www.npmjs.com/package/emitter-component/v/1.1.2 but the [latest version](https://github.com/sindresorhus/component-emitter) is under MIT license. I think this means this 3rd party dependency should be updated to the latest, licensed version.**
-    * <font color="green">This module was a dependency of the OAI-PMH support inhereted from ui-harvester-admin, which is not used in the present module. I have removed that dependency, and with it, the problematic dependency on emitter-component. I think this item can now be checked off.</font>
+    * **FOR REVIEW.** This module was a dependency of the OAI-PMH support inhereted from ui-harvester-admin, which is not used in the present module. I have removed that dependency, and with it, the problematic dependency on emitter-component. I think this item can now be checked off.
   * Uses README for [Category B Appropriately Labelled Condition](https://apache.org/legal/resolved.html#appropriately-labelled-condition)
   * LGPL consideration:
     * org.z3950.zing:cql-java is allowed if appropriately labelled, even if it is LGPL-2.1-only
@@ -73,11 +73,11 @@ Use these conventions to indicate the status of each criterion.
   * _note: [More information about this criterion](https://github.com/folio-org/tech-council/blob/master/criteria/THIRD_PARTY_DEPENDENCIES.MD)_
 * [ ] **Installation documentation is included (11)**
   * **No installation instructions in the README.**
-    * <font color="green">[New (short) section](README.md#installation) added.</font>
+    * **FOR REVIEW.** [New (short) section](README.md#installation) added.
   * -_note: read more at https://github.com/folio-org/mod-search/blob/master/README.md_
   * _This is not applicable to libraries_
 * [ ] **[Personal data form](https://github.com/folio-org/personal-data-disclosure) is completed, accurate, and provided as PERSONAL_DATA_DISCLOSURE.md file (6)**
-    * <font color="green">[New file](PERSONAL_DATA_DISCLOSURE.md) added.</font>
+    * **FOR REVIEW.** [New file](PERSONAL_DATA_DISCLOSURE.md) added.
   * _This is not applicable to libraries_
 * [ ] **Sensitive and environment-specific information is not checked into git repository (6)**
   * **I think this file `bin/create-and-assign-permissions.sh` should be removed as running it depends on another script that is not in the repo.**
