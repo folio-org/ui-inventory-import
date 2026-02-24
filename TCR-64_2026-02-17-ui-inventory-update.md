@@ -73,6 +73,7 @@ Use these conventions to indicate the status of each criterion.
   * _note: [More information about this criterion](https://github.com/folio-org/tech-council/blob/master/criteria/THIRD_PARTY_DEPENDENCIES.MD)_
 * [ ] **Installation documentation is included (11)**
   * **No installation instructions in the README.**
+    * <font color="green">[New (short) section](README.md#installation) added.</font>
   * -_note: read more at https://github.com/folio-org/mod-search/blob/master/README.md_
   * _This is not applicable to libraries_
 * [ ] **[Personal data form](https://github.com/folio-org/personal-data-disclosure) is completed, accurate, and provided as PERSONAL_DATA_DISCLOSURE.md file (6)**
