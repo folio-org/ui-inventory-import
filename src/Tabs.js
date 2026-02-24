@@ -17,6 +17,7 @@ function SwitchRoute() {
   const segments = [{
     name: 'channels',
     perm: 'ui-inventory-import.harvestables.view', // XXX Upgrade to 'ui-inventory-import.channels.view'
+    params: 'sort=name'
   }, {
     name: 'jobs',
     perm: 'ui-inventory-import.jobs-and-failed-records.view',
