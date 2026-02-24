@@ -165,7 +165,6 @@
   },
   "dependencies": {
     "@axetroy/react-download": "^1.1.1",
-    "@indexdata/oai-pmh": "^0.0.2",
     "final-form-arrays": "^3.0.2",
     "final-form-set-field-data": "^1.0.2",
     "lodash": "^4.17.0",

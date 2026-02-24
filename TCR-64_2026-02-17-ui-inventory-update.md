@@ -61,6 +61,7 @@ Use these conventions to indicate the status of each criterion.
   * _This is not applicable to libraries_
 * [ ] **Inclusion of third party dependencies complies with [ASF 3rd Party License Policy](https://apache.org/legal/resolved.html) (2)**
   * **emitter-component version 1.1.2 is not licensed https://www.npmjs.com/package/emitter-component/v/1.1.2 but the [latest version](https://github.com/sindresorhus/component-emitter) is under MIT license. I think this means this 3rd party dependency should be updated to the latest, licensed version.**
+    * <font color="green">This module was a dependency of the OAI-PMH support inhereted from ui-harvester-admin, which is not used in the present module. I have removed that dependency, and with it, the problematic dependency on emitter-component. I think this item can now be checked off.</font>
   * Uses README for [Category B Appropriately Labelled Condition](https://apache.org/legal/resolved.html#appropriately-labelled-condition)
   * LGPL consideration:
     * org.z3950.zing:cql-java is allowed if appropriately labelled, even if it is LGPL-2.1-only
