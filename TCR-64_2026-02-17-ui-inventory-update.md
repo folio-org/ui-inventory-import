@@ -81,7 +81,9 @@ Use these conventions to indicate the status of each criterion.
   * _This is not applicable to libraries_
 * [ ] **Sensitive and environment-specific information is not checked into git repository (6)**
   * **I think this file `bin/create-and-assign-permissions.sh` should be removed as running it depends on another script that is not in the repo.**
+    * **FOR REVIEW.** Removed.,
   * **Also this one? https://github.com/folio-org/ui-inventory-import/blob/3ff636d8995345b8b297ed2f33b70a06de39ee24/package.json#L11**
+    * **FOR REVIEW.** Removed.
 * [x] Written in a language and framework from the [officially supported technologies](https://wiki.folio.org/display/TC/Officially+Supported+Technologies) page[^1] (3, 5)
 * [x] Uses FOLIO interfaces already provided by previously accepted modules _e.g. a UI module cannot be accepted that relies on an interface only provided by a back end module that hasn’t been accepted yet_ (3, 5, 12)
   * _This is not applicable to libraries_
