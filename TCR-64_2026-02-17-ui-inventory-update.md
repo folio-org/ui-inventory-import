@@ -1,4 +1,4 @@
-# FOLIO Module Acceptance Values and Criteria
+# FOLIO Module Acceptance Values and Criteria — ui-inventory-import
 
 ## version 3.0 (ratified 2025-01-25) + draft notes for existing module evaluation
 
