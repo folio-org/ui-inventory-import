@@ -7,7 +7,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "stripes serve --startProxy --port 3003 --okapi https://snapshot-dev-okapi.folio-dev.indexdata.com --tenant harvester",
-    "test": "jest",
+    "test": "jest --coverage",
     "lint": "eslint -f unix .",
     "qlint": "eslint -f unix  --rule '{\"no-console\":\"off\"}' .",
     "build-mod-descriptor": "stripes mod descriptor --full --strict | jq '.[]' > module-descriptor.json",

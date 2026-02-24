@@ -90,6 +90,7 @@ Use these conventions to indicate the status of each criterion.
 * [x] Must not depend on a FOLIO library that has not been approved through the TCR process
 * [ ] **Gracefully handles the absence of third party systems or related configuration. (3, 5, 12)**
   * **I don't think it meets this criteria b/c of the environment-specific information I noted above.**
+    * **FOR REVIEW.** Does the removal of the minerva line from the package file address your concern?
   * _Note: This applies to optional third-party integrations and their configurations only. Required environment variables (those without sensible defaults) should fail fast on startup per the Environment Variables Policy._
 * [ ] **Sonarqube hasn't identified any security issues, any high or greater severity issues, or excessive (>3%) duplication (6); and any disabled or intentionally ignored rules/recommendations are reasonably justified.**
   * **duplicated lines is at 7.8% above the 3% threshold**
@@ -98,6 +99,7 @@ Use these conventions to indicate the status of each criterion.
 * [x] Uses [officially supported](https://wiki.folio.org/display/TC/Officially+Supported+Technologies) build tools (3, 5, 13)
 * [ ] **Unit tests have 80% coverage or greater, and are based on [officially supported technologies](https://wiki.folio.org/display/TC/Officially+Supported+Technologies)[^1] (3, 4)**
   * **0% coverage https://sonarcloud.io/summary/overall?id=org.folio%3Aui-inventory-import&branch=main**
+    * **FOR REVIEW.** Not quite -- the tests have 1.97% coverage :-). In principle, though, Yes. At present there are very few unit tests. We will add these during the period when the customer is shaking down the first delivered version of the module.
 * [ ] **Assigned to exactly one application descriptor within the FOLIO Community LSP Platform, specified in the Jira task for this module evaluation (3, 5)**
   * **Not in any application descriptor AFAICT.**
   * _The FOLIO Community LSP Platform is defined at https://github.com/folio-org/platform-lsp._
