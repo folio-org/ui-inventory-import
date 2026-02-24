@@ -77,6 +77,7 @@ Use these conventions to indicate the status of each criterion.
   * -_note: read more at https://github.com/folio-org/mod-search/blob/master/README.md_
   * _This is not applicable to libraries_
 * [ ] **[Personal data form](https://github.com/folio-org/personal-data-disclosure) is completed, accurate, and provided as PERSONAL_DATA_DISCLOSURE.md file (6)**
+    * <font color="green">[New file](PERSONAL_DATA_DISCLOSURE.md) added.</font>
   * _This is not applicable to libraries_
 * [ ] **Sensitive and environment-specific information is not checked into git repository (6)**
   * **I think this file `bin/create-and-assign-permissions.sh` should be removed as running it depends on another script that is not in the repo.**
