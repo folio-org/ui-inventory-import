@@ -23,15 +23,18 @@ const RecordsRoute = ({ stripes, resources, mutator, children }) => {
     source.fetchOffset(index);
   };
 
-  const hasLoaded = resources.records.hasLoaded;
-  const error = resources.records.failed ? resources.records.failed.message : undefined;
+  // eslint-disable-next-line no-console
+  console.log('RecordsRoute: resources =', resources);
+
+  const hasLoaded = resources.failedRecords.hasLoaded;
+  const error = resources.failedRecords.failed ? resources.failedRecords.failed.message : undefined;
 
   return (
     <Records
       data={{
-        records: resources.records.records,
+        records: resources.failedRecords.records,
       }}
-      resultCount={resources.records.other?.totalRecords}
+      resultCount={resources.failedRecords.other?.totalRecords}
       query={resources.query}
       updateQuery={mutator.query.update}
       hasLoaded={hasLoaded}
@@ -64,7 +67,7 @@ RecordsRoute.manifest = Object.freeze({
   query: {},
   resultCount: { initialValue: INITIAL_RESULT_COUNT },
   resultOffset: { initialValue: 0 },
-  records: {
+  failedRecords: {
     type: 'okapi',
     path: 'inventory-import/failed-records',
     throwErrors: false,
@@ -101,7 +104,7 @@ RecordsRoute.propTypes = {
   }).isRequired,
   resources: PropTypes.shape({
     query: PropTypes.object.isRequired,
-    records: PropTypes.shape({
+    failedRecords: PropTypes.shape({
       failed: PropTypes.oneOfType([
         PropTypes.bool,
         PropTypes.shape({
