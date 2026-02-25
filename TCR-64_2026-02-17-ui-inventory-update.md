@@ -104,6 +104,7 @@ Use these conventions to indicate the status of each criterion.
   * **Not in any application descriptor AFAICT.**
   * _The FOLIO Community LSP Platform is defined at https://github.com/folio-org/platform-lsp._
   * _This can be evaluated by searching application descriptors across the folio-org GitHub organization (considering those applications part of the community platform) and confirming that this module only appears in the application descriptor of the one specified application._
+    * **FOR REVIEW.** I have created [a pull request](https://github.com/folio-org/app-platform-complete/pull/52) for adding this module to app-platform-complete.
 
 ### Frontend
 
