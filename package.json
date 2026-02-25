@@ -29,6 +29,9 @@
       }
     ],
     "okapiInterfaces": {
+      "inventory-import": "1.0"
+    },
+    "optionalOkapiInterfaces": {
     },
     "permissionSets": [
       {
