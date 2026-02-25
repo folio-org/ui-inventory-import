@@ -119,8 +119,10 @@ Note: Frontend criteria apply to both modules and shared libraries.
   * -_note: these tests are defined in https://github.com/folio-org/stripes-testing_
 * [ ] **Have i18n support via react-intl and an en.json file with English texts (8)**
   * **There is only an en.json file under translations.**
+    * **FOR REVIEW.** That is correct: the translation process has not yet begun, but all the infrastructure is in place for this to be done in the usual way via Lokalize once the code has settled down enough for it not to be premature.
 * [ ] **Have WCAG 2.1 AA compliance as measured by a current major version of axe DevTools Chrome Extension (9)**
   * **Cannot evaluate this. I can't find `folio/inventory-update` at https://folio-snapshot-2.dev.folio.org/settings/about**
+    * **FOR REVIEW**. Correct: [the work to add this module to snapshot](https://folio-org.atlassian.net/browse/FOLIO-4442) has not yet been done, as the module has only recently approached stability. We should get this done now.
 * [x] Use the Stripes version of referred on the [Officially Supported Technologies](https://wiki.folio.org/display/TC/Officially+Supported+Technologies) page[^1] (10, 16)
 * [ ] **Follow relevant existing UI layouts, patterns and norms (10) -_note: read more about current practices at [https://ux.folio.org/docs/all-guidelines/](https://ux.folio.org/docs/all-guidelines/)_**
   * **Cannot evaluate this. I can't find `folio/inventory-update` at https://folio-snapshot-2.dev.folio.org/settings/about**
