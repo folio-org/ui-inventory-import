@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { useStripes } from '@folio/stripes/core';
 import { Col, Row, KeyValue, MultiColumnList, Accordion } from '@folio/stripes/components';
@@ -38,6 +39,7 @@ const PipelineDetail = (props) => {
         contentData={data.steps}
         formatter={{
           position: r => r.rowIndex + 1,
+          name: r => <Link to={`../step/${r.id}`}>{r.name}</Link>,
         }}
       />
 
