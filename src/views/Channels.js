@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useStripes, IfPermission, AppIcon } from '@folio/stripes/core';
 import { LoadingPane, Paneset, Pane, MultiColumnList, PaneMenu, MenuSection, Button, Icon, MCLPagingTypes } from '@folio/stripes/components';
 import { ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
@@ -74,6 +74,14 @@ function Channels({
   }
 
   const formatter = {
+    name: r => {
+      const basepath = location.pathname.replace(/\/channels.*/, '/channels');
+      let dest = `${basepath}/${r.id}`;
+      if (location.search) {
+        dest = dest + location.search;
+      }
+      return <Link to={dest}>{r.name}</Link>;
+    },
     enabled: r => <FormattedMessage id={`ui-inventory-import.channels.column.enabled.${r.enabled}`} />,
     type: r => <FormattedMessage id={`ui-inventory-import.channels.column.type.${r.type.toUpperCase()}`} />,
     jobs: r => (
@@ -145,10 +153,6 @@ function Channels({
                           pageAmount={pageAmount}
                           onNeedMoreData={onNeedMoreData}
                           pagingType={MCLPagingTypes.PREV_NEXT}
-                          onRowClick={(event, rec) => {
-                            const basepath = location.pathname.replace(/\/channels.*/, '/channels');
-                            updateQuery({ _path: `${basepath}/${rec.id}` });
-                          }}
                         />
                       </Pane>
                     )}
