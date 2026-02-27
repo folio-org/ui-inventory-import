@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import { useLocation, Link } from 'react-router-dom';
 import { AppIcon } from '@folio/stripes/core';
 import { LoadingPane, Paneset, Pane, MultiColumnList, MCLPagingTypes, NoValue } from '@folio/stripes/components';
 import { ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
@@ -23,6 +24,7 @@ function Jobs({
   onNeedMoreData,
   children,
 }) {
+  const location = useLocation();
   const formatDuration = useDurationFormatter('narrow');
 
   const columnMapping = {
@@ -37,6 +39,9 @@ function Jobs({
   };
 
   const formatter = {
+    channelName: r => (
+      <Link to={`${packageInfo.stripes.route}/jobs/${r.id}${location.search}`}>{r.channelName}</Link>
+    ),
     status: r => <FormattedMessage id={`ui-inventory-import.jobs.column.status.${r.status}`} />,
     started: r => formatDateTime(r.started),
     finished: r => (r.finished ? formatDateTime(r.finished) : <NoValue />),
@@ -114,7 +119,6 @@ function Jobs({
                           sortedColumn={sortedColumn}
                           sortDirection={sortDirection}
                           pagingType={MCLPagingTypes.PREV_NEXT}
-                          onRowClick={(event, rec) => updateQuery({ _path: `${packageInfo.stripes.route}/jobs/${rec.id}` })}
                         />
                       </Pane>
                     )}
