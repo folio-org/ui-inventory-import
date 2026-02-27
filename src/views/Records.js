@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
+import { useLocation, Link } from 'react-router-dom';
 import { AppIcon, useOkapiKy } from '@folio/stripes/core';
 import { MenuSection, Button, Icon, LoadingPane, Paneset, Pane, MultiColumnList, ErrorModal, exportToCsv, MCLPagingTypes } from '@folio/stripes/components';
 import { ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
@@ -67,6 +68,7 @@ function Records({
   onNeedMoreData,
   children,
 }) {
+  const location = useLocation();
   const intl = useIntl();
   const [invalidSortKey, setInvalidSortKey] = useState();
   const okapiKy = useOkapiKy();
@@ -90,7 +92,11 @@ function Records({
 
   const formatter = {
     instanceHrid: r => r.transformedRecord?.instance?.hrid,
-    instanceTitle: r => r.transformedRecord?.instance?.title,
+    instanceTitle: r => (
+      <Link to={`${packageInfo.stripes.route}/records/${r.id}${location.search}`}>
+        {r.transformedRecord?.instance?.title || <FormattedMessage id="ui-inventory-import.no-title" />}
+      </Link>
+    ),
     errors: r => errors2react(r.recordErrors),
   };
 
@@ -146,7 +152,6 @@ function Records({
                           sortedColumn={sortedColumn}
                           sortDirection={sortDirection}
                           pagingType={MCLPagingTypes.PREV_NEXT}
-                          onRowClick={(event, rec) => updateQuery({ _path: `${packageInfo.stripes.route}/records/${rec.id}` })}
                         />
                         <ErrorModal
                           open={!!invalidSortKey}

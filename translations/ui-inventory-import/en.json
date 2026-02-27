@@ -2,6 +2,7 @@
     "meta.title": "Inventory import",
     "no-value": "-",
     "error": "Something went wrong",
+    "no-title": "[No title]",
     "selectValue": "Select a value",
     "fillIn": "Please fill this in to continue",
     "invalidXML": "Invalid XML: {error}",
