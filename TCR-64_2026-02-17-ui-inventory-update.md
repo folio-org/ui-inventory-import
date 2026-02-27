@@ -95,7 +95,6 @@ Use these conventions to indicate the status of each criterion.
 * [ ] **Sonarqube hasn't identified any security issues, any high or greater severity issues, or excessive (>3%) duplication (6); and any disabled or intentionally ignored rules/recommendations are reasonably justified.**
   * **duplicated lines is at 7.8% above the 3% threshold**
   * **124 major type severity identified**
-    * **FOR REVIEW.**. Where did you find this report? I can't find it in [CI output](https://github.com/folio-org/ui-inventory-import/actions/runs/22494373850/job/65165028627)
   * See [Rule Customization](https://dev.folio.org/guides/code-analysis/#rule-customization) details. 
 * [x] Uses [officially supported](https://wiki.folio.org/display/TC/Officially+Supported+Technologies) build tools (3, 5, 13)
 * [ ] **Unit tests have 80% coverage or greater, and are based on [officially supported technologies](https://wiki.folio.org/display/TC/Officially+Supported+Technologies)[^1] (3, 4)**
