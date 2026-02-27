@@ -7,7 +7,6 @@ import ChannelsRoute from './routes/ChannelsRoute';
 import CreateChannelRoute from './routes/CreateChannelRoute';
 import FullChannelRoute from './routes/FullChannelRoute';
 import EditChannelRoute from './routes/EditChannelRoute';
-import ChannelLogRoute from './routes/ChannelLogRoute';
 import JobsRoute from './routes/JobsRoute';
 import FullJobRoute from './routes/FullJobRoute';
 import RecordsRoute from './routes/RecordsRoute';
@@ -39,7 +38,6 @@ const InventoryImportApp = (props) => {
         <Switch>
           <Redirect exact from={path} to={`${path}/${dest}`} />
           <NestedRoute path={`${path}/channels/create/:type`} exact component={CreateChannelRoute} />
-          <NestedRoute path={`${path}/channels/:recId/logs`} exact component={ChannelLogRoute} />
           <NestedRoute path={`${path}/channels/:recId/jobs`} exact component={JobsRoute} />
           <NestedRoute path={`${path}/channels`} component={ChannelsRoute}>
             <NestedRoute path={`${path}/channels/:recId`} exact component={FullChannelRoute} />
