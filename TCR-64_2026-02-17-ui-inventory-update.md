@@ -117,6 +117,7 @@ Note: Frontend criteria apply to both modules and shared libraries.
 * [ ] **If provided, End-to-end tests must be written in an [officially supported technology](https://wiki.folio.org/display/TC/Officially+Supported+Technologies)[^1] (3, 4)**
   * -_note: while it's strongly recommended that modules implement integration tests, it's not a requirement_
   * -_note: these tests are defined in https://github.com/folio-org/stripes-testing_
+    * **FOR REVIEW.** Not applicable.
 * [ ] **Have i18n support via react-intl and an en.json file with English texts (8)**
   * **There is only an en.json file under translations.**
     * **FOR REVIEW.** That is correct: the translation process has not yet begun, but all the infrastructure is in place for this to be done in the usual way via Lokalize once the code has settled down enough for it not to be premature.
