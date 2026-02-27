@@ -71,26 +71,17 @@ Use these conventions to indicate the status of each criterion.
   * _note: If a library declares multiple licenses in its pom.xml, [only one of them needs to comply](https://maven.apache.org/ref/3.9.11/maven-model/maven.html#project)._ (This applies only to Maven. For other package managers, closer evaluation is needed.)
   * _note: The [FOLIO Module Evaluator](https://github.com/folio-org/tc-module-eval) tool is optionally available to evaluate this criterion for Java modules (built with Maven) and for front-end modules.  TC expects to [require its use](https://github.com/folio-org/tech-council/pull/110) in the module evaluation process after a trial period._
   * _note: [More information about this criterion](https://github.com/folio-org/tech-council/blob/master/criteria/THIRD_PARTY_DEPENDENCIES.MD)_
-* [ ] **Installation documentation is included (11)**
-  * **No installation instructions in the README.**
-    * **FOR REVIEW.** [New (short) section](README.md#installation) added.
+* [x] **Installation documentation is included (11)**
   * -_note: read more at https://github.com/folio-org/mod-search/blob/master/README.md_
   * _This is not applicable to libraries_
-* [ ] **[Personal data form](https://github.com/folio-org/personal-data-disclosure) is completed, accurate, and provided as PERSONAL_DATA_DISCLOSURE.md file (6)**
-    * **FOR REVIEW.** [New file](PERSONAL_DATA_DISCLOSURE.md) added.
+* [x] **[Personal data form](https://github.com/folio-org/personal-data-disclosure) is completed, accurate, and provided as PERSONAL_DATA_DISCLOSURE.md file (6)**
   * _This is not applicable to libraries_
-* [ ] **Sensitive and environment-specific information is not checked into git repository (6)**
-  * **I think this file `bin/create-and-assign-permissions.sh` should be removed as running it depends on another script that is not in the repo.**
-    * **FOR REVIEW.** Removed.,
-  * **Also this one? https://github.com/folio-org/ui-inventory-import/blob/3ff636d8995345b8b297ed2f33b70a06de39ee24/package.json#L11**
-    * **FOR REVIEW.** Removed.
+* [x] **Sensitive and environment-specific information is not checked into git repository (6)**
 * [x] Written in a language and framework from the [officially supported technologies](https://wiki.folio.org/display/TC/Officially+Supported+Technologies) page[^1] (3, 5)
 * [x] Uses FOLIO interfaces already provided by previously accepted modules _e.g. a UI module cannot be accepted that relies on an interface only provided by a back end module that hasn’t been accepted yet_ (3, 5, 12)
   * _This is not applicable to libraries_
 * [x] Must not depend on a FOLIO library that has not been approved through the TCR process
-* [ ] **Gracefully handles the absence of third party systems or related configuration. (3, 5, 12)**
-  * **I don't think it meets this criteria b/c of the environment-specific information I noted above.**
-    * **FOR REVIEW.** Does the removal of the minerva line from the package file address your concern?
+* [x] **Gracefully handles the absence of third party systems or related configuration. (3, 5, 12)**
   * _Note: This applies to optional third-party integrations and their configurations only. Required environment variables (those without sensible defaults) should fail fast on startup per the Environment Variables Policy._
 * [ ] **Sonarqube hasn't identified any security issues, any high or greater severity issues, or excessive (>3%) duplication (6); and any disabled or intentionally ignored rules/recommendations are reasonably justified.**
   * **duplicated lines is at 7.8% above the 3% threshold**
@@ -100,11 +91,9 @@ Use these conventions to indicate the status of each criterion.
 * [ ] **Unit tests have 80% coverage or greater, and are based on [officially supported technologies](https://wiki.folio.org/display/TC/Officially+Supported+Technologies)[^1] (3, 4)**
   * **0% coverage https://sonarcloud.io/summary/overall?id=org.folio%3Aui-inventory-import&branch=main**
     * **FOR REVIEW.** Not quite -- the tests have 1.97% coverage :-). In principle, though, Yes. At present there are very few unit tests. We will add these during the period when the customer is shaking down the first delivered version of the module.
-* [ ] **Assigned to exactly one application descriptor within the FOLIO Community LSP Platform, specified in the Jira task for this module evaluation (3, 5)**
-  * **Not in any application descriptor AFAICT.**
+* [x] **Assigned to exactly one application descriptor within the FOLIO Community LSP Platform, specified in the Jira task for this module evaluation (3, 5)**
   * _The FOLIO Community LSP Platform is defined at https://github.com/folio-org/platform-lsp._
   * _This can be evaluated by searching application descriptors across the folio-org GitHub organization (considering those applications part of the community platform) and confirming that this module only appears in the application descriptor of the one specified application._
-    * **FOR REVIEW.** I have created [a pull request](https://github.com/folio-org/app-platform-complete/pull/53) for adding this module to app-platform-complete.
 
 ### Frontend
 
@@ -114,13 +103,10 @@ Note: Frontend criteria apply to both modules and shared libraries.
   * **`okapiInterfaces` is empty and `optionalOkapiInterfaces` is missing.**
     * **FOR REVIEW.** Fixed. `optionalOkapiInterfaces` is provided but empty, for explicitness.
   * -_note: read more at https://github.com/folio-org/stripes/blob/master/doc/dev-guide.md#the-package-file-stripes-entry_
-* [ ] **If provided, End-to-end tests must be written in an [officially supported technology](https://wiki.folio.org/display/TC/Officially+Supported+Technologies)[^1] (3, 4)**
+* [x] ~INAPPLICABLE~ **If provided, End-to-end tests must be written in an [officially supported technology](https://wiki.folio.org/display/TC/Officially+Supported+Technologies)[^1] (3, 4)**
   * -_note: while it's strongly recommended that modules implement integration tests, it's not a requirement_
   * -_note: these tests are defined in https://github.com/folio-org/stripes-testing_
-    * **FOR REVIEW.** Not applicable.
-* [ ] **Have i18n support via react-intl and an en.json file with English texts (8)**
-  * **There is only an en.json file under translations.**
-    * **FOR REVIEW.** The translation process has now begun, and all infrastructure is in place both in software and in external tooling (Lokalize).
+* [x] **Have i18n support via react-intl and an en.json file with English texts (8)**
 * [ ] **Have WCAG 2.1 AA compliance as measured by a current major version of axe DevTools Chrome Extension (9)**
   * **Cannot evaluate this. I can't find `folio/inventory-update` at https://folio-snapshot-2.dev.folio.org/settings/about**
     * **FOR REVIEW**. The module is now in snapshot. I have fixed some accessibility problems found by the tooling, but it is also reporting false positives for MultiColumnLists and Panes with no focussable elements. See [Slack discussion 1](https://open-libr-foundation.slack.com/archives/C210UCHQ9/p1772129615369659) and [Slack discussion 2](https://open-libr-foundation.slack.com/archives/C210UCHQ9/p1772202581612039?thread_ts=1772193220.619029&cid=C210UCHQ9).
