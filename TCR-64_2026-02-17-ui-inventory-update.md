@@ -122,7 +122,7 @@ Note: Frontend criteria apply to both modules and shared libraries.
     * **FOR REVIEW.** That is correct: the translation process has not yet begun, but all the infrastructure is in place for this to be done in the usual way via Lokalize once the code has settled down enough for it not to be premature.
 * [ ] **Have WCAG 2.1 AA compliance as measured by a current major version of axe DevTools Chrome Extension (9)**
   * **Cannot evaluate this. I can't find `folio/inventory-update` at https://folio-snapshot-2.dev.folio.org/settings/about**
-    * **FOR REVIEW**. The module is now in snapshot.
+    * **FOR REVIEW**. The module is now in snapshot. I have fixed some accessibility problems found by the tooling, but it is also reporting false positives for MultiColumnLists and Panes with no focussable elements. See [Slack discussion 1](https://open-libr-foundation.slack.com/archives/C210UCHQ9/p1772129615369659) and [Slack discussion 2](https://open-libr-foundation.slack.com/archives/C210UCHQ9/p1772202581612039?thread_ts=1772193220.619029&cid=C210UCHQ9).
 * [x] Use the Stripes version of referred on the [Officially Supported Technologies](https://wiki.folio.org/display/TC/Officially+Supported+Technologies) page[^1] (10, 16)
 * [ ] **Follow relevant existing UI layouts, patterns and norms (10) -_note: read more about current practices at [https://ux.folio.org/docs/all-guidelines/](https://ux.folio.org/docs/all-guidelines/)_**
   * **Cannot evaluate this. I can't find `folio/inventory-update` at https://folio-snapshot-2.dev.folio.org/settings/about**
