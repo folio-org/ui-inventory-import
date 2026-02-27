@@ -76,11 +76,7 @@ function Channels({
   const formatter = {
     name: r => {
       const basepath = location.pathname.replace(/\/channels.*/, '/channels');
-      let dest = `${basepath}/${r.id}`;
-      if (location.search) {
-        dest = dest + location.search;
-      }
-      return <Link to={dest}>{r.name}</Link>;
+      return <Link to={`${basepath}/${r.id}${location.search}`}>{r.name}</Link>;
     },
     enabled: r => <FormattedMessage id={`ui-inventory-import.channels.column.enabled.${r.enabled}`} />,
     type: r => <FormattedMessage id={`ui-inventory-import.channels.column.type.${r.type.toUpperCase()}`} />,
