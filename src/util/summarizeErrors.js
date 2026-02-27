@@ -1,7 +1,7 @@
 import React from 'react';
 import css from '../views/Styles.css';
 
-function errors2react(errors) {
+function errors2react(errors = []) {
   return (
     <ul className={css.noDot}>
       {

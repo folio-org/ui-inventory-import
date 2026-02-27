@@ -31,7 +31,7 @@ const ChannelLogFailedRecords = ({ failedRecords, updateQuery }) => {
       id="logs-failed"
       label={<FormattedMessage
         id="ui-inventory-import.logs.countFailedRecords"
-        values={{ count: failedRecords?.failedRecords.length }}
+        values={{ count: failedRecords?.failedRecords?.length }}
       />}
     >
       {!failedRecords ? <Loading /> :
