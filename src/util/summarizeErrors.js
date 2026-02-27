@@ -6,11 +6,11 @@ function errors2react(errors) {
     <ul className={css.noDot}>
       {
         errors.map(error => (
-          <>
+          <li>
             <code>{error.code}</code>
             &nbsp;
             ({error.message})
-          </>
+          </li>
         ))
       }
     </ul>
