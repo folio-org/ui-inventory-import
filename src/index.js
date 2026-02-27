@@ -12,7 +12,6 @@ import JobsRoute from './routes/JobsRoute';
 import FullJobRoute from './routes/FullJobRoute';
 import RecordsRoute from './routes/RecordsRoute';
 import FullRecordRoute from './routes/FullRecordRoute';
-import MikeRoute from './routes/MikeRoute';
 import Tabs from './Tabs';
 import css from './index.css';
 
@@ -39,7 +38,6 @@ const InventoryImportApp = (props) => {
       <div className={css.body}>
         <Switch>
           <Redirect exact from={path} to={`${path}/${dest}`} />
-          <NestedRoute path={`${path}/mike`} exact component={MikeRoute} />
           <NestedRoute path={`${path}/channels/create/:type`} exact component={CreateChannelRoute} />
           <NestedRoute path={`${path}/channels/:recId/logs`} exact component={ChannelLogRoute} />
           <NestedRoute path={`${path}/channels/:recId/jobs`} exact component={JobsRoute} />

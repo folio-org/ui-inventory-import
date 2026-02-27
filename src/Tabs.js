@@ -26,11 +26,6 @@ function SwitchRoute() {
     name: 'records',
     perm: 'ui-inventory-import.jobs-and-failed-records.view',
     params: `filters=timeStamp_from.${isoString}`,
-    /*
-  }, {
-    name: 'mike',
-    perm: 'ui-inventory-import.channels.view',
-    */
   }];
 
   return (
