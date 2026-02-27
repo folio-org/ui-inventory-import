@@ -48,7 +48,6 @@ function SwitchRoute() {
                   key={`${name}`}
                   to={`/${base}/${name}${params ? `?${params}` : ''}`}
                   buttonStyle={selected ? 'primary' : 'default'}
-                  aria-selected={selected}
                 >
                   <FormattedMessage id={`ui-inventory-import.nav.${name}`} />
                 </Button>
