@@ -12,7 +12,7 @@ function renderFilter(intl, filterStruct, updateQuery, qualifiedField, optionTag
   // they are elsewhere, `qualifiedField` takes the form `FIELD/TAG`
   // where TAG is the translation-tag path to the relevant field's
   // translations. See JobsSearchPane.js for examples.
-  const match = qualifiedField.match(/(.*)\/(.*)/);
+  const match = qualifiedField.match(/^(.*)\/(.*)$/);
   const field = match ? match[1] : qualifiedField;
   const transTag = match ? match[2] : `channels.column.${field}`;
   // console.log(`qualifiedField='${qualifiedField}' => field '${field}', transTag '${transTag}'`);
