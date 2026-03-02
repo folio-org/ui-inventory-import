@@ -107,22 +107,6 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
             </Icon>
           </Button>
         </IfPermission>
-        {/*
-        <IfPermission perm="harvester-admin.harvestables.log.get">
-          <Button
-            buttonStyle="dropdownItem"
-            marginBottom0
-            id="clickable-jobs"
-            onClick={() => {
-              mutator.query.update({ _path: `${packageInfo.stripes.route}/channels/${match.params.recId}/jobs` });
-            }}
-          >
-            <Icon icon="list">
-              <FormattedMessage id="ui-inventory-import.button.jobs" />
-            </Icon>
-          </Button>
-        </IfPermission>
-        */}
       </>
     );
   };
