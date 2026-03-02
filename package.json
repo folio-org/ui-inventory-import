@@ -37,12 +37,16 @@
       {
         "permissionName": "module.inventory-import.enabled",
         "displayName": "UI: Inventory import module is enabled",
+        "subPermissions": [
+          "stripes-core.settings.read"
+        ],
         "visible": false
       },
       {
         "permissionName": "settings.inventory-import.enabled",
         "displayName": "Settings (Inventory import): display list of settings pages",
         "subPermissions": [
+          "stripes-core.settings.read",
           "settings.enabled"
         ],
         "visible": false
