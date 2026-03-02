@@ -122,7 +122,7 @@ function Channels({
                   >
                     {({ renderColumnsMenu, visibleColumns }) => (
                       <Pane
-                        appIcon={<AppIcon app="inventory-update" />}
+                        appIcon={<AppIcon app="inventory-import" />}
                         defaultWidth="fill"
                         padContent={false}
                         paneTitle={<FormattedMessage id="ui-inventory-import.nav.channels" />}

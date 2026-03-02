@@ -86,7 +86,7 @@ function Jobs({
                   >
                     {({ renderColumnsMenu, visibleColumns }) => (
                       <Pane
-                        appIcon={<AppIcon app="harvester-admin" />}
+                        appIcon={<AppIcon app="inventory-import" />}
                         defaultWidth="fill"
                         padContent={false}
                         height="100%"
