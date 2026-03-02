@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import { stripesConnect } from '@folio/stripes/core';
 import ChannelForm from '../forms/ChannelForm';
-import { raw2cooked, cooked2raw } from '../util/cookData';
 
 
 const EditChannelRoute = ({ resources, mutator, match }) => {
@@ -12,7 +11,7 @@ const EditChannelRoute = ({ resources, mutator, match }) => {
   };
 
   const handleSubmit = (record) => {
-    mutator.channel.PUT(cooked2raw(record))
+    mutator.channel.PUT(record)
       .then(handleClose);
   };
 
@@ -22,7 +21,7 @@ const EditChannelRoute = ({ resources, mutator, match }) => {
   return (
     <ChannelForm
       isLoading={isLoading}
-      initialValues={raw2cooked(get(resources, 'channel.records[0]', {}))}
+      initialValues={get(resources, 'channel.records[0]', {})}
       data={{
         transformationPipelines: resources.transformationPipelines.records,
       }}

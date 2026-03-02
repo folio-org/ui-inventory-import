@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
 import ChannelForm from '../forms/ChannelForm';
-import { cooked2raw } from '../util/cookData';
 
 
 const CreateChannelRoute = ({ resources, mutator, match }) => {
@@ -11,7 +10,7 @@ const CreateChannelRoute = ({ resources, mutator, match }) => {
   };
 
   const handleSubmit = (record) => {
-    mutator.channels.POST(cooked2raw({ ...record }))
+    mutator.channels.POST({ ...record })
       .then(handleClose);
   };
 
