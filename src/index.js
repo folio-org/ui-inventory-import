@@ -27,7 +27,7 @@ const InventoryImportApp = (props) => {
   }
 
   // Don't redirect to a page we don't have permission to view: see Tabs.js
-  const dest = stripes.hasPerm('ui-inventory-import.channels.view') ? 'channels' : 'jobs';
+  const dest = stripes.hasPerm('inventory-update.import.channels.collection.get') ? 'channels' : 'jobs';
 
   return (
     <div className={css.container}>
