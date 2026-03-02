@@ -69,7 +69,7 @@ function Channels({
     id: <FormattedMessage id="ui-inventory-import.channels.column.id" />,
   };
 
-  if (stripes.hasPerm('inventory-update.import.job-logs.collection.get')) {
+  if (stripes.hasPerm('inventory-update.import.import-jobs.item.get')) {
     columnMapping.jobs = <FormattedMessage id="ui-inventory-import.channels.column.jobs" />;
   }
 

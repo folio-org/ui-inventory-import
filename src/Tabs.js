@@ -16,15 +16,15 @@ function SwitchRoute() {
 
   const segments = [{
     name: 'channels',
-    perm: 'ui-inventory-import.harvestables.view', // XXX Upgrade to 'ui-inventory-import.channels.view'
+    perm: 'inventory-update.import.channels.collection.get',
     params: 'sort=name'
   }, {
     name: 'jobs',
-    perm: 'ui-inventory-import.jobs-and-failed-records.view',
+    perm: 'inventory-update.import.import-jobs.collection.get',
     params: 'sort=-started'
   }, {
     name: 'records',
-    perm: 'ui-inventory-import.jobs-and-failed-records.view',
+    perm: 'inventory-update.import.failed-records.collection.get',
     params: `filters=timeStamp_from.${isoString}`,
   }];
 
