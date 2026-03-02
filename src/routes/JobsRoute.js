@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
 import { makeQueryFunction, StripesConnectedSource } from '@folio/stripes/smart-components';
-import { makePFV } from '../search/queryFunction';
+import { makePFV } from '../search/parseFilterValue';
 import Jobs from '../views/Jobs';
 
 const INITIAL_RESULT_COUNT = 100;
