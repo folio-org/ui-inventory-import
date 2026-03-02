@@ -49,116 +49,113 @@
       },
       {
         "permissionName": "ui-inventory-import.settings.view",
-        "displayName": "Harvester admin (Settings): View transformation pipelines and transformation steps, and log-file deletion threshold",
+        "displayName": "Inventory import (Settings): View transformation pipelines, transformation steps, channels and log-file deletion threshold",
         "subPermissions": [
           "settings.inventory-import.enabled",
           "mod-settings.entries.collection.get",
           "inventory-update.import.steps.collection.get",
           "inventory-update.import.steps.item.get",
+          "inventory-update.import.transformations.collection.get",
+          "inventory-update.import.transformations.item.get",
+	  "inventory-update.import.channels.collection.get",
+	  "inventory-update.import.channels.item.get",
           "mod-settings.global.read.mod-inventory-update"
         ],
         "visible": true
       },
       {
         "permissionName": "ui-inventory-import.settings.view-edit",
-        "displayName": "Harvester admin (Settings): View, edit transformation pipelines and transformation steps, and log-file deletion threshold",
+        "displayName": "Inventory import (Settings): View, edit transformation pipelines, transformation steps, channels and log-file deletion threshold",
         "subPermissions": [
           "ui-inventory-import.settings.view",
           "mod-settings.entries.item.put",
           "mod-settings.entries.item.post",
           "inventory-update.import.steps.item.put",
+          "inventory-update.import.transformations.item.put",
+	  "inventory-update.import.channels.item.put",
           "mod-settings.global.write.mod-inventory-update"
         ],
         "visible": true
       },
       {
         "permissionName": "ui-inventory-import.settings.view-edit-create",
-        "displayName": "Harvester admin (Settings): View, edit, create transformation pipelines and transformation steps",
+        "displayName": "Inventory import (Settings): View, edit, create transformation pipelines, transformation steps and channels",
         "subPermissions": [
           "ui-inventory-import.settings.view-edit",
-          "inventory-update.import.steps.item.post"
+          "inventory-update.import.steps.item.post",
+          "inventory-update.import.transformations.item.post",
+	  "inventory-update.import.channels.item.post"
         ],
         "visible": true
       },
       {
         "permissionName": "ui-inventory-import.settings.view-edit-create-delete",
-        "displayName": "Harvester admin (Settings): View, edit, create, delete transformation pipelines and transformation steps",
+        "displayName": "Inventory import (Settings): View, edit, create, delete transformation pipelines, transformation steps and channels",
         "subPermissions": [
           "ui-inventory-import.settings.view-edit-create",
-          "inventory-update.import.steps.item.delete"
+          "inventory-update.import.steps.item.delete",
+          "inventory-update.import.transformations.item.delete",
+	  "inventory-update.import.channels.item.delete"
         ],
         "visible": true
       },
       {
-        "permissionName": "ui-inventory-import.harvestables.view",
-        "displayName": "Harvester admin: View harvestables",
+        "permissionName": "ui-inventory-import.channels.view",
+        "displayName": "Inventory import: View channels",
         "subPermissions": [
           "module.inventory-import.enabled",
-          "xxx-harvester-admin.harvestables.collection.get",
-          "xxx-harvester-admin.harvestables.item.get",
-          "xxx-harvester-admin.harvestables.failed-records.collection.get",
-          "xxx-harvester-admin.harvestables.log.get",
-          "xxx-harvester-admin.previous-jobs.collection.get"
+	  "inventory-update.import.channels.collection.get",
+	  "inventory-update.import.channels.item.get"
         ],
         "visible": true
       },
       {
-        "permissionName": "ui-inventory-import.harvestables.view-edit",
-        "displayName": "Harvester admin: View, edit harvestables, start/stop jobs",
+        "permissionName": "ui-inventory-import.channels.view-edit",
+        "displayName": "Inventory import: View, edit channels",
         "subPermissions": [
-          "ui-inventory-import.harvestables.view",
-          "xxx-harvester-admin.transformations.collection.get",
-          "xxx-harvester-admin.harvestables.item.put",
-          "xxx-harvester-admin.run-jobs",
-          "xxx-harvester-admin.stop-jobs"
+          "ui-inventory-import.channels.view",
+   	  "inventory-update.import.channels.item.put",
+	  "inventory-update.import.transformations.collection.get"
         ],
         "visible": true
       },
       {
-        "permissionName": "ui-inventory-import.harvestables.view-edit-create",
-        "displayName": "Harvester admin: View, edit, create harvestables, start/stop jobs",
+        "permissionName": "ui-inventory-import.channels.view-edit-create",
+        "displayName": "Inventory import: View, edit, create channels",
         "subPermissions": [
-          "ui-inventory-import.harvestables.view-edit",
-          "xxx-harvester-admin.harvestables.item.post"
+          "ui-inventory-import.channels.view-edit",
+   	  "inventory-update.import.channels.item.post"
         ],
         "visible": true
       },
       {
-        "permissionName": "ui-inventory-import.harvestables.view-edit-create-delete",
-        "displayName": "Harvester admin: View, edit, create, delete harvestables, start/stop jobs",
+        "permissionName": "ui-inventory-import.channels.view-edit-create-delete",
+        "displayName": "Inventory import: View, edit, create, delete channels",
         "subPermissions": [
-          "ui-inventory-import.harvestables.view-edit-create",
-          "xxx-harvester-admin.harvestables.item.delete"
+          "ui-inventory-import.channels.view-edit-create",
+   	  "inventory-update.import.channels.item.delete"
         ],
         "visible": true
       },
       {
         "permissionName": "ui-inventory-import.jobs-and-failed-records.view",
-        "displayName": "Harvester admin: View jobs and failed records",
+        "displayName": "Inventory import: View jobs and failed records",
         "subPermissions": [
           "module.inventory-import.enabled",
-          "xxx-harvester-admin.previous-jobs.collection.get",
-          "xxx-harvester-admin.previous-jobs.item.get",
-          "xxx-harvester-admin.previous-jobs.log.get",
-          "xxx-harvester-admin.previous-jobs.failed-records.collection.get",
-          "xxx-harvester-admin.previous-jobs.failed-records.item.get"
+	  "inventory-update.import.import-jobs.collection.get",
+	  "inventory-update.import.import-jobs.item.get",
+          "inventory-update.import.job-logs.collection.get",
+	  "inventory-update.import.failed-records.collection.get",
+	  "inventory-update.import.failed-records.item.get"
         ],
         "visible": true
       },
       {
         "permissionName": "ui-inventory-import.all",
-        "displayName": "Harvester admin: All permissions",
+        "displayName": "Inventory import: All permissions",
         "subPermissions": [
-          "module.inventory-import.enabled",
-          "settings.inventory-import.enabled",
-          "ui-inventory-import.settings.view",
-          "ui-inventory-import.settings.view-edit",
-          "ui-inventory-import.settings.view-edit-create",
           "ui-inventory-import.settings.view-edit-create-delete",
-          "ui-inventory-import.harvestables.view",
-          "ui-inventory-import.harvestables.view-edit",
-          "ui-inventory-import.harvestables.view-edit-create",
-          "ui-inventory-import.harvestables.view-edit-create-delete",
+          "ui-inventory-import.channels.view-edit-create-delete",
           "ui-inventory-import.jobs-and-failed-records.view"
         ],
         "visible": true
