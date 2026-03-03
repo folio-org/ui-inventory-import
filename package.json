@@ -142,7 +142,7 @@
         "visible": true
       },
       {
-        "permissionName": "ui-inventory-import.jobs-and-failed-records.view",
+        "permissionName": "ui-inventory-import.jobs-and-failed-records.get",
         "displayName": "Inventory import: View jobs and failed records",
         "subPermissions": [
           "module.inventory-import.enabled",
@@ -160,7 +160,7 @@
         "subPermissions": [
           "ui-inventory-import.settings.view-edit-create-delete",
           "ui-inventory-import.channels.delete",
-          "ui-inventory-import.jobs-and-failed-records.view"
+          "ui-inventory-import.jobs-and-failed-records.get"
         ],
         "visible": true
       }
