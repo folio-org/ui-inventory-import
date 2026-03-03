@@ -17,7 +17,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
 
   const returnToList = () => {
     const currentPath = match.url;
-    const newPath = currentPath.replace(/(.*)\/.*./, '$1');
+    const newPath = currentPath.replace(/^(.*)\/.+/, '$1');
     mutator.query.update({ _path: `${newPath}` });
   };
 
