@@ -1,5 +1,9 @@
 # Change history for ui-inventory-import
 
+## [4.1.0](https://github.com/folio-org/ui-inventory-import/tree/v4.1.0) (IN PROGRESS)
+
+* [UIINIMP-11](https://folio-org.atlassian.net/browse/UIINIMP-11) Align permissions names with Eureka conventions.
+
 ## [4.0.0](https://github.com/folio-org/ui-inventory-import/tree/v4.0.0) (2026-03-03)
 
 * First version of `ui-inventory-import`, initially derived from [`ui-harvester-admin` v3.0.0](https://github.com/indexdata/ui-harvester-admin/tree/v3.0.0).
