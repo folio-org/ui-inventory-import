@@ -104,7 +104,7 @@
         "visible": true
       },
       {
-        "permissionName": "ui-inventory-import.channels.view",
+        "permissionName": "ui-inventory-import.channels.get",
         "displayName": "Inventory import: View channels",
         "subPermissions": [
           "module.inventory-import.enabled",
@@ -114,29 +114,29 @@
         "visible": true
       },
       {
-        "permissionName": "ui-inventory-import.channels.view-edit",
+        "permissionName": "ui-inventory-import.channels.put",
         "displayName": "Inventory import: View, edit channels",
         "subPermissions": [
-          "ui-inventory-import.channels.view",
+          "ui-inventory-import.channels.get",
    	  "inventory-update.import.channels.item.put",
 	  "inventory-update.import.transformations.collection.get"
         ],
         "visible": true
       },
       {
-        "permissionName": "ui-inventory-import.channels.view-edit-create",
+        "permissionName": "ui-inventory-import.channels.post",
         "displayName": "Inventory import: View, edit, create channels",
         "subPermissions": [
-          "ui-inventory-import.channels.view-edit",
+          "ui-inventory-import.channels.put",
    	  "inventory-update.import.channels.item.post"
         ],
         "visible": true
       },
       {
-        "permissionName": "ui-inventory-import.channels.view-edit-create-delete",
+        "permissionName": "ui-inventory-import.channels.delete",
         "displayName": "Inventory import: View, edit, create, delete channels",
         "subPermissions": [
-          "ui-inventory-import.channels.view-edit-create",
+          "ui-inventory-import.channels.post",
    	  "inventory-update.import.channels.item.delete"
         ],
         "visible": true
@@ -159,7 +159,7 @@
         "displayName": "Inventory import: All permissions",
         "subPermissions": [
           "ui-inventory-import.settings.view-edit-create-delete",
-          "ui-inventory-import.channels.view-edit-create-delete",
+          "ui-inventory-import.channels.delete",
           "ui-inventory-import.jobs-and-failed-records.view"
         ],
         "visible": true

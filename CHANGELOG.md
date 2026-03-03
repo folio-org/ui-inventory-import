@@ -1,5 +1,9 @@
 # Change history for ui-inventory-import
 
+## [4.1.0](https://github.com/folio-org/ui-inventory-import/tree/v4.1.0) (IN PROGRESS)
+
+* [UIINIMP-11](https://folio-org.atlassian.net/browse/UIINIMP-11) Align permissions names with Eureka conventions.
+
 ## [4.0.0](https://github.com/folio-org/ui-inventory-import/tree/v4.0.0) (2026-03-03)
 
 * First version of `ui-inventory-import`, initially derived from [`ui-harvester-admin` v3.0.0](https://github.com/indexdata/ui-harvester-admin/tree/v3.0.0).
@@ -14,8 +18,8 @@
 * [UIINIMP-9](https://folio-org.atlassian.net/browse/UIINIMP-9) Remove Settings > Inventory import admin > Storages page
 * [UIINIMP-10](https://folio-org.atlassian.net/browse/UIINIMP-10) Move Channels configuration to Settings > Inventory Import
 * [UIINIMP-12](https://folio-org.atlassian.net/browse/UIINIMP-12) Move from GitHub's `indexdata` space to `folio-org`
-UIINIMP-13 Fix up all permissions
-UIINIMP-20 Failed Records list sometimes fails to load into the UI
+* [UIINIMP-13](https://folio-org.atlassian.net/browse/UIINIMP-13) Fix up all permissions
+* [UIINIMP-20](https://folio-org.atlassian.net/browse/UIINIMP-20) Failed Records list sometimes fails to load into the UI
 * [UIINIMP-14](https://folio-org.atlassian.net/browse/UIINIMP-14) Fix up all translations
 * [UIINIMP-15](https://folio-org.atlassian.net/browse/UIINIMP-15) Clean up old code
 * [#12](https://github.com/folio-org/ui-inventory-import/issues/12) Add links from failed-record list to full failed records
