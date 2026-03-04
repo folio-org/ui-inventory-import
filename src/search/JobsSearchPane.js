@@ -1,13 +1,13 @@
 import React from 'react';
 import { useIntl, FormattedMessage } from 'react-intl';
 import { useStripes } from '@folio/stripes/core';
-import { Button, Icon, Pane, SearchField } from '@folio/stripes/components';
+import { Pane } from '@folio/stripes/components';
 import { parseFilters } from '@folio/stripes/smart-components';
+import MainSearchArea from './MainSearchArea';
 import renderFilter from './renderFilter';
 import renderDateFilterPair from './renderDateFilterPair';
 import renderNumericFilterPair from './renderNumericFilterPair';
 import searchPanePropTypes from './searchPanePropTypes';
-import css from './SearchPane.css';
 
 
 function JobsSearchPane(props) {
@@ -43,61 +43,21 @@ function JobsSearchPane(props) {
       paneTitle={<FormattedMessage id="stripes-smart-components.searchAndFilter" />}
     >
       <form onSubmit={onSubmitSearch}>
-        <div className={css.searchGroupWrap}>
-          <FormattedMessage id="ui-inventory-import.searchInputLabel">
-            { ([ariaLabel]) => (
-              <SearchField
-                data-test-jobs-search-input
-                id="input-jobs-search"
-                autoFocus
-                ariaLabel={ariaLabel}
-                className={css.searchField}
-                searchableIndexes={searchableIndexes}
-                selectedIndex={query.qindex}
-                value={searchValue.query}
-                marginBottom0
-                onChangeIndex={onChangeIndex}
-                onChange={searchHandlers.query}
-                onClear={searchHandlers.reset}
-                name="query"
-                inputref={searchField}
-              />
-            )}
-          </FormattedMessage>
-          <Button
-            buttonStyle="primary"
-            disabled={!searchValue.query || searchValue.query === ''}
-            fullWidth
-            id="clickable-jobs-search"
-            marginBottom0
-            type="submit"
-          >
-            <FormattedMessage id="stripes-smart-components.search" />
-          </Button>
-        </div>
-
-        <div className={css.resetButtonWrap}>
-          <Button
-            buttonStyle="none"
-            id="clickable-reset-all"
-            disabled={false}
-            onClick={() => {
-              updateQuery({ qindex: '', query: undefined, sort: undefined, filters: undefined });
-              searchHandlers.reset();
-            }}
-          >
-            <Icon icon="times-circle-solid">
-              <FormattedMessage id="stripes-smart-components.resetAll" />
-            </Icon>
-          </Button>
-        </div>
-
+        <MainSearchArea
+          key="jobs"
+          searchValue={searchValue}
+          searchField={searchField}
+          searchHandlers={searchHandlers}
+          onChangeIndex={onChangeIndex}
+          searchableIndexes={searchableIndexes}
+          query={query}
+          updateQuery={updateQuery}
+        />
         {renderFilter(intl, filterStruct, updateQuery, 'status/jobs.column.status',
           ['RUNNING', 'PAUSED', 'DONE', 'INTERRUPTED'], true)}
         {renderNumericFilterPair(intl, filterStruct, updateQuery, 'records')}
         {renderDateFilterPair(intl, filterStruct, updateQuery, 'started')}
         {renderDateFilterPair(intl, filterStruct, updateQuery, 'finished')}
-
       </form>
     </Pane>
   );
