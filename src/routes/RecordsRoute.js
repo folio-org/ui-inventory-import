@@ -40,7 +40,7 @@ function RecordsRoute({ stripes, resources, mutator, children }) {
       {children}
     </Records>
   );
-};
+}
 
 
 // Keep these in sync with what's in ../search/RecordsSearchPane.js
