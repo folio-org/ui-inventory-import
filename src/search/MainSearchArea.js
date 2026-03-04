@@ -4,9 +4,10 @@ import { useStripes } from '@folio/stripes/core';
 import { Button, Icon, SearchField } from '@folio/stripes/components';
 import css from './SearchPane.css';
 
-function MainSearchArea({ type, indexes, searchValue, searchField, searchHandlers, query, updateQuery }) {
+function MainSearchArea({ type, indexes, searchValue, searchField, getSearchHandlers, query, updateQuery }) {
   const intl = useIntl();
   const stripes = useStripes();
+  const searchHandlers = getSearchHandlers();
 
   const searchableIndexes = indexes.map(x => ({
     value: x,

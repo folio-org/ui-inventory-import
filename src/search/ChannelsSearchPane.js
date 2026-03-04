@@ -17,8 +17,6 @@ function ChannelsSearchPane(props) {
     query,
     updateQuery,
   } = props;
-  const searchHandlers = getSearchHandlers();
-
   const intl = useIntl();
   const filterStruct = parseFilters(query.filters);
 
@@ -33,7 +31,7 @@ function ChannelsSearchPane(props) {
           indexes={['', 'name', 'id']}
           searchValue={searchValue}
           searchField={searchField}
-          searchHandlers={searchHandlers}
+          getSearchHandlers={getSearchHandlers}
           query={query}
           updateQuery={updateQuery}
         />

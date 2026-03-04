@@ -19,8 +19,6 @@ function JobsSearchPane(props) {
     query,
     updateQuery,
   } = props;
-  const searchHandlers = getSearchHandlers();
-
   const intl = useIntl();
   const filterStruct = parseFilters(query.filters);
 
@@ -35,7 +33,7 @@ function JobsSearchPane(props) {
           indexes={['', 'channelName', 'message']}
           searchValue={searchValue}
           searchField={searchField}
-          searchHandlers={searchHandlers}
+          getSearchHandlers={getSearchHandlers}
           query={query}
           updateQuery={updateQuery}
         />

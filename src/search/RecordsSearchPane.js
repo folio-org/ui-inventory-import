@@ -17,8 +17,6 @@ function RecordsSearchPane(props) {
     query,
     updateQuery,
   } = props;
-  const searchHandlers = getSearchHandlers();
-
   const intl = useIntl();
   const filterStruct = parseFilters(query.filters);
 
@@ -33,7 +31,7 @@ function RecordsSearchPane(props) {
           indexes={['', 'recordNumber', 'channelName']}
           searchValue={searchValue}
           searchField={searchField}
-          searchHandlers={searchHandlers}
+          getSearchHandlers={getSearchHandlers}
           query={query}
           updateQuery={updateQuery}
         />
