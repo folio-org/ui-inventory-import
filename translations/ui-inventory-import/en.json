@@ -18,7 +18,7 @@
     "settings.step.heading": "transformation step",
     "settings.channels": "Channels",
     "settings.logs": "Log deletion",
-    "settings.logs.description": "Logs older than the configured age threshold are automatically deleted once per day, at 2am Central European time. The threshhold is specified by a number and a unit. ",
+    "settings.logs.description": "Logs older than the configured age threshold are automatically deleted once per day, at 2am Central European time. The threshhold is specified by a number and a unit.",
     "settings.logs.number": "Number",
     "settings.logs.unit": "Unit",
     "settings.logs.unit.days": "Days",
