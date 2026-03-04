@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
 import { makeQueryFunction, StripesConnectedSource } from '@folio/stripes/smart-components';
@@ -9,13 +9,9 @@ const RESULT_COUNT_INCREMENT = 100;
 
 
 function ChannelsRoute({ stripes, resources, mutator, children }) {
-  let [source, setSource] = useState(); // eslint-disable-line prefer-const
-  if (!source) {
-    source = new StripesConnectedSource({ resources, mutator }, stripes.logger, 'reportTitles');
-    setSource(source);
-  } else {
-    source.update({ resources, mutator }, 'reportTitles');
-  }
+  const source = useMemo(() => {
+    return new StripesConnectedSource({ resources, mutator }, stripes.logger, 'channels');
+  }, [resources, mutator, stripes.logger]);
 
   const handleNeedMoreData = (_askAmount, index) => {
     source.fetchOffset(index);
