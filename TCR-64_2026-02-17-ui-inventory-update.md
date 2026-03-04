@@ -85,7 +85,9 @@ Use these conventions to indicate the status of each criterion.
   * _Note: This applies to optional third-party integrations and their configurations only. Required environment variables (those without sensible defaults) should fail fast on startup per the Environment Variables Policy._
 * [ ] **Sonarqube hasn't identified any security issues, any high or greater severity issues, or excessive (>3%) duplication (6); and any disabled or intentionally ignored rules/recommendations are reasonably justified.**
   * **duplicated lines is at 7.8% above the 3% threshold**
+    * **FOR REVIEW.** It is now down to 2.0%.
   * **124 major type severity identified**
+    * **FOR REVIEW.** No major issues remain. In the "Reliability" category there are a few medium-level issues, but these are all in code forked from stripes-smart-components, and not within our bailiwick.
   * See [Rule Customization](https://dev.folio.org/guides/code-analysis/#rule-customization) details. 
 * [x] Uses [officially supported](https://wiki.folio.org/display/TC/Officially+Supported+Technologies) build tools (3, 5, 13)
 * [ ] **Unit tests have 80% coverage or greater, and are based on [officially supported technologies](https://wiki.folio.org/display/TC/Officially+Supported+Technologies)[^1] (3, 4)**
