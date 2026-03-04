@@ -1,44 +1,39 @@
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { stripesConnect } from '@folio/stripes/core';
 import { makeQueryFunction, StripesConnectedSource } from '@folio/stripes/smart-components';
 import { makePFV } from '../search/parseFilterValue';
 import Records from '../views/Records';
 
-
 const INITIAL_RESULT_COUNT = 100;
 const RESULT_COUNT_INCREMENT = 100;
 
 
-const RecordsRoute = ({ stripes, resources, mutator, children }) => {
-  let [source, setSource] = useState(); // eslint-disable-line prefer-const
-  if (!source) {
-    source = new StripesConnectedSource({ resources, mutator }, stripes.logger, 'reportTitles');
-    setSource(source);
-  } else {
-    source.update({ resources, mutator }, 'reportTitles');
-  }
+function RecordsRoute({ stripes, resources, mutator, children }) {
+  const source = useMemo(() => {
+    return new StripesConnectedSource({ resources, mutator }, stripes.logger, 'failedRecords');
+  }, [resources, mutator, stripes.logger]);
 
-  const handleNeedMoreData = (_askAmount, index, _firstIndex, _direction) => {
+  const handleNeedMoreData = (_askAmount, index) => {
     source.fetchOffset(index);
   };
 
   // eslint-disable-next-line no-console
-  console.log('RecordsRoute: resources =', resources);
+  // console.log('RecordsRoute: resources =', resources);
 
-  const hasLoaded = resources.failedRecords.hasLoaded;
   const error = resources.failedRecords.failed ? resources.failedRecords.failed.message : undefined;
+  const hasLoaded = resources.failedRecords.hasLoaded;
 
   return (
     <Records
       data={{
         records: resources.failedRecords.records,
       }}
-      resultCount={resources.failedRecords.other?.totalRecords}
       query={resources.query}
+      resultCount={resources.failedRecords.other?.totalRecords}
       updateQuery={mutator.query.update}
-      hasLoaded={hasLoaded}
       error={error}
+      hasLoaded={hasLoaded}
       pageAmount={RESULT_COUNT_INCREMENT}
       onNeedMoreData={handleNeedMoreData}
     >
