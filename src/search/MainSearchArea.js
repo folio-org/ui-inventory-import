@@ -1,10 +1,24 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { useIntl, FormattedMessage } from 'react-intl';
+import { useStripes } from '@folio/stripes/core';
 import { Button, Icon, SearchField } from '@folio/stripes/components';
 import css from './SearchPane.css';
 
+function MainSearchArea({ type, indexes, searchValue, searchField, searchHandlers, query, updateQuery }) {
+  const intl = useIntl();
+  const stripes = useStripes();
 
-function MainSearchArea({ key, searchValue, searchField, searchHandlers, onChangeIndex, searchableIndexes, query, updateQuery }) {
+  const searchableIndexes = indexes.map(x => ({
+    value: x,
+    label: intl.formatMessage({ id: `ui-inventory-import.${type}.index.${x || 'all'}` }),
+  }));
+
+  const onChangeIndex = (e) => {
+    const qindex = e.target.value;
+    stripes.logger.log('action', `changed query-index to '${qindex}'`);
+    updateQuery({ qindex });
+  };
+
   return (
     <>
       <>
@@ -12,7 +26,7 @@ function MainSearchArea({ key, searchValue, searchField, searchHandlers, onChang
           <FormattedMessage id="ui-inventory-import.searchInputLabel">
             { ([ariaLabel]) => (
               <SearchField
-                id={`input-${key}-search`}
+                id={`input-${type}-search`}
                 autoFocus
                 ariaLabel={ariaLabel}
                 className={css.searchField}
@@ -32,7 +46,7 @@ function MainSearchArea({ key, searchValue, searchField, searchHandlers, onChang
             buttonStyle="primary"
             disabled={!searchValue.query || searchValue.query === ''}
             fullWidth
-            id={`clickable-${key}-search`}
+            id={`clickable-${type}-search`}
             marginBottom0
             type="submit"
           >
