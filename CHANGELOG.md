@@ -4,6 +4,7 @@
 
 * [UIINIMP-11](https://folio-org.atlassian.net/browse/UIINIMP-11) Align permissions names with Eureka conventions.
 * [UIINIMP-25](https://folio-org.atlassian.net/browse/UIINIMP-25) Add translations for permission names.
+* [UIINIMP-26](https://folio-org.atlassian.net/browse/UIINIMP-26) Factor out common code in src/search/*SearchPane.js components.
 
 ## [4.0.0](https://github.com/folio-org/ui-inventory-import/tree/v4.0.0) (2026-03-03)
 
