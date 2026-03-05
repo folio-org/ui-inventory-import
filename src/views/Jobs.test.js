@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import { cleanup, render, screen } from '@folio/jest-config-stripes/testing-library/react';
+import { cleanup, render, screen, fireEvent } from '@folio/jest-config-stripes/testing-library/react';
 import { CalloutContext } from '@folio/stripes/core';
 import { Paneset } from '@folio/stripes/components';
 import withIntlConfiguration from '../../test/jest/util/withIntlConfiguration';
@@ -62,5 +62,15 @@ describe('Matching Summary page', () => {
     // Data rendered in the MCL
     const nameCell = screen.getByText("Felix's test channel #1").closest('[role="gridcell"]');
     expect(nameCell?.nextElementSibling).toHaveTextContent(/INTERRUPTED/);
+
+    // Change selected index
+    const selectElement = document.getElementById('input-jobs-search-qindex');
+    fireEvent.change(selectElement, { target: { value: 'channelName' } });
+    expect(selectElement.value).toBe('channelName');
+
+    // Reset all search-form elements
+    const clearElement = document.getElementById('clickable-reset-all');
+    fireEvent.click(selectElement);
+    // Is there a way to check the outcome?
   });
 });
