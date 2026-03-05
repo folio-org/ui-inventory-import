@@ -1,0 +1,141 @@
+[
+  {
+    "id": "deef8a94-1f33-4091-8b5e-28eca9685da9",
+    "channelId": "c75dc99a-e08a-425b-ae89-da3aa303faaa",
+    "channelName": "Felix's test channel #3",
+    "importType": "XML",
+    "transformation": "feaa812c-4d07-4d8f-a84c-a296f956b8f3",
+    "status": "DONE",
+    "started": "2026-02-20T10:49:28.271+00:00",
+    "finished": "2026-02-20T10:49:28.521+00:00",
+    "amountImported": 2,
+    "message": "",
+    "metadata": {
+      "updatedDate": "2026-02-20T10:49:28.521+00:00"
+    }
+  },
+  {
+    "id": "1f2472b8-9ecb-49fb-8ede-626c8acf4ebf",
+    "channelId": "fa370570-6923-4ad1-b79a-e68526233a7e",
+    "channelName": "Felix's test channel #1",
+    "importType": "XML",
+    "transformation": "63af8424-1578-4363-9d97-f1a9a6a1d806",
+    "status": "INTERRUPTED",
+    "started": "2026-02-20T09:00:00.000+00:00",
+    "finished": null,
+    "amountImported": 1000000,
+    "message": "Created via API by Felix",
+    "metadata": {
+      "createdDate": "2026-02-20T10:27:46.742+00:00",
+      "createdByUserId": "0d3e3290-a517-4dfe-a8e0-8338cf4a7f06",
+      "updatedDate": "2026-02-23T11:34:45.584+00:00"
+    }
+  },
+  {
+    "id": "31d293b1-615e-43e7-b064-ecc04d930f56",
+    "channelId": "356b3fbb-e991-4b0a-980e-c589d83904a3",
+    "channelName": "Felix's test channel #2",
+    "importType": "XML",
+    "transformation": "63af8424-1578-4363-9d97-f1a9a6a1d806",
+    "status": "PAUSED",
+    "started": "2026-02-20T09:00:00.000+00:00",
+    "finished": null,
+    "amountImported": 1000000,
+    "message": "Created via API by Felix",
+    "metadata": {
+      "createdDate": "2026-02-20T10:28:54.253+00:00",
+      "createdByUserId": "0d3e3290-a517-4dfe-a8e0-8338cf4a7f06"
+    }
+  },
+  {
+    "id": "3a98d770-449a-4e57-b118-014392465337",
+    "channelId": "356b3fbb-e991-4b0a-980e-c589d83904a3",
+    "channelName": "Felix's test channel #2",
+    "importType": "XML",
+    "transformation": "63af8424-1578-4363-9d97-f1a9a6a1d806",
+    "status": "DONE",
+    "started": "2026-02-20T09:00:00.000+00:00",
+    "finished": null,
+    "amountImported": 2000000,
+    "message": "Created via API by Felix",
+    "metadata": {
+      "createdDate": "2026-02-20T10:31:17.382+00:00",
+      "createdByUserId": "0d3e3290-a517-4dfe-a8e0-8338cf4a7f06"
+    }
+  },
+  {
+    "id": "c40ce608-2264-41f6-982c-01de3d79e4f9",
+    "channelId": "c71b4d3a-2030-4f71-8b0a-294ec41fad22",
+    "channelName": "Minerva5 samples",
+    "importType": "XML",
+    "transformation": "10928a21-89eb-440d-bc37-b9efae2c98a0",
+    "status": "DONE",
+    "started": "2026-02-19T18:14:55.356+00:00",
+    "finished": "2026-02-19T22:02:27.004+00:00",
+    "amountImported": 1428100,
+    "message": "",
+    "metadata": {
+      "updatedDate": "2026-02-19T22:02:27.004+00:00"
+    }
+  },
+  {
+    "id": "e1dfaa98-ca0d-4841-93fd-c3f0797e185a",
+    "channelId": "64891c97-78c7-41d1-9ec7-e8005de7d334",
+    "channelName": "Channel 2 (Minerva5 samples)",
+    "importType": "XML",
+    "transformation": "10928a21-89eb-440d-bc37-b9efae2c98a0",
+    "status": "DONE",
+    "started": "2026-02-19T12:21:17.805+00:00",
+    "finished": "2026-02-19T16:58:55.436+00:00",
+    "amountImported": 1426600,
+    "message": "",
+    "metadata": {
+      "updatedDate": "2026-02-19T16:58:55.436+00:00"
+    }
+  },
+  {
+    "id": "21c6e9b8-ad61-482a-bba1-66e51be4aab3",
+    "channelId": "c71b4d3a-2030-4f71-8b0a-294ec41fad22",
+    "channelName": "Minerva5 samples",
+    "importType": "XML",
+    "transformation": "10928a21-89eb-440d-bc37-b9efae2c98a0",
+    "status": "INTERRUPTED",
+    "started": "2026-02-13T16:17:58.628+00:00",
+    "finished": null,
+    "amountImported": 0,
+    "message": "",
+    "metadata": {
+      "updatedDate": "2026-02-19T18:08:03.742+00:00"
+    }
+  },
+  {
+    "id": "7d6346f7-5122-4896-9f0a-5dcbd5dd76ee",
+    "channelId": "c71b4d3a-2030-4f71-8b0a-294ec41fad22",
+    "channelName": "Minerva5 samples",
+    "importType": "XML",
+    "transformation": "10928a21-89eb-440d-bc37-b9efae2c98a0",
+    "status": "DONE",
+    "started": "2026-02-13T16:17:46.388+00:00",
+    "finished": "2026-02-13T16:17:58.494+00:00",
+    "amountImported": 1000,
+    "message": "",
+    "metadata": {
+      "updatedDate": "2026-02-13T16:17:58.494+00:00"
+    }
+  },
+  {
+    "id": "5118baa7-8c33-414f-8299-3e830ebdfcfe",
+    "channelId": "c71b4d3a-2030-4f71-8b0a-294ec41fad22",
+    "channelName": "Minerva5 samples",
+    "importType": "XML",
+    "transformation": "10928a21-89eb-440d-bc37-b9efae2c98a0",
+    "status": "DONE",
+    "started": "2026-02-12T19:05:54.143+00:00",
+    "finished": "2026-02-12T19:06:23.170+00:00",
+    "amountImported": 2000,
+    "message": "",
+    "metadata": {
+      "updatedDate": "2026-02-12T19:06:23.170+00:00"
+    }
+  }
+]
