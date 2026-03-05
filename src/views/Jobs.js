@@ -68,7 +68,7 @@ function Jobs({
       {
         (sasqParams) => {
           return (
-            <Paneset id="jobs-paneset">
+            <Paneset id="jobs-paneset" data-test-jobs-paneset>
               <JobsSearchPane
                 {...sasqParams}
                 defaultWidth="20%"
@@ -95,7 +95,6 @@ function Jobs({
                         actionMenu={() => renderColumnsMenu}
                       >
                         <MultiColumnList
-                          autosize
                           id="list-jobs"
                           visibleColumns={visibleColumns}
                           columnMapping={columnMapping}
