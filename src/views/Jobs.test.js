@@ -48,7 +48,7 @@ describe('Matching Summary page', () => {
 
   beforeEach(() => {
     node = renderJobs();
-    if (false) screen.debug(undefined, 100000); // eslint-disable-line no-constant-condition
+    // screen.debug(undefined, 100000);
   });
 
   afterEach(cleanup);
@@ -58,5 +58,9 @@ describe('Matching Summary page', () => {
     const content = container.querySelector('[data-test-jobs-paneset]');
     expect(container).toBeVisible();
     expect(content).toBeVisible();
+
+    // Data rendered in the MCL
+    const nameCell = screen.getByText("Felix's test channel #1").closest('[role="gridcell"]');
+    expect(nameCell?.nextElementSibling).toHaveTextContent(/INTERRUPTED/);
   });
 });
