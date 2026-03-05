@@ -1,7 +1,6 @@
 {
   "extends": "@folio/eslint-config-stripes",
   "parser": "@babel/eslint-parser",
-  "ignorePatterns": ["*.test.js"],
   "rules": {
     "no-useless-escape": "off",
     "react/forbid-prop-types": "off"
