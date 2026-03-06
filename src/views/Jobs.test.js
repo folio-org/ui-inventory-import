@@ -18,18 +18,16 @@ const renderJobs = (query) => {
   return render(withIntlConfiguration(
     <CalloutContext.Provider value={callout}>
       <BrowserRouter>
-        <div style={{ height: 1000 }}>
-          <Paneset>
-            <Jobs
-              hasLoaded
-              data={{ jobs: jobsData }}
-              query={query}
-              updateQuery={(newQuery) => Object.assign(query, newQuery)}
-              pageAmount={100}
-              onNeedMoreData={() => undefined}
-            />
-          </Paneset>
-        </div>
+        <Paneset>
+          <Jobs
+            hasLoaded
+            data={{ jobs: jobsData }}
+            query={query}
+            updateQuery={(newQuery) => Object.assign(query, newQuery)}
+            pageAmount={100}
+            onNeedMoreData={() => undefined}
+          />
+        </Paneset>
       </BrowserRouter>
     </CalloutContext.Provider>
   ));
