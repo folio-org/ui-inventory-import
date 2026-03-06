@@ -111,7 +111,7 @@ function Records({
       {
         (sasqParams) => {
           return (
-            <Paneset id="records-paneset">
+            <Paneset id="records-paneset" data-test-records-paneset>
               <RecordsSearchPane
                 {...sasqParams}
                 defaultWidth="20%"
@@ -137,7 +137,6 @@ function Records({
                         actionMenu={({ onToggle }) => renderActionMenu(onToggle, intl, data, resultCount, okapiKy, renderColumnsMenu)}
                       >
                         <MultiColumnList
-                          autosize
                           id="list-records"
                           visibleColumns={visibleColumns}
                           columnMapping={columnMapping}
