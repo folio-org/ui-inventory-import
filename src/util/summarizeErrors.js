@@ -5,8 +5,8 @@ function errors2react(errors = []) {
   return (
     <ul className={css.noDot}>
       {
-        errors.map(error => (
-          <li>
+        errors.map((error, i) => (
+          <li key={i}>
             <code>{error.code}</code>
             &nbsp;
             ({error.message})
