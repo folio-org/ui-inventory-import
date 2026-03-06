@@ -34,7 +34,7 @@ const renderJobs = (query) => {
 };
 
 
-describe('Matching Summary page', () => {
+describe('Jobs router', () => {
   const query = {
     sort: 'status,-finished',
     filters: 'filters=records_from.10',
