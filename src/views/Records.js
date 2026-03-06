@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useLocation, Link } from 'react-router-dom';
 import { AppIcon, useOkapiKy } from '@folio/stripes/core';
-import { MenuSection, Button, Icon, LoadingPane, Paneset, Pane, MultiColumnList, ErrorModal, exportToCsv, MCLPagingTypes } from '@folio/stripes/components';
+import { MenuSection, Button, Icon, LoadingPane, Paneset, Pane, MultiColumnList, exportToCsv, MCLPagingTypes } from '@folio/stripes/components';
 import { ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
 import parseSort from '../util/parseSort';
 import { errors2react, errors2string } from '../util/summarizeErrors';
@@ -70,7 +70,6 @@ function Records({
 }) {
   const location = useLocation();
   const intl = useIntl();
-  const [invalidSortKey, setInvalidSortKey] = useState();
   const okapiKy = useOkapiKy();
 
   const columnMapping = {
@@ -151,15 +150,6 @@ function Records({
                           sortedColumn={sortedColumn}
                           sortDirection={sortDirection}
                           pagingType={MCLPagingTypes.PREV_NEXT}
-                        />
-                        <ErrorModal
-                          open={!!invalidSortKey}
-                          label={<FormattedMessage id="ui-inventory-import.error.invalidSort.label" />}
-                          content={<FormattedMessage
-                            id="ui-inventory-import.error.invalidSort.content"
-                            values={{ name: invalidSortKey, code: s => <code>{s}</code> }}
-                          />}
-                          onClose={() => setInvalidSortKey(undefined)}
                         />
                       </Pane>
                     )}
