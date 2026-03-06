@@ -8,7 +8,7 @@ import Jobs from './Jobs';
 import jobsData from '../../test/jest/data/jobs';
 
 
-const renderJobs = () => {
+const renderJobs = (query) => {
   const callout = {
     sendCallout: (_calloutData) => {
       // console.log('*** sendCallout:', _calloutData.message.props.id);
@@ -23,12 +23,8 @@ const renderJobs = () => {
             <Jobs
               hasLoaded
               data={{ jobs: jobsData }}
-              query={{
-                sort: 'status,-finished',
-                filters: 'filters=records_from.10',
-                qindex: 'channelName',
-              }}
-              updateQuery={() => undefined}
+              query={query}
+              updateQuery={(newQuery) => Object.assign(query, newQuery)}
               pageAmount={100}
               onNeedMoreData={() => undefined}
             />
@@ -41,10 +37,15 @@ const renderJobs = () => {
 
 
 describe('Matching Summary page', () => {
-  let node;
+  const query = {
+    sort: 'status,-finished',
+    filters: 'filters=records_from.10',
+    qindex: 'channelName',
+  };
 
+  let node;
   beforeEach(() => {
-    node = renderJobs();
+    node = renderJobs(query);
     // screen.debug(undefined, 100000);
   });
 
@@ -61,13 +62,17 @@ describe('Matching Summary page', () => {
     expect(nameCell?.nextElementSibling).toHaveTextContent(/INTERRUPTED/);
 
     // Change selected index
+    expect(query.qindex).toBe('channelName');
     const selectElement = document.getElementById('input-jobs-search-qindex');
-    fireEvent.change(selectElement, { target: { value: 'channelName' } });
+    fireEvent.change(selectElement, { target: { value: 'message' } });
     expect(selectElement.value).toBe('channelName');
+    expect(query.qindex).toBe('message');
 
     // Reset all search-form elements
     const clearElement = document.getElementById('clickable-reset-all');
     fireEvent.click(clearElement);
-    // Is there a way to check the outcome?
+    expect(query.sort).toBeUndefined();
+    expect(query.filters).toBeUndefined();
+    expect(query.qindex).toBe('');
   });
 });
