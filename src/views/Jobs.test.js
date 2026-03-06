@@ -1,6 +1,5 @@
 import React from 'react';
-import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
+import { BrowserRouter } from 'react-router-dom';
 import { cleanup, render, screen, fireEvent } from '@folio/jest-config-stripes/testing-library/react';
 import { CalloutContext } from '@folio/stripes/core';
 import { Paneset } from '@folio/stripes/components';
@@ -16,11 +15,9 @@ const renderJobs = () => {
     }
   };
 
-  const history = createMemoryHistory();
-
   return render(withIntlConfiguration(
     <CalloutContext.Provider value={callout}>
-      <Router history={history}>
+      <BrowserRouter>
         <div style={{ height: 1000 }}>
           <Paneset>
             <Jobs
@@ -37,7 +34,7 @@ const renderJobs = () => {
             />
           </Paneset>
         </div>
-      </Router>
+      </BrowserRouter>
     </CalloutContext.Provider>
   ));
 };
