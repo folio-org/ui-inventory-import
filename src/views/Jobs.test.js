@@ -67,7 +67,7 @@ describe('Matching Summary page', () => {
 
     // Reset all search-form elements
     const clearElement = document.getElementById('clickable-reset-all');
-    fireEvent.click(selectElement);
+    fireEvent.click(clearElement);
     // Is there a way to check the outcome?
   });
 });
