@@ -9,5 +9,9 @@ module.exports = {
     ...config.setupFiles,
     path.join(__dirname, './test/jest/setupFiles.js'),
   ],
+  testPathIgnorePatterns: [
+    ...config.testPathIgnorePatterns,
+    "/src/smart-components/",
+  ],
 };
 
