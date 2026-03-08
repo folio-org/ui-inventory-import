@@ -1,0 +1,48 @@
+[
+  {
+    "id": "c75dc99a-e08a-425b-ae89-da3aa303faaa",
+    "name": "Felix's test channel #3",
+    "tag": "cbs2folio-3",
+    "type": "XML",
+    "transformationId": "feaa812c-4d07-4d8f-a84c-a296f956b8f3",
+    "enabled": true,
+    "commissioned": true,
+    "listening": true,
+    "metadata": {
+      "createdDate": "2026-02-20T10:46:53.642+00:00",
+      "createdByUserId": "0d3e3290-a517-4dfe-a8e0-8338cf4a7f06",
+      "updatedDate": "2026-02-23T12:22:08.416+00:00"
+    }
+  },
+  {
+    "id": "356b3fbb-e991-4b0a-980e-c589d83904a3",
+    "name": "Felix's test channel #2 aaa aaa",
+    "tag": "cbs2folio-2",
+    "type": "XML",
+    "transformationId": "63af8424-1578-4363-9d97-f1a9a6a1d806",
+    "enabled": true,
+    "commissioned": true,
+    "listening": true,
+    "metadata": {
+      "createdDate": "2026-02-20T09:29:49.329+00:00",
+      "createdByUserId": "0d3e3290-a517-4dfe-a8e0-8338cf4a7f06",
+      "updatedDate": "2026-03-02T08:44:39.972+00:00",
+      "updatedByUserId": "0d3e3290-a517-4dfe-a8e0-8338cf4a7f06"
+    }
+  },
+  {
+    "id": "fa370570-6923-4ad1-b79a-e68526233a7e",
+    "name": "Felix's test channel #1",
+    "tag": "cbs2folio",
+    "type": "XML",
+    "transformationId": "63af8424-1578-4363-9d97-f1a9a6a1d806",
+    "enabled": true,
+    "commissioned": true,
+    "listening": true,
+    "metadata": {
+      "createdDate": "2026-02-20T09:27:52.622+00:00",
+      "createdByUserId": "0d3e3290-a517-4dfe-a8e0-8338cf4a7f06",
+      "updatedDate": "2026-02-23T12:22:08.419+00:00"
+    }
+  }
+]

@@ -104,7 +104,7 @@ function Channels({
       {
         (sasqParams) => {
           return (
-            <Paneset id="channels-paneset">
+            <Paneset id="channels-paneset" data-test-channels-paneset>
               <ChannelsSearchPane
                 {...sasqParams}
                 defaultWidth="20%"
@@ -130,7 +130,6 @@ function Channels({
                         actionMenu={() => renderActionsMenu(location.search, renderColumnsMenu)}
                       >
                         <MultiColumnList
-                          autosize
                           id="list-channels"
                           visibleColumns={visibleColumns}
                           columnMapping={columnMapping}
