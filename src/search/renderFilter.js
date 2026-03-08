@@ -25,6 +25,7 @@ function renderFilter(intl, filterStruct, updateQuery, qualifiedField, optionTag
   if (isMulti) {
     return (
       <MultiSelectionFilter
+        id={`filter.${transTag}`}
         name={`multifilter-${field}`}
         label={intl.formatMessage({ id: `ui-inventory-import.${transTag}` })}
         dataOptions={dataOptions}
@@ -39,6 +40,7 @@ function renderFilter(intl, filterStruct, updateQuery, qualifiedField, optionTag
 
   return (
     <Select
+      id={`filter.${transTag}`}
       label={intl.formatMessage({ id: `ui-inventory-import.${transTag}` })}
       dataOptions={[
         { value: NO_VALUE, label: intl.formatMessage({ id: 'ui-inventory-import.no-value' }) },
