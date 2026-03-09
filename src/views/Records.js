@@ -41,6 +41,7 @@ function renderActionMenu(onToggle, intl, data, resultCount, okapiKy, renderedCo
     <div>
       <MenuSection label={intl.formatMessage({ id: 'ui-inventory-import.reports' })}>
         <Button
+          data-test-export-csv-button
           aria-label={intl.formatMessage({ id: 'ui-inventory-import.export-csv' })}
           disabled={!resultCount}
           buttonStyle="dropdownItem"
