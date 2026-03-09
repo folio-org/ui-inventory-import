@@ -11,7 +11,7 @@ module.exports = {
   ],
   testPathIgnorePatterns: [
     ...config.testPathIgnorePatterns,
-    "/src/smart-components/",
+    '/src/smart-components/',
   ],
 };
 
