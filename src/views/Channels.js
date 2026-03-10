@@ -81,16 +81,11 @@ function Channels({
     enabled: r => <FormattedMessage id={`ui-inventory-import.channels.column.enabled.${r.enabled}`} />,
     type: r => <FormattedMessage id={`ui-inventory-import.channels.column.type.${r.type.toUpperCase()}`} />,
     jobs: r => (
-      <Button
-        id={`clickable-jobs-${r.id}`}
-        onClick={(e) => {
-          e.stopPropagation();
-          updateQuery({ _path: `${packageInfo.stripes.route}/channels/${r.id}/jobs` });
-        }}
-        marginBottom0
-      >
-        <FormattedMessage id="ui-inventory-import.button.jobs" />
-      </Button>
+      <Link to={`${packageInfo.stripes.route}/channels/${r.id}`}>
+        <Button id={`clickable-jobs-${r.id}`} marginBottom0>
+          <FormattedMessage id="ui-inventory-import.button.jobs" />
+        </Button>
+      </Link>
     ),
   };
 
