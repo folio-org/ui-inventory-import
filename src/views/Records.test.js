@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { cleanup, render, screen, fireEvent, waitFor } from '@folio/jest-config-stripes/testing-library/react';
 import { useOkapiKy } from '@folio/stripes/core';
-import { Paneset, exportToCsv } from '@folio/stripes/components';
+import { Paneset } from '@folio/stripes/components';
 import withIntlConfiguration from '../../test/jest/util/withIntlConfiguration';
 import Records from './Records';
 import { errors2string } from '../util/summarizeErrors';
