@@ -176,7 +176,7 @@ Channels.propTypes = {
   hasLoaded: PropTypes.bool.isRequired,
   pageAmount: PropTypes.number.isRequired,
   onNeedMoreData: PropTypes.func.isRequired,
-  children: PropTypes.arrayOf(PropTypes.object.isRequired),
+  children: PropTypes.object.isRequired,
 };
 
 
