@@ -55,3 +55,4 @@ FullChannelRoute.propTypes = {
 };
 
 export default stripesConnect(FullChannelRoute);
+export { FullChannelRoute }; // For tests
