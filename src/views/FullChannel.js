@@ -114,7 +114,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
 
   return (
     <Pane
-      data-test-fullchannel-pane
+      data-test-full-channel-pane
       dismissible
       onClose={returnToList}
       defaultWidth={defaultWidth}

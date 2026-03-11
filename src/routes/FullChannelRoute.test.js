@@ -58,7 +58,7 @@ describe('Full channel route', () => {
     });
     // screen.debug();
     const { container } = node;
-    const content = container.querySelector('[data-test-fullchannel-pane]');
+    const content = container.querySelector('[data-test-full-channel-pane]');
     expect(container).toBeVisible();
     expect(content).toBeVisible();
 
