@@ -76,13 +76,21 @@ FullJobRoute.manifest = Object.freeze({
 FullJobRoute.propTypes = {
   resources: PropTypes.shape({
     job: PropTypes.shape({
-      isPending: PropTypes.bool.isRequired,
+      records: PropTypes.arrayOf(
+        PropTypes.shape({}).isRequired,
+      ).isRequired,
+    }).isRequired,
+    transformationPipeline: PropTypes.shape({
       records: PropTypes.arrayOf(
         PropTypes.shape({}).isRequired,
       ).isRequired,
     }).isRequired,
     failedRecords: PropTypes.shape({
-      isPending: PropTypes.bool.isRequired,
+      records: PropTypes.arrayOf(
+        PropTypes.shape({}).isRequired,
+      ).isRequired,
+    }).isRequired,
+    logs: PropTypes.shape({
       records: PropTypes.arrayOf(
         PropTypes.shape({}).isRequired,
       ).isRequired,
@@ -108,3 +116,4 @@ FullJobRoute.propTypes = {
 
 
 export default stripesConnect(FullJobRoute);
+export { FullJobRoute }; // For testing

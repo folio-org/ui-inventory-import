@@ -75,6 +75,8 @@ jest.mock('@folio/stripes/core', () => {
 
     useNamespace: jest.fn().mockReturnValue(['module-namespace']),
 
+    TitleManager: ({ children }) => <>{children}</>,
+
     useStripes: () => STRIPES,
 
     withStripes: Component => ({ stripes, ...rest }) => {
