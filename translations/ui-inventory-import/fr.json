@@ -17,7 +17,7 @@
     "settings.step.heading": "transformation step",
     "settings.channels": "Channels",
     "settings.logs": "Log deletion",
-    "settings.logs.description": "Logs older than the configured age threshold are automatically deleted once per day, at 2am Central European time. The threshhold is specified by a number and a unit. ",
+    "settings.logs.description": "Logs older than the configured age threshold are automatically deleted once per day, at 2am Central European time. The threshhold is specified by a number and a unit.",
     "settings.logs.number": "Number",
     "settings.logs.unit": "Unit",
     "settings.logs.unit.days": "Days",
@@ -119,5 +119,16 @@
     "jobs.column.finished": "Finished",
     "jobs.column.type": "Type",
     "jobs.column.message": "Message (processed/loaded/deleted(skipped)/failed)",
-    "SENTINEL": "SENTINEL"
+    "SENTINEL": "SENTINEL",
+    "no-title": "[No title]",
+    "permission.settings.view": "Inventory import (Settings): View transformation pipelines, transformation steps, channels and log-file deletion threshold",
+    "permission.settings.view-edit": "Inventory import (Settings): View, edit transformation pipelines, transformation steps, channels and log-file deletion threshold",
+    "permission.settings.view-edit-create": "Inventory import (Settings): View, edit, create transformation pipelines, transformation steps and channels",
+    "permission.settings.view-edit-create-delete": "Inventory import (Settings): View, edit, create, delete transformation pipelines, transformation steps and channels",
+    "permission.channels.get": "Inventory import: View channels",
+    "permission.channels.put": "Inventory import: View, edit channels",
+    "permission.channels.post": "Inventory import: View, edit, create channels",
+    "permission.channels.delete": "Inventory import: View, edit, create, delete channels",
+    "permission.jobs-and-failed-records.view": "Inventory import: View jobs and failed records",
+    "permission.all": "Inventory import: All permissions"
 }
