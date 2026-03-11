@@ -94,7 +94,7 @@ describe('Full channel route', () => {
     expect(path).toBe('inventory-import/transformations/12345');
 
     // Pull down Actions menu and delete the current channel
-    const absentConfirmButton = screen.queryByText('ui-inventory-import.op.delete.confirm')
+    const absentConfirmButton = screen.queryByText('ui-inventory-import.op.delete.confirm');
     expect(absentConfirmButton).not.toBeInTheDocument();
 
     const actionsMenu = container.querySelector('[data-pane-header-actions-dropdown]');
@@ -105,7 +105,7 @@ describe('Full channel route', () => {
     expect(deleteButton).toBeInTheDocument();
     await fireEvent.click(deleteButton);
 
-    const confirmButton = screen.queryByText('ui-inventory-import.op.delete.confirm')
+    const confirmButton = screen.queryByText('ui-inventory-import.op.delete.confirm');
     expect(confirmButton).toBeInTheDocument();
     await fireEvent.click(confirmButton);
 
