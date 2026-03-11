@@ -66,6 +66,15 @@ describe('Jobs view', () => {
     expect(selectElement.value).toBe('channelName');
     expect(query.qindex).toBe('message');
 
+    // Filter by date started
+    const dateStatedAccordion = screen.getByText('ui-inventory-import.filter.date.started');
+    expect(dateStatedAccordion).toBeVisible();
+    fireEvent.click(dateStatedAccordion);
+    const dpButton = document.getElementById('datepicker-toggle-calendar-button-data-datefilter-started-from');
+    expect(dpButton).toBeVisible();
+    // fireEvent.click(dpButton);
+    // ### Now how the heck do we change the date?
+
     // Reset all search-form elements
     const clearElement = document.getElementById('clickable-reset-all');
     fireEvent.click(clearElement);
