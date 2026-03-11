@@ -1,0 +1,15 @@
+{
+  "id": "c40ce608-2264-41f6-982c-01de3d79e4f9",
+  "channelId": "c71b4d3a-2030-4f71-8b0a-294ec41fad22",
+  "channelName": "Minerva5 samples",
+  "importType": "XML",
+  "transformation": "10928a21-89eb-440d-bc37-b9efae2c98a0",
+  "status": "DONE",
+  "started": "2026-02-19T18:14:55.356+00:00",
+  "finished": "2026-02-19T22:02:27.004+00:00",
+  "amountImported": 1428100,
+  "message": "",
+  "metadata": {
+    "updatedDate": "2026-02-19T22:02:27.004+00:00"
+  }
+}
