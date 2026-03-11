@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { render, screen } from '@folio/jest-config-stripes/testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@folio/jest-config-stripes/testing-library/react';
+import userEvent from '@testing-library/user-event'
 import { Paneset } from '@folio/stripes/components';
 import withIntlConfiguration from '../../test/jest/util/withIntlConfiguration';
 import JobsRoute from './JobsRoute';
@@ -57,6 +58,20 @@ describe('Jobs route', () => {
     // Data rendered in the MCL
     const nameCell = screen.getByText("Felix's test channel #1").closest('[role="gridcell"]');
     expect(nameCell?.nextElementSibling).toHaveTextContent(/INTERRUPTED/);
+    expect(container.querySelector('[data-total-count="9"]')).toBeVisible();
+
+    // Search
+    const searchBox = document.getElementById('input-jobs-search');
+    expect(searchBox).toBeVisible();
+    await userEvent.type(searchBox, 'samples');
+    expect(searchBox).toHaveValue('samples');
+    const searchButton = document.getElementById('clickable-jobs-search');
+    expect(searchButton).toBeVisible();
+    fireEvent.click(searchButton);
+    // In the absence of stripesconnect, and given the internal complexity of SASQ, there is not really anything the test here
+    await waitFor(() => {
+      expect(container.querySelector('[data-total-count="9"]')).toBeVisible();
+    });
   });
 
   it('should be rendered with an error', async () => {
