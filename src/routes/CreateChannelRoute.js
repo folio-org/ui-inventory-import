@@ -76,9 +76,6 @@ CreateChannelRoute.propTypes = {
       type: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
-  location: PropTypes.shape({
-    search: PropTypes.string,
-  }).isRequired,
 };
 
 
