@@ -74,6 +74,9 @@ describe('Jobs view', () => {
     expect(dpButton).toBeVisible();
     // fireEvent.click(dpButton);
     // ### Now how the heck do we change the date?
+    // See Slack discussions at
+    //  https://open-libr-foundation.slack.com/archives/C210UCHQ9/p1773248297808169
+    //  https://open-libr-foundation.slack.com/archives/C210UCHQ9/p1773316042799349
 
     // Reset all search-form elements
     const clearElement = document.getElementById('clickable-reset-all');
