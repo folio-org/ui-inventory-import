@@ -40,17 +40,22 @@ const renderFullRecordRoute = (recordResource) => {
 
 
 describe('Full failed-record route', () => {
-  it('should be rendered with data', async () => {
-    const node = renderFullRecordRoute({
+  let node;
+  beforeEach(() => {
+    node = renderFullRecordRoute({
       hasLoaded: true,
       records: [fullRecordData],
     });
-    // screen.debug();
+  });
+
+  it('should be rendered with data', async () => {
     const { container } = node;
     const content = container.querySelector('[data-test-full-record-pane]');
     expect(container).toBeVisible();
     expect(content).toBeVisible();
+  });
 
+  it('should display correct data in summary area', async () => {
     // Data rendered in display
     for (const [name, value] of [
       ['channelName', 'Channel 2 (Minerva5 samples)'],
@@ -64,8 +69,9 @@ describe('Full failed-record route', () => {
       const kvRoot = screen.getByText(`ui-inventory-import.records.field.${name}`).closest('.kvRoot');
       expect(kvRoot.querySelector('[data-test-kv-value]')).toHaveTextContent(value);
     }
+  });
 
-    // Check display of error details
+  it('should display correct error details', async () => {
     for (const [name, value] of [
       ['code', 'jakarta.validation.constraints.NotNull.message'],
       ['type', '1'],
@@ -76,8 +82,8 @@ describe('Full failed-record route', () => {
       expect(elem.nextElementSibling).toHaveTextContent(':');
       expect(elem.nextElementSibling.nextElementSibling).toHaveTextContent(value);
     }
-
-    // XXX Check original record
-    // XXX Check transformed record
   });
+
+  // XXX Check original record
+  // XXX Check transformed record
 });
