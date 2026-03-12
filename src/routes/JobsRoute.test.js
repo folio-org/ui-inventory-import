@@ -68,7 +68,7 @@ describe('Jobs route', () => {
     const searchButton = document.getElementById('clickable-jobs-search');
     expect(searchButton).toBeVisible();
     fireEvent.click(searchButton);
-    // In the absence of stripesconnect, and given the internal complexity of SASQ, there is not really anything the test here
+    // In the absence of stripesconnect, and given the internal complexity of SASQ, there is not really anything to test here
     await waitFor(() => {
       expect(container.querySelector('[data-total-count="9"]')).toBeVisible();
     });
