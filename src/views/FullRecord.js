@@ -44,6 +44,7 @@ const FullJob = (props) => {
   return (
     <HasCommand commands={shortcuts} isWithinScope={checkScope} scope={document.body}>
       <Pane
+        data-test-full-record-pane
         appIcon={<AppIcon app="inventory-import" />}
         centerContent
         defaultWidth="60%"
