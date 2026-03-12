@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { render, screen, fireEvent, waitFor } from '@folio/jest-config-stripes/testing-library/react';
+import { render, screen } from '@folio/jest-config-stripes/testing-library/react';
 import { Paneset } from '@folio/stripes/components';
 import withIntlConfiguration from '../../test/jest/util/withIntlConfiguration';
-import FullRecordRoute, { FullRecordRoute as RawFullRecordRoute } from './FullRecordRoute';
+import FullRecordRoute from './FullRecordRoute';
 import fullRecordData from '../../test/jest/data/failedRecord';
 
 
