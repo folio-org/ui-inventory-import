@@ -65,7 +65,18 @@ describe('Full failed-record route', () => {
       expect(kvRoot.querySelector('[data-test-kv-value]')).toHaveTextContent(value);
     }
 
-    // XXX Check errors
+    // Check display of error details
+    for (const [name, value] of [
+      ['code', 'jakarta.validation.constraints.NotNull.message'],
+      ['type', '1'],
+      ['message', 'must not be null'],
+    ]) {
+      const elem = screen.getByText(name);
+      expect(elem).toBeVisible();
+      expect(elem.nextElementSibling).toHaveTextContent(':');
+      expect(elem.nextElementSibling.nextElementSibling).toHaveTextContent(value);
+    }
+
     // XXX Check original record
     // XXX Check transformed record
   });
