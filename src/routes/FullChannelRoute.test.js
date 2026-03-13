@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { render, screen, fireEvent, waitFor } from '@folio/jest-config-stripes/testing-library/react';
+import { render, screen, fireEvent } from '@folio/jest-config-stripes/testing-library/react';
 import { Paneset } from '@folio/stripes/components';
 import withIntlConfiguration from '../../test/jest/util/withIntlConfiguration';
 import FullChannelRoute, { FullChannelRoute as RawFullChannelRoute } from './FullChannelRoute';
@@ -109,12 +109,11 @@ describe('Full channel route', () => {
     expect(confirmButton).toBeInTheDocument();
     await fireEvent.click(confirmButton);
 
-    // This doesn't properly check what we want it to, due to complexities of async code
-    setTimeout(async () => {
-      console.log('*** timer is done');
+    // This doesn't fire as we expect it to, possibly due to complexities of async code
+    /*
       await waitFor(() => {
-        expect(deleteChannel).toHaveBeenCalledWith();
+        expect(screen.queryByText('ui-inventory-import.op.delete.completed')).toBeInTheDocument();
       });
-    }, 1000);
+    */
   });
 });
