@@ -13,10 +13,6 @@ const renderCreateChannelRoute = (query, channel) => {
     <BrowserRouter>
       <Paneset>
         <CreateChannelRoute
-          stripes={{
-            logger: {
-            },
-          }}
           resources={{
             transformationPipelines: {
               isPending: false,
@@ -46,7 +42,7 @@ const renderCreateChannelRoute = (query, channel) => {
 
 
 describe('Create channel route', () => {
-  describe('should be rendered with data', () => {
+  describe('should be rendered', () => {
     const query = {};
     const channel = {};
     beforeEach(() => {
@@ -63,7 +59,7 @@ describe('Create channel route', () => {
       expect(screen.getByText("Mike's Pipeline")).toBeVisible();
     });
 
-    it('should be able to cancel the form by clicking', async () => {
+    it('should be able to cancel the form', async () => {
       const cancelButton = screen.getByText('stripes-components.cancel');
       expect(cancelButton).toBeVisible();
       expect(query._path).toBeUndefined();
