@@ -3,7 +3,9 @@ import React from 'react';
 jest.mock('react-intl', () => {
   const intl = {
     formatMessage: ({ id }) => id,
-    messages: {},
+    messages: {
+      'ui-inventory-import.channels.field.id.help': 'An automatically assigned opaque identifier. Cannot be modified.',
+    },
   };
 
   return {
