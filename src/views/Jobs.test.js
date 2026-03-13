@@ -73,7 +73,7 @@ describe('Jobs view', () => {
     const dpButton = document.getElementById('datepicker-toggle-calendar-button-data-datefilter-started-from');
     expect(dpButton).toBeVisible();
     // fireEvent.click(dpButton);
-    // ### Now how the heck do we change the date?
+    // XXX Now how the heck do we change the date?
     // See Slack discussions at
     //  https://open-libr-foundation.slack.com/archives/C210UCHQ9/p1773248297808169
     //  https://open-libr-foundation.slack.com/archives/C210UCHQ9/p1773316042799349
