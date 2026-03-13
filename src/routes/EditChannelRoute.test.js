@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { render, screen, fireEvent, waitFor } from '@folio/jest-config-stripes/testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { Paneset } from '@folio/stripes/components';
 import withIntlConfiguration from '../../test/jest/util/withIntlConfiguration';
 import EditChannelRoute from './EditChannelRoute';
@@ -49,7 +48,7 @@ const renderEditChannelRoute = (query, channel) => {
 describe('Edit channel route', () => {
   describe('should be rendered', () => {
     const query = {};
-    const channel = {};
+    const channel = { ...fullChannel };
     beforeEach(() => {
       const node = renderEditChannelRoute(query, channel);
       const { container } = node;
