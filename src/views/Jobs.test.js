@@ -8,14 +8,6 @@ import Jobs from './Jobs';
 import jobsData from '../../test/jest/data/jobs';
 
 
-// The version of Node used in CI seems to lack Intl.DurationFormat
-global.Intl.DurationFormat = class {
-  format() {
-    return 'mocked duration';
-  }
-};
-
-
 const renderJobs = (query) => {
   const callout = {
     sendCallout: (_calloutData) => {
