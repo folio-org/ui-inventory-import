@@ -8,6 +8,14 @@ import JobsRoute, { JobsRoute as RawJobsRoute } from './JobsRoute';
 import jobsData from '../../test/jest/data/jobs';
 
 
+// The version of Node used in CI seems to lack Intl.DurationFormat
+global.Intl.DurationFormat = class {
+  format() {
+    return 'mocked duration';
+  }
+};
+
+
 const renderJobsRoute = (jobsResource) => {
   return render(withIntlConfiguration(
     <BrowserRouter>
