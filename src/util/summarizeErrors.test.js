@@ -1,29 +1,53 @@
 import { errors2string } from './summarizeErrors';
 
-const errorFromMessage = `[
+const singleError = `[
   {
-    "error": {
-      "label": "Error encountered during upsert of Inventory record set",
-      "message": "ERROR: Cannot update record c352fe11-51e2-4e8b-87d6-578d6dedec8b because it has been changed (optimistic locking): Stored _version is 4, _version of request is 1 (23F09)"
-    }
+    "code": "jakarta.validation.constraints.NotNull.message",
+    "type": "1",
+    "message": "must not be null",
+    "parameters": [
+      {
+        "key": "instances[0].series[].value",
+        "value": "null"
+      }
+    ]
   }
 ]`;
 
-const errorFromLabel = `[
+const multipleErrors = `[
   {
-    "error": {
-      "label": "Error encountered during upsert of Inventory record set"
-    }
+    "code": "jakarta.validation.constraints.NotNull.message",
+    "type": "1",
+    "message": "must not be null",
+    "parameters": [
+      {
+        "key": "instances[0].series[].value",
+        "value": "null"
+      }
+    ]
+  },
+  {
+    "code": "jakarta.validation.constraints.Pattern.message",
+    "type": "1",
+    "message": "must match \\"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$\\"",
+    "parameters": [
+      {
+        "key": "instances[0].notes[1].instanceNoteTypeId",
+        "value": "Restrictions on Access note"
+      }
+    ]
   }
 ]`;
 
-
-test('summarizes simple error from message', () => {
-  const errorsData = JSON.parse(errorFromMessage);
-  expect(errors2string(errorsData)).toBe('ERROR: Cannot update record c352fe11-51e2-4e8b-87d6-578d6dedec8b because it has been changed (optimistic locking): Stored _version is 4, _version of request is 1 (23F09)');
+test('summarizes single error', () => {
+  const errorsData = JSON.parse(singleError);
+  expect(errors2string(errorsData)).toBe('jakarta.validation.constraints.NotNull.message: must not be null');
 });
 
-test('summarizes simple error from label', () => {
-  const errorsData = JSON.parse(errorFromLabel);
-  expect(errors2string(errorsData)).toBe('Error encountered during upsert of Inventory record set');
+test('summarizes multiple errors', () => {
+  const errorsData = JSON.parse(multipleErrors);
+  expect(errors2string(errorsData)).toBe('jakarta.validation.constraints.NotNull.message: must not be null // jakarta.validation.constraints.Pattern.message: must match "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"');
 });
+
+
+

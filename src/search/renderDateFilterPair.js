@@ -14,6 +14,7 @@ function renderSingleDateFilter(intl, filterStruct, updateQuery, field, boundary
 
   return (
     <Datepicker
+      id={`data-datefilter-${field}-${boundary}`}
       label={intl.formatMessage({ id: `ui-inventory-import.filter.date.${field}.${boundary}` })}
       backendDateStandard="YYYY-MM-DD"
       value={value}

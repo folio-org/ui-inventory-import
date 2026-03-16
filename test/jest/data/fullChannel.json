@@ -1,0 +1,17 @@
+{
+  "id": "c71b4d3a-2030-4f71-8b0a-294ec41fad22",
+  "name": "Minerva5 samples",
+  "tag": "minerva5",
+  "type": "XML",
+  "transformationId": "10928a21-89eb-440d-bc37-b9efae2c98a0",
+  "enabled": true,
+  "commissioned": false,
+  "listening": true,
+  "queuedFiles": 0,
+  "fileInProcess": "no file in process",
+  "metadata": {
+    "createdDate": "2026-01-16T19:04:38.390+00:00",
+    "createdByUserId": "c22dbc66-4384-5fdc-8d2a-91b129962217",
+    "updatedDate": "2026-02-23T12:22:08.418+00:00"
+  }
+}

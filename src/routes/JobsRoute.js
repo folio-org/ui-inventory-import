@@ -158,3 +158,4 @@ JobsRoute.propTypes = {
 
 
 export default stripesConnect(JobsRoute);
+export { JobsRoute }; // For tests

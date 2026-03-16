@@ -81,7 +81,6 @@ const ChannelLogFailedRecords = ({ failedRecords, updateQuery }) => {
 
 ChannelLogFailedRecords.propTypes = {
   failedRecords: PropTypes.shape({
-    totalRecords: PropTypes.number.isRequired,
     failedRecords: PropTypes.arrayOf(
       PropTypes.shape({
         // XXX add individual fields

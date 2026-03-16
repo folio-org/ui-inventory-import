@@ -1,0 +1,31 @@
+{
+  "id": "10928a21-89eb-440d-bc37-b9efae2c98a0",
+  "name": "PICA to FOLIO",
+  "description": "Sample transformation",
+  "steps": [
+    {
+      "id": "721768f2-98ff-4b8e-b727-29a12b8b1f05",
+      "name": "step-pica2instance"
+    },
+    {
+      "id": "16fb7af3-c97a-4da2-8fc1-9cbdadc065a2",
+      "name": "felix-step-relationships"
+    },
+    {
+      "id": "d9777826-88ad-4dfd-835c-f0d46897042a",
+      "name": "step-holdings-items"
+    },
+    {
+      "id": "85b269f9-2c9b-4a2a-9beb-5733b6dddfd0",
+      "name": "step-locations2uuid-iln40"
+    },
+    {
+      "id": "efca52cf-5862-4e3e-bc46-02889374e2fe",
+      "name": "step-codes2uuid"
+    }
+  ],
+  "metadata": {
+    "createdDate": "2026-01-16T19:04:10.102+00:00",
+    "createdByUserId": "c22dbc66-4384-5fdc-8d2a-91b129962217"
+  }
+}

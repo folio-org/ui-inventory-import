@@ -97,6 +97,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
         </IfPermission>
         <IfPermission perm="inventory-update.import.channels.item.delete">
           <Button
+            data-test-delete-channel-button
             buttonStyle="dropdownItem"
             data-test-actions-menu-delete
             id="clickable-delete-channel"
@@ -113,6 +114,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
 
   return (
     <Pane
+      data-test-full-channel-pane
       dismissible
       onClose={returnToList}
       defaultWidth={defaultWidth}

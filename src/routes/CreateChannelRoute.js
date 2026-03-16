@@ -51,11 +51,6 @@ CreateChannelRoute.manifest = Object.freeze({
 
 CreateChannelRoute.propTypes = {
   resources: PropTypes.shape({
-    channels: PropTypes.shape({
-      records: PropTypes.arrayOf(
-        PropTypes.shape({}).isRequired,
-      ).isRequired,
-    }).isRequired,
     transformationPipelines: PropTypes.shape({
       isPending: PropTypes.bool.isRequired,
       records: PropTypes.arrayOf(
@@ -75,9 +70,6 @@ CreateChannelRoute.propTypes = {
     params: PropTypes.shape({
       type: PropTypes.string.isRequired,
     }).isRequired,
-  }).isRequired,
-  location: PropTypes.shape({
-    search: PropTypes.string,
   }).isRequired,
 };
 

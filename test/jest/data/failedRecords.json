@@ -1,0 +1,998 @@
+[
+  {
+    "id": "9952c1b0-a966-452f-a7c1-53f67d7ba8a5",
+    "importJobId": "e1dfaa98-ca0d-4841-93fd-c3f0797e185a",
+    "channelId": "64891c97-78c7-41d1-9ec7-e8005de7d334",
+    "channelName": "Channel 2 (Minerva5 samples)",
+    "recordNumber": "068870434",
+    "timeStamp": "2026-02-19T13:30:35.737+00:00",
+    "sourceFileName": "Abz_40_Tit.001_20231029_013504.nrm.0001153.xml",
+    "recordErrors": [
+      {
+        "code": "jakarta.validation.constraints.NotNull.message",
+        "type": "1",
+        "message": "must not be null",
+        "parameters": [
+          {
+            "key": "instances[0].series[].value",
+            "value": "null"
+          }
+        ]
+      }
+    ],
+    "originalRecord": "<record>\n    <header status=\"upsert\">\n      <identifier>068870434</identifier>\n    </header>\n    <metadata>\n      <datafield tag=\"001@\" fulltag=\"001@\">\n        <subfield code=\"0\">22,40,65,72,121,123,176,179,217</subfield>\n      </datafield>\n      <datafield tag=\"001A\" fulltag=\"001A\">\n        <subfield code=\"0\">0008:15-10-00</subfield>\n      </datafield>\n      <datafield tag=\"001B\" fulltag=\"001B\">\n        <subfield code=\"0\">BSZ:22-04-22</subfield>\n        <subfield code=\"t\">12:14:02.000</subfield>\n      </datafield>\n      <datafield tag=\"001D\" fulltag=\"001D\">\n        <subfield code=\"0\">0035:14-01-14</subfield>\n      </datafield>\n      <datafield tag=\"001U\" fulltag=\"001U\">\n        <subfield code=\"0\">utf8</subfield>\n      </datafield>\n      <datafield tag=\"001X\" fulltag=\"001X\">\n        <subfield code=\"0\">0</subfield>\n      </datafield>\n      <datafield tag=\"002@\" fulltag=\"002@\">\n        <subfield code=\"0\">Afu</subfield>\n      </datafield>\n      <datafield tag=\"002C\" fulltag=\"002C\">\n        <subfield code=\"a\">Text</subfield>\n        <subfield code=\"b\">txt</subfield>\n      </datafield>\n      <datafield tag=\"002D\" fulltag=\"002D\">\n        <subfield code=\"a\">ohne Hilfsmittel zu benutzen</subfield>\n        <subfield code=\"b\">n</subfield>\n      </datafield>\n      <datafield tag=\"002E\" fulltag=\"002E\">\n        <subfield code=\"a\">Band</subfield>\n        <subfield code=\"b\">nc</subfield>\n      </datafield>\n      <datafield tag=\"003@\" fulltag=\"003@\">\n        <subfield code=\"0\">068870434</subfield>\n      </datafield>\n      <datafield tag=\"003O\" fulltag=\"003O\">\n        <subfield code=\"a\">OCoLC</subfield>\n        <subfield code=\"0\">831170427</subfield>\n        <subfield code=\"v\">2012-12-31</subfield>\n      </datafield>\n      <datafield tag=\"006Y\" fulltag=\"006Y\">\n        <subfield code=\"0\">0008421975</subfield>\n      </datafield>\n      <datafield tag=\"007G\" fulltag=\"007G\">\n        <subfield code=\"i\">GBV</subfield>\n        <subfield code=\"0\">068870434</subfield>\n      </datafield>\n      <datafield tag=\"010@\" fulltag=\"010@\">\n        <subfield code=\"a\">ger</subfield>\n      </datafield>\n      <datafield tag=\"011@\" fulltag=\"011@\">\n        <subfield code=\"a\">1914</subfield>\n        <subfield code=\"n\">1914</subfield>\n      </datafield>\n      <datafield tag=\"019@\" fulltag=\"019@\">\n        <subfield code=\"a\">XA-DXDE</subfield>\n      </datafield>\n      <datafield tag=\"027A\" fulltag=\"027A\">\n        <subfield code=\"a\">S&#xe4;mtliche Werke</subfield>\n      </datafield>\n      <datafield tag=\"028A\" fulltag=\"028A\">\n        <subfield code=\"9\">137081022</subfield>\n        <subfield code=\"a\">Zwingli</subfield>\n        <subfield code=\"d\">Ulrich</subfield>\n        <subfield code=\"a\">1484</subfield>\n        <subfield code=\"b\">1531</subfield>\n        <subfield code=\"0\">gnd/118637533</subfield>\n      </datafield>\n      <datafield tag=\"028C\" fulltag=\"028C\">\n        <subfield code=\"9\">137866305</subfield>\n        <subfield code=\"a\">Egli</subfield>\n        <subfield code=\"d\">Emil</subfield>\n        <subfield code=\"a\">1848</subfield>\n        <subfield code=\"b\">1908</subfield>\n        <subfield code=\"0\">gnd/118688111</subfield>\n      </datafield>\n      <datafield tag=\"028C\" fulltag=\"028C\">\n        <subfield code=\"9\">085710598</subfield>\n        <subfield code=\"a\">Finsler</subfield>\n        <subfield code=\"d\">Georg</subfield>\n        <subfield code=\"a\">1860</subfield>\n        <subfield code=\"b\">1920</subfield>\n        <subfield code=\"0\">gnd/124211461</subfield>\n      </datafield>\n      <datafield tag=\"033A\" fulltag=\"033A\">\n        <subfield code=\"p\">Leipzig</subfield>\n        <subfield code=\"n\">Heinsius</subfield>\n      </datafield>\n      <datafield tag=\"034D\" fulltag=\"034D\">\n        <subfield code=\"a\">IV, 912 S.</subfield>\n      </datafield>\n      <datafield tag=\"036C\" fulltag=\"036C\">\n        <subfield code=\"a\">Huldreich Zwinglis S&#xe4;mtliche Werke</subfield>\n        <subfield code=\"h\">unter Mitw. des Zwingli-Vereins in Z&#xfc;rich hrsg. von Emil Egli, Georg Finsler ...</subfield>\n        <subfield code=\"l\">Bd. 3</subfield>\n      </datafield>\n      <datafield tag=\"036D\" fulltag=\"036D\">\n        <subfield code=\"X\">3.1914</subfield>\n        <subfield code=\"9\">06887040X</subfield>\n        <subfield code=\"a\">Huldreich Zwinglis S&#xe4;mtliche Werke</subfield>\n        <subfield code=\"a\">Zwingli</subfield>\n        <subfield code=\"d\">Ulrich</subfield>\n        <subfield code=\"a\">1484</subfield>\n        <subfield code=\"b\">1531</subfield>\n        <subfield code=\"0\">gnd/118637533</subfield>\n        <subfield code=\"l\">Bd. 3</subfield>\n      </datafield>\n      <datafield tag=\"036E\" fulltag=\"036E\">\n        <subfield code=\"a\">@</subfield>\n      </datafield>\n      <datafield tag=\"036E\" fulltag=\"036E\">\n        <subfield code=\"a\">Corpus reformatorum</subfield>\n        <subfield code=\"l\">90</subfield>\n      </datafield>\n      <datafield tag=\"036F\" fulltag=\"036F\">\n        <subfield code=\"X\">9000</subfield>\n        <subfield code=\"9\">168762757</subfield>\n        <subfield code=\"a\">Corpus reformatorum</subfield>\n        <subfield code=\"0\">844697-0</subfield>\n        <subfield code=\"l\">90</subfield>\n      </datafield>\n      <datafield tag=\"046P\" fulltag=\"046P\">\n        <subfield code=\"a\">Erscheinungsbeginn 1911</subfield>\n      </datafield>\n      <datafield tag=\"046X\" fulltag=\"046X\">\n        <subfield code=\"a\">ba</subfield>\n        <subfield code=\"c\">2020</subfield>\n        <subfield code=\"k\">DE-18</subfield>\n        <subfield code=\"5\">DE-18-161</subfield>\n      </datafield>\n      <datafield tag=\"101@\" fulltag=\"101@\">\n        <subfield code=\"a\">40</subfield>\n      </datafield>\n      <datafield tag=\"101B\" fulltag=\"101B\">\n        <subfield code=\"0\">23-11-21</subfield>\n        <subfield code=\"t\">22:21:17.000</subfield>\n      </datafield>\n      <datafield tag=\"101U\" fulltag=\"101U\">\n        <subfield code=\"0\">utf8</subfield>\n      </datafield>\n      <datafield tag=\"102D\" fulltag=\"102D\">\n        <subfield code=\"0\">23-11-21</subfield>\n        <subfield code=\"b\">cbs_1536</subfield>\n        <subfield code=\"a\">1999</subfield>\n      </datafield>\n      <datafield tag=\"107F\" fulltag=\"107F\">\n        <subfield code=\"0\">3L36/15U</subfield>\n      </datafield>\n      <item epn=\"103711872\">\n        <datafield tag=\"201B\" occurrence=\"01\" fulltag=\"201B/01\">\n          <subfield code=\"0\">18-01-23</subfield>\n          <subfield code=\"t\">09:15:52.000</subfield>\n        </datafield>\n        <datafield tag=\"201U\" occurrence=\"01\" fulltag=\"201U/01\">\n          <subfield code=\"0\">utf8</subfield>\n        </datafield>\n        <datafield tag=\"202D\" occurrence=\"01\" fulltag=\"202D/01\">\n          <subfield code=\"0\">18-01-23</subfield>\n          <subfield code=\"b\">cbs_1580</subfield>\n          <subfield code=\"a\">1999</subfield>\n        </datafield>\n        <datafield tag=\"203@\" occurrence=\"01\" fulltag=\"203@/01\">\n          <subfield code=\"0\">103711872</subfield>\n        </datafield>\n        <datafield tag=\"208@\" occurrence=\"01\" fulltag=\"208@/01\">\n          <subfield code=\"a\">02-09-97</subfield>\n          <subfield code=\"b\">xsn</subfield>\n        </datafield>\n        <datafield tag=\"209A\" occurrence=\"01\" fulltag=\"209A/01\">\n          <subfield code=\"a\">!HG-LS!CDE 735 = 4 TH TH I, 270/9:90</subfield>\n          <subfield code=\"d\">s</subfield>\n          <subfield code=\"x\">00</subfield>\n        </datafield>\n        <datafield tag=\"209A\" occurrence=\"01\" fulltag=\"209A/01\">\n          <subfield code=\"a\">4 TH TH I, 270/9:90</subfield>\n          <subfield code=\"x\">09</subfield>\n        </datafield>\n        <datafield tag=\"209G\" occurrence=\"01\" fulltag=\"209G/01\">\n          <subfield code=\"a\">7$207051712</subfield>\n        </datafield>\n      </item>\n      <item epn=\"924893230\">\n        <datafield tag=\"201B\" occurrence=\"02\" fulltag=\"201B/02\">\n          <subfield code=\"0\">27-02-14</subfield>\n          <subfield code=\"t\">16:09:14.000</subfield>\n        </datafield>\n        <datafield tag=\"201U\" occurrence=\"02\" fulltag=\"201U/02\">\n          <subfield code=\"0\">utf8</subfield>\n        </datafield>\n        <datafield tag=\"202D\" occurrence=\"02\" fulltag=\"202D/02\">\n          <subfield code=\"0\">12-12-09</subfield>\n          <subfield code=\"b\">movtheol</subfield>\n          <subfield code=\"a\">0007</subfield>\n        </datafield>\n        <datafield tag=\"203@\" occurrence=\"02\" fulltag=\"203@/02\">\n          <subfield code=\"0\">924893230</subfield>\n        </datafield>\n        <datafield tag=\"208@\" occurrence=\"02\" fulltag=\"208@/02\">\n          <subfield code=\"a\">12-03-09</subfield>\n          <subfield code=\"b\">zi042</subfield>\n        </datafield>\n        <datafield tag=\"209A\" occurrence=\"02\" fulltag=\"209A/02\">\n          <subfield code=\"b\">7</subfield>\n          <subfield code=\"j\">149</subfield>\n          <subfield code=\"f\">7/042</subfield>\n          <subfield code=\"a\">Ma 2000 (90)</subfield>\n          <subfield code=\"d\">i</subfield>\n          <subfield code=\"x\">00</subfield>\n        </datafield>\n        <datafield tag=\"209C\" occurrence=\"02\" fulltag=\"209C/02\">\n          <subfield code=\"a\">96</subfield>\n          <subfield code=\"x\">00</subfield>\n        </datafield>\n      </item>\n    </metadata>\n  </record>",
+    "transformedRecord": {
+      "instance": {
+        "hrid": "068870434",
+        "notes": [
+          {
+            "note": "Erscheinungsbeginn 1911",
+            "instanceNoteTypeId": "cf635f41-29e7-4dd0-8598-33f230157074"
+          }
+        ],
+        "title": "Huldreich Zwinglis Sämtliche Werke / unter Mitw. des Zwingli-Vereins in Zürich hrsg. von Emil Egli, Georg Finsler ... ; Bd. 3",
+        "series": [
+          {},
+          {
+            "value": "Corpus reformatorum ; 90"
+          }
+        ],
+        "source": "K10plus",
+        "languages": [
+          "ger"
+        ],
+        "indexTitle": "Huldreich Zwinglis Sämtliche Werke unter Mitw des ZwingliVereins in Zürich hrsg von Emil Egli Georg Finsler Bd 3",
+        "identifiers": [
+          {
+            "value": "068870434",
+            "identifierTypeId": "1d5cb40c-508f-451b-8952-87c92be4255a"
+          },
+          {
+            "value": "831170427",
+            "identifierTypeId": "439bfbae-75bc-4f74-9fc7-b2a2d47ce3ef"
+          },
+          {
+            "value": "GBV: 068870434",
+            "identifierTypeId": "8e33c1be-e2c4-43ac-a975-8fb50f71137a"
+          }
+        ],
+        "publication": [
+          {
+            "role": "Publisher",
+            "place": "Leipzig",
+            "publisher": "Heinsius",
+            "dateOfPublication": "1914"
+          }
+        ],
+        "contributors": [
+          {
+            "name": "Zwingli, Ulrich",
+            "primary": "true",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          },
+          {
+            "name": "Egli, Emil",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          },
+          {
+            "name": "Finsler, Georg",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          }
+        ],
+        "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+        "electronicAccess": [],
+        "modeOfIssuanceId": "9d18a02f-5897-4c31-9106-c9abb5c7ae8b",
+        "alternativeTitles": [
+          {
+            "alternativeTitle": "Sämtliche Werke",
+            "alternativeTitleTypeId": "79ea6d17-8247-4126-aab5-99fbd2ac6dda"
+          }
+        ],
+        "instanceFormatIds": [
+          "8d511d33-5e85-4c5d-9bce-6e3c9cd0c324"
+        ],
+        "administrativeNotes": [
+          "Afu (0500: Bibliografische Gattung)",
+          "22.04.22, 12:14 (0210: Datum der letzten Änderung)"
+        ],
+        "physicalDescriptions": [
+          "IV, 912 S."
+        ]
+      },
+      "processing": {
+        "item": {
+          "status": {
+            "policy": "overwrite",
+            "ifStatusWas": [
+              {
+                "name": "On order"
+              },
+              {
+                "name": "Available"
+              },
+              {
+                "name": "Intellectual item"
+              },
+              {
+                "name": "Missing"
+              },
+              {
+                "name": "Restricted"
+              },
+              {
+                "name": "Unknown"
+              }
+            ]
+          },
+          "retainOmittedRecord": {
+            "ifField": "hrid",
+            "matchesPattern": "\\D+.*"
+          },
+          "retainExistingValues": {
+            "forOmittedProperties": "true"
+          }
+        },
+        "batchIndex": 63,
+        "holdingsRecord": {
+          "statisticalCoding": [
+            {
+              "if": "deleteSkipped",
+              "setCode": "970b8b4e-ee88-4037-b954-a10ee75340f0",
+              "becauseOf": "ITEM_PATTERN_MATCH"
+            },
+            {
+              "if": "deleteSkipped",
+              "setCode": "e7b3071c-8cc0-48cc-9cd0-dfc82c4e4602",
+              "becauseOf": "ITEM_STATUS"
+            }
+          ],
+          "retainOmittedRecord": {
+            "ifField": "hrid",
+            "matchesPattern": "\\D+.*"
+          },
+          "retainExistingValues": {
+            "forOmittedProperties": "true"
+          }
+        }
+      },
+      "holdingsRecords": [
+        {
+          "hrid": "103711872",
+          "items": [
+            {
+              "hrid": "103711872",
+              "status": {
+                "name": "Available"
+              },
+              "barcode": "103711872:7$207051712",
+              "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+              "discoverySuppress": "false",
+              "permanentLoanTypeId": "7141f5a0-05ef-4869-89ab-9f0b5e3cecf3"
+            }
+          ],
+          "notes": [],
+          "sourceId": "fa687f33-aab5-4119-b0ad-05afe8de4d92",
+          "callNumber": "!HG-LS!CDE 735 = 4 TH TH I, 270/9:90",
+          "holdingsTypeId": "0c422f92-0f4d-4d32-8cbe-390ebc33a3e5",
+          "electronicAccess": [],
+          "discoverySuppress": "false",
+          "administrativeNotes": [
+            "18-01-23, 09:15 (7903: Datum und Uhrzeit der letzten Änderung)"
+          ],
+          "permanentLocationId": "78091d58-5057-4f5d-bbcc-ca07eafd8cc1"
+        },
+        {
+          "hrid": "924893230",
+          "items": [
+            {
+              "hrid": "924893230",
+              "status": {
+                "name": "Available"
+              },
+              "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+              "accessionNumber": "96",
+              "discoverySuppress": "false",
+              "permanentLoanTypeId": "3ef6d652-2e02-4561-8f7b-720cbccde87f"
+            }
+          ],
+          "notes": [],
+          "sourceId": "fa687f33-aab5-4119-b0ad-05afe8de4d92",
+          "callNumber": "Ma 2000 (90)",
+          "holdingsTypeId": "0c422f92-0f4d-4d32-8cbe-390ebc33a3e5",
+          "callNumberPrefix": "7/042",
+          "electronicAccess": [],
+          "discoverySuppress": "false",
+          "administrativeNotes": [
+            "27-02-14, 16:09 (7903: Datum und Uhrzeit der letzten Änderung)"
+          ],
+          "permanentLocationId": "c2c69828-6716-47c4-aa64-758b4992ae2b"
+        }
+      ],
+      "instanceRelations": {
+        "parentInstances": [
+          {
+            "instanceIdentifier": {
+              "hrid": "06887040X"
+            },
+            "provisionalInstance": {
+              "title": "Provisional title",
+              "source": "K10plus",
+              "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f"
+            },
+            "instanceRelationshipTypeId": "a17daf0a-f057-43b3-9997-13d0724cdf51"
+          },
+          {
+            "instanceIdentifier": {
+              "hrid": "168762757"
+            },
+            "provisionalInstance": {
+              "title": "Provisional title",
+              "source": "K10plus",
+              "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f"
+            },
+            "instanceRelationshipTypeId": "30773a27-b485-4dab-aeb6-b8c04fa3cb17"
+          }
+        ]
+      }
+    },
+    "metadata": {
+      "createdDate": "2026-02-19T13:30:35.737+00:00"
+    }
+  },
+  {
+    "id": "37555875-702c-4b91-896c-83d935a57c6e",
+    "importJobId": "e1dfaa98-ca0d-4841-93fd-c3f0797e185a",
+    "channelId": "64891c97-78c7-41d1-9ec7-e8005de7d334",
+    "channelName": "Channel 2 (Minerva5 samples)",
+    "recordNumber": "60623747X",
+    "timeStamp": "2026-02-19T16:01:59.071+00:00",
+    "sourceFileName": "Abz_40_Tit.001_20231029_013504.nrm.0006013.xml",
+    "recordErrors": [
+      {
+        "code": "jakarta.validation.constraints.NotNull.message",
+        "type": "1",
+        "message": "must not be null",
+        "parameters": [
+          {
+            "key": "instances[0].series[].value",
+            "value": "null"
+          }
+        ]
+      }
+    ],
+    "originalRecord": "<record>\n    <header status=\"upsert\">\n      <identifier>60623747X</identifier>\n    </header>\n    <metadata>\n      <datafield tag=\"001@\" fulltag=\"001@\">\n        <subfield code=\"0\">22,40</subfield>\n      </datafield>\n      <datafield tag=\"001A\" fulltag=\"001A\">\n        <subfield code=\"0\">0018:07-08-09</subfield>\n      </datafield>\n      <datafield tag=\"001B\" fulltag=\"001B\">\n        <subfield code=\"0\">BSZ:06-07-22</subfield>\n        <subfield code=\"t\">11:48:04.000</subfield>\n      </datafield>\n      <datafield tag=\"001D\" fulltag=\"001D\">\n        <subfield code=\"0\">0018:07-08-09</subfield>\n      </datafield>\n      <datafield tag=\"001U\" fulltag=\"001U\">\n        <subfield code=\"0\">utf8</subfield>\n      </datafield>\n      <datafield tag=\"001X\" fulltag=\"001X\">\n        <subfield code=\"0\">0</subfield>\n      </datafield>\n      <datafield tag=\"002@\" fulltag=\"002@\">\n        <subfield code=\"0\">AFu</subfield>\n      </datafield>\n      <datafield tag=\"002C\" fulltag=\"002C\">\n        <subfield code=\"a\">Text</subfield>\n        <subfield code=\"b\">txt</subfield>\n      </datafield>\n      <datafield tag=\"002D\" fulltag=\"002D\">\n        <subfield code=\"a\">ohne Hilfsmittel zu benutzen</subfield>\n        <subfield code=\"b\">n</subfield>\n      </datafield>\n      <datafield tag=\"002E\" fulltag=\"002E\">\n        <subfield code=\"a\">Band</subfield>\n        <subfield code=\"b\">nc</subfield>\n      </datafield>\n      <datafield tag=\"003@\" fulltag=\"003@\">\n        <subfield code=\"0\">60623747X</subfield>\n      </datafield>\n      <datafield tag=\"003O\" fulltag=\"003O\">\n        <subfield code=\"a\">OCoLC</subfield>\n        <subfield code=\"0\">552145442</subfield>\n        <subfield code=\"v\">2012-12-31</subfield>\n      </datafield>\n      <datafield tag=\"004A\" fulltag=\"004A\">\n        <subfield code=\"0\">4901558021</subfield>\n      </datafield>\n      <datafield tag=\"007G\" fulltag=\"007G\">\n        <subfield code=\"i\">GBV</subfield>\n        <subfield code=\"0\">60623747X</subfield>\n      </datafield>\n      <datafield tag=\"010@\" fulltag=\"010@\">\n        <subfield code=\"a\">jpn</subfield>\n        <subfield code=\"a\">eng</subfield>\n        <subfield code=\"c\">jpn</subfield>\n      </datafield>\n      <datafield tag=\"011@\" fulltag=\"011@\">\n        <subfield code=\"a\">2002</subfield>\n      </datafield>\n      <datafield tag=\"019@\" fulltag=\"019@\">\n        <subfield code=\"a\">XB-JP</subfield>\n      </datafield>\n      <datafield tag=\"021A\" fulltag=\"021A\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"a\">Hana no kogakure</subfield>\n        <subfield code=\"h\">Hayakawa Monta hen ; Kuriyama Shigehisa, P. Fisut&#x101; yaku</subfield>\n      </datafield>\n      <datafield tag=\"021A\" fulltag=\"021A\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"a\">&#x82b1;&#x306e;&#x5c0f;&#x304c;&#x304f;&#x308c;</subfield>\n      </datafield>\n      <datafield tag=\"028A\" fulltag=\"028A\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Latn</subfield>\n        <subfield code=\"9\">515795771</subfield>\n        <subfield code=\"a\">Hishikawa</subfield>\n        <subfield code=\"d\">Moronobu</subfield>\n        <subfield code=\"a\">1625</subfield>\n        <subfield code=\"b\">1695</subfield>\n        <subfield code=\"0\">gnd/105818658</subfield>\n        <subfield code=\"B\">VerfasserIn</subfield>\n        <subfield code=\"4\">aut</subfield>\n      </datafield>\n      <datafield tag=\"028A\" fulltag=\"028A\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"9\">515795771</subfield>\n        <subfield code=\"a\">&#x83f1;&#x5ddd;</subfield>\n        <subfield code=\"d\">&#x5e2b;&#x5ba3;</subfield>\n        <subfield code=\"a\">1625</subfield>\n        <subfield code=\"b\">1695</subfield>\n        <subfield code=\"0\">gnd/105818658</subfield>\n        <subfield code=\"B\">VerfasserIn</subfield>\n        <subfield code=\"4\">aut</subfield>\n      </datafield>\n      <datafield tag=\"028C\" fulltag=\"028C\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Latn</subfield>\n        <subfield code=\"9\">782029604</subfield>\n        <subfield code=\"a\">Hayakawa</subfield>\n        <subfield code=\"d\">Monta</subfield>\n        <subfield code=\"a\">1949</subfield>\n        <subfield code=\"0\">gnd/1049476328</subfield>\n        <subfield code=\"B\">HerausgeberIn</subfield>\n        <subfield code=\"4\">edt</subfield>\n      </datafield>\n      <datafield tag=\"028C\" fulltag=\"028C\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"9\">782029604</subfield>\n        <subfield code=\"a\">&#x65e9;&#x5ddd;</subfield>\n        <subfield code=\"d\">&#x805e;&#x591a;</subfield>\n        <subfield code=\"a\">1949</subfield>\n        <subfield code=\"0\">gnd/1049476328</subfield>\n        <subfield code=\"B\">HerausgeberIn</subfield>\n        <subfield code=\"4\">edt</subfield>\n      </datafield>\n      <datafield tag=\"028C\" fulltag=\"028C\">\n        <subfield code=\"T\">02</subfield>\n        <subfield code=\"U\">Latn</subfield>\n        <subfield code=\"9\">719437059</subfield>\n        <subfield code=\"a\">Kuriyama</subfield>\n        <subfield code=\"d\">Shigehisa</subfield>\n        <subfield code=\"a\">1954</subfield>\n        <subfield code=\"0\">gnd/1024234363</subfield>\n        <subfield code=\"B\">&#xdc;bersetzerIn</subfield>\n        <subfield code=\"4\">trl</subfield>\n      </datafield>\n      <datafield tag=\"028C\" fulltag=\"028C\">\n        <subfield code=\"T\">02</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"9\">719437059</subfield>\n        <subfield code=\"a\">&#x6817;&#x5c71;</subfield>\n        <subfield code=\"d\">&#x8302;&#x4e45;</subfield>\n        <subfield code=\"a\">1954</subfield>\n        <subfield code=\"0\">gnd/1024234363</subfield>\n        <subfield code=\"B\">&#xdc;bersetzerIn</subfield>\n        <subfield code=\"4\">trl</subfield>\n      </datafield>\n      <datafield tag=\"028C\" fulltag=\"028C\">\n        <subfield code=\"T\">03</subfield>\n        <subfield code=\"U\">Latn</subfield>\n        <subfield code=\"9\">779676661</subfield>\n        <subfield code=\"a\">Fister</subfield>\n        <subfield code=\"d\">Pat</subfield>\n        <subfield code=\"a\">1953</subfield>\n        <subfield code=\"0\">gnd/1047992809</subfield>\n        <subfield code=\"B\">&#xdc;bersetzerIn</subfield>\n        <subfield code=\"4\">trl</subfield>\n      </datafield>\n      <datafield tag=\"033A\" fulltag=\"033A\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"p\">Ky&#x14d;to</subfield>\n        <subfield code=\"n\">Kokusai Nihon bunka kenky&#x16b; sent&#x101;</subfield>\n      </datafield>\n      <datafield tag=\"033A\" fulltag=\"033A\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"p\">&#x4eac;&#x90fd;</subfield>\n        <subfield code=\"n\">&#x56fd;&#x969b;&#x65e5;&#x672c;&#x6587;&#x5316;&#x7814;&#x7a76;&#x30bb;&#x30f3;&#x30bf;&#x30fc;</subfield>\n      </datafield>\n      <datafield tag=\"034D\" fulltag=\"034D\">\n        <subfield code=\"a\">32 Seiten</subfield>\n      </datafield>\n      <datafield tag=\"034I\" fulltag=\"034I\">\n        <subfield code=\"a\">26 cm</subfield>\n      </datafield>\n      <datafield tag=\"034M\" fulltag=\"034M\">\n        <subfield code=\"a\">zahlr. Illustrationen</subfield>\n      </datafield>\n      <datafield tag=\"036C\" fulltag=\"036C\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"a\">Nichibunken shoz&#x14d; kinsei enpon shiry&#x14d; sh&#x16b;sei</subfield>\n        <subfield code=\"l\">1, T. 3</subfield>\n      </datafield>\n      <datafield tag=\"036C\" fulltag=\"036C\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"a\">&#x65e5;&#x6587;&#x7814;&#x6240;&#x8535;&#x8fd1;&#x4e16;&#x8276;&#x672c;&#x8cc7;&#x6599;&#x96c6;&#x6210;</subfield>\n        <subfield code=\"l\">1, T. 3</subfield>\n      </datafield>\n      <datafield tag=\"036D\" fulltag=\"036D\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"X\">1,3.2002</subfield>\n        <subfield code=\"9\">603833780</subfield>\n        <subfield code=\"a\">&#x65e5;&#x6587;&#x7814;&#x6240;&#x8535;&#x8fd1;&#x4e16;&#x8276;&#x672c;&#x8cc7;&#x6599;&#x96c6;&#x6210;</subfield>\n        <subfield code=\"l\">1, T. 3</subfield>\n      </datafield>\n      <datafield tag=\"036D\" fulltag=\"036D\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"X\">1,3.2002</subfield>\n        <subfield code=\"9\">603833780</subfield>\n        <subfield code=\"a\">&#x65e5;&#x6587;&#x7814;&#x6240;&#x8535;&#x8fd1;&#x4e16;&#x8276;&#x672c;&#x8cc7;&#x6599;&#x96c6;&#x6210;</subfield>\n        <subfield code=\"l\">1, T. 3</subfield>\n      </datafield>\n      <datafield tag=\"036E\" fulltag=\"036E\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"a\">Nichibunken s&#x14d;sho</subfield>\n        <subfield code=\"l\">24</subfield>\n      </datafield>\n      <datafield tag=\"036E\" fulltag=\"036E\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"a\">&#x65e5;&#x6587;&#x7814;&#x53e2;&#x66f8;</subfield>\n        <subfield code=\"l\">24</subfield>\n      </datafield>\n      <datafield tag=\"036E\" occurrence=\"01\" fulltag=\"036E/01\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"a\">Hishikawa Moronobu</subfield>\n        <subfield code=\"l\">3</subfield>\n      </datafield>\n      <datafield tag=\"036E\" occurrence=\"01\" fulltag=\"036E/01\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"a\">&#x83f1;&#x5ddd;&#x5e2b;&#x5ba3;</subfield>\n        <subfield code=\"l\">3</subfield>\n      </datafield>\n      <datafield tag=\"036F\" fulltag=\"036F\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"X\">24</subfield>\n        <subfield code=\"9\">356570444</subfield>\n        <subfield code=\"a\">&#x65e5;&#x6587;&#x7814;&#x53e2;&#x66f8;</subfield>\n        <subfield code=\"a\">&#x56fd;&#x969b;&#x65e5;&#x672c;&#x6587;&#x5316;&#x7814;&#x7a76;&#x30bb;&#x30f3;&#x30bf;&#x30fc;</subfield>\n        <subfield code=\"g\">&#x4eac;&#x90fd;</subfield>\n        <subfield code=\"0\">gnd/5015578-7</subfield>\n        <subfield code=\"0\">2092550-5</subfield>\n        <subfield code=\"l\">24</subfield>\n      </datafield>\n      <datafield tag=\"036F\" fulltag=\"036F\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Jpan</subfield>\n        <subfield code=\"X\">24</subfield>\n        <subfield code=\"9\">356570444</subfield>\n        <subfield code=\"a\">&#x65e5;&#x6587;&#x7814;&#x53e2;&#x66f8;</subfield>\n        <subfield code=\"a\">&#x56fd;&#x969b;&#x65e5;&#x672c;&#x6587;&#x5316;&#x7814;&#x7a76;&#x30bb;&#x30f3;&#x30bf;&#x30fc;</subfield>\n        <subfield code=\"g\">&#x4eac;&#x90fd;</subfield>\n        <subfield code=\"0\">gnd/5015578-7</subfield>\n        <subfield code=\"0\">2092550-5</subfield>\n        <subfield code=\"l\">24</subfield>\n      </datafield>\n      <datafield tag=\"037A\" fulltag=\"037A\">\n        <subfield code=\"a\">Text auf engl. u. jap.</subfield>\n      </datafield>\n      <datafield tag=\"044N\" fulltag=\"044N\">\n        <subfield code=\"S\">c</subfield>\n        <subfield code=\"a\">Kokusai Nihon Bunka Kenky&#x16b; Sent&#x101;</subfield>\n      </datafield>\n      <datafield tag=\"044N\" fulltag=\"044N\">\n        <subfield code=\"S\">s</subfield>\n        <subfield code=\"a\">Erotic prints, Japanese</subfield>\n      </datafield>\n      <datafield tag=\"044N\" fulltag=\"044N\">\n        <subfield code=\"S\">s</subfield>\n        <subfield code=\"a\">Ukiyoe</subfield>\n      </datafield>\n      <datafield tag=\"044N\" fulltag=\"044N\">\n        <subfield code=\"S\">s</subfield>\n        <subfield code=\"a\">Ukiyoe</subfield>\n        <subfield code=\"a\">Japan</subfield>\n        <subfield code=\"a\">Kyoto</subfield>\n      </datafield>\n      <datafield tag=\"046L\" fulltag=\"046L\">\n        <subfield code=\"a\">In jap. Schr.</subfield>\n      </datafield>\n      <datafield tag=\"101@\" fulltag=\"101@\">\n        <subfield code=\"a\">40</subfield>\n      </datafield>\n      <item epn=\"1344695825\">\n        <datafield tag=\"201B\" occurrence=\"01\" fulltag=\"201B/01\">\n          <subfield code=\"0\">15-01-13</subfield>\n          <subfield code=\"t\">11:06:15.000</subfield>\n        </datafield>\n        <datafield tag=\"201U\" occurrence=\"01\" fulltag=\"201U/01\">\n          <subfield code=\"0\">utf8</subfield>\n        </datafield>\n        <datafield tag=\"202D\" occurrence=\"01\" fulltag=\"202D/01\">\n          <subfield code=\"0\">15-01-13</subfield>\n          <subfield code=\"b\">1786</subfield>\n          <subfield code=\"a\">0007</subfield>\n        </datafield>\n        <datafield tag=\"203@\" occurrence=\"01\" fulltag=\"203@/01\">\n          <subfield code=\"0\">1344695825</subfield>\n        </datafield>\n        <datafield tag=\"208@\" occurrence=\"01\" fulltag=\"208@/01\">\n          <subfield code=\"a\">07-12-12</subfield>\n          <subfield code=\"b\">zi051</subfield>\n        </datafield>\n        <datafield tag=\"209A\" occurrence=\"01\" fulltag=\"209A/01\">\n          <subfield code=\"a\">2012 B 2245:1,3</subfield>\n          <subfield code=\"d\">u</subfield>\n          <subfield code=\"x\">00</subfield>\n        </datafield>\n        <datafield tag=\"209A\" occurrence=\"01\" fulltag=\"209A/01\">\n          <subfield code=\"f\">7/051</subfield>\n          <subfield code=\"a\">FBC 6:3</subfield>\n          <subfield code=\"x\">05</subfield>\n        </datafield>\n        <datafield tag=\"209C\" occurrence=\"01\" fulltag=\"209C/01\">\n          <subfield code=\"a\">2245</subfield>\n          <subfield code=\"x\">00</subfield>\n        </datafield>\n        <datafield tag=\"209G\" occurrence=\"01\" fulltag=\"209G/01\">\n          <subfield code=\"a\">7$220836426</subfield>\n        </datafield>\n        <datafield tag=\"209O\" occurrence=\"01\" fulltag=\"209O/01\">\n          <subfield code=\"a\">Provenienz7051</subfield>\n          <subfield code=\"x\">00</subfield>\n        </datafield>\n      </item>\n    </metadata>\n  </record>",
+    "transformedRecord": {
+      "instance": {
+        "hrid": "60623747X",
+        "notes": [
+          {
+            "note": "Text auf engl. u. jap.",
+            "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c"
+          },
+          {
+            "note": "In jap. Schr.",
+            "instanceNoteTypeId": "7356cde5-ec6b-4961-9cb0-961c48a37af4"
+          }
+        ],
+        "title": "KEIN TITEL, IM CBS PRÜFEN",
+        "series": [
+          {
+            "value": "Nichibunken sōsho ; 24"
+          },
+          {
+            "value": "日文研叢書 ; 24"
+          },
+          {
+            "value": "Hishikawa Moronobu ; 3"
+          },
+          {
+            "value": "菱川師宣 ; 3"
+          },
+          {}
+        ],
+        "source": "K10plus",
+        "languages": [
+          "jpn",
+          "eng"
+        ],
+        "indexTitle": "KEIN TITEL IM CBS PRÜFEN",
+        "identifiers": [
+          {
+            "value": "60623747X",
+            "identifierTypeId": "1d5cb40c-508f-451b-8952-87c92be4255a"
+          },
+          {
+            "value": "552145442",
+            "identifierTypeId": "439bfbae-75bc-4f74-9fc7-b2a2d47ce3ef"
+          },
+          {
+            "value": "4901558021",
+            "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422"
+          },
+          {
+            "value": "GBV: 60623747X",
+            "identifierTypeId": "8e33c1be-e2c4-43ac-a975-8fb50f71137a"
+          }
+        ],
+        "publication": [
+          {
+            "role": "Publisher",
+            "place": "Kyōto",
+            "publisher": "Kokusai Nihon bunka kenkyū sentā",
+            "dateOfPublication": "2002"
+          },
+          {
+            "role": "Publisher",
+            "place": "京都",
+            "publisher": "国際日本文化研究センター",
+            "dateOfPublication": "2002"
+          }
+        ],
+        "contributors": [
+          {
+            "name": "Hishikawa, Moronobu",
+            "primary": "true",
+            "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+            "contributorTypeText": "VerfasserIn",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          },
+          {
+            "name": "菱川, 師宣",
+            "primary": "true",
+            "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+            "contributorTypeText": "VerfasserIn",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          },
+          {
+            "name": "Hayakawa, Monta",
+            "contributorTypeId": "9deb29d1-3e71-4951-9413-a80adac703d0",
+            "contributorTypeText": "HerausgeberIn",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          },
+          {
+            "name": "早川, 聞多",
+            "contributorTypeId": "9deb29d1-3e71-4951-9413-a80adac703d0",
+            "contributorTypeText": "HerausgeberIn",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          },
+          {
+            "name": "Kuriyama, Shigehisa",
+            "contributorTypeId": "3322b734-ce38-4cd4-815d-8983352837cc",
+            "contributorTypeText": "ÜbersetzerIn",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          },
+          {
+            "name": "栗山, 茂久",
+            "contributorTypeId": "3322b734-ce38-4cd4-815d-8983352837cc",
+            "contributorTypeText": "ÜbersetzerIn",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          },
+          {
+            "name": "Fister, Pat",
+            "contributorTypeId": "3322b734-ce38-4cd4-815d-8983352837cc",
+            "contributorTypeText": "ÜbersetzerIn",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          }
+        ],
+        "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+        "electronicAccess": [],
+        "modeOfIssuanceId": "9d18a02f-5897-4c31-9106-c9abb5c7ae8b",
+        "alternativeTitles": [
+          {
+            "alternativeTitle": "Hana no kogakure / Hayakawa Monta hen ; Kuriyama Shigehisa, P. Fisutā yaku花の小がくれ |",
+            "alternativeTitleTypeId": "2584943f-36ad-4037-a7fa-3bdebb09f452"
+          }
+        ],
+        "instanceFormatIds": [
+          "8d511d33-5e85-4c5d-9bce-6e3c9cd0c324"
+        ],
+        "administrativeNotes": [
+          "AFu (0500: Bibliografische Gattung)",
+          "06.07.22, 11:48 (0210: Datum der letzten Änderung)"
+        ],
+        "physicalDescriptions": [
+          "32 Seiten : zahlr. Illustrationen ; 26 cm"
+        ]
+      },
+      "processing": {
+        "item": {
+          "status": {
+            "policy": "overwrite",
+            "ifStatusWas": [
+              {
+                "name": "On order"
+              },
+              {
+                "name": "Available"
+              },
+              {
+                "name": "Intellectual item"
+              },
+              {
+                "name": "Missing"
+              },
+              {
+                "name": "Restricted"
+              },
+              {
+                "name": "Unknown"
+              }
+            ]
+          },
+          "retainOmittedRecord": {
+            "ifField": "hrid",
+            "matchesPattern": "\\D+.*"
+          },
+          "retainExistingValues": {
+            "forOmittedProperties": "true"
+          }
+        },
+        "batchIndex": 98,
+        "holdingsRecord": {
+          "statisticalCoding": [
+            {
+              "if": "deleteSkipped",
+              "setCode": "970b8b4e-ee88-4037-b954-a10ee75340f0",
+              "becauseOf": "ITEM_PATTERN_MATCH"
+            },
+            {
+              "if": "deleteSkipped",
+              "setCode": "e7b3071c-8cc0-48cc-9cd0-dfc82c4e4602",
+              "becauseOf": "ITEM_STATUS"
+            }
+          ],
+          "retainOmittedRecord": {
+            "ifField": "hrid",
+            "matchesPattern": "\\D+.*"
+          },
+          "retainExistingValues": {
+            "forOmittedProperties": "true"
+          }
+        }
+      },
+      "holdingsRecords": [
+        {
+          "hrid": "1344695825",
+          "items": [
+            {
+              "hrid": "1344695825",
+              "status": {
+                "name": "Available"
+              },
+              "barcode": "1344695825:7$220836426",
+              "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+              "accessionNumber": "2245",
+              "discoverySuppress": "false",
+              "permanentLoanTypeId": "a8cacfd0-b284-47ae-b5fa-235d768411e7"
+            }
+          ],
+          "notes": [
+            {
+              "note": "Provenienz7051",
+              "staffOnly": "true",
+              "holdingsNoteTypeId": "12d1ea41-759c-4c80-8209-271e925f8cc8"
+            }
+          ],
+          "sourceId": "fa687f33-aab5-4119-b0ad-05afe8de4d92",
+          "callNumber": "2012 B 2245:1,3",
+          "holdingsTypeId": "0c422f92-0f4d-4d32-8cbe-390ebc33a3e5",
+          "callNumberPrefix": "7/051",
+          "electronicAccess": [],
+          "discoverySuppress": "false",
+          "administrativeNotes": [
+            "15-01-13, 11:06 (7903: Datum und Uhrzeit der letzten Änderung)"
+          ],
+          "permanentLocationId": "82aabbe5-bbc0-4c1e-a8cd-a8c1f34729ce"
+        }
+      ],
+      "instanceRelations": {
+        "parentInstances": [
+          {
+            "instanceIdentifier": {
+              "hrid": "603833780"
+            },
+            "provisionalInstance": {
+              "title": "Provisional title",
+              "source": "K10plus",
+              "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f"
+            },
+            "instanceRelationshipTypeId": "a17daf0a-f057-43b3-9997-13d0724cdf51"
+          },
+          {
+            "instanceIdentifier": {
+              "hrid": "603833780"
+            },
+            "provisionalInstance": {
+              "title": "Provisional title",
+              "source": "K10plus",
+              "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f"
+            },
+            "instanceRelationshipTypeId": "a17daf0a-f057-43b3-9997-13d0724cdf51"
+          },
+          {
+            "instanceIdentifier": {
+              "hrid": "356570444"
+            },
+            "provisionalInstance": {
+              "title": "Provisional title",
+              "source": "K10plus",
+              "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f"
+            },
+            "instanceRelationshipTypeId": "30773a27-b485-4dab-aeb6-b8c04fa3cb17"
+          },
+          {
+            "instanceIdentifier": {
+              "hrid": "356570444"
+            },
+            "provisionalInstance": {
+              "title": "Provisional title",
+              "source": "K10plus",
+              "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f"
+            },
+            "instanceRelationshipTypeId": "30773a27-b485-4dab-aeb6-b8c04fa3cb17"
+          }
+        ]
+      }
+    },
+    "metadata": {
+      "createdDate": "2026-02-19T16:01:59.071+00:00"
+    }
+  },
+  {
+    "id": "12f9f90a-ae7b-4284-9222-821d7309cb71",
+    "importJobId": "e1dfaa98-ca0d-4841-93fd-c3f0797e185a",
+    "channelId": "64891c97-78c7-41d1-9ec7-e8005de7d334",
+    "channelName": "Channel 2 (Minerva5 samples)",
+    "recordNumber": "89106379X",
+    "timeStamp": "2026-02-19T16:27:39.182+00:00",
+    "sourceFileName": "Abz_40_Tit.001_20231029_013504.nrm.0007381.xml",
+    "recordErrors": [
+      {
+        "code": "jakarta.validation.constraints.NotNull.message",
+        "type": "1",
+        "message": "must not be null",
+        "parameters": [
+          {
+            "key": "instances[0].series[].value",
+            "value": "null"
+          }
+        ]
+      }
+    ],
+    "originalRecord": "<record>\n    <header status=\"upsert\">\n      <identifier>89106379X</identifier>\n    </header>\n    <metadata>\n      <datafield tag=\"001@\" fulltag=\"001@\">\n        <subfield code=\"0\">40</subfield>\n      </datafield>\n      <datafield tag=\"001A\" fulltag=\"001A\">\n        <subfield code=\"0\">0007:28-06-17</subfield>\n      </datafield>\n      <datafield tag=\"001B\" fulltag=\"001B\">\n        <subfield code=\"0\">1999:11-12-19</subfield>\n        <subfield code=\"t\">19:26:20.000</subfield>\n      </datafield>\n      <datafield tag=\"001D\" fulltag=\"001D\">\n        <subfield code=\"0\">0007:28-06-17</subfield>\n      </datafield>\n      <datafield tag=\"001U\" fulltag=\"001U\">\n        <subfield code=\"0\">utf8</subfield>\n      </datafield>\n      <datafield tag=\"001X\" fulltag=\"001X\">\n        <subfield code=\"0\">0</subfield>\n      </datafield>\n      <datafield tag=\"002@\" fulltag=\"002@\">\n        <subfield code=\"0\">AFu</subfield>\n      </datafield>\n      <datafield tag=\"002C\" fulltag=\"002C\">\n        <subfield code=\"a\">Text</subfield>\n        <subfield code=\"b\">txt</subfield>\n      </datafield>\n      <datafield tag=\"002D\" fulltag=\"002D\">\n        <subfield code=\"a\">ohne Hilfsmittel zu benutzen</subfield>\n        <subfield code=\"b\">n</subfield>\n      </datafield>\n      <datafield tag=\"002E\" fulltag=\"002E\">\n        <subfield code=\"a\">Band</subfield>\n        <subfield code=\"b\">nc</subfield>\n      </datafield>\n      <datafield tag=\"003@\" fulltag=\"003@\">\n        <subfield code=\"0\">89106379X</subfield>\n      </datafield>\n      <datafield tag=\"007G\" fulltag=\"007G\">\n        <subfield code=\"i\">GBV</subfield>\n        <subfield code=\"0\">89106379X</subfield>\n      </datafield>\n      <datafield tag=\"010@\" fulltag=\"010@\">\n        <subfield code=\"a\">kor</subfield>\n      </datafield>\n      <datafield tag=\"010E\" fulltag=\"010E\">\n        <subfield code=\"e\">rda</subfield>\n      </datafield>\n      <datafield tag=\"011@\" fulltag=\"011@\">\n        <subfield code=\"a\">1994</subfield>\n        <subfield code=\"n\">1994, 5</subfield>\n      </datafield>\n      <datafield tag=\"019@\" fulltag=\"019@\">\n        <subfield code=\"a\">XB-KR</subfield>\n      </datafield>\n      <datafield tag=\"021A\" fulltag=\"021A\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Latn</subfield>\n        <subfield code=\"a\">Han gu leum choe min hong bag sa pal sun gyeong chug gi nyeom teug jib</subfield>\n      </datafield>\n      <datafield tag=\"021A\" fulltag=\"021A\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Hang</subfield>\n        <subfield code=\"a\">&#xd55c;&#xad6c;&#xb984;&#xcd5c;&#xbbfc;&#xd64d;&#xbc15;&#xc0ac;&#xd314;&#xc21c;&#xacbd;&#xcd95;&#xae30;&#xb150;&#xd2b9;&#xc9d1;</subfield>\n      </datafield>\n      <datafield tag=\"027A\" fulltag=\"027A\">\n        <subfield code=\"a\">Hangur&#x16d;m Ch&apos;oe Min-hong paksa p&apos;alsun ky&#x14f;ngch&apos;uk kiny&#x14f;m t&apos;&#x16d;kchip</subfield>\n      </datafield>\n      <datafield tag=\"028A\" fulltag=\"028A\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Latn</subfield>\n        <subfield code=\"d\">Min-hong</subfield>\n        <subfield code=\"a\">Choe</subfield>\n        <subfield code=\"B\">VerfasserIn</subfield>\n        <subfield code=\"4\">aut</subfield>\n      </datafield>\n      <datafield tag=\"028A\" fulltag=\"028A\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Hang</subfield>\n        <subfield code=\"d\">&#xbbfc;&#xd64d;</subfield>\n        <subfield code=\"a\">&#xcd5c;</subfield>\n        <subfield code=\"B\">VerfasserIn</subfield>\n        <subfield code=\"4\">aut</subfield>\n      </datafield>\n      <datafield tag=\"028Z\" fulltag=\"028Z\">\n        <subfield code=\"C\">3000</subfield>\n        <subfield code=\"d\">Min-hong</subfield>\n        <subfield code=\"a\">Ch&apos;oe</subfield>\n      </datafield>\n      <datafield tag=\"029F\" fulltag=\"029F\">\n        <subfield code=\"9\">891062874</subfield>\n        <subfield code=\"a\">Hae dong cheol hag hoe</subfield>\n        <subfield code=\"0\">gnd/113602364X</subfield>\n      </datafield>\n      <datafield tag=\"033A\" fulltag=\"033A\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Latn</subfield>\n        <subfield code=\"p\">Seo ul</subfield>\n        <subfield code=\"n\">Hae dong cheol hag hoe</subfield>\n      </datafield>\n      <datafield tag=\"033A\" fulltag=\"033A\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Hang</subfield>\n        <subfield code=\"p\">&#xc11c;&#xc6b8;</subfield>\n        <subfield code=\"n\">&#xd574;&#xb3d9;&#xcca0;&#xd559;&#xd68c;</subfield>\n      </datafield>\n      <datafield tag=\"034D\" fulltag=\"034D\">\n        <subfield code=\"a\">369 Seiten</subfield>\n      </datafield>\n      <datafield tag=\"036C\" fulltag=\"036C\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Hang</subfield>\n        <subfield code=\"a\">Choe min hong gyo su han cheol hag non mun seon jib</subfield>\n        <subfield code=\"h\">Choe Min-hong</subfield>\n        <subfield code=\"l\">1</subfield>\n      </datafield>\n      <datafield tag=\"036C\" fulltag=\"036C\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Hang</subfield>\n        <subfield code=\"a\">&#xcd5c;&#xbbfc;&#xd64d;&#xad50;&#xc218;&#xd55c;&#xcca0;&#xd559;&#xb17c;&#xbb38;&#xc120;&#xc9d1;</subfield>\n        <subfield code=\"h\">&#xcd5c;&#xbbfc;&#xd64d;</subfield>\n        <subfield code=\"l\">1</subfield>\n      </datafield>\n      <datafield tag=\"036D\" fulltag=\"036D\">\n        <subfield code=\"X\">1.1994</subfield>\n        <subfield code=\"9\">890957622</subfield>\n        <subfield code=\"a\">Choe</subfield>\n        <subfield code=\"d\">Min-hong</subfield>\n        <subfield code=\"l\">1</subfield>\n        <subfield code=\"x\">_11 1994</subfield>\n      </datafield>\n      <datafield tag=\"036E\" fulltag=\"036E\">\n        <subfield code=\"a\">Han&apos;guk ch&apos;&#x14f;rhak y&#x14f;n&apos;gu</subfield>\n        <subfield code=\"l\">23</subfield>\n      </datafield>\n      <datafield tag=\"036E\" fulltag=\"036E\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Latn</subfield>\n        <subfield code=\"a\">Han gug cheol hag yeon gu</subfield>\n        <subfield code=\"l\">23</subfield>\n      </datafield>\n      <datafield tag=\"036E\" fulltag=\"036E\">\n        <subfield code=\"T\">01</subfield>\n        <subfield code=\"U\">Hang</subfield>\n        <subfield code=\"a\">&#xd55c;&#xad6d;&#xcca0;&#xd559;&#xc5f0;&#xad6c;</subfield>\n        <subfield code=\"l\">23</subfield>\n      </datafield>\n      <datafield tag=\"036F\" fulltag=\"036F\">\n        <subfield code=\"X\">1994,0023,00</subfield>\n        <subfield code=\"9\">167986570</subfield>\n        <subfield code=\"a\">Han gug cheol hag yeon gu</subfield>\n        <subfield code=\"0\">613210-8</subfield>\n        <subfield code=\"l\">23</subfield>\n      </datafield>\n      <datafield tag=\"046C\" fulltag=\"046C\">\n        <subfield code=\"i\">Transkriptionsvariante</subfield>\n        <subfield code=\"a\">Hangur&#x16d;m Ch&apos;oe Min-hong paksa p&apos;alsun ky&#x14f;ngch&apos;uk kiny&#x14f;m t&apos;&#x16d;kchip</subfield>\n      </datafield>\n      <datafield tag=\"047A\" fulltag=\"047A\">\n        <subfield code=\"a\">Sortierz&#xe4;hlung maschinell ge&#xe4;ndert (GBV)</subfield>\n      </datafield>\n      <datafield tag=\"101@\" fulltag=\"101@\">\n        <subfield code=\"a\">40</subfield>\n      </datafield>\n      <item epn=\"1696866979\">\n        <datafield tag=\"201B\" occurrence=\"01\" fulltag=\"201B/01\">\n          <subfield code=\"0\">07-04-21</subfield>\n          <subfield code=\"t\">11:07:42.000</subfield>\n        </datafield>\n        <datafield tag=\"201U\" occurrence=\"01\" fulltag=\"201U/01\">\n          <subfield code=\"0\">utf8</subfield>\n        </datafield>\n        <datafield tag=\"202D\" occurrence=\"01\" fulltag=\"202D/01\">\n          <subfield code=\"0\">07-04-21</subfield>\n          <subfield code=\"b\">rep_cbs1420</subfield>\n          <subfield code=\"a\">1999</subfield>\n        </datafield>\n        <datafield tag=\"203@\" occurrence=\"01\" fulltag=\"203@/01\">\n          <subfield code=\"0\">1696866979</subfield>\n        </datafield>\n        <datafield tag=\"208@\" occurrence=\"01\" fulltag=\"208@/01\">\n          <subfield code=\"a\">13-06-19</subfield>\n          <subfield code=\"b\">ksn</subfield>\n        </datafield>\n        <datafield tag=\"209A\" occurrence=\"01\" fulltag=\"209A/01\">\n          <subfield code=\"a\">FA 31812:1</subfield>\n          <subfield code=\"d\">u</subfield>\n          <subfield code=\"x\">00</subfield>\n        </datafield>\n        <datafield tag=\"209G\" occurrence=\"01\" fulltag=\"209G/01\">\n          <subfield code=\"a\">7$233646884</subfield>\n        </datafield>\n        <datafield tag=\"237B\" occurrence=\"01\" fulltag=\"237B/01\">\n          <subfield code=\"0\">2019-06</subfield>\n        </datafield>\n      </item>\n    </metadata>\n  </record>",
+    "transformedRecord": {
+      "instance": {
+        "hrid": "89106379X",
+        "title": "Han gu leum choe min hong bag sa pal sun gyeong chug gi nyeom teug jib",
+        "series": [
+          {
+            "value": "Han'guk ch'ŏrhak yŏn'gu ; 23"
+          },
+          {
+            "value": "Han gug cheol hag yeon gu ; 23"
+          },
+          {
+            "value": "한국철학연구 ; 23"
+          },
+          {}
+        ],
+        "source": "K10plus",
+        "languages": [
+          "kor"
+        ],
+        "indexTitle": "Han gu leum choe min hong bag sa pal sun gyeong chug gi nyeom teug jib",
+        "identifiers": [
+          {
+            "value": "89106379X",
+            "identifierTypeId": "1d5cb40c-508f-451b-8952-87c92be4255a"
+          },
+          {
+            "value": "GBV: 89106379X",
+            "identifierTypeId": "8e33c1be-e2c4-43ac-a975-8fb50f71137a"
+          }
+        ],
+        "publication": [
+          {
+            "role": "Publisher",
+            "place": "Seo ul",
+            "publisher": "Hae dong cheol hag hoe",
+            "dateOfPublication": "1994, 5"
+          },
+          {
+            "role": "Publisher",
+            "place": "서울",
+            "publisher": "해동철학회",
+            "dateOfPublication": "1994, 5"
+          }
+        ],
+        "contributors": [
+          {
+            "name": "Choe, Min-hong",
+            "primary": "true",
+            "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+            "contributorTypeText": "VerfasserIn",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          },
+          {
+            "name": "최, 민홍",
+            "primary": "true",
+            "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+            "contributorTypeText": "VerfasserIn",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          },
+          {
+            "name": "Hae dong cheol hag hoe",
+            "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa"
+          }
+        ],
+        "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+        "electronicAccess": [],
+        "modeOfIssuanceId": "9d18a02f-5897-4c31-9106-c9abb5c7ae8b",
+        "alternativeTitles": [
+          {
+            "alternativeTitle": "한구름최민홍박사팔순경축기념특집 |",
+            "alternativeTitleTypeId": "2584943f-36ad-4037-a7fa-3bdebb09f452"
+          },
+          {
+            "alternativeTitle": "Hangurŭm Ch'oe Min-hong paksa p'alsun kyŏngch'uk kinyŏm t'ŭkchip",
+            "alternativeTitleTypeId": "79ea6d17-8247-4126-aab5-99fbd2ac6dda"
+          },
+          {
+            "alternativeTitle": "Transkriptionsvariante: Hangurŭm Ch'oe Min-hong paksa p'alsun kyŏngch'uk kinyŏm t'ŭkchip",
+            "alternativeTitleTypeId": "2584943f-36ad-4037-a7fa-3bdebb09f452"
+          }
+        ],
+        "instanceFormatIds": [
+          "8d511d33-5e85-4c5d-9bce-6e3c9cd0c324"
+        ],
+        "administrativeNotes": [
+          "AFu (0500: Bibliografische Gattung)",
+          "11.12.19, 19:26 (0210: Datum der letzten Änderung)"
+        ],
+        "physicalDescriptions": [
+          "369 Seiten"
+        ]
+      },
+      "processing": {
+        "item": {
+          "status": {
+            "policy": "overwrite",
+            "ifStatusWas": [
+              {
+                "name": "On order"
+              },
+              {
+                "name": "Available"
+              },
+              {
+                "name": "Intellectual item"
+              },
+              {
+                "name": "Missing"
+              },
+              {
+                "name": "Restricted"
+              },
+              {
+                "name": "Unknown"
+              }
+            ]
+          },
+          "retainOmittedRecord": {
+            "ifField": "hrid",
+            "matchesPattern": "\\D+.*"
+          },
+          "retainExistingValues": {
+            "forOmittedProperties": "true"
+          }
+        },
+        "batchIndex": 62,
+        "holdingsRecord": {
+          "statisticalCoding": [
+            {
+              "if": "deleteSkipped",
+              "setCode": "970b8b4e-ee88-4037-b954-a10ee75340f0",
+              "becauseOf": "ITEM_PATTERN_MATCH"
+            },
+            {
+              "if": "deleteSkipped",
+              "setCode": "e7b3071c-8cc0-48cc-9cd0-dfc82c4e4602",
+              "becauseOf": "ITEM_STATUS"
+            }
+          ],
+          "retainOmittedRecord": {
+            "ifField": "hrid",
+            "matchesPattern": "\\D+.*"
+          },
+          "retainExistingValues": {
+            "forOmittedProperties": "true"
+          }
+        }
+      },
+      "holdingsRecords": [
+        {
+          "hrid": "1696866979",
+          "items": [
+            {
+              "hrid": "1696866979",
+              "status": {
+                "name": "Available"
+              },
+              "barcode": "1696866979:7$233646884",
+              "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+              "discoverySuppress": "false",
+              "permanentLoanTypeId": "a8cacfd0-b284-47ae-b5fa-235d768411e7"
+            }
+          ],
+          "notes": [],
+          "sourceId": "fa687f33-aab5-4119-b0ad-05afe8de4d92",
+          "callNumber": "FA 31812:1",
+          "holdingsTypeId": "0c422f92-0f4d-4d32-8cbe-390ebc33a3e5",
+          "electronicAccess": [],
+          "discoverySuppress": "false",
+          "administrativeNotes": [
+            "07-04-21, 11:07 (7903: Datum und Uhrzeit der letzten Änderung)"
+          ],
+          "permanentLocationId": "78091d58-5057-4f5d-bbcc-ca07eafd8cc1"
+        }
+      ],
+      "instanceRelations": {
+        "parentInstances": [
+          {
+            "instanceIdentifier": {
+              "hrid": "890957622"
+            },
+            "provisionalInstance": {
+              "title": "Provisional title",
+              "source": "K10plus",
+              "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f"
+            },
+            "instanceRelationshipTypeId": "a17daf0a-f057-43b3-9997-13d0724cdf51"
+          },
+          {
+            "instanceIdentifier": {
+              "hrid": "167986570"
+            },
+            "provisionalInstance": {
+              "title": "Provisional title",
+              "source": "K10plus",
+              "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f"
+            },
+            "instanceRelationshipTypeId": "30773a27-b485-4dab-aeb6-b8c04fa3cb17"
+          }
+        ]
+      }
+    },
+    "metadata": {
+      "createdDate": "2026-02-19T16:27:39.182+00:00"
+    }
+  },
+  {
+    "id": "1c1e1f87-023f-43ef-8d8f-643428049659",
+    "importJobId": "e1dfaa98-ca0d-4841-93fd-c3f0797e185a",
+    "channelId": "64891c97-78c7-41d1-9ec7-e8005de7d334",
+    "channelName": "Channel 2 (Minerva5 samples)",
+    "recordNumber": "1618446592",
+    "timeStamp": "2026-02-19T16:43:19.852+00:00",
+    "sourceFileName": "Abz_40_Tit.001_20231029_013504.nrm.0007843.xml",
+    "recordErrors": [
+      {
+        "code": "jakarta.validation.constraints.NotNull.message",
+        "type": "1",
+        "message": "must not be null",
+        "parameters": [
+          {
+            "key": "instances[0].series[].value",
+            "value": "null"
+          }
+        ]
+      }
+    ],
+    "originalRecord": "<record>\n    <header status=\"upsert\">\n      <identifier>1618446592</identifier>\n    </header>\n    <metadata>\n      <datafield tag=\"001@\" fulltag=\"001@\">\n        <subfield code=\"0\">20,22,24,40,70,2014-2015</subfield>\n      </datafield>\n      <datafield tag=\"001A\" fulltag=\"001A\">\n        <subfield code=\"0\">2000:09-06-83</subfield>\n      </datafield>\n      <datafield tag=\"001B\" fulltag=\"001B\">\n        <subfield code=\"0\">BSZ:24-01-23</subfield>\n        <subfield code=\"t\">18:14:13.000</subfield>\n      </datafield>\n      <datafield tag=\"001D\" fulltag=\"001D\">\n        <subfield code=\"0\">BSZ:24-01-23</subfield>\n      </datafield>\n      <datafield tag=\"001U\" fulltag=\"001U\">\n        <subfield code=\"0\">utf8</subfield>\n      </datafield>\n      <datafield tag=\"001X\" fulltag=\"001X\">\n        <subfield code=\"0\">0</subfield>\n      </datafield>\n      <datafield tag=\"002@\" fulltag=\"002@\">\n        <subfield code=\"0\">Aau</subfield>\n      </datafield>\n      <datafield tag=\"002C\" fulltag=\"002C\">\n        <subfield code=\"a\">Text</subfield>\n        <subfield code=\"b\">txt</subfield>\n      </datafield>\n      <datafield tag=\"002D\" fulltag=\"002D\">\n        <subfield code=\"a\">ohne Hilfsmittel zu benutzen</subfield>\n        <subfield code=\"b\">n</subfield>\n      </datafield>\n      <datafield tag=\"002E\" fulltag=\"002E\">\n        <subfield code=\"a\">Band</subfield>\n        <subfield code=\"b\">nc</subfield>\n      </datafield>\n      <datafield tag=\"003@\" fulltag=\"003@\">\n        <subfield code=\"0\">1618446592</subfield>\n      </datafield>\n      <datafield tag=\"003D\" fulltag=\"003D\">\n        <subfield code=\"0\">014362198</subfield>\n      </datafield>\n      <datafield tag=\"003O\" fulltag=\"003O\">\n        <subfield code=\"a\">OCoLC</subfield>\n        <subfield code=\"0\">8031569</subfield>\n        <subfield code=\"v\">2012-12-31</subfield>\n      </datafield>\n      <datafield tag=\"003S\" fulltag=\"003S\">\n        <subfield code=\"0\">036590592</subfield>\n      </datafield>\n      <datafield tag=\"003T\" fulltag=\"003T\">\n        <subfield code=\"a\">OCoLC</subfield>\n        <subfield code=\"0\">08031569</subfield>\n      </datafield>\n      <datafield tag=\"004A\" fulltag=\"004A\">\n        <subfield code=\"0\">0471101710</subfield>\n      </datafield>\n      <datafield tag=\"006L\" fulltag=\"006L\">\n        <subfield code=\"i\">BVB</subfield>\n        <subfield code=\"0\">8000786128</subfield>\n      </datafield>\n      <datafield tag=\"007G\" fulltag=\"007G\">\n        <subfield code=\"i\">BSZ</subfield>\n        <subfield code=\"0\">036590592</subfield>\n      </datafield>\n      <datafield tag=\"007H\" fulltag=\"007H\">\n        <subfield code=\"i\">GBV</subfield>\n        <subfield code=\"0\">014362198</subfield>\n      </datafield>\n      <datafield tag=\"009@\" fulltag=\"009@\">\n        <subfield code=\"b\">mdedup</subfield>\n      </datafield>\n      <datafield tag=\"009@\" fulltag=\"009@\">\n        <subfield code=\"a\">GBV</subfield>\n        <subfield code=\"b\">Tpn3090pruef</subfield>\n      </datafield>\n      <datafield tag=\"010@\" fulltag=\"010@\">\n        <subfield code=\"a\">eng</subfield>\n      </datafield>\n      <datafield tag=\"011@\" fulltag=\"011@\">\n        <subfield code=\"a\">1982</subfield>\n      </datafield>\n      <datafield tag=\"013D\" fulltag=\"013D\">\n        <subfield code=\"9\">105605727</subfield>\n        <subfield code=\"a\">Aufsatzsammlung</subfield>\n        <subfield code=\"0\">gnd/4143413-4</subfield>\n      </datafield>\n      <datafield tag=\"021A\" fulltag=\"021A\">\n        <subfield code=\"a\">Quantitative stratigraphic correlation</subfield>\n        <subfield code=\"d\">[International Geological Correlation Programme, Project 148]</subfield>\n        <subfield code=\"h\">ed. by  J. M. Cubitt; R. A. Reyment</subfield>\n      </datafield>\n      <datafield tag=\"028C\" fulltag=\"028C\">\n        <subfield code=\"d\">John M.</subfield>\n        <subfield code=\"a\">Cubitt</subfield>\n        <subfield code=\"B\">Hrsg.</subfield>\n      </datafield>\n      <datafield tag=\"028C\" fulltag=\"028C\">\n        <subfield code=\"9\">69243075X</subfield>\n        <subfield code=\"a\">Reyment</subfield>\n        <subfield code=\"d\">Richard A.</subfield>\n        <subfield code=\"a\">1926</subfield>\n        <subfield code=\"b\">2016</subfield>\n        <subfield code=\"0\">gnd/116458348</subfield>\n        <subfield code=\"B\">Hrsg.</subfield>\n      </datafield>\n      <datafield tag=\"028Z\" fulltag=\"028Z\">\n        <subfield code=\"C\">3010</subfield>\n        <subfield code=\"d\">D&#x17e;.</subfield>\n        <subfield code=\"a\">Kubitt</subfield>\n      </datafield>\n      <datafield tag=\"028Z\" fulltag=\"028Z\">\n        <subfield code=\"C\">3010</subfield>\n        <subfield code=\"d\">John</subfield>\n        <subfield code=\"a\">Cubitt</subfield>\n      </datafield>\n      <datafield tag=\"029F\" fulltag=\"029F\">\n        <subfield code=\"9\">101388721</subfield>\n        <subfield code=\"a\">International Geological Correlation Programme</subfield>\n        <subfield code=\"0\">gnd/2001611-6</subfield>\n      </datafield>\n      <datafield tag=\"033A\" fulltag=\"033A\">\n        <subfield code=\"p\">Chichester [u.a.]</subfield>\n        <subfield code=\"n\">Wiley</subfield>\n      </datafield>\n      <datafield tag=\"034D\" fulltag=\"034D\">\n        <subfield code=\"a\">XI, 301 S</subfield>\n      </datafield>\n      <datafield tag=\"034M\" fulltag=\"034M\">\n        <subfield code=\"a\">graph. Darst</subfield>\n      </datafield>\n      <datafield tag=\"036E\" fulltag=\"036E\">\n        <subfield code=\"a\">A @Wiley-interscience publication</subfield>\n      </datafield>\n      <datafield tag=\"036E\" occurrence=\"01\" fulltag=\"036E/01\">\n        <subfield code=\"a\">@</subfield>\n      </datafield>\n      <datafield tag=\"044K\" fulltag=\"044K\">\n        <subfield code=\"9\">106152955</subfield>\n        <subfield code=\"a\">Statistik</subfield>\n        <subfield code=\"0\">gnd/4056995-0</subfield>\n      </datafield>\n      <datafield tag=\"044K\" fulltag=\"044K\">\n        <subfield code=\"9\">106230158</subfield>\n        <subfield code=\"a\">Methode</subfield>\n        <subfield code=\"0\">gnd/4038971-6</subfield>\n      </datafield>\n      <datafield tag=\"044K\" fulltag=\"044K\">\n        <subfield code=\"9\">104548215</subfield>\n        <subfield code=\"a\">Geologische Korrelation</subfield>\n        <subfield code=\"0\">gnd/4156695-6</subfield>\n      </datafield>\n      <datafield tag=\"044N\" fulltag=\"044N\">\n        <subfield code=\"a\">Stratigraphy</subfield>\n      </datafield>\n      <datafield tag=\"045A\" fulltag=\"045A\">\n        <subfield code=\"a\">QE651</subfield>\n      </datafield>\n      <datafield tag=\"045F\" fulltag=\"045F\">\n        <subfield code=\"a\">551.7/001/8</subfield>\n        <subfield code=\"A\">OCLC</subfield>\n      </datafield>\n      <datafield tag=\"045F\" fulltag=\"045F\">\n        <subfield code=\"a\">551.7</subfield>\n      </datafield>\n      <datafield tag=\"045Q\" occurrence=\"01\" fulltag=\"045Q/01\">\n        <subfield code=\"9\">106408267</subfield>\n        <subfield code=\"a\">38.15</subfield>\n        <subfield code=\"j\">Historische Geologie: Allgemeines</subfield>\n      </datafield>\n      <datafield tag=\"045R\" fulltag=\"045R\">\n        <subfield code=\"9\">1271461129</subfield>\n        <subfield code=\"a\">TK 1040</subfield>\n        <subfield code=\"a\">TE-TZ</subfield>\n        <subfield code=\"j\">Geowissenschaften</subfield>\n        <subfield code=\"a\">TK-TN</subfield>\n        <subfield code=\"j\">Historische Geologie</subfield>\n        <subfield code=\"a\">TK 1005-TK 1050</subfield>\n        <subfield code=\"j\">Methoden zur Datierung</subfield>\n        <subfield code=\"j\">Stratigraphie: Gesamtdarstellungen</subfield>\n      </datafield>\n      <datafield tag=\"045R\" fulltag=\"045R\">\n        <subfield code=\"9\">1271483246</subfield>\n        <subfield code=\"a\">TG 1100</subfield>\n        <subfield code=\"a\">TE-TZ</subfield>\n        <subfield code=\"j\">Geowissenschaften</subfield>\n        <subfield code=\"a\">TG</subfield>\n        <subfield code=\"j\">Allgemeine Geologie</subfield>\n        <subfield code=\"a\">TG 1100-TG 1180</subfield>\n        <subfield code=\"j\">Allgemeine Geologie: Methoden</subfield>\n        <subfield code=\"j\">Allgemeine Geologie: Methoden, Gesamtdarstellungen, Gel&#xe4;ndemethoden</subfield>\n      </datafield>\n      <datafield tag=\"045Y\" fulltag=\"045Y\">\n        <subfield code=\"a\">ggo</subfield>\n      </datafield>\n      <datafield tag=\"046X\" fulltag=\"046X\">\n        <subfield code=\"a\">eb</subfield>\n        <subfield code=\"c\">20200919</subfield>\n        <subfield code=\"f\">DE-640</subfield>\n        <subfield code=\"z\">2</subfield>\n      </datafield>\n      <datafield tag=\"047A\" fulltag=\"047A\">\n        <subfield code=\"a\">Feld 3090 maschinell generiert aus ehemaligem nicht-individualisierten GBV-Normsatz (Tpn-Satz) (GBV)</subfield>\n      </datafield>\n      <datafield tag=\"101@\" fulltag=\"101@\">\n        <subfield code=\"a\">40</subfield>\n      </datafield>\n      <datafield tag=\"101B\" fulltag=\"101B\">\n        <subfield code=\"0\">16-11-21</subfield>\n        <subfield code=\"t\">23:13:53.000</subfield>\n      </datafield>\n      <datafield tag=\"101U\" fulltag=\"101U\">\n        <subfield code=\"0\">utf8</subfield>\n      </datafield>\n      <datafield tag=\"102D\" fulltag=\"102D\">\n        <subfield code=\"0\">24-01-23</subfield>\n        <subfield code=\"b\">csf_mm_dubl</subfield>\n        <subfield code=\"a\">20728</subfield>\n      </datafield>\n      <datafield tag=\"107F\" fulltag=\"107F\">\n        <subfield code=\"0\">3982/08L</subfield>\n      </datafield>\n      <datafield tag=\"145Z\" fulltag=\"145Z\">\n        <subfield code=\"9\">625048350</subfield>\n        <subfield code=\"a\">VDA 000</subfield>\n        <subfield code=\"j\">Stratigraphische Verfahren</subfield>\n      </datafield>\n      <datafield tag=\"145Z\" fulltag=\"145Z\">\n        <subfield code=\"9\">625060830</subfield>\n        <subfield code=\"a\">VVA 200</subfield>\n        <subfield code=\"j\">Leitfossilien, Biostratigraphische Grundlagen</subfield>\n      </datafield>\n      <datafield tag=\"145Z\" occurrence=\"99\" fulltag=\"145Z/99\">\n        <subfield code=\"a\">ZZ NAT geo</subfield>\n      </datafield>\n      <item epn=\"015131718\">\n        <datafield tag=\"201A\" occurrence=\"01\" fulltag=\"201A/01\">\n          <subfield code=\"0\">24-01-23</subfield>\n        </datafield>\n        <datafield tag=\"201B\" occurrence=\"01\" fulltag=\"201B/01\">\n          <subfield code=\"0\">24-01-23</subfield>\n          <subfield code=\"t\">18:14:13.000</subfield>\n        </datafield>\n        <datafield tag=\"201U\" occurrence=\"01\" fulltag=\"201U/01\">\n          <subfield code=\"0\">utf8</subfield>\n        </datafield>\n        <datafield tag=\"202D\" occurrence=\"01\" fulltag=\"202D/01\">\n          <subfield code=\"0\">24-01-23</subfield>\n          <subfield code=\"b\">touchtitle_dubl</subfield>\n          <subfield code=\"a\">20728</subfield>\n        </datafield>\n        <datafield tag=\"203@\" occurrence=\"01\" fulltag=\"203@/01\">\n          <subfield code=\"0\">015131718</subfield>\n        </datafield>\n        <datafield tag=\"208@\" occurrence=\"01\" fulltag=\"208@/01\">\n          <subfield code=\"a\">07-04-92</subfield>\n          <subfield code=\"b\">xsn</subfield>\n        </datafield>\n        <datafield tag=\"209A\" occurrence=\"01\" fulltag=\"209A/01\">\n          <subfield code=\"f\">LS1</subfield>\n          <subfield code=\"a\">VVA 200:m = 83 B 1811</subfield>\n          <subfield code=\"d\">u</subfield>\n          <subfield code=\"x\">00</subfield>\n        </datafield>\n        <datafield tag=\"209A\" occurrence=\"01\" fulltag=\"209A/01\">\n          <subfield code=\"a\">83 B 1811</subfield>\n          <subfield code=\"x\">09</subfield>\n        </datafield>\n        <datafield tag=\"209G\" occurrence=\"01\" fulltag=\"209G/01\">\n          <subfield code=\"a\">7$101059205</subfield>\n          <subfield code=\"x\">00</subfield>\n        </datafield>\n      </item>\n      <item epn=\"405740352\">\n        <datafield tag=\"201A\" occurrence=\"02\" fulltag=\"201A/02\">\n          <subfield code=\"0\">24-01-23</subfield>\n        </datafield>\n        <datafield tag=\"201B\" occurrence=\"02\" fulltag=\"201B/02\">\n          <subfield code=\"0\">24-01-23</subfield>\n          <subfield code=\"t\">18:14:13.000</subfield>\n        </datafield>\n        <datafield tag=\"201U\" occurrence=\"02\" fulltag=\"201U/02\">\n          <subfield code=\"0\">utf8</subfield>\n        </datafield>\n        <datafield tag=\"202D\" occurrence=\"02\" fulltag=\"202D/02\">\n          <subfield code=\"0\">24-01-23</subfield>\n          <subfield code=\"b\">touchtitle_dubl</subfield>\n          <subfield code=\"a\">20728</subfield>\n        </datafield>\n        <datafield tag=\"203@\" occurrence=\"02\" fulltag=\"203@/02\">\n          <subfield code=\"0\">405740352</subfield>\n        </datafield>\n        <datafield tag=\"208@\" occurrence=\"02\" fulltag=\"208@/02\">\n          <subfield code=\"a\">11-10-00</subfield>\n          <subfield code=\"b\">ri016</subfield>\n        </datafield>\n        <datafield tag=\"209A\" occurrence=\"02\" fulltag=\"209A/02\">\n          <subfield code=\"b\">7</subfield>\n          <subfield code=\"j\">196</subfield>\n          <subfield code=\"f\">7/016</subfield>\n          <subfield code=\"a\">Alph. (Cub)</subfield>\n          <subfield code=\"d\">i</subfield>\n          <subfield code=\"x\">00</subfield>\n        </datafield>\n        <datafield tag=\"209C\" occurrence=\"02\" fulltag=\"209C/02\">\n          <subfield code=\"a\">IX 11.251</subfield>\n          <subfield code=\"x\">00</subfield>\n        </datafield>\n      </item>\n    </metadata>\n  </record>",
+    "transformedRecord": {
+      "instance": {
+        "hrid": "1618446592",
+        "title": "Quantitative stratigraphic correlation : [International Geological Correlation Programme, Project 148] / ed. by  J. M. Cubitt; R. A. Reyment",
+        "series": [
+          {
+            "value": "A Wiley-interscience publication"
+          },
+          {}
+        ],
+        "source": "K10plus",
+        "languages": [
+          "eng"
+        ],
+        "indexTitle": "Quantitative stratigraphic correlation International Geological Correlation Programme Project 148 ed by J M Cubitt R A Reyment",
+        "identifiers": [
+          {
+            "value": "1618446592",
+            "identifierTypeId": "1d5cb40c-508f-451b-8952-87c92be4255a"
+          },
+          {
+            "value": "014362198",
+            "identifierTypeId": "1035a102-9fdd-4556-9efd-bf9308e035f6"
+          },
+          {
+            "value": "8031569",
+            "identifierTypeId": "439bfbae-75bc-4f74-9fc7-b2a2d47ce3ef"
+          },
+          {
+            "value": "036590592",
+            "identifierTypeId": "6048004e-75bc-11ea-8ddd-5a780fe0d4e4"
+          },
+          {
+            "value": "08031569",
+            "identifierTypeId": "da3478c6-efa1-4fcb-a914-fde46a170c82"
+          },
+          {
+            "value": "0471101710",
+            "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422"
+          },
+          {
+            "value": "8000786128",
+            "identifierTypeId": "24f03461-e76a-49cb-baba-8f5dd505bac4"
+          },
+          {
+            "value": "BSZ: 036590592",
+            "identifierTypeId": "8e33c1be-e2c4-43ac-a975-8fb50f71137a"
+          }
+        ],
+        "publication": [
+          {
+            "role": "Publisher",
+            "place": "Chichester [u.a.]",
+            "publisher": "Wiley",
+            "dateOfPublication": "1982"
+          }
+        ],
+        "contributors": [
+          {
+            "name": "Cubitt, John M.",
+            "contributorTypeText": "Hrsg.",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          },
+          {
+            "name": "Reyment, Richard A.",
+            "contributorTypeText": "Hrsg.",
+            "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a"
+          },
+          {
+            "name": "International Geological Correlation Programme",
+            "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa"
+          }
+        ],
+        "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+        "electronicAccess": [],
+        "modeOfIssuanceId": "9d18a02f-5897-4c31-9106-c9abb5c7ae8b",
+        "alternativeTitles": [],
+        "instanceFormatIds": [
+          "8d511d33-5e85-4c5d-9bce-6e3c9cd0c324"
+        ],
+        "administrativeNotes": [
+          "Aau (0500: Bibliografische Gattung)",
+          "24.01.23, 18:14 (0210: Datum der letzten Änderung)"
+        ],
+        "physicalDescriptions": [
+          "XI, 301 S : graph. Darst"
+        ],
+        "natureOfContentTermIds": [
+          "7766744c-1ec7-48d6-abb9-dd823648c71e"
+        ]
+      },
+      "processing": {
+        "item": {
+          "status": {
+            "policy": "overwrite",
+            "ifStatusWas": [
+              {
+                "name": "On order"
+              },
+              {
+                "name": "Available"
+              },
+              {
+                "name": "Intellectual item"
+              },
+              {
+                "name": "Missing"
+              },
+              {
+                "name": "Restricted"
+              },
+              {
+                "name": "Unknown"
+              }
+            ]
+          },
+          "retainOmittedRecord": {
+            "ifField": "hrid",
+            "matchesPattern": "\\D+.*"
+          },
+          "retainExistingValues": {
+            "forOmittedProperties": "true"
+          }
+        },
+        "batchIndex": 11,
+        "holdingsRecord": {
+          "statisticalCoding": [
+            {
+              "if": "deleteSkipped",
+              "setCode": "970b8b4e-ee88-4037-b954-a10ee75340f0",
+              "becauseOf": "ITEM_PATTERN_MATCH"
+            },
+            {
+              "if": "deleteSkipped",
+              "setCode": "e7b3071c-8cc0-48cc-9cd0-dfc82c4e4602",
+              "becauseOf": "ITEM_STATUS"
+            }
+          ],
+          "retainOmittedRecord": {
+            "ifField": "hrid",
+            "matchesPattern": "\\D+.*"
+          },
+          "retainExistingValues": {
+            "forOmittedProperties": "true"
+          }
+        }
+      },
+      "holdingsRecords": [
+        {
+          "hrid": "015131718",
+          "items": [
+            {
+              "hrid": "015131718",
+              "status": {
+                "name": "Available"
+              },
+              "barcode": "015131718:7$101059205",
+              "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+              "discoverySuppress": "false",
+              "permanentLoanTypeId": "a8cacfd0-b284-47ae-b5fa-235d768411e7"
+            }
+          ],
+          "notes": [],
+          "sourceId": "fa687f33-aab5-4119-b0ad-05afe8de4d92",
+          "callNumber": "VVA 200:m = 83 B 1811",
+          "holdingsTypeId": "0c422f92-0f4d-4d32-8cbe-390ebc33a3e5",
+          "callNumberPrefix": "LS1",
+          "electronicAccess": [],
+          "discoverySuppress": "false",
+          "administrativeNotes": [
+            "24-01-23, 18:14 (7903: Datum und Uhrzeit der letzten Änderung)"
+          ],
+          "permanentLocationId": "6251b033-bf96-4495-bc90-3b9bca1b0f9f"
+        },
+        {
+          "hrid": "405740352",
+          "items": [
+            {
+              "hrid": "405740352",
+              "status": {
+                "name": "Available"
+              },
+              "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+              "accessionNumber": "IX 11.251",
+              "discoverySuppress": "false",
+              "permanentLoanTypeId": "3ef6d652-2e02-4561-8f7b-720cbccde87f"
+            }
+          ],
+          "notes": [],
+          "sourceId": "fa687f33-aab5-4119-b0ad-05afe8de4d92",
+          "callNumber": "Alph. (Cub)",
+          "holdingsTypeId": "0c422f92-0f4d-4d32-8cbe-390ebc33a3e5",
+          "callNumberPrefix": "7/016",
+          "electronicAccess": [],
+          "discoverySuppress": "false",
+          "administrativeNotes": [
+            "24-01-23, 18:14 (7903: Datum und Uhrzeit der letzten Änderung)"
+          ],
+          "permanentLocationId": "82aabbe5-bbc0-4c1e-a8cd-a8c1f34729ce"
+        }
+      ]
+    },
+    "metadata": {
+      "createdDate": "2026-02-19T16:43:19.852+00:00"
+    }
+  }
+]

@@ -81,16 +81,11 @@ function Channels({
     enabled: r => <FormattedMessage id={`ui-inventory-import.channels.column.enabled.${r.enabled}`} />,
     type: r => <FormattedMessage id={`ui-inventory-import.channels.column.type.${r.type.toUpperCase()}`} />,
     jobs: r => (
-      <Button
-        id={`clickable-jobs-${r.id}`}
-        onClick={(e) => {
-          e.stopPropagation();
-          updateQuery({ _path: `${packageInfo.stripes.route}/channels/${r.id}/jobs` });
-        }}
-        marginBottom0
-      >
-        <FormattedMessage id="ui-inventory-import.button.jobs" />
-      </Button>
+      <Link to={`${packageInfo.stripes.route}/channels/${r.id}`}>
+        <Button id={`clickable-jobs-${r.id}`} marginBottom0>
+          <FormattedMessage id="ui-inventory-import.button.jobs" />
+        </Button>
+      </Link>
     ),
   };
 
@@ -104,7 +99,7 @@ function Channels({
       {
         (sasqParams) => {
           return (
-            <Paneset id="channels-paneset">
+            <Paneset id="channels-paneset" data-test-channels-paneset>
               <ChannelsSearchPane
                 {...sasqParams}
                 defaultWidth="20%"
@@ -130,7 +125,6 @@ function Channels({
                         actionMenu={() => renderActionsMenu(location.search, renderColumnsMenu)}
                       >
                         <MultiColumnList
-                          autosize
                           id="list-channels"
                           visibleColumns={visibleColumns}
                           columnMapping={columnMapping}
@@ -177,7 +171,10 @@ Channels.propTypes = {
   hasLoaded: PropTypes.bool.isRequired,
   pageAmount: PropTypes.number.isRequired,
   onNeedMoreData: PropTypes.func.isRequired,
-  children: PropTypes.arrayOf(PropTypes.object.isRequired),
+  children: PropTypes.oneOfType([
+    PropTypes.object.isRequired,
+    PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+  ]),
 };
 
 

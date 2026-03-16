@@ -1,20 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl, FormattedMessage } from 'react-intl';
 import { Field } from 'react-final-form';
-import { ConfigManager } from '@folio/stripes/smart-components';
-import { Loading, TextField, Select } from '@folio/stripes/components';
+import { TextField, Select } from '@folio/stripes/components';
+import ConnectedConfigManager from './ConnectedConfigManager';
 
 
 function LogSettings(props) {
   const intl = useIntl();
-  const [ConnectedConfigManager, setConnectedConfigManager] = useState();
-
-  useEffect(() => {
-    setConnectedConfigManager(props.stripes.connect(ConfigManager));
-  }, [props.stripes]);
-
-  if (!ConnectedConfigManager) return <Loading size="xlarge" />;
 
   const getInitialValues = (settings) => {
     const res = settings.length === 0 ? '' : settings[0].value;
@@ -39,28 +32,27 @@ function LogSettings(props) {
   }));
 
   return (
-    <ConnectedConfigManager
-      formType="final-form"
-      label={props.label}
-      scope="mod-inventory-update"
-      configName="PURGE_LOGS_AFTER"
-      getInitialValues={getInitialValues}
-      onBeforeSave={beforeSave}
-    >
-      <div>
-        <p>{descLabel}</p>
-        <Field name="number" label={numberLabel} component={TextField} />
-        <Field name="unit" label={unitLabel} component={Select} dataOptions={units} />
-      </div>
-    </ConnectedConfigManager>
+    <div data-test-log-settings>
+      <ConnectedConfigManager
+        formType="final-form"
+        label={props.label}
+        scope="mod-inventory-update"
+        configName="PURGE_LOGS_AFTER"
+        getInitialValues={getInitialValues}
+        onBeforeSave={beforeSave}
+      >
+        <div>
+          <p>{descLabel}</p>
+          <Field name="number" label={numberLabel} component={TextField} />
+          <Field name="unit" label={unitLabel} component={Select} dataOptions={units} />
+        </div>
+      </ConnectedConfigManager>
+    </div>
   );
 }
 
 
 LogSettings.propTypes = {
-  stripes: PropTypes.shape({
-    connect: PropTypes.func.isRequired,
-  }).isRequired,
   label: PropTypes.node.isRequired,
 };
 

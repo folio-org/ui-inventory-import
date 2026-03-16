@@ -5,7 +5,7 @@ import { Field } from 'react-final-form';
 import { Row, Col, TextField, InfoPopover } from '@folio/stripes/components';
 import ListField from './ListField';
 
-function translationTagAndHelpButton(intl, domain = 'channels', tag, i18nTag, helpTag) {
+function translationTagAndHelpButton(intl, domain, tag, i18nTag, helpTag) {
   const translationTag = `ui-inventory-import.${domain}.field.${i18nTag || tag}`;
   const helpTranslationTag = `ui-inventory-import.${domain}.field.${helpTag || i18nTag || tag}.help`;
   const helpMessage = intl.messages[helpTranslationTag];
@@ -18,7 +18,7 @@ function translationTagAndHelpButton(intl, domain = 'channels', tag, i18nTag, he
 }
 
 // Col-Field
-export const CF = ({ domain, tag, i18nTag, helpTag, xs, ...rest }) => {
+export const CF = ({ domain = 'channels', tag, i18nTag, helpTag, xs, ...rest }) => {
   const intl = useIntl();
   const [translationTag, helpButton] = translationTagAndHelpButton(intl, domain, tag, i18nTag, helpTag);
 
@@ -51,7 +51,7 @@ export const RCF = (props) => (
 );
 
 // Col-ListField
-export const CLF = ({ domain, tag, i18nTag, helpTag, xs, ...rest }) => {
+export const CLF = ({ domain = 'channels', tag, i18nTag, helpTag, xs, ...rest }) => {
   const intl = useIntl();
   const [translationTag, helpButton] = translationTagAndHelpButton(intl, domain, tag, i18nTag, helpTag);
 
