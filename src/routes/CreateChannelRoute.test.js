@@ -13,6 +13,10 @@ const renderCreateChannelRoute = (query, channel) => {
     <BrowserRouter>
       <Paneset>
         <CreateChannelRoute
+          stripes={{
+            logger: {
+            },
+          }}
           resources={{
             transformationPipelines: {
               isPending: false,
