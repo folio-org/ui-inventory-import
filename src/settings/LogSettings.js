@@ -1,20 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl, FormattedMessage } from 'react-intl';
 import { Field } from 'react-final-form';
-import { ConfigManager } from '@folio/stripes/smart-components';
-import { Loading, TextField, Select } from '@folio/stripes/components';
+import { TextField, Select } from '@folio/stripes/components';
+import ConnectedConfigManager from './ConnectedConfigManager';
 
 
 function LogSettings(props) {
   const intl = useIntl();
-  const [ConnectedConfigManager, setConnectedConfigManager] = useState();
-
-  useEffect(() => {
-    setConnectedConfigManager(props.stripes.connect(ConfigManager));
-  }, [props.stripes]);
-
-  if (!ConnectedConfigManager) return <Loading size="xlarge" />;
 
   const getInitialValues = (settings) => {
     const res = settings.length === 0 ? '' : settings[0].value;
