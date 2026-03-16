@@ -32,28 +32,27 @@ function LogSettings(props) {
   }));
 
   return (
-    <ConnectedConfigManager
-      formType="final-form"
-      label={props.label}
-      scope="mod-inventory-update"
-      configName="PURGE_LOGS_AFTER"
-      getInitialValues={getInitialValues}
-      onBeforeSave={beforeSave}
-    >
-      <div>
-        <p>{descLabel}</p>
-        <Field name="number" label={numberLabel} component={TextField} />
-        <Field name="unit" label={unitLabel} component={Select} dataOptions={units} />
-      </div>
-    </ConnectedConfigManager>
+    <div data-test-log-settings>
+      <ConnectedConfigManager
+        formType="final-form"
+        label={props.label}
+        scope="mod-inventory-update"
+        configName="PURGE_LOGS_AFTER"
+        getInitialValues={getInitialValues}
+        onBeforeSave={beforeSave}
+      >
+        <div>
+          <p>{descLabel}</p>
+          <Field name="number" label={numberLabel} component={TextField} />
+          <Field name="unit" label={unitLabel} component={Select} dataOptions={units} />
+        </div>
+      </ConnectedConfigManager>
+    </div>
   );
 }
 
 
 LogSettings.propTypes = {
-  stripes: PropTypes.shape({
-    connect: PropTypes.func.isRequired,
-  }).isRequired,
   label: PropTypes.node.isRequired,
 };
 
