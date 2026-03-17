@@ -59,6 +59,7 @@ const StepForm = (props) => {
 
   return (
     <Pane
+      data-testid="pane"
       centerContent
       defaultWidth="60%"
       footer={renderPaneFooter(handleSubmit, onCancel, pristine, submitting)}
@@ -66,7 +67,7 @@ const StepForm = (props) => {
       paneTitle={title}
     >
       <TitleManager record={title}>
-        <form id="form-step">
+        <form data-testid="step-form">
           <Row>
             <CF tag="id" domain="channels" xs={2} disabled />
             <CF tag="type" domain="step" xs={2} component={Select} dataOptions={[noValue].concat(types)} required />
@@ -104,3 +105,4 @@ export default stripesFinalForm({
   },
   mutators: { setFieldData, ...arrayMutators }
 })(StepForm);
+export { validate }; // For testing
