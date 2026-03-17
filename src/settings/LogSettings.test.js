@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render, screen, fireEvent } from '@folio/jest-config-stripes/testing-library/react';
+import { cleanup, render } from '@folio/jest-config-stripes/testing-library/react';
 import { Paneset } from '@folio/stripes/components';
 import withIntlConfiguration from '../../test/jest/util/withIntlConfiguration';
 import LogSettings from './LogSettings';
