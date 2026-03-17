@@ -31,6 +31,19 @@ function validate(values) {
 }
 
 
+function renderScriptStatus(xsltStatus, xsltValue) {
+  if (xsltStatus === BAD_XML) {
+    return <div className={css.badXML}><FormattedMessage id="ui-inventory-import.invalidXML" values={{ error: xsltValue }} /></div>;
+  } else if (xsltStatus === BAD_XSLT) {
+    return <div className={css.badXSLT}><FormattedMessage id="ui-inventory-import.invalidXSLT" /></div>;
+  } else if (xsltStatus === GOOD_XSLT) {
+    return <div className={css.good}><FormattedMessage id="ui-inventory-import.validXSLT" /></div>;
+  }
+
+  return null;
+}
+
+
 const StepForm = (props) => {
   const { form, handleSubmit, onCancel, pristine, submitting } = props;
   const intl = useIntl();
@@ -61,15 +74,7 @@ const StepForm = (props) => {
           </Row>
           <RCF tag="description" domain="step" component={TextArea} rows="4" />
           <RCF tag="script" domain="step" component={TextArea} rows="4" />
-          {
-            (xsltStatus === BAD_XML) ?
-              <div className={css.badXML}><FormattedMessage id="ui-inventory-import.invalidXML" values={{ error: xsltValue }} /></div> :
-              (xsltStatus === BAD_XSLT) ?
-                <div className={css.badXSLT}><FormattedMessage id="ui-inventory-import.invalidXSLT" /></div> :
-                (xsltStatus === GOOD_XSLT) ?
-                  <div className={css.good}><FormattedMessage id="ui-inventory-import.validXSLT" /></div> :
-                  null
-          }
+          {renderScriptStatus(xsltStatus, xsltValue)}
         </form>
       </TitleManager>
     </Pane>

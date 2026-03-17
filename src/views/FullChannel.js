@@ -44,39 +44,39 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
     });
   }
 
-  /*
-  function controlJob(op) {
-    mutator[op].PUT({}).then(() => {
-      callout.sendCallout({
-        message: (
-          <FormattedMessage
-            id={`ui-inventory-import.op.${op}.completed`}
-            values={{
-              name: rec.name,
-              b: text => <b>{text}</b>,
-            }}
-          />
-        ),
-      });
-    }).catch((res) => {
-      res.text().then((error) => {
-        callout.sendCallout({
-          type: 'error',
-          message: (
-            <FormattedMessage
-              id={`ui-inventory-import.op.${op}.error`}
-              values={{
-                name: rec.name,
-                error: error.toString(),
-                b: text => <b>{text}</b>,
-              }}
-            />
-          ),
-        });
-      });
-    });
-  }
-  */
+  // Old implementation kept for reference
+  // NOSONAR
+  // function controlJob(op) {
+  //   mutator[op].PUT({}).then(() => {
+  //     callout.sendCallout({
+  //       message: (
+  //         <FormattedMessage
+  //           id={`ui-inventory-import.op.${op}.completed`}
+  //           values={{
+  //             name: rec.name,
+  //             b: text => <b>{text}</b>,
+  //           }}
+  //         />
+  //       ),
+  //     });
+  //   }).catch((res) => {
+  //     res.text().then((error) => {
+  //       callout.sendCallout({
+  //         type: 'error',
+  //         message: (
+  //           <FormattedMessage
+  //             id={`ui-inventory-import.op.${op}.error`}
+  //             values={{
+  //               name: rec.name,
+  //               error: error.toString(),
+  //               b: text => <b>{text}</b>,
+  //             }}
+  //           />
+  //         ),
+  //       });
+  //     });
+  //   });
+  // }
 
   const actionMenu = ({ _onToggle }) => {
     return (

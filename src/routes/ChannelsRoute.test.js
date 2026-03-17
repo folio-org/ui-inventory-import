@@ -58,7 +58,7 @@ describe('Channels route', () => {
   it('should be rendered with an error', async () => {
     const node = renderChannelsRoute({
       failed: { message: 'Error caused by test harness' },
-      hasLoaded: false,
+      hasLoaded: true,
       records: [],
     });
     const { container } = node;

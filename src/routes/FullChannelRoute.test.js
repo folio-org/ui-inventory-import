@@ -56,7 +56,7 @@ describe('Full channel route', () => {
       hasLoaded: true,
       records: [fullChannelData],
     });
-    // screen.debug();
+
     const { container } = node;
     const content = container.querySelector('[data-test-full-channel-pane]');
     expect(container).toBeVisible();
@@ -110,10 +110,5 @@ describe('Full channel route', () => {
     await fireEvent.click(confirmButton);
 
     // This doesn't fire as we expect it to, possibly due to complexities of async code
-    /*
-      await waitFor(() => {
-        expect(screen.queryByText('ui-inventory-import.op.delete.completed')).toBeInTheDocument();
-      });
-    */
   });
 });

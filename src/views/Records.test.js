@@ -24,17 +24,13 @@ jest.mock('@folio/stripes/components', () => ({
 // See https://folio-project.slack.com/archives/C210UCHQ9/p1632425791183300?thread_ts=1632350696.158900&cid=C210UCHQ9
 function okapiKy(_path, _options) {
   const httpResponse = {
-    json: () => new Promise((resolve2, _reject) => {
-      resolve2({
-        failedRecords: failedRecordsData,
-        totalRecords: failedRecordsData.length,
-      });
-    }),
+    json: () => Promise.resolve({
+      failedRecords: failedRecordsData,
+      totalRecords: failedRecordsData.length,
+    })
   };
 
-  return new Promise((resolve, _reject) => {
-    resolve(httpResponse);
-  });
+  return Promise.resolve(httpResponse);
 }
 useOkapiKy.mockReturnValue(okapiKy);
 
@@ -67,7 +63,6 @@ describe('Records view', () => {
   let node;
   beforeEach(() => {
     node = renderRecords(query);
-    // screen.debug(undefined, 100000);
   });
 
   afterEach(cleanup);

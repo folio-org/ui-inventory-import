@@ -15,7 +15,7 @@ const GOOD_XSLT = 4;
 // There is no value for the NO_TEXT and BAD_XSLT statuses.
 //
 function compileXSLT(xsltText) {
-  if (xsltText === '') {
+  if (xsltText === undefined || xsltText === '') {
     return [NO_TEXT];
   }
 

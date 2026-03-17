@@ -11,5 +11,6 @@
 
 .status_RUNNING { color: #00a000; }
 .status_ERROR, .status_WARN { color: #c00000; }
+.status_INTERRUPTED, .status_PAUSED { color: #c80; }
 
 /* Other statuses do not appear in colour: OK NEW FINISHED KILLED SHUTDOWN */

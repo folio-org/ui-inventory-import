@@ -77,7 +77,7 @@ describe('Jobs route', () => {
   it('should be rendered with an error', async () => {
     const node = renderJobsRoute({
       failed: { message: 'Error provoked by test harness' },
-      hasLoaded: false,
+      hasLoaded: true,
       records: [],
     });
     const { container } = node;

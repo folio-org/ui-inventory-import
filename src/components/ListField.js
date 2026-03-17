@@ -15,7 +15,7 @@ const ListField = ({ name, label, renderEntry, component, emptyValue }) => {
         {({ fields }) => (
           <>
             {fields.map((subname, index) => (
-              <div key={index} className={css.row}>
+              <div key={subname} className={css.row}>
                 <div className={css.field}>
                   {renderEntry ?
                     renderEntry(subname) :

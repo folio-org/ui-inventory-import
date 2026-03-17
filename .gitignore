@@ -1,5 +1,7 @@
+.scannerwork
 SAMPLES
 artifacts
 junit.xml
 node_modules
+run-sonar
 yarn.lock

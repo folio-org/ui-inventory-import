@@ -94,6 +94,8 @@ function Channels({
   const sortedColumn = sortKeys[0]?.key;
   const sortDirection = sortKeys[0]?.descending ? 'descending' : 'ascending';
 
+  if (!hasLoaded) return <LoadingPane />;
+
   return (
     <SearchAndSortQuery>
       {
@@ -108,45 +110,44 @@ function Channels({
               />
               {
                 error ? <ErrorMessage message={error} /> :
-                  !hasLoaded ? <LoadingPane /> :
-                  <ColumnManager
-                    id="channel-visible-columns"
-                    columnMapping={columnMapping}
-                    excludeKeys={['name']}
-                    persist
-                  >
-                    {({ renderColumnsMenu, visibleColumns }) => (
-                      <Pane
-                        appIcon={<AppIcon app="inventory-import" />}
-                        defaultWidth="fill"
-                        padContent={false}
-                        paneTitle={<FormattedMessage id="ui-inventory-import.nav.channels" />}
-                        paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: channels.length }} />}
-                        actionMenu={() => renderActionsMenu(location.search, renderColumnsMenu)}
-                      >
-                        <MultiColumnList
-                          id="list-channels"
-                          visibleColumns={visibleColumns}
-                          columnMapping={columnMapping}
-                          columnWidths={{
-                            name: '400px',
-                            enabled: '80px',
-                            type: '150px',
-                            id: '300px',
-                          }}
-                          formatter={formatter}
-                          contentData={channels}
-                          totalCount={channels.length}
-                          onHeaderClick={sasqParams.onSort}
-                          sortedColumn={sortedColumn}
-                          sortDirection={sortDirection}
-                          pageAmount={pageAmount}
-                          onNeedMoreData={onNeedMoreData}
-                          pagingType={MCLPagingTypes.PREV_NEXT}
-                        />
-                      </Pane>
-                    )}
-                  </ColumnManager>
+                <ColumnManager
+                  id="channel-visible-columns"
+                  columnMapping={columnMapping}
+                  excludeKeys={['name']}
+                  persist
+                >
+                  {({ renderColumnsMenu, visibleColumns }) => (
+                    <Pane
+                      appIcon={<AppIcon app="inventory-import" />}
+                      defaultWidth="fill"
+                      padContent={false}
+                      paneTitle={<FormattedMessage id="ui-inventory-import.nav.channels" />}
+                      paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: channels.length }} />}
+                      actionMenu={() => renderActionsMenu(location.search, renderColumnsMenu)}
+                    >
+                      <MultiColumnList
+                        id="list-channels"
+                        visibleColumns={visibleColumns}
+                        columnMapping={columnMapping}
+                        columnWidths={{
+                          name: '400px',
+                          enabled: '80px',
+                          type: '150px',
+                          id: '300px',
+                        }}
+                        formatter={formatter}
+                        contentData={channels}
+                        totalCount={channels.length}
+                        onHeaderClick={sasqParams.onSort}
+                        sortedColumn={sortedColumn}
+                        sortDirection={sortDirection}
+                        pageAmount={pageAmount}
+                        onNeedMoreData={onNeedMoreData}
+                        pagingType={MCLPagingTypes.PREV_NEXT}
+                      />
+                    </Pane>
+                  )}
+                </ColumnManager>
               }
               {children}
             </Paneset>

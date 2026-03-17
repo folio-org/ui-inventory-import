@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render, screen, fireEvent } from '@folio/jest-config-stripes/testing-library/react';
+import { cleanup, render } from '@folio/jest-config-stripes/testing-library/react';
 import { Paneset } from '@folio/stripes/components';
 import withIntlConfiguration from '../../test/jest/util/withIntlConfiguration';
 import LogSettings from './LogSettings';
@@ -31,12 +31,5 @@ describe('Log settings', () => {
     expect(content).toBeVisible();
 
     // XXX consider how we might mock the network calls to fetch data for the form
-
-    // Data rendered in the form
-    // const nameCell = screen.getByText("Number #1");
-    /*
-    expect(nameCell?.nextElementSibling).toHaveTextContent('ui-inventory-import.channels.column.enabled.true');
-    expect(nameCell?.nextElementSibling.nextElementSibling).toHaveTextContent('ui-inventory-import.channels.column.type.XML');
-    */
   });
 });

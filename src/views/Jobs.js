@@ -63,6 +63,8 @@ function Jobs({
   const sortedColumn = sortKeys[0]?.key;
   const sortDirection = sortKeys[0]?.descending ? 'descending' : 'ascending';
 
+  if (!hasLoaded) return <LoadingPane />;
+
   return (
     <SearchAndSortQuery>
       {
@@ -77,51 +79,50 @@ function Jobs({
               />
               {
                 error ? <ErrorMessage message={error} /> :
-                  !hasLoaded ? <LoadingPane /> :
-                  <ColumnManager
-                    id="jobs-visible-columns"
-                    columnMapping={columnMapping}
-                    excludeKeys={['channelName']}
-                    persist
-                  >
-                    {({ renderColumnsMenu, visibleColumns }) => (
-                      <Pane
-                        appIcon={<AppIcon app="inventory-import" />}
-                        defaultWidth="fill"
-                        padContent={false}
-                        height="100%"
-                        paneTitle={paneTitle}
-                        paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: resultCount }} />}
-                        actionMenu={() => renderColumnsMenu}
-                      >
-                        <MultiColumnList
-                          id="list-jobs"
-                          visibleColumns={visibleColumns}
-                          columnMapping={columnMapping}
-                          columnWidths={{
-                            channelName: '20%',
-                            status: '100px',
-                            amountImported: '90px',
-                            duration: '100px',
-                            started: '230px',
-                            finished: '230px',
-                            type: '110px',
-                            message: '450px',
-                          }}
-                          formatter={formatter}
-                          contentData={data.jobs}
-                          totalCount={resultCount}
-                          onHeaderClick={sasqParams.onSort}
-                          nonInteractiveHeaders={['duration']}
-                          pageAmount={pageAmount}
-                          onNeedMoreData={onNeedMoreData}
-                          sortedColumn={sortedColumn}
-                          sortDirection={sortDirection}
-                          pagingType={MCLPagingTypes.PREV_NEXT}
-                        />
-                      </Pane>
-                    )}
-                  </ColumnManager>
+                <ColumnManager
+                  id="jobs-visible-columns"
+                  columnMapping={columnMapping}
+                  excludeKeys={['channelName']}
+                  persist
+                >
+                  {({ renderColumnsMenu, visibleColumns }) => (
+                    <Pane
+                      appIcon={<AppIcon app="inventory-import" />}
+                      defaultWidth="fill"
+                      padContent={false}
+                      height="100%"
+                      paneTitle={paneTitle}
+                      paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: resultCount }} />}
+                      actionMenu={() => renderColumnsMenu}
+                    >
+                      <MultiColumnList
+                        id="list-jobs"
+                        visibleColumns={visibleColumns}
+                        columnMapping={columnMapping}
+                        columnWidths={{
+                          channelName: '20%',
+                          status: '100px',
+                          amountImported: '90px',
+                          duration: '100px',
+                          started: '230px',
+                          finished: '230px',
+                          type: '110px',
+                          message: '450px',
+                        }}
+                        formatter={formatter}
+                        contentData={data.jobs}
+                        totalCount={resultCount}
+                        onHeaderClick={sasqParams.onSort}
+                        nonInteractiveHeaders={['duration']}
+                        pageAmount={pageAmount}
+                        onNeedMoreData={onNeedMoreData}
+                        sortedColumn={sortedColumn}
+                        sortDirection={sortDirection}
+                        pagingType={MCLPagingTypes.PREV_NEXT}
+                      />
+                    </Pane>
+                  )}
+                </ColumnManager>
               }
               {children}
             </Paneset>
