@@ -5,13 +5,15 @@ function errors2react(errors = []) {
   return (
     <ul className={css.noDot}>
       {
-        errors.map((error, i) => (
-          <li key={`${error.code}-${i}`}>
-            <code>{error.code}</code>
-            &nbsp;
-            ({error.message})
-          </li>
-        ))
+        errors
+          .map((error, i) => ({ ...error, indexHiddenFromSonar: i }))
+          .map((error) => (
+            <li key={`${error.code}-${error.indexHiddenFromSonar}`}>
+              <code>{error.code}</code>
+              &nbsp;
+              ({error.message})
+            </li>
+          ))
       }
     </ul>
   );
