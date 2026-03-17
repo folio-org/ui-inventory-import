@@ -105,3 +105,4 @@ export default stripesFinalForm({
   },
   mutators: { setFieldData, ...arrayMutators }
 })(StepForm);
+export { validate }; // For testing

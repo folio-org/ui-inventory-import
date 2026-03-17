@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@folio/jest-config-stripes/testing-library/react';
-import StepForm from './StepForm';
+import StepForm, { validate } from './StepForm';
 
 jest.mock('@folio/stripes/final-form', () => () => (Component) => Component);
 
@@ -93,5 +93,52 @@ describe('StepForm', () => {
     const form = screen.getByTestId('step-form');
     fireEvent.submit(form);
     // I can't find a way to make expect(handleSubmit).toHaveBeenCalled() work
+  });
+});
+
+
+import { FormattedMessage } from 'react-intl'; // eslint-disable-line import/first, import/order
+
+describe('validate function', () => {
+  it('returns errors for missing name and type', () => {
+    const values = {};
+    const errors = validate(values);
+
+    // Check that errors object has keys
+    expect(errors).toHaveProperty('name');
+    expect(errors).toHaveProperty('type');
+
+    // Check that the errors are FormattedMessage elements with correct id
+    expect(errors.name.type).toBe(FormattedMessage);
+    expect(errors.name.props.id).toBe('ui-inventory-import.fillIn');
+
+    expect(errors.type.type).toBe(FormattedMessage);
+    expect(errors.type.props.id).toBe('ui-inventory-import.selectToContinue');
+  });
+
+  it('returns error only for missing name', () => {
+    const values = { type: 'Book' };
+    const errors = validate(values);
+
+    expect(errors).toHaveProperty('name');
+    expect(errors.name.props.id).toBe('ui-inventory-import.fillIn');
+    expect(errors.type).toBeUndefined();
+  });
+
+  it('returns error only for missing type', () => {
+    const values = { name: 'My Item' };
+    const errors = validate(values);
+
+    expect(errors.name).toBeUndefined();
+    expect(errors).toHaveProperty('type');
+    expect(errors.type.props.id).toBe('ui-inventory-import.selectToContinue');
+  });
+
+  it('returns no errors when both fields are present', () => {
+    const values = { name: 'My Item', type: 'Book' };
+    const errors = validate(values);
+
+    expect(errors.name).toBeUndefined();
+    expect(errors.type).toBeUndefined();
   });
 });
