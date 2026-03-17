@@ -61,7 +61,6 @@ const StepDetail = (props) => {
 
 StepDetail.propTypes = {
   initialValues: PropTypes.shape({
-    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
     type: PropTypes.string.isRequired,
