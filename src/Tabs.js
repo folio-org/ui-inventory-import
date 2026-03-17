@@ -38,10 +38,11 @@ function SwitchRoute() {
               let effectiveTab = location.pathname.replace(fullBase, '').replace(/\/.*/, '');
               if (location.pathname.endsWith('/jobs')) effectiveTab = 'jobs';
               const selected = (effectiveTab === name);
+              const maybeParams = params ? `?${params}` : '';
               return (
                 <Button
                   key={`${name}`}
-                  to={`/${base}/${name}${params ? `?${params}` : ''}`}
+                  to={`/${base}/${name}${maybeParams}`}
                   buttonStyle={selected ? 'primary' : 'default'}
                 >
                   <FormattedMessage id={`ui-inventory-import.nav.${name}`} />

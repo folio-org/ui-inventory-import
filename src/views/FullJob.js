@@ -43,6 +43,7 @@ const FullJob = (props) => {
     },
   ];
 
+  const cssStatusClass = css[`status_${status}`];
   const paneTitle = (
     <>
       {record.channelName}
@@ -51,7 +52,7 @@ const FullJob = (props) => {
       {status &&
         <>
           {' '}&mdash;{' '}
-          <span className={`${css.status} ${css[`status_${status}`]}`}>
+          <span className={`${css.status} ${cssStatusClass}`}>
             <FormattedMessage id={`ui-inventory-import.jobs.column.status.${status}`} />
           </span>
         </>
