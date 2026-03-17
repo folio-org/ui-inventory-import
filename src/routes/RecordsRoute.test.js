@@ -57,7 +57,7 @@ describe('Failed records route', () => {
   it('should be rendered with an error', async () => {
     const node = renderRecordsRoute({
       failed: { message: 'Error invoked by test harness' },
-      hasLoaded: false,
+      hasLoaded: true,
       records: [],
     });
     const { container } = node;

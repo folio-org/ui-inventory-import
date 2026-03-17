@@ -106,6 +106,8 @@ function Records({
   const sortedColumn = sortKeys[0]?.key;
   const sortDirection = sortKeys[0]?.descending ? 'descending' : 'ascending';
 
+  if (!hasLoaded) return <LoadingPane />;
+
   return (
     <SearchAndSortQuery>
       {
@@ -120,41 +122,40 @@ function Records({
               />
               {
                 error ? <ErrorMessage message={error} /> :
-                  !hasLoaded ? <LoadingPane /> :
-                  <ColumnManager
-                    id="records-visible-columns"
-                    columnMapping={columnMapping}
-                    excludeKeys={['recordNumber']}
-                    persist
-                  >
-                    {({ renderColumnsMenu, visibleColumns }) => (
-                      <Pane
-                        appIcon={<AppIcon app="inventory-import" />}
-                        defaultWidth="fill"
-                        padContent={false}
-                        paneTitle={paneTitle}
-                        paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: resultCount }} />}
-                        actionMenu={({ onToggle }) => renderActionMenu(onToggle, intl, data, resultCount, okapiKy, renderColumnsMenu)}
-                      >
-                        <MultiColumnList
-                          id="list-records"
-                          visibleColumns={visibleColumns}
-                          columnMapping={columnMapping}
-                          columnWidths={columnWidths}
-                          formatter={formatter}
-                          contentData={data.records}
-                          totalCount={resultCount}
-                          onHeaderClick={sasqParams.onSort}
-                          nonInteractiveHeaders={['instanceHrid', 'instanceTitle', 'errors']}
-                          pageAmount={pageAmount}
-                          onNeedMoreData={onNeedMoreData}
-                          sortedColumn={sortedColumn}
-                          sortDirection={sortDirection}
-                          pagingType={MCLPagingTypes.PREV_NEXT}
-                        />
-                      </Pane>
-                    )}
-                  </ColumnManager>
+                <ColumnManager
+                  id="records-visible-columns"
+                  columnMapping={columnMapping}
+                  excludeKeys={['recordNumber']}
+                  persist
+                >
+                  {({ renderColumnsMenu, visibleColumns }) => (
+                    <Pane
+                      appIcon={<AppIcon app="inventory-import" />}
+                      defaultWidth="fill"
+                      padContent={false}
+                      paneTitle={paneTitle}
+                      paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: resultCount }} />}
+                      actionMenu={({ onToggle }) => renderActionMenu(onToggle, intl, data, resultCount, okapiKy, renderColumnsMenu)}
+                    >
+                      <MultiColumnList
+                        id="list-records"
+                        visibleColumns={visibleColumns}
+                        columnMapping={columnMapping}
+                        columnWidths={columnWidths}
+                        formatter={formatter}
+                        contentData={data.records}
+                        totalCount={resultCount}
+                        onHeaderClick={sasqParams.onSort}
+                        nonInteractiveHeaders={['instanceHrid', 'instanceTitle', 'errors']}
+                        pageAmount={pageAmount}
+                        onNeedMoreData={onNeedMoreData}
+                        sortedColumn={sortedColumn}
+                        sortDirection={sortDirection}
+                        pagingType={MCLPagingTypes.PREV_NEXT}
+                      />
+                    </Pane>
+                  )}
+                </ColumnManager>
               }
               {children}
             </Paneset>
