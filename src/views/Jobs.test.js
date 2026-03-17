@@ -1,35 +1,26 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { cleanup, render, screen, fireEvent } from '@folio/jest-config-stripes/testing-library/react';
-import { CalloutContext } from '@folio/stripes/core';
 import { Paneset } from '@folio/stripes/components';
 import withIntlConfiguration from '../../test/jest/util/withIntlConfiguration';
 import Jobs from './Jobs';
 import jobsData from '../../test/jest/data/jobs';
 
 
-const renderJobs = (query) => {
-  const callout = {
-    sendCallout: (_calloutData) => {
-      console.log('*** sendCallout:', _calloutData.message.props.id);
-    }
-  };
-
+const useRenderJobs = (query) => {
   return render(withIntlConfiguration(
-    <CalloutContext.Provider value={callout}>
-      <BrowserRouter>
-        <Paneset>
-          <Jobs
-            hasLoaded
-            data={{ jobs: jobsData }}
-            query={query}
-            updateQuery={(newQuery) => Object.assign(query, newQuery)}
-            pageAmount={100}
-            onNeedMoreData={() => undefined}
-          />
-        </Paneset>
-      </BrowserRouter>
-    </CalloutContext.Provider>
+    <BrowserRouter>
+      <Paneset>
+        <Jobs
+          hasLoaded
+          data={{ jobs: jobsData }}
+          query={query}
+          updateQuery={(newQuery) => Object.assign(query, newQuery)}
+          pageAmount={100}
+          onNeedMoreData={() => undefined}
+        />
+      </Paneset>
+    </BrowserRouter>
   ));
 };
 
@@ -43,7 +34,7 @@ describe('Jobs view', () => {
 
   let node;
   beforeEach(() => {
-    node = renderJobs(query);
+    node = useRenderJobs(query);
   });
 
   afterEach(cleanup);
