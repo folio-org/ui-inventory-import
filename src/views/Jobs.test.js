@@ -11,7 +11,7 @@ import jobsData from '../../test/jest/data/jobs';
 const renderJobs = (query) => {
   const callout = {
     sendCallout: (_calloutData) => {
-      // console.log('*** sendCallout:', _calloutData.message.props.id);
+      console.log('*** sendCallout:', _calloutData.message.props.id);
     }
   };
 
@@ -44,7 +44,6 @@ describe('Jobs view', () => {
   let node;
   beforeEach(() => {
     node = renderJobs(query);
-    // screen.debug(undefined, 100000);
   });
 
   afterEach(cleanup);

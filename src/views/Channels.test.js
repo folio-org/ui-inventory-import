@@ -36,7 +36,6 @@ describe('Channels view', () => {
   let node;
   beforeEach(() => {
     node = renderChannels(query);
-    // screen.debug(undefined, 100000);
   });
 
   afterEach(cleanup);

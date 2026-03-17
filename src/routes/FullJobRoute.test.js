@@ -66,7 +66,7 @@ describe('Full job route', () => {
     const node = renderFullJobRoute({
       records: [fullJob],
     });
-    // screen.debug();
+
     const { container } = node;
     const content = container.querySelector('[data-test-full-job-pane]');
     expect(container).toBeVisible();

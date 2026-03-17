@@ -67,7 +67,6 @@ describe('Records view', () => {
   let node;
   beforeEach(() => {
     node = renderRecords(query);
-    // screen.debug(undefined, 100000);
   });
 
   afterEach(cleanup);

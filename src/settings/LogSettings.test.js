@@ -31,12 +31,5 @@ describe('Log settings', () => {
     expect(content).toBeVisible();
 
     // XXX consider how we might mock the network calls to fetch data for the form
-
-    // Data rendered in the form
-    // const nameCell = screen.getByText("Number #1");
-    /*
-    expect(nameCell?.nextElementSibling).toHaveTextContent('ui-inventory-import.channels.column.enabled.true');
-    expect(nameCell?.nextElementSibling.nextElementSibling).toHaveTextContent('ui-inventory-import.channels.column.type.XML');
-    */
   });
 });
