@@ -16,11 +16,6 @@ jest.mock('../smart-components', () => ({
   )),
 }));
 
-// Mock injectIntl
-const mockIntl = {
-  formatMessage: ({ id }) => id,
-};
-
 const renderComponent = (overrides = {}) => {
   const props = {
     resources: {
@@ -35,7 +30,9 @@ const renderComponent = (overrides = {}) => {
         DELETE: jest.fn(),
       },
     },
-    intl: mockIntl,
+    intl: {
+      formatMessage: ({ id }) => id,
+    },
     ...overrides,
   };
 
