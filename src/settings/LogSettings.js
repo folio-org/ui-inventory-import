@@ -6,20 +6,22 @@ import { TextField, Select } from '@folio/stripes/components';
 import ConnectedConfigManager from './ConnectedConfigManager';
 
 
+const getInitialValues = (settings) => {
+  const res = settings.length === 0 ? '' : settings[0].value;
+  return {
+    number: res.substring(0, res.indexOf(' ')),
+    unit: res.substring(res.indexOf(' ') + 1),
+  };
+};
+
+
+const beforeSave = (data) => {
+  return (data?.number || '1') + ' ' + (data.unit || 'MONTHS');
+};
+
+
 function LogSettings(props) {
   const intl = useIntl();
-
-  const getInitialValues = (settings) => {
-    const res = settings.length === 0 ? '' : settings[0].value;
-    return {
-      number: res.substring(0, res.indexOf(' ')),
-      unit: res.substring(res.indexOf(' ') + 1),
-    };
-  };
-
-  const beforeSave = (data) => {
-    return (data?.number || '1') + ' ' + (data.unit || 'MONTHS');
-  };
 
   const descLabel = <FormattedMessage id="ui-inventory-import.settings.logs.description" />;
   const numberLabel = <FormattedMessage id="ui-inventory-import.settings.logs.number" />;
@@ -58,3 +60,4 @@ LogSettings.propTypes = {
 
 
 export default LogSettings;
+export { getInitialValues, beforeSave }; // For testing
