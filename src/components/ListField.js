@@ -43,7 +43,7 @@ ListField.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.object,
   renderEntry: PropTypes.func,
-  component: PropTypes.string, // definitely wrong
+  component: PropTypes.elementType,
   emptyValue: PropTypes.any, // eslint-disable-line react/forbid-prop-types
 };
 
