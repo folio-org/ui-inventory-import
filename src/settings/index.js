@@ -29,7 +29,7 @@ const InventoryImportSettings = (props) => {
       route: 'channels',
       label: <FormattedMessage id="ui-inventory-import.settings.channels" />,
       component: ChannelsRoute,
-      perm: 'ui-inventory-import.harvestables.view',
+      perm: 'inventory-update.import.channels.collection.get',
     },
     {
       route: 'logs',

@@ -1,7 +1,7 @@
 {
   "name": "@folio/inventory-import",
   "version": "4.0.0",
-  "description": "Admin console for the Index Data Harvester",
+  "description": "Admin console for FOLIO's Inventory Import facility",
   "repository": "https://github.com/folio-org/ui-inventory-import",
   "license": "Apache-2.0",
   "main": "src/index.js",
@@ -24,8 +24,8 @@
     "icons": [
       {
         "name": "app",
-        "alt": "Admin console for the Index Data Harvester",
-        "title": "Harvester admin"
+        "alt": "Admin console for FOLIO's Inventory Import facility",
+        "title": "Inventory Import"
       }
     ],
     "okapiInterfaces": {
