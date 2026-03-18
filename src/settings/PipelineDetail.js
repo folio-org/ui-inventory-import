@@ -61,7 +61,6 @@ const PipelineDetail = (props) => {
 
 PipelineDetail.propTypes = {
   initialValues: PropTypes.shape({
-    id: PropTypes.string.isRequired,
     name: PropTypes.string,
     description: PropTypes.string,
     steps: PropTypes.arrayOf(
