@@ -35,7 +35,7 @@ describe('compileXSLT', () => {
   });
 
   test('returns BAD_XSLT for valid XML that is not XSLT', () => {
-    const validXMLNotXSLT = `<root><child/></root>`;
+    const validXMLNotXSLT = '<root><child/></root>';
 
     mockImportStylesheet.mockImplementation(() => {
       throw new Error('Not a stylesheet');

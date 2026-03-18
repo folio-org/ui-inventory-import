@@ -2,7 +2,7 @@ import compileXML from './compileXML';
 
 describe('compileXML', () => {
   test('returns parsed XML document for valid XML', () => {
-    const validXML = `<root><child>value</child></root>`;
+    const validXML = '<root><child>value</child></root>';
 
     const [parsedDoc, error] = compileXML(validXML);
 
@@ -12,7 +12,7 @@ describe('compileXML', () => {
   });
 
   test('returns error message for invalid XML', () => {
-    const invalidXML = `<root><child></root>`; // malformed XML
+    const invalidXML = '<root><child></root>'; // malformed XML
 
     const [parsedDoc, error] = compileXML(invalidXML);
 
