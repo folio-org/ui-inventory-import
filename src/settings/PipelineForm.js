@@ -37,6 +37,7 @@ const PipelineForm = (props) => {
 
   return (
     <Pane
+      data-testid="pane-pipeline-form"
       centerContent
       defaultWidth="60%"
       footer={renderPaneFooter(handleSubmit, onCancel, pristine, submitting)}
@@ -44,7 +45,7 @@ const PipelineForm = (props) => {
       paneTitle={title}
     >
       <TitleManager record={title}>
-        <form id="form-pipeline">
+        <form data-testid="pipeline-form">
           <Row>
             <CF tag="id" domain="channels" xs={2} disabled />
             <CF tag="name" domain="channels" xs={8} required />
@@ -91,3 +92,4 @@ export default stripesFinalForm({
   },
   mutators: { setFieldData, ...arrayMutators }
 })(PipelineForm);
+export { validate }; // For testing
