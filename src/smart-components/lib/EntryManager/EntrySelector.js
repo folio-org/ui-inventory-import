@@ -140,6 +140,8 @@ class EntrySelector extends React.Component {
     }
   }
 
+  // ESLint is actually fine with this, but Sonar (which gets confused) honours its control comments
+  /* eslint-disable react/no-this-in-sfc */
   getActionMenu = item => ({ onToggle }) => {
     const {
       onClone,
