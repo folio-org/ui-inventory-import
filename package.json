@@ -31,8 +31,7 @@
     "okapiInterfaces": {
       "inventory-import": "1.0"
     },
-    "optionalOkapiInterfaces": {
-    },
+    "optionalOkapiInterfaces": {},
     "permissionSets": [
       {
         "permissionName": "module.inventory-import.enabled",
@@ -61,8 +60,8 @@
           "inventory-update.import.steps.item.get",
           "inventory-update.import.transformations.collection.get",
           "inventory-update.import.transformations.item.get",
-	  "inventory-update.import.channels.collection.get",
-	  "inventory-update.import.channels.item.get",
+          "inventory-update.import.channels.collection.get",
+          "inventory-update.import.channels.item.get",
           "mod-settings.global.read.mod-inventory-update"
         ],
         "visible": true
@@ -76,7 +75,7 @@
           "mod-settings.entries.item.post",
           "inventory-update.import.steps.item.put",
           "inventory-update.import.transformations.item.put",
-	  "inventory-update.import.channels.item.put",
+          "inventory-update.import.channels.item.put",
           "mod-settings.global.write.mod-inventory-update"
         ],
         "visible": true
@@ -88,7 +87,7 @@
           "ui-inventory-import.settings.view-edit",
           "inventory-update.import.steps.item.post",
           "inventory-update.import.transformations.item.post",
-	  "inventory-update.import.channels.item.post"
+          "inventory-update.import.channels.item.post"
         ],
         "visible": true
       },
@@ -99,7 +98,7 @@
           "ui-inventory-import.settings.view-edit-create",
           "inventory-update.import.steps.item.delete",
           "inventory-update.import.transformations.item.delete",
-	  "inventory-update.import.channels.item.delete"
+          "inventory-update.import.channels.item.delete"
         ],
         "visible": true
       },
@@ -108,8 +107,8 @@
         "displayName": "Inventory import: View channels",
         "subPermissions": [
           "module.inventory-import.enabled",
-	  "inventory-update.import.channels.collection.get",
-	  "inventory-update.import.channels.item.get"
+          "inventory-update.import.channels.collection.get",
+          "inventory-update.import.channels.item.get"
         ],
         "visible": true
       },
@@ -118,8 +117,8 @@
         "displayName": "Inventory import: View, edit channels",
         "subPermissions": [
           "ui-inventory-import.channels.get",
-   	  "inventory-update.import.channels.item.put",
-	  "inventory-update.import.transformations.collection.get"
+          "inventory-update.import.channels.item.put",
+          "inventory-update.import.transformations.collection.get"
         ],
         "visible": true
       },
@@ -128,7 +127,7 @@
         "displayName": "Inventory import: View, edit, create channels",
         "subPermissions": [
           "ui-inventory-import.channels.put",
-   	  "inventory-update.import.channels.item.post"
+          "inventory-update.import.channels.item.post"
         ],
         "visible": true
       },
@@ -137,7 +136,7 @@
         "displayName": "Inventory import: View, edit, create, delete channels",
         "subPermissions": [
           "ui-inventory-import.channels.post",
-   	  "inventory-update.import.channels.item.delete"
+          "inventory-update.import.channels.item.delete"
         ],
         "visible": true
       },
@@ -146,11 +145,11 @@
         "displayName": "Inventory import: View jobs and failed records",
         "subPermissions": [
           "module.inventory-import.enabled",
-	  "inventory-update.import.import-jobs.collection.get",
-	  "inventory-update.import.import-jobs.item.get",
+          "inventory-update.import.import-jobs.collection.get",
+          "inventory-update.import.import-jobs.item.get",
           "inventory-update.import.job-logs.collection.get",
-	  "inventory-update.import.failed-records.collection.get",
-	  "inventory-update.import.failed-records.item.get"
+          "inventory-update.import.failed-records.collection.get",
+          "inventory-update.import.failed-records.item.get"
         ],
         "visible": true
       },
