@@ -130,5 +130,7 @@
     "permission.channels.post": "Inventory import: View, edit, create channels",
     "permission.channels.delete": "Inventory import: View, edit, create, delete channels",
     "permission.jobs-and-failed-records.view": "Inventory import: View jobs and failed records",
-    "permission.all": "Inventory import: All permissions"
+    "permission.all": "Inventory import: All permissions",
+    "op.delete.confirm": "Really delete channel?",
+    "op.delete.completed": "Deleted channel <b>{name}</b>"
 }

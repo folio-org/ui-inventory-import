@@ -130,5 +130,7 @@
     "permission.channels.post": "典藏导入：查看、编辑、创建渠道",
     "permission.channels.delete": "典藏导入：查看、编辑、创建、删除渠道",
     "permission.jobs-and-failed-records.view": "典藏导入：查看任务和失败记录",
-    "permission.all": "典藏导入：所有权限"
+    "permission.all": "典藏导入：所有权限",
+    "op.delete.confirm": "Really delete channel?",
+    "op.delete.completed": "Deleted channel <b>{name}</b>"
 }

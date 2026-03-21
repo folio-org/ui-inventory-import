@@ -17,7 +17,7 @@
     "settings.step.heading": "transformation step",
     "settings.channels": "Channels",
     "settings.logs": "Log deletion",
-    "settings.logs.description": "Logs older than the configured age threshold are automatically deleted once per day, at 2am Central European time. The threshhold is specified by a number and a unit.",
+    "settings.logs.description": "설정된 보관 기간 기준을 초과한 로그는 매일 한 번, 중앙유럽 표준시(CET) 기준 오전 2시에 자동으로 삭제됩니다. 해당 기준은 숫자와 단위로 지정됩니다.",
     "settings.logs.number": "Number",
     "settings.logs.unit": "Unit",
     "settings.logs.unit.days": "Days",
@@ -125,10 +125,12 @@
     "permission.settings.view-edit": "Inventory import (Settings): View, edit transformation pipelines, transformation steps, channels and log-file deletion threshold",
     "permission.settings.view-edit-create": "Inventory import (Settings): View, edit, create transformation pipelines, transformation steps and channels",
     "permission.settings.view-edit-create-delete": "Inventory import (Settings): View, edit, create, delete transformation pipelines, transformation steps and channels",
-    "permission.channels.get": "Inventory import: View channels",
-    "permission.channels.put": "Inventory import: View, edit channels",
-    "permission.channels.post": "Inventory import: View, edit, create channels",
-    "permission.channels.delete": "Inventory import: View, edit, create, delete channels",
-    "permission.jobs-and-failed-records.view": "Inventory import: View jobs and failed records",
-    "permission.all": "Inventory import: All permissions"
+    "permission.channels.get": "인벤토리 반입: 채널 보기",
+    "permission.channels.put": "인벤토리 반입: 채널 보기 및 수정",
+    "permission.channels.post": "인벤토리 반입: 채널 보기, 수정 및 생성",
+    "permission.channels.delete": "인벤토리 반입: 채널 보기, 수정, 생성 및 삭제",
+    "permission.jobs-and-failed-records.view": "인벤토리 반입: 작업 및 실패한 레코드 보기",
+    "permission.all": "인벤토리 반입: 모든 권한",
+    "op.delete.confirm": "채널을 정말 삭제하시겠습니까?",
+    "op.delete.completed": "채널 <b>{name}</b>이(가) 삭제되었습니다."
 }

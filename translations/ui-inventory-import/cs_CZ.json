@@ -130,5 +130,7 @@
     "permission.channels.post": "Import katalogu: Zobrazit, upravit, vytvořit kanály",
     "permission.channels.delete": "Import katalogu: Zobrazit, upravit, vytvořit, odstranit kanály",
     "permission.jobs-and-failed-records.view": "Import katalogu: Zobrazení úloh a neúspěšných záznamů",
-    "permission.all": "Import katalogu: Všechna oprávnění"
+    "permission.all": "Import katalogu: Všechna oprávnění",
+    "op.delete.confirm": "Really delete channel?",
+    "op.delete.completed": "Deleted channel <b>{name}</b>"
 }
