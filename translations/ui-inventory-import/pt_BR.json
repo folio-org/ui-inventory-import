@@ -130,5 +130,7 @@
     "permission.channels.post": "Importação de inventário: Visualizar, editar, criar canais",
     "permission.channels.delete": "Importação de inventário: Visualizar, editar, criar e excluir canais",
     "permission.jobs-and-failed-records.view": "Importação de inventário: Visualizar trabalhos e registros com falha",
-    "permission.all": "Importação de inventário: Todas as permissões"
+    "permission.all": "Importação de inventário: Todas as permissões",
+    "op.delete.confirm": "Realmente excluir o canal?",
+    "op.delete.completed": "Canal excluído <b>{name}</b>"
 }

@@ -130,5 +130,7 @@
     "permission.channels.post": "Katalogimport: Kanäle anzeigen, bearbeiten, erstellen",
     "permission.channels.delete": "Katalogimport: Kanäle anzeigen, bearbeiten, erstellen, löschen",
     "permission.jobs-and-failed-records.view": "Katalogimport: Jobs und fehlgeschlagene Datensätze anzeigen",
-    "permission.all": "Katalogimport: Alle Berechtigungen"
+    "permission.all": "Katalogimport: Alle Berechtigungen",
+    "op.delete.confirm": "Kanal wirklich löschen?",
+    "op.delete.completed": "Kanal <b>{name}</b> löschen"
 }

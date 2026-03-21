@@ -129,6 +129,8 @@
     "permission.channels.put": "Inventory import: View, edit channels",
     "permission.channels.post": "Inventory import: View, edit, create channels",
     "permission.channels.delete": "Inventory import: View, edit, create, delete channels",
-    "permission.jobs-and-failed-records.view": "Inventory import: View jobs and failed records",
-    "permission.all": "การนำเข้าข้อมูลสินค้าคงคลัง: สิทธิ์การเข้าถึงทั้งหมด"
+    "permission.jobs-and-failed-records.view": "การนำเข้าอินเวนทอรี: ดูงานและระเบียนที่ล้มเหลว",
+    "permission.all": "การนำเข้าข้อมูลสินค้าคงคลัง: สิทธิ์การเข้าถึงทั้งหมด",
+    "op.delete.confirm": "Really delete channel?",
+    "op.delete.completed": "Deleted channel <b>{name}</b>"
 }
