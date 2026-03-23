@@ -1,15 +1,18 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { CalloutContext, IfPermission, useStripes } from '@folio/stripes/core';
-import { Loading, Pane, Row, Accordion, Button, Icon, ConfirmationModal } from '@folio/stripes/components';
+import { CalloutContext, IfPermission, useStripes, useOkapiKy } from '@folio/stripes/core';
+import { Loading, Pane, Row, Accordion, Button, Icon, ConfirmationModal, Modal } from '@folio/stripes/components';
+import { FileUploader } from '@folio/stripes-data-transfer-components';
 import { RCKV, CKV } from '../components/CKV';
 
 
 const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) => {
   const [deleting, setDeleting] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const stripes = useStripes();
   const callout = useContext(CalloutContext);
+  const okapiKy = useOkapiKy();
 
   const resource = resources.channel;
   if (!resource.hasLoaded) return <Loading />;
@@ -74,7 +77,86 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
             </Icon>
           </Button>
         </IfPermission>
+        <IfPermission perm="inventory-update.import.upload.post">
+          <Button
+            data-test-upload-button
+            buttonStyle="dropdownItem"
+            data-test-actions-menu-update
+            id="clickable-upload"
+            onClick={e => { e.stopPropagation(); setUploading(true); }}
+          >
+            <Icon icon="arrow-up">
+              <FormattedMessage id="ui-inventory-import.button.upload" />
+            </Icon>
+          </Button>
+        </IfPermission>
       </>
+    );
+  };
+
+  const onDrop = (acceptedFiles) => {
+    acceptedFiles.forEach((file) => {
+      const reader = new FileReader();
+      reader.onabort = (x) => console.error('file reading was aborted:', x); // eslint-disable-line no-console
+      reader.onerror = (x) => console.error('file reading has failed:', x); // eslint-disable-line no-console
+      reader.onload = async () => {
+        const binaryString = reader.result;
+
+        const url = `inventory-import/channels/${match.params.recId}/upload?filename=${file.name}`;
+        const res = await okapiKy.post(url, {
+          body: binaryString,
+          throwHttpErrors: false
+        });
+
+        if (res.ok) {
+          callout.sendCallout({
+            message: <FormattedMessage
+              id="ui-inventory-import.upload.success"
+              values={{
+                fileName: file.name,
+                channelName: rec.name,
+              }}
+            />
+          });
+        } else {
+          callout.sendCallout({
+            type: 'error',
+            timeout: 0,
+            message: <FormattedMessage
+              id="ui-inventory-import.upload.failure"
+              values={{
+                fileName: file.name,
+                channelName: rec.name,
+                status: res.status,
+                statusText: res.statusText,
+                body: await res.text(),
+              }}
+            />
+          });
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    setUploading(false);
+  };
+
+  const renderUploadModal = () => {
+    return (
+      <Modal
+        open
+        dismissible
+        onClose={() => setUploading(false)}
+        label={<FormattedMessage id="ui-inventory-import.upload.label" />}
+        footer={<Button onClick={() => setUploading(false)}><FormattedMessage id="stripes-components.cancel" /></Button>}
+      >
+        <FileUploader
+          title={<FormattedMessage id="ui-inventory-import.upload.title" />}
+          uploadButtonText="XXX or pick a file"
+          isDropZoneActive
+          onDrop={onDrop}
+        />
+      </Modal>
     );
   };
 
@@ -124,6 +206,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
           onCancel={() => setDeleting(false)}
         />
       }
+      {uploading && renderUploadModal()}
     </Pane>
   );
 };
