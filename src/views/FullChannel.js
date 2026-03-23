@@ -240,3 +240,4 @@ FullChannel.propTypes = {
 };
 
 export default FullChannel;
+export { onDrop }; // For testing

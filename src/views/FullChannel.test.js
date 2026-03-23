@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@folio/jest-config-stripes/testing-library/react';
-import FullChannel from './FullChannel';
+import FullChannel, { onDrop } from './FullChannel';
 
 const updateMock = jest.fn();
 const deleteRecordMock = jest.fn(() => Promise.resolve());
@@ -117,5 +117,85 @@ describe('FullChannel', () => {
     renderComponent();
     fireEvent.click(screen.getByTestId('action-menu').querySelector('[data-test-actions-menu-edit]'));
     expect(updateMock).toHaveBeenCalledWith({ _path: '1/edit' });
+  });
+});
+
+
+describe('onDrop', () => {
+  let originalFileReader;
+  let okapiKyMock;
+  let calloutMock;
+  let setUploadingMock;
+
+  beforeEach(() => {
+    originalFileReader = global.FileReader;
+    global.FileReader = jest.fn(() => {
+      return {
+        readAsText: jest.fn(function () {
+          // Immediately trigger onload
+          if (this.onload) {
+            this.onload();
+          }
+        }),
+        result: 'file content',
+        onabort: null,
+        onerror: null,
+        onload: null,
+      };
+    });
+
+    okapiKyMock = {
+      post: jest.fn().mockResolvedValue({ ok: true, status: 200, statusText: 'OK', text: jest.fn() }),
+    };
+    calloutMock = { sendCallout: jest.fn() };
+    setUploadingMock = jest.fn();
+  });
+
+  afterEach(() => {
+    global.FileReader = originalFileReader;
+    jest.resetAllMocks();
+  });
+
+  it('uploads files and sends success callout', async () => {
+    const file = new File(['dummy content'], 'testfile.txt', { type: 'text/plain' });
+
+    await onDrop([file], '123', 'myChannel', okapiKyMock, calloutMock, setUploadingMock);
+
+    // Wait a tick for async onload to complete
+    await Promise.resolve();
+
+    expect(okapiKyMock.post).toHaveBeenCalledWith(
+      'inventory-import/channels/123/upload?filename=testfile.txt',
+      expect.objectContaining({
+        body: 'file content',
+        throwHttpErrors: false,
+      })
+    );
+    expect(calloutMock.sendCallout).toHaveBeenCalledWith(
+      expect.objectContaining({
+        message: expect.any(Object),
+      })
+    );
+    expect(setUploadingMock).toHaveBeenCalledWith(false);
+  });
+
+  it('sends error callout if upload fails', async () => {
+    okapiKyMock.post.mockResolvedValueOnce({
+      ok: false,
+      status: 500,
+      statusText: 'Internal Server Error',
+      text: jest.fn().mockResolvedValue('Some error'),
+    });
+
+    const file = new File(['dummy content'], 'failfile.txt', { type: 'text/plain' });
+    await onDrop([file], '123', 'myChannel', okapiKyMock, calloutMock, setUploadingMock);
+    await Promise.resolve();
+
+    expect(calloutMock.sendCallout).toHaveBeenCalledWith(
+      expect.objectContaining({
+        type: 'error',
+        message: expect.any(Object),
+      })
+    );
   });
 });
