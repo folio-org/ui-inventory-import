@@ -7,6 +7,54 @@ import { FileUploader } from '@folio/stripes-data-transfer-components';
 import { RCKV, CKV } from '../components/CKV';
 
 
+const onDrop = (acceptedFiles, recId, channelName, okapiKy, callout, setUploading) => {
+  acceptedFiles.forEach((file) => {
+    const reader = new FileReader();
+    reader.onabort = (x) => console.error('file reading was aborted:', x); // eslint-disable-line no-console
+    reader.onerror = (x) => console.error('file reading has failed:', x); // eslint-disable-line no-console
+    reader.onload = async () => {
+      const binaryString = reader.result;
+
+      const url = `inventory-import/channels/${recId}/upload?filename=${file.name}`;
+      const res = await okapiKy.post(url, {
+        body: binaryString,
+        throwHttpErrors: false
+      });
+
+      if (res.ok) {
+        callout.sendCallout({
+          message: <FormattedMessage
+            id="ui-inventory-import.upload.success"
+            values={{
+              fileName: file.name,
+              channelName,
+            }}
+          />
+        });
+      } else {
+        callout.sendCallout({
+          type: 'error',
+          timeout: 0,
+          message: <FormattedMessage
+            id="ui-inventory-import.upload.failure"
+            values={{
+              fileName: file.name,
+              channelName,
+              status: res.status,
+              statusText: res.statusText,
+              body: await res.text(),
+            }}
+          />
+        });
+      }
+    };
+    reader.readAsText(file);
+  });
+
+  setUploading(false);
+};
+
+
 const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) => {
   const [deleting, setDeleting] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -94,53 +142,6 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
     );
   };
 
-  const onDrop = (acceptedFiles) => {
-    acceptedFiles.forEach((file) => {
-      const reader = new FileReader();
-      reader.onabort = (x) => console.error('file reading was aborted:', x); // eslint-disable-line no-console
-      reader.onerror = (x) => console.error('file reading has failed:', x); // eslint-disable-line no-console
-      reader.onload = async () => {
-        const binaryString = reader.result;
-
-        const url = `inventory-import/channels/${match.params.recId}/upload?filename=${file.name}`;
-        const res = await okapiKy.post(url, {
-          body: binaryString,
-          throwHttpErrors: false
-        });
-
-        if (res.ok) {
-          callout.sendCallout({
-            message: <FormattedMessage
-              id="ui-inventory-import.upload.success"
-              values={{
-                fileName: file.name,
-                channelName: rec.name,
-              }}
-            />
-          });
-        } else {
-          callout.sendCallout({
-            type: 'error',
-            timeout: 0,
-            message: <FormattedMessage
-              id="ui-inventory-import.upload.failure"
-              values={{
-                fileName: file.name,
-                channelName: rec.name,
-                status: res.status,
-                statusText: res.statusText,
-                body: await res.text(),
-              }}
-            />
-          });
-        }
-      };
-      reader.readAsText(file);
-    });
-
-    setUploading(false);
-  };
-
   const renderUploadModal = () => {
     return (
       <Modal
@@ -154,7 +155,7 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
           title={<FormattedMessage id="ui-inventory-import.upload.title" />}
           uploadButtonText="XXX or pick a file"
           isDropZoneActive
-          onDrop={onDrop}
+          onDrop={(acceptedFiles) => onDrop(acceptedFiles, match.params.recId, rec.name, okapiKy, callout, setUploading)}
         />
       </Modal>
     );
