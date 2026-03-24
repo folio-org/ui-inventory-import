@@ -6,7 +6,8 @@
 * [UIINIMP-25](https://folio-org.atlassian.net/browse/UIINIMP-25) Add translations for permission names.
 * [UIINIMP-26](https://folio-org.atlassian.net/browse/UIINIMP-26) Factor out common code in src/search/*SearchPane.js components.
 * [UIINIMP-21](https://folio-org.atlassian.net/browse/UIINIMP-21) Address SonarQube's complaints about code "quality".
-* [UIINIMP-27](https://folio-org.atlassian.net/browse/UIINIMP-27) Fix test of obsolete permission from Harvester. Addresses one of the two parts of the issue.
+* [UIINIMP-22](https://folio-org.atlassian.net/browse/UIINIMP-22) Write unit tests reaching the 80% coverage threshold.
+* [UIINIMP-28](https://folio-org.atlassian.net/browse/UIINIMP-28) Add ability to upload data files directly in the UI.
 
 ## [4.0.0](https://github.com/folio-org/ui-inventory-import/tree/v4.0.0) (2026-03-03)
 
