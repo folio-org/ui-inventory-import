@@ -186,6 +186,10 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
         <CKV rec={rec} tag="listening" xs={4} />
       </Row>
       <RCKV rec={resources.transformationPipeline} tag="records[0].name" i18nTag="transformationPipeline" />
+      <Row>
+        <CKV rec={rec} tag="queuedFiles" xs={4} />
+        <CKV rec={rec} tag="fileInProcess" xs={8} />
+      </Row>
       {stripes.config.showDevInfo &&
         <Accordion
           id="channel-section-devinfo"
