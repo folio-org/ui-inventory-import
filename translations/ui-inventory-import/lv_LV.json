@@ -132,5 +132,13 @@
     "permission.jobs-and-failed-records.view": "Glabātuves imports: Skatīt izpildes procesus un neveiksmīgus ierakstus",
     "permission.all": "Glabātuves imports: Visas tiesības",
     "op.delete.confirm": "Vai tiešām dzēst kanālu?",
-    "op.delete.completed": "Dzēsts kanāls <b>{name}</b>"
+    "op.delete.completed": "Dzēsts kanāls <b>{name}</b>",
+    "button.upload": "Augšupielādēt",
+    "upload.label": "Importēt failus",
+    "upload.title": "Velciet failus šeit, lai importētu",
+    "upload.buttonText": "Vai izvēlieties failu",
+    "upload.success": "Augšupielādēts <b>{fileName}</b> uz kanālu <b>{channelName}</b>",
+    "upload.failure": "Nevarēja augšupielādēt <b>{fileName}</b> uz kanālu <b>{channelName}</b>: HTTP statuss {status} ({statusText}): {body}",
+    "channels.field.queuedFiles": "Rindā ievietoto failu skaits",
+    "channels.field.fileInProcess": "Fails pašlaik tiek apstrādāts"
 }

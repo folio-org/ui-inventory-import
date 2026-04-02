@@ -132,5 +132,13 @@
     "permission.jobs-and-failed-records.view": "Katalogimport: Jobs und fehlgeschlagene Datensätze anzeigen",
     "permission.all": "Katalogimport: Alle Berechtigungen",
     "op.delete.confirm": "Kanal wirklich löschen?",
-    "op.delete.completed": "Kanal <b>{name}</b> löschen"
+    "op.delete.completed": "Kanal <b>{name}</b> löschen",
+    "button.upload": "Hochladen",
+    "upload.label": "Dateien importieren",
+    "upload.title": "Dateien zum Importieren hierhin ziehen",
+    "upload.buttonText": "Oder wählen Sie eine Datei aus",
+    "upload.success": "<b>{fileName}</b> zum Kanal <b>{channelName}</b> hochgeladen",
+    "upload.failure": "Konnte <b>{fileName}</b> nicht auf Kanal <b>{channelName}</b> hochladen: HTTP-Status {status} ({statusText}): {body}",
+    "channels.field.queuedFiles": "Anzahl der Dateien in der Warteschlange",
+    "channels.field.fileInProcess": "Gerade bearbeitete Datei"
 }

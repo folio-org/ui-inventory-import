@@ -131,6 +131,14 @@
     "permission.channels.delete": "Import katalogu: Zobrazit, upravit, vytvořit, odstranit kanály",
     "permission.jobs-and-failed-records.view": "Import katalogu: Zobrazení úloh a neúspěšných záznamů",
     "permission.all": "Import katalogu: Všechna oprávnění",
-    "op.delete.confirm": "Really delete channel?",
-    "op.delete.completed": "Deleted channel <b>{name}</b>"
+    "op.delete.confirm": "Opravdu smazat kanál?",
+    "op.delete.completed": "Kanál <b>{name}</b> smazán",
+    "button.upload": "Nahrát",
+    "upload.label": "Importovat soubory",
+    "upload.title": "Přetáhněte sem soubory pro import",
+    "upload.buttonText": "Nebo vyberte soubor",
+    "upload.success": "<b>{fileName}</b> nahrán do kanálu <b>{channelName}</b>",
+    "upload.failure": "Nepodařilo se nahrát <b>{fileName}</b> do kanálu <b>{channelName}</b>: Stav HTTP {status} ({statusText}): {body}",
+    "channels.field.queuedFiles": "Počet souborů ve frontě",
+    "channels.field.fileInProcess": "Soubor se aktuálně zpracovává"
 }
