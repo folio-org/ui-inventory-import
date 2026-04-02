@@ -132,5 +132,13 @@
     "permission.jobs-and-failed-records.view": "인벤토리 반입: 작업 및 실패한 레코드 보기",
     "permission.all": "인벤토리 반입: 모든 권한",
     "op.delete.confirm": "채널을 정말 삭제하시겠습니까?",
-    "op.delete.completed": "채널 <b>{name}</b>이(가) 삭제되었습니다."
+    "op.delete.completed": "채널 <b>{name}</b>이(가) 삭제되었습니다.",
+    "button.upload": "Upload",
+    "upload.label": "Import files",
+    "upload.title": "Drag files here to import",
+    "upload.buttonText": "Or pick a file",
+    "upload.success": "Uploaded <b>{fileName}</b> to channel <b>{channelName}</b>",
+    "upload.failure": "Could not upload <b>{fileName}</b> to channel <b>{channelName}</b>: HTTP status {status} ({statusText}): {body}",
+    "channels.field.queuedFiles": "Number of files queued",
+    "channels.field.fileInProcess": "File currently being processed"
 }
