@@ -132,5 +132,13 @@
     "permission.jobs-and-failed-records.view": "Importação de inventário: Visualizar trabalhos e registros com falha",
     "permission.all": "Importação de inventário: Todas as permissões",
     "op.delete.confirm": "Realmente excluir o canal?",
-    "op.delete.completed": "Canal excluído <b>{name}</b>"
+    "op.delete.completed": "Canal excluído <b>{name}</b>",
+    "button.upload": "Carregar",
+    "upload.label": "Arquivos de importação",
+    "upload.title": "Arraste os arquivos aqui para importar.",
+    "upload.buttonText": "Ou escolha um arquivo",
+    "upload.success": "Carregado <b>{fileName}</b> para o canal <b>{channelName}</b>",
+    "upload.failure": "Não foi possível fazer upload de <b>{fileName}</b> para o canal <b>{channelName}</b>: Status HTTP {status} ({statusText}): {body}",
+    "channels.field.queuedFiles": "Número de arquivos na fila",
+    "channels.field.fileInProcess": "Arquivo em processamento."
 }
