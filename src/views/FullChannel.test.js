@@ -9,7 +9,7 @@ jest.mock('@folio/stripes/core', () => {
   const React = require('react'); // eslint-disable-line no-shadow, global-require
 
   return {
-    useStripes: () => ({ config: {} }),
+    useStripes: () => ({ config: {}, hasPerm: () => true }),
     useOkapiKy: () => ({ post: jest.fn() }),
     CalloutContext: React.createContext({ sendCallout: jest.fn() }),
     IfPermission: ({ children }) => <>{children}</>,
@@ -41,8 +41,8 @@ jest.mock('@folio/stripes/components', () => ({
 }));
 
 jest.mock('@folio/stripes-data-transfer-components', () => ({
-  FileUploader: ({ onDrop }) => (
-    <button type="button" onClick={() => onDrop([], [])}>mock upload</button>
+  FileUploader: ({ onDrop: onDropRenamedForESLint }) => (
+    <button type="button" onClick={() => onDropRenamedForESLint([], [])}>mock upload</button>
   ),
 }));
 
@@ -131,7 +131,7 @@ describe('onDrop', () => {
     originalFileReader = global.FileReader;
     global.FileReader = jest.fn(() => {
       return {
-        readAsText: jest.fn(function () {
+        readAsText: jest.fn(function dummyNameAsRequiredByESLint() {
           // Immediately trigger onload
           if (this.onload) {
             this.onload();
