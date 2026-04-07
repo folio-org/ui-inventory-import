@@ -108,7 +108,8 @@
         "subPermissions": [
           "module.inventory-import.enabled",
           "inventory-update.import.channels.collection.get",
-          "inventory-update.import.channels.item.get"
+          "inventory-update.import.channels.item.get",
+	  "inventory-update.import.transformations.item.get"
         ],
         "visible": true
       },
