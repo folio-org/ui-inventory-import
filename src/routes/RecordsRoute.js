@@ -8,6 +8,12 @@ import Records from '../views/Records';
 const INITIAL_RESULT_COUNT = 100;
 const RESULT_COUNT_INCREMENT = 100;
 
+const sortMap = {
+  instanceHrid: 'transformedRecord.instance.hrid',
+  instanceTitle: 'transformedRecord.instance.title',
+  errors: 'recordErrors',
+};
+
 
 function RecordsRoute({ stripes, resources, mutator, children }) {
   const source = useMemo(() => {
@@ -77,7 +83,7 @@ RecordsRoute.manifest = Object.freeze({
         const queryFunction = makeQueryFunction(
           'cql.allRecords=1',
           searchableIndexes.map(index => `${index}="${qp.query}"`).join(' or '),
-          {},
+          sortMap,
           filterConfig,
           0,
           undefined,
