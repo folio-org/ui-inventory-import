@@ -96,6 +96,13 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
   }
 
   const actionMenu = ({ _onToggle }) => {
+    if (!stripes.hasPerm('inventory-update.import.channels.item.put') &&
+        !stripes.hasPerm('inventory-update.import.channels.item.delete') &&
+        !stripes.hasPerm('inventory-update.import.upload.post')) {
+      // If there are no entries in the menu, don't render an empty one
+      return null;
+    }
+
     return (
       <>
         <IfPermission perm="inventory-update.import.channels.item.put">
