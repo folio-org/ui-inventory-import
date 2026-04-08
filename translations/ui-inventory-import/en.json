@@ -103,7 +103,7 @@
     "records.field.errors": "Errors",
     "records.field.timeStamp": "Time stamp",
     "records.field.channelName": "Channel name",
-    "records.field.importJob": "Import job",
+    "records.field.importJob": "Job ID",
     "records.field.sourceFileName": "Source file name",
     "records.field.originalRecord": "Original record",
     "records.field.transformedRecord": "Transformed record",
