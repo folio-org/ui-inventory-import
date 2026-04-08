@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { useLocation, Link } from 'react-router-dom';
-import { useStripes, IfPermission, AppIcon } from '@folio/stripes/core';
+import { IfPermission, AppIcon } from '@folio/stripes/core';
 import { LoadingPane, Paneset, Pane, MultiColumnList, PaneMenu, MenuSection, Button, Icon, MCLPagingTypes } from '@folio/stripes/components';
 import { ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
 import parseSort from '../util/parseSort';
@@ -60,7 +60,6 @@ function Channels({
   children,
 }) {
   const location = useLocation();
-  const stripes = useStripes();
 
   const columnMapping = {
     name: <FormattedMessage id="ui-inventory-import.channels.column.name" />,
@@ -69,9 +68,11 @@ function Channels({
     id: <FormattedMessage id="ui-inventory-import.channels.column.id" />,
   };
 
+  /*
   if (stripes.hasPerm('inventory-update.import.import-jobs.item.get')) {
     columnMapping.jobs = <FormattedMessage id="ui-inventory-import.channels.column.jobs" />;
   }
+  */
 
   const formatter = {
     name: r => {
