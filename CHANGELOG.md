@@ -10,6 +10,8 @@
 * [UIINIMP-28](https://folio-org.atlassian.net/browse/UIINIMP-28) Add ability to upload data files directly in the UI.
 * [UIINIMP-19](https://folio-org.atlassian.net/browse/UIINIMP-19) Enhance Channels settings display with new fields.
 * [UIINIMP-31](https://folio-org.atlassian.net/browse/UIINIMP-31) Failed records detail view: Rename heading "Import job" to "Job ID".
+* [UIINIMP-18](https://folio-org.atlassian.net/browse/UIINIMP-18) Tech Council module acceptance process.
+* [UIINIMP-27](https://folio-org.atlassian.net/browse/UIINIMP-27) Get missing settings pages to appear in Eureka Snapshot.
 
 ## [4.0.0](https://github.com/folio-org/ui-inventory-import/tree/v4.0.0) (2026-03-03)
 
@@ -29,6 +31,8 @@
 * [UIINIMP-20](https://folio-org.atlassian.net/browse/UIINIMP-20) Failed Records list sometimes fails to load into the UI
 * [UIINIMP-14](https://folio-org.atlassian.net/browse/UIINIMP-14) Fix up all translations
 * [UIINIMP-15](https://folio-org.atlassian.net/browse/UIINIMP-15) Clean up old code
+* [UIINIMP-16](https://folio-org.atlassian.net/browse/UIINIMP-16) Include global permissions in package.json base permissions
+* [UIINIMP-23](https://folio-org.atlassian.net/browse/UIINIMP-23) Make initial release (v4.0.0)
 * [#12](https://github.com/folio-org/ui-inventory-import/issues/12) Add links from failed-record list to full failed records
 * [#13](https://github.com/folio-org/ui-inventory-import/issues/13) Use new WSAPI to fetch a single failed record
 * [#16](https://github.com/folio-org/ui-inventory-import/issues/16) Date filter in failed records not working as expected
