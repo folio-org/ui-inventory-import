@@ -9,6 +9,7 @@
 * [UIINIMP-22](https://folio-org.atlassian.net/browse/UIINIMP-22) Write unit tests reaching the 80% coverage threshold.
 * [UIINIMP-28](https://folio-org.atlassian.net/browse/UIINIMP-28) Add ability to upload data files directly in the UI.
 * [UIINIMP-19](https://folio-org.atlassian.net/browse/UIINIMP-19) Enhance Channels settings display with new fields.
+* [UIINIMP-31](https://folio-org.atlassian.net/browse/UIINIMP-31) Failed records detail view: Rename heading "Import job" to "Job ID".
 
 ## [4.0.0](https://github.com/folio-org/ui-inventory-import/tree/v4.0.0) (2026-03-03)
 
