@@ -127,7 +127,7 @@
     "jobs.column.started": "Started",
     "jobs.column.finished": "Finished",
     "jobs.column.type": "Type",
-    "jobs.column.message": "Message (processed/loaded/deleted(skipped)/failed)",
+    "jobs.column.message": "Message",
     "op.delete.confirm": "Really delete channel?",
     "op.delete.completed": "Deleted channel <b>{name}</b>",
     "permission.settings.view": "Inventory import (Settings): View transformation pipelines, transformation steps, channels and log-file deletion threshold",

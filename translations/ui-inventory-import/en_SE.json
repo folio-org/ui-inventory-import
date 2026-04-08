@@ -118,7 +118,7 @@
     "jobs.column.started": "Started",
     "jobs.column.finished": "Finished",
     "jobs.column.type": "Type",
-    "jobs.column.message": "Message (processed/loaded/deleted(skipped)/failed)",
+    "jobs.column.message": "Message",
     "SENTINEL": "SENTINEL",
     "no-title": "[No title]",
     "permission.settings.view": "Inventory import (Settings): View transformation pipelines, transformation steps, channels and log-file deletion threshold",
