@@ -120,6 +120,7 @@
     "step.field.script": "Script",
     "logs.countFailedRecords": "{count, number} {count, plural, one {failed record} other {failed records}}",
     "logs.countLogLiines": "{count, number} {count, plural, one {log line} other {log lines}}",
+    "jobs.column.id": "Job ID",
     "jobs.column.channelName": "Channel name",
     "jobs.column.status": "Status",
     "jobs.column.amountImported": "Records",

@@ -28,6 +28,7 @@ function Jobs({
   const formatDuration = useDurationFormatter('narrow');
 
   const columnMapping = {
+    id: <FormattedMessage id="ui-inventory-import.jobs.column.id" />,
     channelName: <FormattedMessage id="ui-inventory-import.jobs.column.channelName" />,
     status: <FormattedMessage id="ui-inventory-import.jobs.column.status" />,
     amountImported: <FormattedMessage id="ui-inventory-import.jobs.column.amountImported" />,
@@ -39,8 +40,8 @@ function Jobs({
   };
 
   const formatter = {
-    channelName: r => (
-      <Link to={`${packageInfo.stripes.route}/jobs/${r.id}${location.search}`}>{r.channelName}</Link>
+    id: r => (
+      <Link to={`${packageInfo.stripes.route}/jobs/${r.id}${location.search}`}>{r.id}</Link>
     ),
     status: r => <FormattedMessage id={`ui-inventory-import.jobs.column.status.${r.status}`} />,
     started: r => formatDateTime(r.started),
@@ -82,7 +83,6 @@ function Jobs({
                 <ColumnManager
                   id="jobs-visible-columns"
                   columnMapping={columnMapping}
-                  excludeKeys={['channelName']}
                   persist
                 >
                   {({ renderColumnsMenu, visibleColumns }) => (
