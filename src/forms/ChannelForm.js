@@ -117,9 +117,12 @@ const ChannelForm = (props) => {
               <CF tag="tag" xs={2} />
               <CF tag="name" xs={6} required />
             </Row>
-            <RCF tag="enabled" component={Checkbox} type="checkbox" />
-            <RCF tag="commissioned" component={Checkbox} type="checkbox" disabled />
             <RCF tag="listening" component={Checkbox} type="checkbox" />
+            <Row>
+              <CF tag="enabled" xs={6} component={Checkbox} type="checkbox" />
+              <CF tag="commissioned" xs={6} component={Checkbox} type="checkbox" disabled />
+            </Row>
+            <br />
             <RCF tag="transformationId" i18nTag="transformationPipeline" component={Select} dataOptions={[noValue].concat(transformationPipelines)} required />
           </form>
         </TitleManager>

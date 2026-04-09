@@ -184,13 +184,11 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
         <CKV rec={rec} tag="name" xs={6} />
       </Row>
       <Row>
-        <CKV rec={rec} tag="enabled" xs={4} />
-      </Row>
-      <Row>
-        <CKV rec={rec} tag="commissioned" xs={4} />
-      </Row>
-      <Row>
         <CKV rec={rec} tag="listening" xs={4} />
+      </Row>
+      <Row>
+        <CKV rec={rec} tag="enabled" xs={4} />
+        <CKV rec={rec} tag="commissioned" xs={4} />
       </Row>
       <RCKV rec={resources.transformationPipeline} tag="records[0].name" i18nTag="transformationPipeline" />
       <Row>
