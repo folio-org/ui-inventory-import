@@ -16,6 +16,7 @@ function ChannelsSearchPane(props) {
     searchField,
     query,
     updateQuery,
+    lastMenu,
   } = props;
   const intl = useIntl();
   const filterStruct = parseFilters(query.filters);
@@ -24,6 +25,7 @@ function ChannelsSearchPane(props) {
     <Pane
       defaultWidth={defaultWidth}
       paneTitle={<FormattedMessage id="stripes-smart-components.searchAndFilter" />}
+      lastMenu={lastMenu}
     >
       <form onSubmit={onSubmitSearch}>
         <MainSearchArea

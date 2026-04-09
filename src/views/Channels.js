@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { useLocation, Link } from 'react-router-dom';
 import { IfPermission, AppIcon } from '@folio/stripes/core';
-import { LoadingPane, Paneset, Pane, MultiColumnList, PaneMenu, MenuSection, Button, Icon, MCLPagingTypes } from '@folio/stripes/components';
+import { LoadingPane, Paneset, Pane, MultiColumnList, PaneMenu, MenuSection, Button, Icon, IconButton, MCLPagingTypes } from '@folio/stripes/components';
 import { ColumnManager, SearchAndSortQuery } from '@folio/stripes/smart-components';
 import parseSort from '../util/parseSort';
 import ChannelsSearchPane from '../search/ChannelsSearchPane';
@@ -59,6 +59,7 @@ function Channels({
   onNeedMoreData,
   children,
 }) {
+  const [showSearchPane, setShowSearchPane] = useState(false);
   const location = useLocation();
 
   const columnMapping = {
@@ -103,12 +104,15 @@ function Channels({
         (sasqParams) => {
           return (
             <Paneset id="channels-paneset" data-test-channels-paneset>
-              <ChannelsSearchPane
-                {...sasqParams}
-                defaultWidth="20%"
-                query={query}
-                updateQuery={updateQuery}
-              />
+              {showSearchPane &&
+                <ChannelsSearchPane
+                  {...sasqParams}
+                  defaultWidth="20%"
+                  query={query}
+                  updateQuery={updateQuery}
+                  lastMenu={<IconButton icon="caret-left" onClick={() => setShowSearchPane(false)} />}
+                />
+              }
               {
                 error ? <ErrorMessage message={error} /> :
                 <ColumnManager
@@ -125,6 +129,7 @@ function Channels({
                       paneTitle={<FormattedMessage id="ui-inventory-import.nav.channels" />}
                       paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: channels.length }} />}
                       actionMenu={() => renderActionsMenu(location.search, renderColumnsMenu)}
+                      firstMenu={!showSearchPane && <IconButton icon="caret-right" onClick={() => setShowSearchPane(true)} />}
                     >
                       <MultiColumnList
                         id="list-channels"
