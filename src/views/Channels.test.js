@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { cleanup, render, screen, fireEvent } from '@folio/jest-config-stripes/testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Paneset } from '@folio/stripes/components';
 import withIntlConfiguration from '../../test/jest/util/withIntlConfiguration';
 import Channels from './Channels';
@@ -50,6 +51,10 @@ describe('Channels view', () => {
     const nameCell = screen.getByText("Felix's test channel #1").closest('[role="gridcell"]');
     expect(nameCell?.nextElementSibling).toHaveTextContent('ui-inventory-import.channels.column.enabled.true');
     expect(nameCell?.nextElementSibling.nextElementSibling).toHaveTextContent('ui-inventory-import.channels.column.type.XML');
+
+    // Open search pane
+    const button = screen.getByRole('button', { name: /caret-right/i });
+    await userEvent.click(button);
 
     // Change selected filters
     expect(query.filters).toBe('enabled.true');

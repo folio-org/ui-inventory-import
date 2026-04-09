@@ -129,7 +129,7 @@ function Channels({
                       paneTitle={<FormattedMessage id="ui-inventory-import.nav.channels" />}
                       paneSub={<FormattedMessage id="ui-inventory-import.resultCount" values={{ count: channels.length }} />}
                       actionMenu={() => renderActionsMenu(location.search, renderColumnsMenu)}
-                      firstMenu={!showSearchPane && <IconButton icon="caret-right" onClick={() => setShowSearchPane(true)} />}
+                      firstMenu={showSearchPane ? null : <IconButton icon="caret-right" onClick={() => setShowSearchPane(true)} />}
                     >
                       <MultiColumnList
                         id="list-channels"
