@@ -13,6 +13,7 @@
 * [UIINIMP-18](https://folio-org.atlassian.net/browse/UIINIMP-18) Tech Council module acceptance process.
 * [UIINIMP-27](https://folio-org.atlassian.net/browse/UIINIMP-27) Get missing settings pages to appear in Eureka Snapshot.
 * [UIINIMP-30](https://folio-org.atlassian.net/browse/UIINIMP-30) Add Job ID column to the Jobs list.
+* [UIINIMP-33](https://folio-org.atlassian.net/browse/UIINIMP-32) Modify UI for enabled/commissioned/listening booleans.
 
 ## [4.0.0](https://github.com/folio-org/ui-inventory-import/tree/v4.0.0) (2026-03-03)
 
