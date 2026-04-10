@@ -58,8 +58,9 @@ function Channels({
   pageAmount,
   onNeedMoreData,
   children,
+  defaultSearchPaneOpen,
 }) {
-  const [showSearchPane, setShowSearchPane] = useState(false);
+  const [showSearchPane, setShowSearchPane] = useState(defaultSearchPaneOpen);
   const location = useLocation();
 
   const columnMapping = {

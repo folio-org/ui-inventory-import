@@ -8,7 +8,7 @@ const INITIAL_RESULT_COUNT = 100;
 const RESULT_COUNT_INCREMENT = 100;
 
 
-function ChannelsRoute({ stripes, resources, mutator, children }) {
+function ChannelsRoute({ stripes, resources, mutator, children, defaultSearchPaneOpen = true }) {
   const source = useMemo(() => {
     return new StripesConnectedSource({ resources, mutator }, stripes.logger, 'channels');
   }, [resources, mutator, stripes.logger]);
@@ -32,6 +32,7 @@ function ChannelsRoute({ stripes, resources, mutator, children }) {
       hasLoaded={hasLoaded}
       pageAmount={RESULT_COUNT_INCREMENT}
       onNeedMoreData={handleNeedMoreData}
+      defaultSearchPaneOpen={defaultSearchPaneOpen}
     >
       {children}
     </Channels>

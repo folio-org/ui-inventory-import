@@ -28,7 +28,7 @@ const InventoryImportSettings = (props) => {
     {
       route: 'channels',
       label: <FormattedMessage id="ui-inventory-import.settings.channels" />,
-      component: ChannelsRoute,
+      component: (props2) => <ChannelsRoute {...props2} defaultSearchPaneOpen={false} />,
       perm: 'inventory-update.import.channels.collection.get',
     },
     {
