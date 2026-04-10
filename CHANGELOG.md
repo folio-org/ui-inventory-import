@@ -15,6 +15,7 @@
 * [UIINIMP-30](https://folio-org.atlassian.net/browse/UIINIMP-30) Add Job ID column to the Jobs list.
 * [UIINIMP-33](https://folio-org.atlassian.net/browse/UIINIMP-33) Modify UI for enabled/commissioned/listening booleans.
 * [UIINIMP-32](https://folio-org.atlassian.net/browse/UIINIMP-32) Make channels search/filter pane collapsible (default open in main app, closed in settings).
+* [UIINIMP-35](https://folio-org.atlassian.net/browse/UIINIMP-35) Jobs > Duration is reported as "< 1s" for very short runs.
 
 ## [4.0.0](https://github.com/folio-org/ui-inventory-import/tree/v4.0.0) (2026-03-03)
 
