@@ -79,6 +79,12 @@ ChannelsRoute.manifest = Object.freeze({
             rightTrunc: false,
           }
         );
+
+        // Default sort-order when none is specified (UIINIMP-36)
+        if (!rv.query || !rv.query.sort) {
+          rv = { ...rv, query: { ...rv.query, sort: 'name' } };
+        }
+
         return queryFunction(qp, pathComponents, rv, logger);
       },
     },
@@ -113,7 +119,7 @@ ChannelsRoute.propTypes = {
       update: PropTypes.func.isRequired,
     }).isRequired,
   }).isRequired,
-  children: PropTypes.object.isRequired,
+  children: PropTypes.object,
 };
 
 

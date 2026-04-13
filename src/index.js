@@ -27,7 +27,9 @@ const InventoryImportApp = (props) => {
   }
 
   // Don't redirect to a page we don't have permission to view: see Tabs.js
-  const dest = stripes.hasPerm('inventory-update.import.channels.collection.get') ? 'channels' : 'jobs';
+  const dest = stripes.hasPerm('inventory-update.import.channels.collection.get') ?
+    'channels?sort=name' : // Keep aligned with Tabs.js
+    'jobs?sort=-started'; // Keep aligned with Tabs.js
 
   return (
     <div className={css.container}>

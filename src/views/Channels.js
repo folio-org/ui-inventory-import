@@ -93,7 +93,7 @@ function Channels({
   };
 
   const channels = data.channels;
-  const sortKeys = parseSort(query.sort);
+  const sortKeys = parseSort(query.sort || 'name');
   const sortedColumn = sortKeys[0]?.key;
   const sortDirection = sortKeys[0]?.descending ? 'descending' : 'ascending';
 
