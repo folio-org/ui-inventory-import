@@ -140,5 +140,9 @@
     "upload.success": "<b>{fileName}</b> zum Kanal <b>{channelName}</b> hochgeladen",
     "upload.failure": "Konnte <b>{fileName}</b> nicht auf Kanal <b>{channelName}</b> hochladen: HTTP-Status {status} ({statusText}): {body}",
     "channels.field.queuedFiles": "Anzahl der Dateien in der Warteschlange",
-    "channels.field.fileInProcess": "Gerade bearbeitete Datei"
+    "channels.field.fileInProcess": "Gerade bearbeitete Datei",
+    "jobs.column.id": "Job ID",
+    "channels.field.listening.help": "When this is checked (and the channel is enabled) the channel will pick up any uploaded files from the queue and import them to inventory. If unchecked, uploaded files will just accumulate in the queue for later.",
+    "channels.field.commissioned.help": "This read-only field indicates whether the channel is commissioned and processing the files in its queue.",
+    "lessThanOneSecond": "< 1s"
 }

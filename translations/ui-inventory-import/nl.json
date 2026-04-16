@@ -140,5 +140,9 @@
     "upload.success": "Uploaden <b>.{fileName}</b> naar kanaal <b>{channelName}</b>",
     "upload.failure": "Kon <b> niet Uploaden{fileName}</b> naar kanaal <b>{channelName}</b>: HTTP-status {status} ({statusText}): {body}",
     "channels.field.queuedFiles": "Aantal bestanden in de wachtrij",
-    "channels.field.fileInProcess": "Bestand in behandeling"
+    "channels.field.fileInProcess": "Bestand in behandeling",
+    "jobs.column.id": "Job ID",
+    "channels.field.listening.help": "When this is checked (and the channel is enabled) the channel will pick up any uploaded files from the queue and import them to inventory. If unchecked, uploaded files will just accumulate in the queue for later.",
+    "channels.field.commissioned.help": "This read-only field indicates whether the channel is commissioned and processing the files in its queue.",
+    "lessThanOneSecond": "< 1s"
 }
