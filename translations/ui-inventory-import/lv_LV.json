@@ -140,5 +140,9 @@
     "upload.success": "Augšupielādēts <b>{fileName}</b> uz kanālu <b>{channelName}</b>",
     "upload.failure": "Nevarēja augšupielādēt <b>{fileName}</b> uz kanālu <b>{channelName}</b>: HTTP statuss {status} ({statusText}): {body}",
     "channels.field.queuedFiles": "Rindā ievietoto failu skaits",
-    "channels.field.fileInProcess": "Fails pašlaik tiek apstrādāts"
+    "channels.field.fileInProcess": "Fails pašlaik tiek apstrādāts",
+    "jobs.column.id": "Job ID",
+    "channels.field.listening.help": "When this is checked (and the channel is enabled) the channel will pick up any uploaded files from the queue and import them to inventory. If unchecked, uploaded files will just accumulate in the queue for later.",
+    "channels.field.commissioned.help": "This read-only field indicates whether the channel is commissioned and processing the files in its queue.",
+    "lessThanOneSecond": "< 1s"
 }

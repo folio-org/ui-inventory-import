@@ -140,5 +140,9 @@
     "upload.success": "Завантажено <b>{fileName}</b> до каналу <b>{channelName}</b>",
     "upload.failure": "Не вдалося завантажити <b>{fileName}</b> до каналу <b>{channelName}</b>: Статус HTTP {status} ({statusText}): {body}",
     "channels.field.queuedFiles": "Кількість файлів у черзі",
-    "channels.field.fileInProcess": "Файл наразі обробляється"
+    "channels.field.fileInProcess": "Файл наразі обробляється",
+    "jobs.column.id": "Job ID",
+    "channels.field.listening.help": "When this is checked (and the channel is enabled) the channel will pick up any uploaded files from the queue and import them to inventory. If unchecked, uploaded files will just accumulate in the queue for later.",
+    "channels.field.commissioned.help": "This read-only field indicates whether the channel is commissioned and processing the files in its queue.",
+    "lessThanOneSecond": "< 1s"
 }
