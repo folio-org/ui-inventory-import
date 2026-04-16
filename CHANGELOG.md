@@ -1,6 +1,6 @@
 # Change history for ui-inventory-import
 
-## [4.1.0](https://github.com/folio-org/ui-inventory-import/tree/v4.1.0) (IN PROGRESS)
+## [4.1.0](https://github.com/folio-org/ui-inventory-import/tree/v4.1.0) (2026-04-16)
 
 * [UIINIMP-11](https://folio-org.atlassian.net/browse/UIINIMP-11) Align permissions names with Eureka conventions.
 * [UIINIMP-25](https://folio-org.atlassian.net/browse/UIINIMP-25) Add translations for permission names.

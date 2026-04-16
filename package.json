@@ -1,6 +1,6 @@
 {
   "name": "@folio/inventory-import",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Admin console for FOLIO's Inventory Import facility",
   "repository": "https://github.com/folio-org/ui-inventory-import",
   "license": "Apache-2.0",
