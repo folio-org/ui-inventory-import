@@ -83,6 +83,7 @@ function Jobs({
                 <ColumnManager
                   id="jobs-visible-columns"
                   columnMapping={columnMapping}
+                  excludeKeys={['id']}
                   persist
                 >
                   {({ renderColumnsMenu, visibleColumns }) => (

@@ -3,6 +3,7 @@
 ## [4.1.1](https://github.com/folio-org/ui-inventory-import/tree/v4.1.1) (IN PROGRESS)
 
 * [UIINIMP-57](https://folio-org.atlassian.net/browse/UIINIMP-57) The number of files queued shows as `<NoValue>` rather than -1 when the channel is not commissioned.
+* [UIINIMP-50](https://folio-org.atlassian.net/browse/UIINIMP-50) In the Jobs list, the ID column can no longer be hidden.
 
 ## [4.1.0](https://github.com/folio-org/ui-inventory-import/tree/v4.1.0) (2026-04-16)
 
