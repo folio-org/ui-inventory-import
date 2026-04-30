@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { CalloutContext, IfPermission, useStripes, useOkapiKy } from '@folio/stripes/core';
-import { Loading, Pane, Row, Accordion, Button, Icon, ConfirmationModal, Modal } from '@folio/stripes/components';
+import { Loading, Pane, Row, NoValue, Accordion, Button, Icon, ConfirmationModal, Modal } from '@folio/stripes/components';
 import { FileUploader } from '@folio/stripes-data-transfer-components';
 import { RCKV, CKV } from '../components/CKV';
 
@@ -192,7 +192,12 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
       </Row>
       <RCKV rec={resources.transformationPipeline} tag="records[0].name" i18nTag="transformationPipeline" />
       <Row>
-        <CKV rec={rec} tag="queuedFiles" xs={4} />
+        <CKV
+          rec={rec}
+          tag="queuedFiles"
+          xs={4}
+          formatFn={(val) => (val < 0 ? <NoValue /> : val)}
+        />
         <CKV rec={rec} tag="fileInProcess" xs={8} />
       </Row>
       {stripes.config.showDevInfo &&

@@ -4,12 +4,16 @@ import get from 'lodash/get';
 import { FormattedMessage } from 'react-intl';
 import { Row, Col, KeyValue } from '@folio/stripes/components';
 
-export const CKV = ({ rec, tag, i18nTag, xs }) => {
+export const CKV = ({ rec, tag, i18nTag, xs, formatFn = x => x }) => {
   let value = get(rec, tag);
   if (value === true) {
     value = '✅';
   } else if (value === false) {
     value = '❌';
+  }
+
+  if (formatFn) {
+    value = formatFn(value);
   }
 
   return (
