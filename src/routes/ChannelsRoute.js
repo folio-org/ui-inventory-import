@@ -82,6 +82,7 @@ ChannelsRoute.manifest = Object.freeze({
 
         // Default sort-order when none is specified (UIINIMP-36)
         if (!rv.query || !rv.query.sort) {
+          // eslint-disable-next-line no-param-reassign
           rv = { ...rv, query: { ...rv.query, sort: 'name' } };
         }
 
