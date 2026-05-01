@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import ObjectInspector from 'react-inspector';
+import { ObjectInspector } from 'react-inspector';
 import { useStripes } from '@folio/stripes/core';
 import { Loading, MultiColumnList, Accordion } from '@folio/stripes/components';
 import { errors2react } from '../../util/summarizeErrors';
