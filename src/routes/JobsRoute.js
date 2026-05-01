@@ -95,7 +95,7 @@ JobsRoute.manifest = Object.freeze({
     records: 'importJobs',
     throwErrors: false,
     resultDensity: 'sparse',
-    recordsRequired: '%{resultCount}',
+    resultOffset: '%{resultOffset}',
     perRequest: RESULT_COUNT_INCREMENT,
     params: {
       query: (qp, pathComponents, rv, logger) => {
