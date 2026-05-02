@@ -142,7 +142,7 @@
     "channels.field.queuedFiles": "Anzahl der Dateien in der Warteschlange",
     "channels.field.fileInProcess": "Gerade bearbeitete Datei",
     "jobs.column.id": "Job ID",
-    "channels.field.listening.help": "When this is checked (and the channel is enabled) the channel will pick up any uploaded files from the queue and import them to inventory. If unchecked, uploaded files will just accumulate in the queue for later.",
-    "channels.field.commissioned.help": "This read-only field indicates whether the channel is commissioned and processing the files in its queue.",
+    "channels.field.listening.help": "Wenn diese Option aktiviert ist (und der Kanal aktiviert ist), nimmt der Kanal alle hochgeladenen Dateien aus der Warteschlange auf und importiert sie in den Katalog. Wenn diese Option nicht aktiviert ist, werden die hochgeladenen Dateien einfach in der Warteschlange für später gesammelt.",
+    "channels.field.commissioned.help": "Dieses schreibgeschützte Feld zeigt an, ob der Kanal in Betrieb ist (commissioned) und die Dateien in seiner Warteschlange verarbeitet.",
     "lessThanOneSecond": "< 1s"
 }

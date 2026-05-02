@@ -81,7 +81,7 @@
     "channels.field.transformationPipeline": "Transformatie pijplijn",
     "channels.field.transformationPipeline.help": "Selecteer de Transformatie pijplijn Vereist om het input formaat geleverd aan dit kanaal te wijzigen in het interne formaat gebruikt door het Collectiebezit Update proces. Zie Transformatie pijplijnen in de instellingen voor meer details.",
     "jobs.caption.notComplete": "Functie is niet voltooid",
-    "jobs.caption.completed": "Geïmporteerd {count} records in {duration}",
+    "jobs.caption.completed": "{count, number} {count, plural, one {record} other {records}} in {duration} geïmporteerd",
     "jobs.field.transformationPipeline": "Transformatie pijplijn",
     "jobs.field.channelName": "Kanaalnaam",
     "pause.success": "Kanaal {channelName} is gepauzeerd",
@@ -141,8 +141,8 @@
     "upload.failure": "Kon <b> niet Uploaden{fileName}</b> naar kanaal <b>{channelName}</b>: HTTP-status {status} ({statusText}): {body}",
     "channels.field.queuedFiles": "Aantal bestanden in de wachtrij",
     "channels.field.fileInProcess": "Bestand in behandeling",
-    "jobs.column.id": "Job ID",
-    "channels.field.listening.help": "When this is checked (and the channel is enabled) the channel will pick up any uploaded files from the queue and import them to inventory. If unchecked, uploaded files will just accumulate in the queue for later.",
-    "channels.field.commissioned.help": "This read-only field indicates whether the channel is commissioned and processing the files in its queue.",
+    "jobs.column.id": "Functie ID",
+    "channels.field.listening.help": "Wanneer dit is aangevinkt (en het kanaal is ingeschakeld) zal het kanaal alle geüploade bestanden uit de wachtrij ophalen en importeren in de Collectiebezit. Als dit niet is aangevinkt, zullen de geüploade bestanden in de wachtrij blijven staan voor later.",
+    "channels.field.commissioned.help": "Dit alleen-lezen veld geeft aan of het kanaal in gebruik is en de bestanden in de wachtrij verwerkt.",
     "lessThanOneSecond": "< 1s"
 }
