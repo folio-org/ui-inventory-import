@@ -61,7 +61,7 @@ const StepForm = (props) => {
     <Pane
       data-testid="pane"
       centerContent
-      defaultWidth="60%"
+      defaultWidth="fill"
       footer={renderPaneFooter(handleSubmit, onCancel, pristine, submitting)}
       id="pane-step-form"
       paneTitle={title}

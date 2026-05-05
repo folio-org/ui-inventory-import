@@ -39,7 +39,7 @@ const PipelineForm = (props) => {
     <Pane
       data-testid="pane-pipeline-form"
       centerContent
-      defaultWidth="60%"
+      defaultWidth="fill"
       footer={renderPaneFooter(handleSubmit, onCancel, pristine, submitting)}
       id="pane-pipeline-form"
       paneTitle={title}

@@ -102,7 +102,7 @@ const ChannelForm = (props) => {
         data-test-channel-form-pane
         appIcon={<AppIcon app="inventory-import" />}
         centerContent
-        defaultWidth="60%"
+        defaultWidth="fill"
         footer={renderPaneFooter()}
         id="pane-channel-form"
         paneTitle={title}
