@@ -47,7 +47,7 @@ const FullJob = (props) => {
         data-test-full-record-pane
         appIcon={<AppIcon app="inventory-import" />}
         centerContent
-        defaultWidth="60%"
+        defaultWidth="fill"
         id="pane-full-job"
         paneTitle={paneTitle}
         dismissible

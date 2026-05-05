@@ -7,7 +7,7 @@ import FullChannel from '../views/FullChannel';
 const FullChannelRoute = (props) => {
   const deleteRecord = () => props.mutator.channel.DELETE({ id: props.match.params.recId });
 
-  return <FullChannel {...props} defaultWidth="60%" deleteRecord={deleteRecord} />;
+  return <FullChannel {...props} defaultWidth="fill" deleteRecord={deleteRecord} />;
 };
 
 
