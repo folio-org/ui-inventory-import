@@ -1,11 +1,12 @@
 # Change history for ui-inventory-import
 
-## [4.1.1](https://github.com/folio-org/ui-inventory-import/tree/v4.1.1) (IN PROGRESS)
+## [4.1.1](https://github.com/folio-org/ui-inventory-import/tree/v4.1.1) (2026-05-08)
 
 * [UIINIMP-57](https://folio-org.atlassian.net/browse/UIINIMP-57) The number of files queued shows as `<NoValue>` rather than -1 when the channel is not commissioned.
 * [UIINIMP-50](https://folio-org.atlassian.net/browse/UIINIMP-50) In the Jobs list, the ID column can no longer be hidden.
 * [UIINIMP-59](https://folio-org.atlassian.net/browse/UIINIMP-59) Correctly import ObjectInspector..
 * [UIINIMP-37](https://folio-org.atlassian.net/browse/UIINIMP-37) Fix paging of Jobs list.
+* [UIINIMP-38](https://folio-org.atlassian.net/browse/UIINIMP-38) Full-channel Action button never renders offscreen.
 
 ## [4.1.0](https://github.com/folio-org/ui-inventory-import/tree/v4.1.0) (2026-04-16)
 
