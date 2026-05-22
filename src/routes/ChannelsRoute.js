@@ -40,9 +40,6 @@ function ChannelsRoute({ stripes, resources, mutator, children, defaultSearchPan
 }
 
 
-// Keep these in sync with what's in ../search/ChannelsSearchPane.js
-const searchableIndexes = ['name', 'id'];
-
 const filterConfig = [{
   name: 'enabled',
   cql: 'enabled',
@@ -70,7 +67,7 @@ ChannelsRoute.manifest = Object.freeze({
       query: (qp, pathComponents, rv, logger) => {
         const queryFunction = makeQueryFunction(
           'cql.allRecords=1',
-          searchableIndexes.map(index => `${index}="${qp.query}"`).join(' or '),
+          '*** cannot happen ***',
           {},
           filterConfig,
           0,
@@ -84,6 +81,12 @@ ChannelsRoute.manifest = Object.freeze({
         if (!rv.query || !rv.query.sort) {
           // eslint-disable-next-line no-param-reassign
           rv = { ...rv, query: { ...rv.query, sort: 'name' } };
+        }
+
+        // Default index when none is specified (UIINIMP-62)
+        if (!rv.query || !rv.query.qindex) {
+          // eslint-disable-next-line no-param-reassign
+          rv = { ...rv, query: { ...rv.query, qindex: 'name' } };
         }
 
         return queryFunction(qp, pathComponents, rv, logger);
@@ -120,7 +123,10 @@ ChannelsRoute.propTypes = {
       update: PropTypes.func.isRequired,
     }).isRequired,
   }).isRequired,
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]),
 };
 
 
