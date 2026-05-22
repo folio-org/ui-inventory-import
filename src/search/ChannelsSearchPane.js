@@ -30,7 +30,7 @@ function ChannelsSearchPane(props) {
       <form onSubmit={onSubmitSearch}>
         <MainSearchArea
           type="channels"
-          indexes={['', 'name', 'id']}
+          indexes={['name', 'id']}
           searchValue={searchValue}
           searchField={searchField}
           getSearchHandlers={getSearchHandlers}
