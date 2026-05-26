@@ -86,7 +86,7 @@ describe('Records view', () => {
     expect(exportButton).toBeInTheDocument();
     await fireEvent.click(exportButton);
 
-    const transformedFailedRecordsData = failedRecordsData.map(r => ({ ...r, errors: errors2string(r.recordErrors), originalRecord: undefined }));
+    const transformedFailedRecordsData = failedRecordsData.map(r => ({ ...r, errors: errors2string(r.recordErrors) }));
     await waitFor(() => {
       expect(exportedRecords).toEqual(transformedFailedRecordsData);
     });
