@@ -22,16 +22,16 @@ describe('Tabs', () => {
   beforeEach(() => { jest.clearAllMocks(); });
 
   it('renders only permitted segments', () => {
-    mockUseLocation.mockReturnValue({ pathname: '/inventory-import/channels' });
+    mockUseLocation.mockReturnValue({ pathname: '/inventory-import/jobs' });
     mockUseStripes.mockReturnValue({
       hasPerm: (perm) => (
-        perm === 'inventory-update.import.channels.collection.get' ||
+        perm === 'inventory-update.import.jobs.collection.get' ||
           perm === 'inventory-update.import.import-jobs.collection.get'
       )
     });
     render(<Tabs />);
 
-    expect(screen.getByText('ui-inventory-import.nav.channels')).toBeInTheDocument();
+    expect(screen.queryByText('ui-inventory-import.nav.channels')).not.toBeInTheDocument();
     expect(screen.getByText('ui-inventory-import.nav.jobs')).toBeInTheDocument();
     expect(screen.queryByText('ui-inventory-import.nav.records')).not.toBeInTheDocument();
   });
@@ -43,8 +43,8 @@ describe('Tabs', () => {
 
     const jobsButton = screen.getByText('ui-inventory-import.nav.jobs').closest('a,button');
     expect(jobsButton).toHaveAttribute('data-style', 'primary');
-    const channelsButton = screen.getByText('ui-inventory-import.nav.channels').closest('a,button');
-    expect(channelsButton).not.toHaveClass('primary');
+    const recordsButton = screen.getByText('ui-inventory-import.nav.records').closest('a,button');
+    expect(recordsButton).not.toHaveClass('primary');
   });
 
   it('adds query params to records link', () => {

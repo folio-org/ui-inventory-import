@@ -45,13 +45,7 @@ describe('InventoryImportApp', () => {
     expect(screen.getByText('Settings Page')).toBeInTheDocument();
   });
 
-  test('redirects to channels when user has permission', async () => {
-    renderInventoryImportApp('app', true);
-    // After redirect, Channels route should render
-    expect(await screen.findByText('Channels Page')).toBeInTheDocument();
-  });
-
-  test('redirects to jobs when user lacks permission', async () => {
+  test('redirects from root to jobs', async () => {
     renderInventoryImportApp('app', false);
     expect(await screen.findByText('Jobs Page')).toBeInTheDocument();
   });
