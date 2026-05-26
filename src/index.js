@@ -16,20 +16,11 @@ import css from './index.css';
 
 
 const InventoryImportApp = (props) => {
-  const {
-    actAs,
-    stripes,
-    match: { path }
-  } = props;
+  const { actAs, match: { path } } = props;
 
   if (actAs === 'settings') {
     return <Settings {...props} />;
   }
-
-  // Don't redirect to a page we don't have permission to view: see Tabs.js
-  const dest = stripes.hasPerm('inventory-update.import.channels.collection.get') ?
-    'channels?sort=name' : // Keep aligned with Tabs.js
-    'jobs?sort=-started'; // Keep aligned with Tabs.js
 
   return (
     <div className={css.container}>
@@ -38,7 +29,7 @@ const InventoryImportApp = (props) => {
       </div>
       <div className={css.body}>
         <Switch>
-          <Redirect exact from={path} to={`${path}/${dest}`} />
+          <Redirect exact from={path} to={`${path}/jobs?sort=-started`} />
           <NestedRoute path={`${path}/channels/create/:type`} exact component={CreateChannelRoute} />
           <NestedRoute path={`${path}/channels/:recId/jobs`} exact component={JobsRoute} />
           <NestedRoute path={`${path}/channels`} component={ChannelsRoute}>

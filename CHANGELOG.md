@@ -3,6 +3,7 @@
 ## [4.1.2](https://github.com/folio-org/ui-inventory-import/tree/v4.1.2) (IN PROGRESS)
 
 * [UIINIMP-62](https://folio-org.atlassian.net/browse/UIINIMP-62) Remove "(All)" search in Channels, default to "Name".
+* [UIINIMP-42](https://folio-org.atlassian.net/browse/UIINIMP-42) Remove Channels tab from main app, leaving it only in settings.
 
 ## [4.1.1](https://github.com/folio-org/ui-inventory-import/tree/v4.1.1) (2026-05-08)
 
