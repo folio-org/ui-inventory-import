@@ -15,10 +15,6 @@ function SwitchRoute() {
   const isoString = yesterday.toISOString().substring(0, 10);
 
   const segments = [{
-    name: 'channels',
-    perm: 'inventory-update.import.channels.collection.get',
-    params: 'sort=name'
-  }, {
     name: 'jobs',
     perm: 'inventory-update.import.import-jobs.collection.get',
     params: 'sort=-started'
