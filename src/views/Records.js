@@ -28,7 +28,6 @@ function exportAllRecords(resultCount, okapiKy) {
       .filter(r => r !== undefined).map(r => ({
         ...r,
         errors: errors2string(r.recordErrors),
-        originalRecord: undefined,
       }));
 
     exportToCsv(records, {});
