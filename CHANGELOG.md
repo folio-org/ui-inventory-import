@@ -1,6 +1,6 @@
 # Change history for ui-inventory-import
 
-## [4.1.2](https://github.com/folio-org/ui-inventory-import/tree/v4.1.2) (IN PROGRESS)
+## [4.1.2](https://github.com/folio-org/ui-inventory-import/tree/v4.1.2) (2026-06-01)
 
 * [UIINIMP-62](https://folio-org.atlassian.net/browse/UIINIMP-62) Remove "(All)" search in Channels, default to "Name".
 * [UIINIMP-42](https://folio-org.atlassian.net/browse/UIINIMP-42) Remove Channels tab from main app, leaving it only in settings.
