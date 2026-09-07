@@ -4,4 +4,5 @@ artifacts
 junit.xml
 node_modules
 run-sonar
+tenant-assets
 yarn.lock
