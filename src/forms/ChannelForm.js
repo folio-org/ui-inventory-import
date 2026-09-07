@@ -2,13 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import arrayMutators from 'final-form-arrays';
-import { Row, Checkbox, Select, HasCommand, Button, LoadingPane, NoValue, Pane, PaneFooter, checkScope } from '@folio/stripes/components';
+import { Row, Checkbox, Select, HasCommand, Button, LoadingPane, Pane, PaneFooter, checkScope } from '@folio/stripes/components';
 import { AppIcon, TitleManager } from '@folio/stripes/core';
 import stripesFinalForm from '@folio/stripes/final-form';
 import { isEqual } from 'lodash';
 import setFieldData from 'final-form-set-field-data'; // XXX do we need this?
 import { RCF, CF } from '../components/CF';
-import { CKV } from '../components/CKV';
+
+
+// A negative queued-file count means "unknown": render it the same way as
+// <NoValue /> does in the full-channel display, but within the disabled field.
+const formatQueuedFiles = (val) => (val < 0 ? '-' : val);
 
 
 const handleKeyCommand = (handler, { disabled } = {}) => {
@@ -126,9 +130,7 @@ const ChannelForm = (props) => {
             <br />
             <RCF tag="transformationId" i18nTag="transformationPipeline" component={Select} dataOptions={[noValue].concat(transformationPipelines)} required />
             <Row>
-              {values.queuedFiles < 0 ?
-                <CKV rec={values} tag="queuedFiles" xs={6} formatFn={() => <NoValue />} /> :
-                <CF tag="queuedFiles" xs={6} disabled />}
+              <CF tag="queuedFiles" xs={6} disabled format={formatQueuedFiles} />
               <CF tag="fileInProcess" xs={6} disabled />
             </Row>
           </form>
