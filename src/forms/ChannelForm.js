@@ -124,6 +124,10 @@ const ChannelForm = (props) => {
             </Row>
             <br />
             <RCF tag="transformationId" i18nTag="transformationPipeline" component={Select} dataOptions={[noValue].concat(transformationPipelines)} required />
+            <Row>
+              <CF tag="queuedFiles" xs={6} disabled />
+              <CF tag="fileInProcess" xs={6} disabled />
+            </Row>
           </form>
         </TitleManager>
       </Pane>

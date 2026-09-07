@@ -1,5 +1,9 @@
 # Change history for ui-inventory-import
 
+## (IN PROGRESS)
+
+* [UIINIMP-67](https://folio-org.atlassian.net/browse/UIINIMP-67) Show Number of files queued/File currently being processed in edit form (read-only).
+
 ## [4.1.2](https://github.com/folio-org/ui-inventory-import/tree/v4.1.2) (2026-06-01)
 
 * [UIINIMP-62](https://folio-org.atlassian.net/browse/UIINIMP-62) Remove "(All)" search in Channels, default to "Name".
