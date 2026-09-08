@@ -184,11 +184,16 @@ const FullChannel = ({ defaultWidth, resources, mutator, match, deleteRecord }) 
         <CKV rec={rec} tag="name" xs={6} />
       </Row>
       <Row>
-        <CKV rec={rec} tag="listening" xs={4} />
+        <CKV rec={rec} tag="listening" xs={6} />
       </Row>
       <Row>
-        <CKV rec={rec} tag="enabled" xs={4} />
-        <CKV rec={rec} tag="commissioned" xs={4} />
+        <CKV rec={rec} tag="enabled" xs={6} />
+        <CKV rec={rec} tag="commissioned" xs={6} />
+      </Row>
+      <Row>
+        <CKV rec={rec} tag="harvestUrl" xs={6} />
+        {/* XXX think about timezones and localization */}
+        <CKV rec={rec} tag="lastHarvested" xs={6} />
       </Row>
       <RCKV rec={resources.transformationPipeline} tag="records[0].name" i18nTag="transformationPipeline" />
       <Row>

@@ -90,6 +90,8 @@
     "channels.field.commissioned.help": "This read-only field indicates whether the channel is commissioned and processing the files in its queue.",
     "channels.field.transformationPipeline": "Transformation pipeline",
     "channels.field.transformationPipeline.help": "Select the transformation pipeline required to change the input format delivered to this channel into the internal format used by the the Inventory Update process. See Transformation Pipelines in the settings for more details.",
+    "channels.field.harvestUrl": "Harvest URL",
+    "channels.field.lastHarvested": "Last harvested time, date",
     "channels.field.queuedFiles": "Number of files queued",
     "channels.field.fileInProcess": "File currently being processed",
     "jobs.caption.notComplete": "Job is not complete",
