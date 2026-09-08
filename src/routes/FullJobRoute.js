@@ -44,7 +44,7 @@ FullJobRoute.manifest = Object.freeze({
   },
   logs: {
     type: 'okapi',
-    path: 'inventory-import/job-logs?query=importJobId=:{recId}',
+    path: 'inventory-import/job-logs?query=importJobId=:{recId} sortby timeStamp/sort.descending',
   },
   failedRecords: {
     type: 'okapi',
