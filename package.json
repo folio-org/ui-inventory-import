@@ -6,7 +6,8 @@
   "license": "Apache-2.0",
   "main": "src/index.js",
   "scripts": {
-    "start": "stripes serve --startProxy --port 3003 --okapi https://snapshot-dev-okapi.folio-dev.indexdata.com --tenant harvester",
+    "start": "stripes serve --startProxy --port 3011 --okapi https://harvester-dev-okapi.folio-dev.indexdata.com --tenant harvester",
+    "start-snapshot": "stripes serve --startProxy --port 3004 --okapi https://folio-snapshot-okapi.dev.folio.org --tenant diku",
     "test": "env DEBUG_PRINT_LIMIT=100000 jest --coverage --verbose",
     "lint": "eslint -f unix .",
     "qlint": "eslint -f unix  --rule '{\"no-console\":\"off\"}' .",
