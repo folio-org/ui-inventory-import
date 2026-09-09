@@ -21,6 +21,7 @@ const FullJobRoute = ({ resources, mutator }) => {
         onClose: handleClose,
         pause: () => mutator.pause.POST({}),
         resume: () => mutator.resume.POST({}),
+        skip: () => mutator.skip.POST({}),
       }}
       updateQuery={mutator.query.update}
     />
@@ -66,6 +67,16 @@ FullJobRoute.manifest = Object.freeze({
       const channelId = res.job.records?.[0]?.channelId;
       if (channelId === undefined) return undefined;
       return `inventory-import/channels/${channelId}/resume-job`;
+    },
+    fetch: false,
+    throwErrors: false,
+  },
+  skip: {
+    type: 'okapi',
+    path: (_qp, _pc, res) => {
+      const channelId = res.job.records?.[0]?.channelId;
+      if (channelId === undefined) return undefined;
+      return `inventory-import/channels/${channelId}/resume-job?skipCurrentFile=true`;
     },
     fetch: false,
     throwErrors: false,

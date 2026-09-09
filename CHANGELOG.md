@@ -6,6 +6,7 @@
 * [UIINIMP-66](https://folio-org.atlassian.net/browse/UIINIMP-66) Add new fields to view/edit Channel: Harvest URL, and Last harvested.
 * [UIINIMP-53](https://folio-org.atlassian.net/browse/UIINIMP-53) Reverse log lines in Job tab: reverse chronological.
 * [UIINIMP-68](https://folio-org.atlassian.net/browse/UIINIMP-68) Channel type is consistently "XML", not "XML bulk".
+* [UIINIMP-51](https://folio-org.atlassian.net/browse/UIINIMP-51) Allow paused jobs to skip the blocking file.
 
 ## [4.1.2](https://github.com/folio-org/ui-inventory-import/tree/v4.1.2) (2026-06-01)
 

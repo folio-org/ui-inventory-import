@@ -110,6 +110,30 @@ const FullJob = (props) => {
     });
   }
 
+  async function skipJob() {
+    try {
+      await handlers.skip(true);
+    } catch (response) {
+      const body = await response.text();
+      callout.sendCallout({
+        type: 'error',
+        message: <FormattedMessage
+          id="ui-inventory-import.skip.failure"
+          values={{
+            channelName: record.channelName,
+            status: response.status,
+            body,
+          }}
+        />
+      });
+      return;
+    }
+
+    callout.sendCallout({
+      message: <FormattedMessage id="ui-inventory-import.skip.success" values={{ channelName: record.channelName }} />
+    });
+  }
+
   return (
     <HasCommand commands={shortcuts} isWithinScope={checkScope} scope={document.body}>
       <Pane
@@ -155,6 +179,15 @@ const FullJob = (props) => {
                   marginBottom0
                 >
                   <FormattedMessage id="ui-inventory-import.button.resume" />
+                </Button>
+              )}
+              {status === 'PAUSED' && (
+                <Button
+                  id="clickable-skip"
+                  onClick={skipJob}
+                  marginBottom0
+                >
+                  <FormattedMessage id="ui-inventory-import.button.skip" />
                 </Button>
               )}
             </p>
@@ -217,6 +250,7 @@ FullJob.propTypes = {
     onClose: PropTypes.func.isRequired,
     pause: PropTypes.func.isRequired,
     resume: PropTypes.func.isRequired,
+    skip: PropTypes.func.isRequired,
   }),
 };
 
