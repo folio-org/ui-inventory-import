@@ -35,7 +35,7 @@
     "button.jobs": "Jobs",
     "button.pause": "Pause",
     "button.resume": "Resume",
-    "button.skip": "Skip",
+    "button.skip": "Resume from next file",
     "button.upload": "Upload",
     "upload.label": "Import files",
     "upload.title": "Drag files here to import",
