@@ -30,6 +30,9 @@ function validate(values) {
   if (!values.name) {
     errors.name = <FormattedMessage id="ui-inventory-import.fillIn" />;
   }
+  if (values.tag && !/^[A-Za-z0-9-_]{1,24}$/.test(values.tag)) {
+    errors.tag = <FormattedMessage id="ui-inventory-import.invalidTag" />;
+  }
   if (!values.transformationId) {
     errors.transformationId = <FormattedMessage id="ui-inventory-import.selectToContinue" />;
   }
