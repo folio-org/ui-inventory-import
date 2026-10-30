@@ -36,6 +36,7 @@ const baseProps = {
     onClose: jest.fn(),
     pause: jest.fn(),
     resume: jest.fn(),
+    skip: jest.fn(),
   },
   updateQuery: jest.fn(),
 };
