@@ -10,6 +10,7 @@
 * [UIINIMP-70](https://folio-org.atlassian.net/browse/UIINIMP-70) Display last-harvested time in locale-appropriate way.
 * [UIINIMP-69](https://folio-org.atlassian.net/browse/UIINIMP-69) Use textarea for editing Harvest URL, add help texts.
 * [UIINIMP-71](https://folio-org.atlassian.net/browse/UIINIMP-71) Add info text and validation for values of `tag` in Channel.
+* [UIINIMP-72](https://folio-org.atlassian.net/browse/UIINIMP-72) Remove obsolete permissions for Channels
 
 ## [4.1.2](https://github.com/folio-org/ui-inventory-import/tree/v4.1.2) (2026-06-01)
 
