@@ -12,6 +12,7 @@
 * [UIINIMP-71](https://folio-org.atlassian.net/browse/UIINIMP-71) Add info text and validation for values of `tag` in Channel.
 * [UIINIMP-72](https://folio-org.atlassian.net/browse/UIINIMP-72) Remove obsolete permissions for Channels
 * [UIINIMP-73](https://folio-org.atlassian.net/browse/UIINIMP-73) Rename settings and jobs permissions to fit Eureka's matrix.
+* [UIINIMP-56](https://folio-org.atlassian.net/browse/UIINIMP-56) Specific permission for upload of files.
 
 ## [4.1.2](https://github.com/folio-org/ui-inventory-import/tree/v4.1.2) (2026-06-01)
 

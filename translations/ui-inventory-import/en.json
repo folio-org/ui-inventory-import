@@ -147,6 +147,7 @@
     "permission.settings.edit": "Inventory import (Settings): View, edit transformation pipelines, transformation steps, channels and log-file deletion threshold",
     "permission.settings.create": "Inventory import (Settings): View, edit, create transformation pipelines, transformation steps and channels",
     "permission.settings.delete": "Inventory import (Settings): View, edit, create, delete transformation pipelines, transformation steps and channels",
+    "permission.upload.execute": "Inventory import (Settings): Upload files for import to a channel",
     "permission.jobs-and-failed-records.view": "Inventory import: View jobs and failed records",
     "permission.all": "Inventory import: All permissions",
     "SENTINEL": "SENTINEL"
