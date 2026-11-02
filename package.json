@@ -68,7 +68,10 @@
         "visible": true
       },
       {
-        "permissionName": "ui-inventory-import.settings.view-edit",
+        "permissionName": "ui-inventory-import.settings.edit",
+        "replaces": [
+          "ui-inventory-import.settings.view-edit"
+        ],
         "displayName": "Inventory import (Settings): View, edit transformation pipelines, transformation steps, channels and log-file deletion threshold",
         "subPermissions": [
           "ui-inventory-import.settings.view",
@@ -82,10 +85,13 @@
         "visible": true
       },
       {
-        "permissionName": "ui-inventory-import.settings.view-edit-create",
+        "permissionName": "ui-inventory-import.settings.create",
+        "replaces": [
+          "ui-inventory-import.settings.view-edit-create"
+        ],
         "displayName": "Inventory import (Settings): View, edit, create transformation pipelines, transformation steps and channels",
         "subPermissions": [
-          "ui-inventory-import.settings.view-edit",
+          "ui-inventory-import.settings.edit",
           "inventory-update.import.steps.item.post",
           "inventory-update.import.transformations.item.post",
           "inventory-update.import.channels.item.post"
@@ -93,10 +99,13 @@
         "visible": true
       },
       {
-        "permissionName": "ui-inventory-import.settings.view-edit-create-delete",
+        "permissionName": "ui-inventory-import.settings.delete",
+        "replaces": [
+          "ui-inventory-import.settings.view-edit-create-delete"
+        ],
         "displayName": "Inventory import (Settings): View, edit, create, delete transformation pipelines, transformation steps and channels",
         "subPermissions": [
-          "ui-inventory-import.settings.view-edit-create",
+          "ui-inventory-import.settings.create",
           "inventory-update.import.steps.item.delete",
           "inventory-update.import.transformations.item.delete",
           "inventory-update.import.channels.item.delete"
@@ -104,7 +113,10 @@
         "visible": true
       },
       {
-        "permissionName": "ui-inventory-import.jobs-and-failed-records.get",
+        "permissionName": "ui-inventory-import.jobs-and-failed-records.view",
+        "replaces": [
+          "ui-inventory-import.jobs-and-failed-records.get"
+        ],
         "displayName": "Inventory import: View jobs and failed records",
         "subPermissions": [
           "module.inventory-import.enabled",
@@ -120,8 +132,8 @@
         "permissionName": "ui-inventory-import.all",
         "displayName": "Inventory import: All permissions",
         "subPermissions": [
-          "ui-inventory-import.settings.view-edit-create-delete",
-          "ui-inventory-import.jobs-and-failed-records.get"
+          "ui-inventory-import.settings.delete",
+          "ui-inventory-import.jobs-and-failed-records.view"
         ],
         "visible": true
       }
