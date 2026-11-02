@@ -113,6 +113,15 @@
         "visible": true
       },
       {
+        "permissionName": "ui-inventory-import.upload.execute",
+        "displayName": "Inventory import (Settings): Upload files for import to a channel",
+        "subPermissions": [
+          "ui-inventory-import.settings.view",
+          "inventory-update.import.upload.post"
+        ],
+        "visible": true
+      },
+      {
         "permissionName": "ui-inventory-import.jobs-and-failed-records.view",
         "replaces": [
           "ui-inventory-import.jobs-and-failed-records.get"
@@ -133,6 +142,7 @@
         "displayName": "Inventory import: All permissions",
         "subPermissions": [
           "ui-inventory-import.settings.delete",
+          "ui-inventory-import.upload.execute",
           "ui-inventory-import.jobs-and-failed-records.view"
         ],
         "visible": true
