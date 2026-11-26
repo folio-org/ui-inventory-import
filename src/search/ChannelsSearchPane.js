@@ -37,8 +37,8 @@ function ChannelsSearchPane(props) {
           query={query}
           updateQuery={updateQuery}
         />
-        {renderFilter(intl, filterStruct, updateQuery, 'enabled', ['true', 'false'])}
-        {renderFilter(intl, filterStruct, updateQuery, 'type', ['XML'])}
+        {renderFilter(intl, filterStruct, updateQuery, 'channels', 'enabled', ['true', 'false'])}
+        {renderFilter(intl, filterStruct, updateQuery, 'channels', 'type', ['XML'])}
       </form>
     </Pane>
   );

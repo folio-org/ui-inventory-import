@@ -58,7 +58,7 @@ describe('Channels view', () => {
 
     // Change selected filters
     expect(query.filters).toBe('enabled.true');
-    const selectElement = document.getElementById('filter.channels.column.enabled');
+    const selectElement = document.getElementById('filter.channels.index.enabled');
     fireEvent.change(selectElement, { target: { value: 'false' } });
     expect(query.filters).toBe('enabled.false');
   });

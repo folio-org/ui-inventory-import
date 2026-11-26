@@ -6,27 +6,24 @@ import { MultiSelectionFilter, deparseFilters } from '@folio/stripes/smart-compo
 const NO_VALUE = 'NO';
 
 
-function renderFilter(intl, filterStruct, updateQuery, qualifiedField, optionTags, isMulti) {
-  // `qualifiedField` may be simply the fieldname, provided that the
-  // translations for that field are in `channels.column.FIELD`. If
-  // they are elsewhere, `qualifiedField` takes the form `FIELD/TAG`
-  // where TAG is the translation-tag path to the relevant field's
-  // translations. See JobsSearchPane.js for examples.
-  const match = qualifiedField.match(/^([^\/]*)\/(.*)$/);
-  const field = match ? match[1] : qualifiedField;
-  const transTag = match ? match[2] : `channels.column.${field}`;
+function renderFilter(intl, filterStruct, updateQuery, page, field, optionTags, isMulti) {
+  // The filter's label is the same as the index name used in the
+  // search-field dropdown (`PAGE.index.FIELD`), but the option values
+  // re-use those displayed in the results list (`PAGE.column.FIELD.VALUE`)
+  const indexTag = `${page}.index.${field}`;
+  const valueTag = `${page}.column.${field}`;
 
   const dataOptions = optionTags.map(tag => ({
     value: tag,
-    label: intl.formatMessage({ id: `ui-inventory-import.${transTag}.${tag}` }),
+    label: intl.formatMessage({ id: `ui-inventory-import.${valueTag}.${tag}` }),
   }));
 
   if (isMulti) {
     return (
       <MultiSelectionFilter
-        id={`filter.${transTag}`}
+        id={`filter.${indexTag}`}
         name={`multifilter-${field}`}
-        label={intl.formatMessage({ id: `ui-inventory-import.${transTag}` })}
+        label={intl.formatMessage({ id: `ui-inventory-import.${indexTag}` })}
         dataOptions={dataOptions}
         selectedValues={filterStruct[field] || []}
         onChange={(group) => {
@@ -39,8 +36,8 @@ function renderFilter(intl, filterStruct, updateQuery, qualifiedField, optionTag
 
   return (
     <Select
-      id={`filter.${transTag}`}
-      label={intl.formatMessage({ id: `ui-inventory-import.${transTag}` })}
+      id={`filter.${indexTag}`}
+      label={intl.formatMessage({ id: `ui-inventory-import.${indexTag}` })}
       dataOptions={[
         { value: NO_VALUE, label: intl.formatMessage({ id: 'ui-inventory-import.no-value' }) },
         ...dataOptions
